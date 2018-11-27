@@ -5,7 +5,9 @@
 h2, h1, h3, td, th, tr, p
 {
 	font-family: arial;
-	font-size:1vw;
+	font-size:1.3vw;
+	padding:0px;
+	margin:2px;
 }
 
 h1
@@ -29,16 +31,20 @@ h3
 	font-weight: bold;
 	color: #000000;
 	margin: 0em;
-	font-size:2vw;;
+	font-size:2vw;
 }
 
 table
 {
-	border: 0pt;
+	border: 1px solid #dddddd;
 	margin: 0em;
 	width: 100%;
+	
 }
-
+table, th, td
+{
+border-collapse: collapse;
+}
 tr
 {
 	vertical-align: top;
@@ -50,6 +56,7 @@ tr:nth-child(even) {
 td
 {
 	vertical-align: top;
+	border-bottom:1px solid #dddddd;
 }
 
 
@@ -95,7 +102,9 @@ border: solid;
 
 [class*="col-"] {
     float: left;
-    padding: 15px;
+    padding: 1px;
+	margin-top:1px;
+	border: solid 0px black;
 }
 
 .row::after {
@@ -108,4 +117,20 @@ border: solid;
 {
 border: 2px solid black;
 border-radius: 25px;
+padding:10px;
+margin-top:10px;
+}
+#header
+{
+border: 2px solid black;
+border-radius: 25px;
+padding: 10px;
+}
+#sum
+{
+border-bottom:2px solid black;
+}
+#tablerow
+{
+padding-top:30px;
 }
