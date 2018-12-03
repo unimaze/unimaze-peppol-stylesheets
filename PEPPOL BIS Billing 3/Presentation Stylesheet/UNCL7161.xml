@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification xmlns="">
+		<ShortName>UNCL7161</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Advertising</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Telecommunication</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Technical modification</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Job-order production</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Outlays</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Off-premises</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Additional processing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Attesting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Acceptance</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rush delivery</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Special construction</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Airport facilities</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AAZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Concession</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Compulsory storage</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fuel removal</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Into plane</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Overtime</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Tooling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Miscellaneous</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Additional packaging</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Dunnage</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Containerisation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Carton packing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hessian wrapped</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ABU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Polyethylene wrap packing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Miscellaneous treatment</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Enamelling treatment</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Heat treatment</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Plating treatment</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Painting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Polishing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Priming</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Preservation treatment</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ACS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fitting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consolidation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Bill of lading</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Airbag</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Transfer</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Slipsheet</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Binding</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Repair or replacement of broken returnable package</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Efficient logistics</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Merchandising</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADQ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Product mix</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Other services</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pick-up</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Chronic illness</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>New product introduction</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ADZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Direct delivery</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Diversion</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Disconnect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Distribution</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AED</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Handling of hazardous cargo</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rents and leases</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Location differential</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Aircraft refueling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fuel shipped into storage</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cash on delivery</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Small order processing service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Clerical or administrative services</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Guarantee</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Collection and recycling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Copyright fee collection</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AES</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Veterinary inspection service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AET</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pensioner service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Medicine free pass holder</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Environmental protection service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Environmental clean-up service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEX</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>National cheque processing service outside account area</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>National payment service outside account area</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AEZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>National payment service within account area</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Adjustments</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Authentication</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cataloguing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cartage</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Certification</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Certificate of conformance</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Certificate of origin</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cutting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consular service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Customer collection</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Payroll payment service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cash transportation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Home banking service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Bilateral agreement service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Insurance brokerage service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAQ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cheque generation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Preferential merchandising location</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Crane</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Special colour service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sorting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Battery collection and recycling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CAW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Product take back fee</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Car loading</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cleaning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Cigarette stamping</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>CT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Count and recount</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>DAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Layout/design</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>DAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Driver assigned unloading</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>DL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Delivery</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>EG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Engraving</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>EP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Expediting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Exchange rate guarantee</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>FAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fabrication</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>FAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Freight equalization</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>FAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Freight extraordinary handling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>FC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Freight service</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>FH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Filling/handling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>FI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Financing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>GAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Grinding</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>HAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hose</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>HD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Handling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>HH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hoisting and hauling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>IAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Installation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>IAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Installation and warranty</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ID</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Inside delivery</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>IF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Inspection</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>IR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Installation and training</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>IS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Invoicing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>KO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Koshering</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>L1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Carrier count</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>LA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Labelling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>LAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Labour</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>LAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Repair and return</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>LF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Legalisation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>MAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Mounting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>MI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Mail invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ML</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Mail invoice to each location</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>NAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Non-returnable containers</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>OA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Outside cable connectors</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>PA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Invoice with shipment</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>PAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Phosphatizing (steel treatment)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>PC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Packing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>PL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Palletizing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Repacking</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Repair</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Returnable container</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RAF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Restocking</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Re-delivery</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Refurbishing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rail wagon hire</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>RV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Loading</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Salvaging</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Shipping and handling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Special packaging</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Stamping</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SAI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consignee unload</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Shrink-wrap</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Special handling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Special finish</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>SU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Set-up</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>TAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Tank renting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>TAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Testing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>TT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Transportation - third party billing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>TV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Transportation by vendor</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>V1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Drop yard</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>V2</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Drop dock</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>WH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Warehousing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>XAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Combine all same day shipment</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>YY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Split pick-up</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ZZZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Mutually defined</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>

@@ -349,6 +349,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-52" lang="en">
 		<TermName>Buyer city</TermName>
 		<Definition>The common name of the city, town or village, where the Buyer's address is located.</Definition>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-53" lang="en">
 		<TermName>Buyer post code</TermName>
@@ -398,6 +399,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Payee name</TermName>
 		<Definition>The name of the Payee.</Definition>
 		<Description>Shall be used when the Payee is different from the Seller. The Payee name may however be the same as the Seller name.</Description>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-60" lang="en">
 		<TermName>Payee identifier</TermName>
@@ -502,55 +504,58 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Invoicing period start date</TermName>
 		<Definition>The date when the Invoice period starts.</Definition>
 		<Description>The initial date of delivery of goods or services. </Description>
+		<DisplayName>Period start date</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-74" lang="en">
 		<TermName>Invoicing period end date</TermName>
 		<Definition>The date when the Invoice period ends.</Definition>
 		<Description>The date on which the delivery of goods or services was completed. </Description>
+		<DisplayName>Period end date</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-15" lang="en">
 		<TermName>DELIVER TO ADDRESS</TermName>
 		<Definition>A group of business terms providing information about the address to which goods and services invoiced were or are delivered.</Definition>
 		<Description>In the case of pick-up, the deliver to address is the pick-up address. Sufficient components of the address are to be filled to comply with legal requirements.</Description>
+		<DisplayName>Address</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-75" lang="en">
 		<TermName>Deliver to address line 1</TermName>
 		<Definition>The main address line in an address. </Definition>
 		<Description>Usually the street name and number. </Description>
-		<DisplayName>Address line</DisplayName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-76" lang="en">
 		<TermName>Deliver to address line 2</TermName>
 		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
-		<DisplayName>Address line 2</DisplayName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-165" lang="en">
 		<TermName>Deliver to address line 3</TermName>
 		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
-		<DisplayName>Address line 3</DisplayName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-77" lang="en">
 		<TermName>Deliver to city</TermName>
 		<Definition>The common name of the city, town or village, where the deliver to address is located.</Definition>
-		<DisplayName>City</DisplayName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-78" lang="en">
 		<TermName>Deliver to post code</TermName>
 		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
 		<Description>Such as a ZIP code or a post code. </Description>
-		<DisplayName>Post code</DisplayName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-79" lang="en">
 		<TermName>Deliver to country subdivision</TermName>
 		<Definition>The subdivision of a country. </Definition>
 		<Description>Such as a region, a county, a state, a province, etc. </Description>
-		<DisplayName>Country subdivision</DisplayName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-80" lang="en">
 		<TermName>Deliver to country code</TermName>
 		<Definition>A code that identifies the country.</Definition>
 		<Description>The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
-		<DisplayName>Country</DisplayName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-16" lang="en">
 		<TermName>PAYMENT INSTRUCTIONS</TermName>

@@ -19,6 +19,10 @@
 	<xsl:variable name="moduleDoc" select="document('Headlines.xml')"/>
 	<xsl:variable name="moduleDocBT" select="document('Headlines-BT.xml')"/>
 	<xsl:variable name="UNCL1001" select="document('UNCL1001.xml')"/>
+	<xsl:variable name="UNCL4461" select="document('UNCL4461.xml')"/>
+	<xsl:variable name="UNCL7161" select="document('UNCL7161.xml')"/>
+	<xsl:variable name="UNCL5189" select="document('UNCL5189.xml')"/>
+	<xsl:variable name="UNECE" select="document('UNECE.xml')"/>
 	<xsl:variable name="lang" select="'en'"/>
 	<xsl:template match="/">
 		<xsl:apply-templates/>
@@ -40,6 +44,32 @@
 		<xsl:variable name="DocumentName" select="if (exists($UNCL1001/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$Code and ../../Annotation/Description[@xml:lang=$lang]])) then ($UNCL1001/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$Code]) else ($Code)"/>
 		<xsl:value-of select="$DocumentName"/>
 	</xsl:function>
+	<!--Function to pick the AllowanceReasonCodes--> 
+	<xsl:function name="fcn:AllowanceReasonCode">
+		<xsl:param name="AllowanceCode"/>
+		<xsl:variable name="Allowance" select="if (exists($UNCL5189/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$AllowanceCode and ../../Annotation/Description[@xml:lang=$lang]])) then ($UNCL5189/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$AllowanceCode]) else ($AllowanceCode)"/>
+		<xsl:value-of select="$Allowance"/>
+	</xsl:function>
+	<!--Function to pick the ChargeReasonCodes--> 
+	<xsl:function name="fcn:ChargeReasonCode">
+		<xsl:param name="ChargeCode"/>
+		<xsl:variable name="Charge" select="if (exists($UNCL7161/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$ChargeCode and ../../Annotation/Description[@xml:lang=$lang]])) then ($UNCL7161/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$ChargeCode]) else ($ChargeCode)"/>
+		<xsl:value-of select="$Charge"/>
+	</xsl:function>
+	<!--Function to pick up payment means code-->
+	<xsl:function name="fcn:PaymentMeansCode">
+		<xsl:param name="PaymentCode"/>
+		<xsl:variable name="PaymentMeans" select="if (exists($UNCL4461/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$PaymentCode and ../../Annotation/Description[@xml:lang=$lang]])) then ($UNCL4461/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$PaymentCode]) else ($PaymentCode)"/>
+		<xsl:value-of select="$PaymentMeans"/>
+	</xsl:function>
+	
+		<!--Function to pick the UNECE codes--> 
+	<xsl:function name="fcn:UNECECode">
+		<xsl:param name="UNECECode"/>
+		<xsl:variable name="UnitOfMeasureCode" select="if (exists($UNECE/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$UNECECode and ../../Annotation/Description[@xml:lang=$lang]])) then ($UNECE/CodeList/SimpleCodeList/Row/Value/SimpleValue[../@ColumnRef='name' and ../../Value[@ColumnRef='code']/SimpleValue=$UNECECode]) else ($UNECECode)"/>
+		<xsl:value-of select="$UnitOfMeasureCode"/>
+	</xsl:function>
+	
 	<!--Party templates from here:-->
 	<xsl:template match=" cac:AccountingSupplierParty">
 		<xsl:call-template name="SellerParty"/>
@@ -246,6 +276,13 @@
 						&#160;[<xsl:apply-templates select="cac:Party/cac:PartyIdentification/cbc:ID/@schemeID"/>]
 
 					</xsl:if>
+					<br/>
+					<xsl:if test="../cbc:AccountingCost !=''">
+									
+										<xsl:value-of select="fcn:LabelName('BT-19', 'true')"/>
+									
+									<xsl:value-of select="../cbc:AccountingCost"/>
+								</xsl:if>
 			</small>
 		</xsl:if>
 		<!--Party legal registration: -->
@@ -319,7 +356,7 @@
 				<xsl:choose>
 					<xsl:when test="cac:Party/cac:PostalAddress/cbc:PostalZone !=''">
 						<xsl:value-of select="fcn:LabelName('BT-53', 'true')"/>
-						<xsl:apply-templates select="cac:Party/cac:PostalAddress/cbc:PostalZone"/>
+						<xsl:apply-templates select="cac:Party/cac:PostalAddress/cbc:PostalZone"/> &#160;
 						<xsl:value-of select="fcn:LabelName('BT-52', 'true')"/>
 						<xsl:apply-templates select="cac:Party/cac:PostalAddress/cbc:CityName"/>
 					</xsl:when>
@@ -536,17 +573,16 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template name="DeliveryAddress">
+	<b><xsl:value-of select="fcn:LabelName('BG-15', 'true')"/></b>
 		<xsl:if test="cac:Address/cbc:StreetName !=''">
-			<br/>
 			<span class="UBLStreetName">
-				<xsl:value-of select="fcn:LabelName('BT-75', 'true')"/>
+				<br/><xsl:value-of select="fcn:LabelName('BT-75', 'true')"/>
 				<xsl:apply-templates select="cac:Address/cbc:StreetName"/>
 			</span>
 		</xsl:if>
 		<xsl:if test="cac:Address/cbc:AdditionalStreetName !=''">
-			<br/>
 			<span class="UBLAdditionalStreetName">
-				<xsl:value-of select="fcn:LabelName('BT-76', 'true')"/>
+				<br/><xsl:value-of select="fcn:LabelName('BT-76', 'true')"/>
 				<xsl:apply-templates select="cac:Address/cbc:AdditionalStreetName"/>
 			</span>
 		</xsl:if>
@@ -556,7 +592,7 @@
 				<xsl:choose>
 					<xsl:when test="cac:Address/cbc:PostalZone !=''">
 						<xsl:value-of select="fcn:LabelName('BT-78', 'true')"/>
-						<xsl:apply-templates select="cac:Address/cbc:PostalZone"/>
+						<xsl:apply-templates select="cac:Address/cbc:PostalZone"/>&#160;
 						<xsl:value-of select="fcn:LabelName('BT-77', 'true')"/>
 						<xsl:apply-templates select="cac:Address/cbc:CityName"/>
 					</xsl:when>
@@ -698,25 +734,18 @@
 					</xsl:if>
 				</small>
 			</td>
-			<td align="right">
+			<td align="left">
 				<xsl:if test="cbc:InvoicedQuantity !=''">
-					<xsl:apply-templates select="cbc:InvoicedQuantity"/>
+					<xsl:apply-templates select="cbc:InvoicedQuantity"/>&#160;
+					<xsl:value-of select="fcn:UNECECode(cbc:InvoicedQuantity/@unitCode)"/>&#160;&#160;
 				</xsl:if>
-				<xsl:if test="cbc:CreditedQuantity !=''">
+				<xsl:if test="cbc:CreditedQuantity !=''">&#160;
 					<xsl:apply-templates select="cbc:CreditedQuantity"/>
+					<xsl:value-of select="fcn:UNECECode(cbc:CreditedQuantity/@unitCode)"/>&#160;&#160;
 				</xsl:if>
 				&#160;&#160;
 			</td>
-			<td>
-				<xsl:if test="cbc:InvoicedQuantity !=''">
-					<xsl:apply-templates select="cbc:InvoicedQuantity/@unitCode"/>&#160;&#160;
-
-				</xsl:if>
-				<xsl:if test="cbc:CreditedQuantity !=''">
-					<xsl:apply-templates select="cbc:CreditedQuantity/@unitCode"/>&#160;&#160;
-
-				</xsl:if>
-			</td>
+		
 			<td>
 				<xsl:apply-templates select="cac:Price"/>
 				<xsl:if test="cac:Price/cbc:BaseQuantity">
@@ -726,7 +755,8 @@
 							<xsl:value-of select="fcn:LabelName('BT-149', 'true')"/>
 						</b>
 						<xsl:apply-templates select="cac:Price/cbc:BaseQuantity"/>
-						&#160;<xsl:apply-templates select="cac:Price/cbc:BaseQuantity/@unitCode"/>
+						&#160;
+						<xsl:value-of select="fcn:UNECECode(cac:Price/cbc:BaseQuantity/@unitCode)"/>
 					</small>
 				</xsl:if>
 			</td>
@@ -892,15 +922,10 @@
 	</xsl:template>
 	<xsl:template name="Allowance">
 		<tr>
-		
-		<td valign="top" colspan="2">
-				
-				
-				
-			</td>
 			<td valign="top" colspan="2">
 				
 					<xsl:apply-templates select="cbc:AllowanceChargeReasonCode"/>
+					<!--xsl:value-of select="fcn:AllowanceReasonCode(cbc:AllowanceChargeReasonCode)"/-->
 				
 			</td>
 			<td valign="top" colspan="2">
@@ -932,9 +957,6 @@
 	<xsl:template name="Charge">
 						
 			<tr>
-			<td valign="top" colspan="2">
-			
-			</td>
 			<td valign="top" colspan="2">
 			<xsl:apply-templates select="cbc:AllowanceChargeReasonCode"/>
 			</td>
@@ -1072,7 +1094,7 @@
 	<xsl:template match="cac:PaymentMeans">
 		<tr>
 			<td valign="top">
-				<xsl:apply-templates select="cbc:PaymentMeansCode"/>
+					<xsl:value-of select="fcn:PaymentMeansCode(cbc:PaymentMeansCode)"/>
 			</td>
 			<td valign="top">
 				<xsl:if test="cbc:PaymentChannelCode !=''">
@@ -1169,11 +1191,10 @@
 	<!-- PaymentTerms from here: -->
 	<xsl:template match="cac:PaymentTerms">
 		<xsl:if test="cbc:Note !=''">
-			<tr>
-				<td valign="top">
+					<br/>
 					<xsl:apply-templates select="cbc:Note"/>
-				</td>
-			</tr>
+					
+		
 		</xsl:if>
 	</xsl:template>
 	<!-- Document references from here: -->

@@ -37,6 +37,7 @@ h3
 table
 {
 	border: 1px solid #dddddd;
+	/*border: 2px solid black;*/
 	margin: 0em;
 	width: 100%;
 	
@@ -57,6 +58,7 @@ td
 {
 	vertical-align: top;
 	border-bottom:1px solid #dddddd;
+	/*border:2px solid black;*/
 }
 
 
@@ -128,7 +130,7 @@ padding: 10px;
 }
 #sum
 {
-border-bottom:2px solid black;
+border-bottom:1px solid black;
 }
 #tablerow
 {
