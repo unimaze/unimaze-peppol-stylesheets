@@ -161,7 +161,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Definition>A textual description of the payment terms that apply to the amount due for payment (Including description of possible penalties).</Definition>
 		<Description>This element may contain multiple lines and multiple terms. </Description>
 	</BusinessTerm>
-	<BusinessTerm id="BT-19" lang="se">
+	<BusinessTerm id="BT-20" lang="se">
 		<TermName>Betalningsvillkor</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-1" lang="en">
@@ -424,6 +424,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BT-46" lang="se">
 		<TermName>Köparens ID</TermName>
+			<DisplayName>ID</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-46-1" lang="en">
 		<TermName>Scheme identifier</TermName>
@@ -573,6 +574,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BT-59" lang="se">
 		<TermName>Betalningsmottagarens namn</TermName>
+		<DisplayName>Namn</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-60" lang="en">
 		<TermName>Payee identifier</TermName>
@@ -581,6 +583,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BT-60" lang="se">
 		<TermName>Betalningsmottagarens ID</TermName>
+		<DisplayName>ID</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-60-1" lang="en">
 		<TermName>Scheme identifier</TermName>

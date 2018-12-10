@@ -57,7 +57,7 @@ tr:nth-child(even) {
 td
 {
 	vertical-align: top;
-	border-bottom:1px solid #dddddd;
+	border-bottom:1px solid #222222;
 	/*border:2px solid black;*/
 }
 
@@ -66,7 +66,6 @@ th
 {
 	border-bottom: 2px solid black;
 	font-weight:normal;
-	text-align:left;
 }
 
 

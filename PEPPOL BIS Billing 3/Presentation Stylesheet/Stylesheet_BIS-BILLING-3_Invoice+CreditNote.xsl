@@ -67,8 +67,17 @@
 						<div class="col-6">
 							<p align="right">
 								<b>
+									<xsl:value-of select="fcn:LabelName('BT-9', 'true')"/>
+								</b>
+								<br/>
+								<!-- Inserting Due Date:  -->
+								<xsl:value-of select="cbc:DueDate"/>
+								<br/>
+								<br/>
+								<b>
 									<xsl:value-of select="fcn:LabelName('BT-2', 'true')"/>
 								</b>
+								<br/>
 								<!-- Inserting Invoice Date -->
 								<xsl:value-of select="cbc:IssueDate"/>
 								<br/>
@@ -78,6 +87,7 @@
 										<b>
 											<xsl:value-of select="fcn:LabelName('BT-73', 'true')"/>
 										</b>
+										<br/>
 										<xsl:apply-templates select="cac:InvoicePeriod/cbc:StartDate"/>
 										<br/>
 									</xsl:if>
@@ -85,16 +95,11 @@
 										<b>
 											<xsl:value-of select="fcn:LabelName('BT-74', 'true')"/>
 										</b>
+										<br/>
 										<xsl:apply-templates select="cac:InvoicePeriod/cbc:EndDate"/>
 									</xsl:if>
 								</xsl:if>
-								<br/>
-								<br/>
-								<b>
-									<xsl:value-of select="fcn:LabelName('BT-9', 'true')"/>
-								</b>
-								<!-- Inserting Due Date:  -->
-								<xsl:value-of select="cbc:DueDate"/>
+								
 							</p>
 						</div>
 						<!--Start of invoice Header Information:-->
@@ -140,7 +145,7 @@
 						<!-- Inserting Accounting Customer Party -->
 						<p>
 							<b>
-								<xsl:value-of select="fcn:LabelName('BG-7', 'true')"/>
+								<xsl:value-of select="fcn:LabelName('BG-7', 'false')"/>
 							</b>
 							<br/>
 							<xsl:apply-templates select="cac:AccountingCustomerParty"/>
@@ -151,7 +156,7 @@
 							<!-- Inserting Contact information-->
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-9', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BG-9', 'false')"/>
 								</b>
 								<br/>
 								<xsl:call-template name="BuyerContact"/>
@@ -164,7 +169,7 @@
 							<!-- Inserting Payee Party -->
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-10', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BG-10', 'false')"/>
 								</b>
 								<br/>
 								<xsl:call-template name="PayeeParty"/>
@@ -175,7 +180,7 @@
 						<xsl:if test="cac:TaxRepresentativeParty !=''">
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-11', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BG-11', 'false')"/>
 								</b>
 								<br/>
 								<xsl:apply-templates select="cac:TaxRepresentativeParty"/>
@@ -190,7 +195,7 @@
 							<xsl:if test="cac:Delivery/cbc:ActualDeliveryDate !=' '">
 								<xsl:if test="cac:Delivery/cbc:ActualDeliveryDate !=''">
 <p>
-									<xsl:value-of select="fcn:LabelName('BT-72', 'true')"/>
+									<b><xsl:value-of select="fcn:LabelName('BT-72', 'true')"/></b>
 									<xsl:apply-templates select="cac:Delivery/cbc:ActualDeliveryDate"/>
 									</p>
 								</xsl:if>
@@ -202,7 +207,7 @@
 							<xsl:if test="cbc:Note[.!='']">
 								<p>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-22', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-22', 'false')"/>
 									</b>
 									<br/>
 									<xsl:apply-templates select="cbc:Note"/>
@@ -222,7 +227,7 @@
 						<xsl:if test="cac:AdditionalDocumentReference !=''">
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-24', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BG-24', 'false')"/>
 								</b>
 								<xsl:apply-templates select="cac:AdditionalDocumentReference"/>
 							</p>
@@ -234,44 +239,44 @@
 					<div class="col-12">
 						<table>
 							<tr class="UBLInvoiceLineHeader">
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-126', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-126', 'false')"/>
 									</b>
 								</th>
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-155', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-155', 'false')"/>
 									</b>
 								</th>
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-153', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-153', 'false')"/>
 									</b>
 								</th>
-								<th valign="top" align="right">
+								<th valign="top" align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-129', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-129', 'false')"/>
 									</b>
 								</th>
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-146', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-146', 'false')"/>
 									</b>
 								</th>
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-151', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-151', 'false')"/>
 									</b>
 								</th>
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-136', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-136', 'false')"/>
 									</b>
 								</th>
 								<th align="right" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-131', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-131', 'false')"/>
 									</b>
 								</th>
 							</tr>
@@ -291,7 +296,8 @@
 					</div>
 					<div class="col-6">
 						<p align="right">
-							<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID"/>
+						<b>
+							<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID"/></b>
 						</p>
 					</div>
 				</div>
@@ -303,29 +309,29 @@
 						<div class="col-12">
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-20', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BG-20', 'false')"/>
 								</b>
 							</p>
 							<table>
 								<tr>
-									<th valign="top" colspan="2">
+									<th align="left" valign="top" colspan="2">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-105', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-105', 'false')"/>
 										</b>
 									</th>
-									<th valign="top" colspan="2">
+									<th align="left" valign="top" colspan="2">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-104', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-104', 'false')"/>
 										</b>
 									</th>
-									<th valign="top">
+									<th align="left" valign="top">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-102', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-102', 'false')"/>
 										</b>
 									</th>
 									<th valign="top" align="right">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-99', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-99', 'false')"/>
 										</b>
 									</th>
 								</tr>
@@ -351,7 +357,8 @@
 						</div>
 						<div class="col-6">
 							<p align="right">
-								<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID"/>
+							<b>
+								<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID"/></b>
 							</p>
 						</div>
 					</div>
@@ -363,29 +370,29 @@
 						<div class="col-12">
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-21', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BG-21', 'false')"/>
 								</b>
 							</p>
 							<table>
 								<tr>
-									<th valign="top" colspan="2">
+									<th align="left" valign="top" colspan="2">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-98', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-98', 'false')"/>
 										</b>
 									</th>
-									<th valign="top" colspan="2">
+									<th align="left" valign="top" colspan="2">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-97', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-97', 'false')"/>
 										</b>
 									</th>
-									<th valign="top">
+									<th align="left" valign="top">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-95', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-95', 'false')"/>
 										</b>
 									</th>
 									<th valign="top" align="right">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-92', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-92', 'false')"/>
 										</b>
 									</th>
 								</tr>
@@ -411,7 +418,8 @@
 						</div>
 						<div class="col-6">
 							<p align="right">
-								<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID"/>
+							<b>
+								<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID"/></b>
 							</p>
 						</div>
 					</div>
@@ -422,7 +430,7 @@
 					<div class="col-12">
 						<p>
 							<b>
-								<xsl:value-of select="fcn:LabelName('BG-23', 'true')"/>
+								<xsl:value-of select="fcn:LabelName('BG-23', 'false')"/>
 							</b>
 							<br/>
 							<xsl:if test="cbc:TaxPointDate !=''">
@@ -446,26 +454,26 @@
 						<table>
 							<xsl:if test="cac:TaxTotal">
 								<tr class="TAXInformationHeader">
-									<th valign="top" colspan="2">
+									<th align="left" valign="top" colspan="2">
 										<b>
 											<xsl:value-of select="fcn:LabelName('BT-118', 'true')"/>
 										</b>
 									</th>
-									<th valign="top" colspan="2">
+									<th align="left" valign="top" colspan="2">
 										<b>
 											<xsl:value-of select="fcn:LabelName('BT-120', 'true')"/>
 										</b>
 									</th>
-									<th valign="top" colspan="2">
+									<th align="left" valign="top" colspan="2">
 										<b>
 											<xsl:value-of select="fcn:LabelName('BT-116', 'true')"/>
 										</b>
 									</th>
-									<th valign="top" align="right">
+									<!--th valign="top" align="right">
 										<b>
 											<xsl:value-of select="fcn:LabelName('BT-111', 'true')"/>
 										</b>
-									</th>
+									</th-->
 									<th valign="top" align="right">
 										<b>
 											<xsl:value-of select="fcn:LabelName('BT-117', 'true')"/>
@@ -491,7 +499,8 @@
 							</div>
 							<div class="col-6">
 								<p align="right">
-									<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]/@currencyID"/>
+								<b>
+									<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]/@currencyID"/></b>
 								
 								</p>
 							</div>
@@ -595,7 +604,9 @@
 					</div>
 					<div class="col-6">
 						<p align="right">
+						<b>
 							<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
+							</b>
 						</p>
 					</div>
 				</div>
@@ -619,41 +630,41 @@
 					<div class="col-12">
 						<p>
 							<b>
-								<xsl:value-of select="fcn:LabelName('BG-16', 'true')"/>
+								<xsl:value-of select="fcn:LabelName('BG-16', 'false')"/>
 							</b>
 						</p>
 						<table>
 							<tr>
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-81', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-81', 'false')"/>
 									</b>&#160;&#160;
 								</th>
-								<th valign="top">
+								<th align="left" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-86', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-86', 'false')"/>
 									</b>
 								</th>
-								<th valign="top" colspan="2">
+								<th align="left" valign="top" colspan="2">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-84', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-84', 'false')"/>
 									</b>
 								</th>
-								<th valign="top" colspan="2">
+								<th align="left" valign="top" colspan="2">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-86', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-86', 'false')"/>
 									</b>
 								</th>
-								<th valign="top">
+								<th align="right" valign="top">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-83', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-83', 'false')"/>
 									</b>
 								</th>
-								<th valign="top" align="right">
+								<!--th valign="top" align="right">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-9', 'true')"/>
+										<xsl:value-of select="fcn:LabelName('BT-9', 'false')"/>
 									</b>
-								</th>
+								</th-->
 							</tr>
 							<xsl:apply-templates select="cac:PaymentMeans"/>
 						</table>
@@ -666,7 +677,7 @@
 						<!-- Inserting Accounting Supplier Party-->
 						<p>
 							<b>
-								<xsl:value-of select="fcn:LabelName('BG-4', 'true')"/>
+								<xsl:value-of select="fcn:LabelName('BG-4', 'false')"/>
 							</b>
 							<br/>
 							<xsl:apply-templates select="cac:AccountingSupplierParty"/>
@@ -677,7 +688,7 @@
 						<xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact !=''">
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-6', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BG-6', 'false')"/>
 								</b>
 								<xsl:call-template name="SellerContact"/>
 							</p>
@@ -895,6 +906,7 @@
 							<!-- Inserting Accounting Customer Party -->
 							<b>
 								<xsl:value-of select="fcn:LabelName('BG-7', 'true')"/>
+								hej
 							</b>
 							<br/>
 							<xsl:apply-templates select="cac:AccountingCustomerParty"/>
@@ -935,6 +947,7 @@
 									<br/>
 									<xsl:apply-templates select="cac:TaxRepresentativeParty"/>
 								</xsl:if>
+								
 								<xsl:apply-templates select="cac:Delivery" mode="DocumentHeader"/>
 							</td>
 						</tr>
@@ -1053,27 +1066,27 @@
 						<tr class="TAXInformationHeader">
 							<td valign="top" colspan="2">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-118', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-118', 'false')"/>
 								</b>
 							</td>
 							<td valign="top" colspan="2">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-120', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-120', 'false')"/>
 								</b>
 							</td>
 							<td valign="top" colspan="2">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-116', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-116', 'false')"/>
 								</b>
 							</td>
 							<td valign="top" align="right">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-111', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-111', 'false')"/>
 								</b>
 							</td>
 							<td valign="top" align="right">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-117', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-117', 'false')"/>
 								</b>
 							</td>
 						</tr>
