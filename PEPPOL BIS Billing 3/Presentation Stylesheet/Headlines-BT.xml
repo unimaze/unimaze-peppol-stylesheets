@@ -232,6 +232,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BT-27" lang="se">
 		<TermName>Säljarens namn</TermName>
+		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-28" lang="en">
 		<TermName>Seller trading name</TermName>
@@ -248,6 +249,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BT-29" lang="se">
 		<TermName>Säljarens ID</TermName>
+		<DisplayName>ID</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-29-1" lang="en">
 		<TermName>Scheme identifier</TermName>
@@ -261,9 +263,11 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller legal registration identifier</TermName>
 		<Definition>An identifier issued by an official registrar that identifies the Seller as a legal entity or person.</Definition>
 		<Description>If no identification scheme is specified, it should be known by Buyer and Seller. </Description>
+		<DisplayName>Legal registration identifier</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-30" lang="se">
 		<TermName>Säljarens organisationsnummer</TermName>
+		<DisplayName>Organisationsnummer</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-30-1" lang="en">
 		<TermName>Scheme identifier</TermName>
@@ -277,9 +281,11 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller VAT identifier</TermName>
 		<Definition>The Seller's VAT identifier (also known as Seller VAT identification number).</Definition>
 		<Description>VAT number prefixed by a country code. A VAT registered Supplier shall include his VAT ID, except when he uses a tax representative.</Description>
+		<DisplayName>VAT identifier</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-31" lang="se">
 		<TermName>Säljarens momsregistreringsnummer</TermName>
+		<DisplayName>Momsregistreringsnummer</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-32" lang="en">
 		<TermName>Seller tax registration identifier</TermName>
@@ -372,26 +378,31 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller contact point</TermName>
 		<Definition>A contact point for a legal entity or person.</Definition>
 		<Description>Such as person name, contact identification, department or office identification. </Description>
+		<DisplayName>Contact Point</DisplayName>
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-41" lang="se">
 		<TermName>Säljarens kontakt</TermName>
+		<DisplayName>Kontakt</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-42" lang="en">
 		<TermName>Seller contact telephone number</TermName>
 		<Definition>A phone number for the contact point. </Definition>
+		<DisplayName>Telephone number</DisplayName>
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-42" lang="se">
 		<TermName>Säljarens telefon</TermName>
+		<DisplayName>Telefon</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-43" lang="en">
 		<TermName>Seller contact email address</TermName>
 		<Definition>An e-mail address for the contact point. </Definition>
-		<DisplayName/>
+		<DisplayName>E-mail address</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-43" lang="se">
 		<TermName>Säljarens email</TermName>
+		<DisplayName>E-mail</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-7" lang="en">
 		<TermName>BUYER</TermName>
@@ -407,6 +418,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BT-44" lang="se">
 		<TermName>Köparens namn</TermName>
+		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-45" lang="en">
 		<TermName>Buyer trading name</TermName>
@@ -443,6 +455,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BT-47" lang="se">
 		<TermName>Köparens organisationsnummer</TermName>
+		<DisplayName>Organisationsnummer</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-47-1" lang="en">
 		<TermName>Scheme identifier</TermName>
@@ -539,10 +552,11 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Buyer contact point</TermName>
 		<Definition>A contact point for a legal entity or person.</Definition>
 		<Description>Such as person name, contact identification, department or office identification. </Description>
-		<DisplayName>Contact point</DisplayName>
+		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-56" lang="se">
 		<TermName>Köparens kontakt</TermName>
+		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-57" lang="en">
 		<TermName>Buyer contact telephone number</TermName>
@@ -597,9 +611,12 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Payee legal registration identifier</TermName>
 		<Definition>An identifier issued by an official registrar that identifies the Payee as a legal entity or person.</Definition>
 		<Description>If no scheme is specified, it should be known by Buyer and Seller, e.g. the identifier that is exclusively used in the applicable legal environment.</Description>
+	<DisplayName>Legal registration ID</DisplayName>
 	</BusinessTerm>
+	
 	<BusinessTerm id="BT-61" lang="se">
 		<TermName>Betalningsmottagarens organisationsnummer</TermName>
+		<DisplayName>Organisationsnummer</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-61-1" lang="en">
 		<TermName>Scheme identifier</TermName>
@@ -744,6 +761,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	</BusinessTerm>
 	<BusinessTerm id="BG-15" lang="se">
 		<TermName>LEVERANSPLATS</TermName>
+		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-75" lang="en">
 		<TermName>Deliver to address line 1</TermName>

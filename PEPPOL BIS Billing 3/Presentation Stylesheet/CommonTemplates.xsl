@@ -23,7 +23,7 @@
 	<xsl:variable name="UNCL7161" select="document('UNCL7161.xml')"/>
 	<xsl:variable name="UNCL5189" select="document('UNCL5189.xml')"/>
 	<xsl:variable name="UNECE" select="document('UNECE.xml')"/>
-	<xsl:variable name="lang" select="'en'"/>
+	<xsl:variable name="lang" select="'se'"/>
 	<xsl:template match="/">
 		<xsl:apply-templates/>
 	</xsl:template>
@@ -80,7 +80,7 @@
 	<!--SELLER PARTY STARTS HERE-->
 	<xsl:template name="SellerParty">
 		<xsl:value-of select="fcn:LabelName('BT-27', 'true')"/>
-		<xsl:apply-templates select="cac:Party/cac:PartyName"/>
+		<b><xsl:apply-templates select="cac:Party/cac:PartyName"/></b>
 		<br/><b><xsl:value-of select="fcn:LabelName('BG-5', 'false')"/></b>
 		<xsl:call-template name="SellerPostalAddress"/>
 		
@@ -569,6 +569,7 @@
 			</xsl:choose>
 		</xsl:if>
 		<xsl:if test="cac:Address !=''">
+		<br/>
 			<xsl:call-template name="DeliveryAddress"/>
 		</xsl:if>
 	</xsl:template>
@@ -996,20 +997,23 @@
 	</xsl:template>
 	<!-- 3) A/C on price unit level (for information only) -->
 	<xsl:template match="cac:AllowanceCharge" mode="PriceUnit-new">
-		<b>
-			<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='UnitNetPriceIncl']"/-->&#160;</b>
+	<b>
 		<xsl:choose>
 			<xsl:when test="cbc:ChargeIndicator ='true'">
+			<xsl:value-of select="fcn:LabelName('BT-147', 'true')"/>
 				<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='ChargeIndicatorTrue']"/-->
 			</xsl:when>
 			<xsl:when test="cbc:ChargeIndicator ='false'">
+			<xsl:value-of select="fcn:LabelName('BT-147', 'true')"/>
 				<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='ChargeIndicatorFalse']"/-->
 			</xsl:when>
 		</xsl:choose>
+		</b>
 		<xsl:choose>
 			<xsl:when test="cbc:BaseAmount !='' ">
-				&#160;<xsl:apply-templates select="cbc:Amount"/>&#160;<xsl:apply-templates select="cbc:Amount/@currencyID"/>,
-				&#160;<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='BasedOnAmount']"/-->
+				&#160;<xsl:apply-templates select="cbc:Amount"/>&#160;<xsl:apply-templates select="cbc:Amount/@currencyID"/>
+				<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='BasedOnAmount']"/-->
+				<br/><b><xsl:value-of select="fcn:LabelName('BT-148', 'true')"/></b>
 
 				&#160;<xsl:apply-templates select="cbc:BaseAmount"/>&#160;<xsl:apply-templates select="cbc:BaseAmount/@currencyID"/>
 			</xsl:when>
@@ -1094,24 +1098,25 @@
 			<td valign="top">
 					<xsl:value-of select="fcn:PaymentMeansCode(cbc:PaymentMeansCode)"/>
 			</td>
-			<td valign="top">
-				<xsl:if test="cbc:PaymentChannelCode !=''">
-					<xsl:apply-templates select="cbc:PaymentChannelCode"/>
-				</xsl:if>
-			</td>
 			<td valign="top" colspan="2">
 				<xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''">
-					<xsl:apply-templates select="cac:CardAccount/cbc:PrimaryAccountNumberID"/>
+					<xsl:apply-templates select="cac:CardAccount/cbc:PrimaryAccountNumberID"/>&#160;
+					<xsl:if test="cac:CardAccount/cbc:HolderName !=''">
+					<small>(<xsl:apply-templates select="cac:CardAccount/cbc:HolderName"/>)</small>
+					</xsl:if>
 				</xsl:if>
 				<xsl:if test="cac:PayeeFinancialAccount/cbc:ID !='' or 
 							cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID !=''">
 					<xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''">
 					</xsl:if>
 					<xsl:apply-templates select="cac:PayeeFinancialAccount/cbc:ID"/>&#160;
-
-						<xsl:if test="cac:PayeeFinancialAccount/cbc:ID/@schemeID">
-						<small>(<xsl:apply-templates select="cac:PayeeFinancialAccount/cbc:ID/@schemeID"/>)</small>
+						<xsl:if test="cac:PayeeFinancialAccount/cbc:Name">
+						<small>(<xsl:apply-templates select="cac:PayeeFinancialAccount/cbc:Name"/>)</small>
 					</xsl:if>
+				</xsl:if>
+				<xsl:if test="cac:PaymentMandate/cbc:ID !='' or cac:PaymentMandate/cac:PayerFinancialAccount !=''">
+				<xsl:apply-templates select="cac:PaymentMandate/cbc:ID"/>
+				
 				</xsl:if>
 			</td>
 			<td valign="top" colspan="2">
@@ -1123,18 +1128,13 @@
 						<br/>
 					</xsl:if>
 					<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID"/>&#160;
-
-						<small>(
-						<xsl:choose>
-							<xsl:when test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID/@schemeID !=''">
-								<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID/@schemeID"/>
-							</xsl:when>
-							<xsl:otherwise>
-								No schemeID
-							</xsl:otherwise>
-						</xsl:choose>
-
-						)</small>
+				</xsl:if>
+				<xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID !='' ">
+						<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"/>&#160;
+					</xsl:if>
+					<xsl:if test="cac:PaymentMandate/cbc:ID !='' or cac:PaymentMandate/cac:PayerFinancialAccount !=''">
+				<xsl:apply-templates select="cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID"/>
+				
 				</xsl:if>
 			</td>
 			<td valign="top" align="right">
@@ -1148,41 +1148,6 @@
 				</xsl:if>
 			</td-->
 		</tr>
-		<!-- If needed, a 2nd row with certain financial details: -->
-		<xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID !=''
-
-				or cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:Name !=''
-
-				or cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cac:Address !='' ">
-			<tr>
-				<td>
-				</td>
-				<td>
-				</td>
-				<td valign="top" colspan="2">
-					<xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID !='' ">
-						<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"/>&#160;
-
-							<small>(<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='PayeeFinancialInstitutionBranchID']"/-->)</small>
-					</xsl:if>
-				</td>
-				<td valign="top" colspan="2">
-					<small>
-						<xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:Name !='' ">
-							<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:Name"/>&#160;
-
-						</xsl:if>
-						<xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cac:Address !='' ">
-							<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cac:Address"/>
-						</xsl:if>
-					</small>
-				</td>
-				<td>
-				</td>
-				<td>
-				</td>
-			</tr>
-		</xsl:if>
 	</xsl:template>
 	<!--PaymentMeans template until here-->
 	<!-- PaymentTerms from here: -->
@@ -1196,58 +1161,38 @@
 	</xsl:template>
 	<!-- Document references from here: -->
 	<xsl:template match="cac:AdditionalDocumentReference ">
-	<table>
+	
 	<xsl:if test="cbc:ID !=''">
-			<tr>
-				<td><xsl:value-of select="fcn:LabelName('BT-122', 'true')"/></td>
-				<td><xsl:apply-templates select="cbc:ID"/></td>
-			</tr>
+			
+				<xsl:value-of select="fcn:LabelName('BT-122', 'true')"/><xsl:apply-templates select="cbc:ID"/>
 	</xsl:if>
 	<small>
-	
 	<xsl:if test="cbc:DocumentType !='' or cbc:DocumentTypeCode !=''">
-			<tr>
-			<td><xsl:value-of select="fcn:LabelName('BT-123', 'true')"/></td>
-					
-					<td><xsl:apply-templates select="cbc:DocumentType"/>&#160;<xsl:apply-templates select="cbc:DocumentTypeCode"/></td>
+			<br/>
+			-&#160;<xsl:value-of select="fcn:LabelName('BT-123', 'true')"/><xsl:apply-templates select="cbc:DocumentType"/>&#160;<xsl:apply-templates select="cbc:DocumentTypeCode"/>
 				
-			</tr>
 		</xsl:if>
-		<tr>
-		
-		<td>
+		<br/>
 			<xsl:apply-templates select="cac:Attachment"/>
-			</td>
-			<td>
-			</td>
-		</tr>
-		
 		</small>
-	</table>
 	</xsl:template>
 	<xsl:template match="cac:Attachment">
 		<!-- No processing of attached document, just info: -->
 		<xsl:if test="cbc:EmbeddedDocumentBinaryObject/@mimeCode !=''">
-			<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='AttachmentInfo1']"/-->
-
-				&#160;<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='AttachmentInfo2']"/-->&#160;
-
-				<xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@mimeCode"/>
+				-&#160;<xsl:value-of select="fcn:LabelName('BT-125-1', 'true')"/><xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@mimeCode"/>
+				<br/>
 		</xsl:if>
 		<xsl:if test="cbc:EmbeddedDocumentBinaryObject/@format !=''">
-
-				&#160;<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='AttachmentInfo4']"/-->&#160;
-
-				<xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@format"/>
+				-&#160;<xsl:value-of select="fcn:LabelName('BT-125-1', 'true')"/><xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@format"/>
+				<br/>
 		</xsl:if>
 		<xsl:if test="cbc:EmbeddedDocumentBinaryObject/@filename !=''">
-
-				&#160;<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='AttachmentInfo3']"/-->&#160;
-
-				<xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@filename"/>
+				-&#160;<xsl:value-of select="fcn:LabelName('BT-125-2', 'true')"/><xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@filename"/>
+				<br/>
 		</xsl:if>
 		<xsl:if test="cac:ExternalReference !=''">
-			<xsl:apply-templates select="cac:ExternalReference"/>
+			-&#160;<xsl:apply-templates select="cac:ExternalReference"/>
+			<br/>
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="cac:ExternalReference">
@@ -1259,14 +1204,12 @@
 	<xsl:template match="cac:BillingReference">
 		<br/>
 		<xsl:if test="cac:CreditNoteDocumentReference !=''">
-					-&#160;<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='BillingRef-CreditNote']"/-->&#160;
 					<xsl:apply-templates select="cac:CreditNoteDocumentReference/cbc:ID"/>&#160;
 				</xsl:if>
 		<xsl:if test="cac:InvoiceDocumentReference !=''">
 			<xsl:if test="cac:CreditNoteDocumentReference !=''">
 				<br/>
 			</xsl:if>
-					-&#160;<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='BillingRef-Invoice']"/-->&#160;
 					<xsl:apply-templates select="cac:InvoiceDocumentReference/cbc:ID"/>&#160;
 				</xsl:if>
 	</xsl:template>

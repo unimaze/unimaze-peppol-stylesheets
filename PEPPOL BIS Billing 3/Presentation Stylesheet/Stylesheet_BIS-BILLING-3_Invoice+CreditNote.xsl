@@ -67,7 +67,7 @@
 						<div class="col-6">
 							<p align="right">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-9', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-9', 'false')"/>
 								</b>
 								<br/>
 								<!-- Inserting Due Date:  -->
@@ -75,7 +75,7 @@
 								<br/>
 								<br/>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-2', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-2', 'false')"/>
 								</b>
 								<br/>
 								<!-- Inserting Invoice Date -->
@@ -85,7 +85,7 @@
 								<xsl:if test="cac:InvoicePeriod !=''">
 									<xsl:if test="cac:InvoicePeriod/cbc:StartDate !=''">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-73', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-73', 'false')"/>
 										</b>
 										<br/>
 										<xsl:apply-templates select="cac:InvoicePeriod/cbc:StartDate"/>
@@ -93,7 +93,7 @@
 									</xsl:if>
 									<xsl:if test="cac:InvoicePeriod/cbc:EndDate !='' ">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-74', 'true')"/>
+											<xsl:value-of select="fcn:LabelName('BT-74', 'false')"/>
 										</b>
 										<br/>
 										<xsl:apply-templates select="cac:InvoicePeriod/cbc:EndDate"/>
@@ -106,30 +106,30 @@
 						<div class="col-6">
 							<p align="right">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-1', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-1', 'false')"/>
 								</b>
 								<!-- Inserting Invoice ID -->
 								<br/>
 								<xsl:value-of select="cbc:ID"/>
 								<br/>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-13', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-13', 'false')"/>
 								</b>
 								<br/>
 								<!-- Inserting Order reference number  -->
 								<xsl:value-of select="cac:OrderReference/cbc:ID"/>
 								<br/>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-10', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-10', 'false')"/>
 								</b>
 								<br/>
 								<!-- Inserting Buyer Reference::  -->
 								<xsl:value-of select="cbc:BuyerReference"/>
 							
 								
-								<br/>
+								<br/><br/>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-115', 'true')"/>
+									<xsl:value-of select="fcn:LabelName('BT-115', 'false')"/>
 								</b>
 								<br/>
 								<!-- Inserting Total Payable amount  -->
@@ -229,6 +229,7 @@
 								<b>
 									<xsl:value-of select="fcn:LabelName('BG-24', 'false')"/>
 								</b>
+								<br/>
 								<xsl:apply-templates select="cac:AdditionalDocumentReference"/>
 							</p>
 						</xsl:if>
@@ -633,17 +634,13 @@
 								<xsl:value-of select="fcn:LabelName('BG-16', 'false')"/>
 							</b>
 						</p>
+					
 						<table>
 							<tr>
 								<th align="left" valign="top">
 									<b>
 										<xsl:value-of select="fcn:LabelName('BT-81', 'false')"/>
 									</b>&#160;&#160;
-								</th>
-								<th align="left" valign="top">
-									<b>
-										<xsl:value-of select="fcn:LabelName('BT-86', 'false')"/>
-									</b>
 								</th>
 								<th align="left" valign="top" colspan="2">
 									<b>
@@ -660,11 +657,6 @@
 										<xsl:value-of select="fcn:LabelName('BT-83', 'false')"/>
 									</b>
 								</th>
-								<!--th valign="top" align="right">
-									<b>
-										<xsl:value-of select="fcn:LabelName('BT-9', 'false')"/>
-									</b>
-								</th-->
 							</tr>
 							<xsl:apply-templates select="cac:PaymentMeans"/>
 						</table>
@@ -704,10 +696,10 @@
 							<br/>
 							<xsl:value-of select="fcn:LabelName('BT-23', 'true')"/>
 										&#160;<xsl:value-of select="cbc:ProfileID"/>
-							<b>
+							
 								<br/>
 								<xsl:value-of select="fcn:LabelName('BT-24', 'true')"/>
-							</b>&#160;<xsl:value-of select="cbc:CustomizationID"/>
+							&#160;<xsl:value-of select="cbc:CustomizationID"/>
 							<xsl:if test="cbc:UUID !=''">
 								<!--xsl:value-of select="$moduleDoc/module/document-merge/g-funcs/g[@name='UUID']"/-->
 								<xsl:value-of select="cbc:UUID"/>
