@@ -2,41 +2,168 @@
     box-sizing: border-box;
 }
 
-h2, h1, h3, td, th, tr, p
-{
-	font-family: arial;
-	font-size:1.3vw;
-	padding:0px;
-	margin:2px;
+:root {
+  --white: #ffffff;
+  --grey: #f3f3f2;
+  --Line-color: #979797;
+  --font-color: #484848;
 }
 
-h1
-{
-	color: #000000;
-	font-weight: bold;
-	margin: 0em;
-	font-size:4vw;
+/* Text styles */
+
+.H1-Bold {
+  font-family: Helvetica;
+  font-size: 3,3vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.82;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+h1 {
+  font-family: Helvetica;
+  font-size: 3.3vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.82;
+  letter-spacing: normal;
+  color: #484848;
 }
 
-h2
-{
-	color: #000000;
-	font-weight: bold;
-	margin: 0em;
-	font-size:3vw;
+.H2-Bold {
+  font-family: Helvetica;
+  font-size: 2,4vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+h2 {
+  font-family: Helvetica;
+  font-size: 2.4vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #484848;
 }
 
-h3
-{
-	font-weight: bold;
-	color: #000000;
-	margin: 0em;
-	font-size:2vw;
+.H3-Regular {
+  font-family: Helvetica;
+  font-size: 1.9vw;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: normal;
+  color: var(--font-color);
 }
+h3 {
+  font-family: Helvetica;
+  font-size: 1.9vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: normal;
+  color: #484848;
+}
+
+.H3-Bold {
+  font-family: Helvetica;
+  font-size: 1.9vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+
+.H4-Bold {
+  font-family: Helvetica;
+  font-size: 1.4vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+h4 {
+  font-family: Helvetica;
+  font-size: 1.4vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #484848;
+}
+
+.Text-Regular {
+  font-family: Helvetica;
+  font-size: 1.2vw;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+p,th,td {
+  font-family: Helvetica;
+  font-size: 1.2vw;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  color: #484848;
+}
+
+.Text-Bold {
+  font-family: Helvetica;
+  font-size: 1.2vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+
+.Text-Small-Bold {
+  font-family: Helvetica;
+  font-size: 1.0vw;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.1;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+
+.Text-Small-Regular {
+  font-family: Helvetica;
+  font-size: 1.0vw;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.1;
+  letter-spacing: normal;
+  color: var(--font-color);
+}
+
 
 table
 {
-	border: 1px solid #dddddd;
+	
 	/*border: 2px solid black;*/
 	margin: 0em;
 	width: 100%;
@@ -51,41 +178,36 @@ tr
 	vertical-align: top;
 }
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #f3f3f2;
 }
 
 td
 {
 	vertical-align: top;
-	border-bottom:1px solid #222222;
+	border-bottom:1px solid #979797;
 	/*border:2px solid black;*/
 }
 
 
 th
 {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #979797;
 	font-weight:normal;
 }
 
 
 td.UBLLine
 {
-	color: #000000;
+	color:#979797;
 	margin: 0em;
 }
 
 hr
 {
-color:#CCFFCC;
+color:var(--Line-color);
 
 }
-.header
-{
-border-width:1px;
-border-color: #000000;
-border: solid;
-}
+
 
 
 .col-1 {width: 8.33%;}
@@ -105,7 +227,7 @@ border: solid;
     float: left;
     padding: 1px;
 	margin-top:1px;
-	border: solid 0px black;
+	border: solid 0px #979797;
 }
 
 .row::after {
@@ -113,23 +235,26 @@ border: solid;
     clear: both;
     display: table;
 }
+#bottomrow{
+
+border-bottom:2px solid #979797;
+}
 
 #footer
 {
-border: 2px solid black;
-border-radius: 25px;
+border-top: 2px solid #979797;
+background-color: #f3f3f2;
 padding:10px;
-margin-top:10px;
+margin-top:50px;
 }
 #header
 {
-border: 2px solid black;
-border-radius: 25px;
 padding: 10px;
 }
-#sum
+#headerrow
 {
-border-bottom:1px solid black;
+padding-top:30px;
+border-bottom:1px solid #979797;
 }
 #tablerow
 {
