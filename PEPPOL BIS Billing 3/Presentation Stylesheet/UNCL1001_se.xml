@@ -23,178 +23,178 @@
 	<SimpleCodeList xmlns="">
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>80</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Debit note related to goods or services</SimpleValue>
+				<SimpleValue>Debitering varor/tjänster</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>82</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Metered services invoice</SimpleValue>
+				<SimpleValue>Mätarbaserade tjänster</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>84</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Debit note related to financial adjustments</SimpleValue>
+				<SimpleValue>DDebitering finansiella tjänster</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>380</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Commercial invoice</SimpleValue>
+				<SimpleValue>Faktura/SimpleValue</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>383</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Debit note</SimpleValue>
+				<SimpleValue>Debitiering</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>386</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Prepayment invoice</SimpleValue>
+				<SimpleValue>Förskottsbetalning</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>393</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Factored invoice</SimpleValue>
+				<SimpleValue>Hanterad via factoringtjänst</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>395</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Consignment invoice</SimpleValue>
+				<SimpleValue>Konsignationsförsäljning</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>575</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Insurer's invoice</SimpleValue>
+				<SimpleValue>Försäkringstjänster</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>623</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Forwarder's invoice</SimpleValue>
+				<SimpleValue>Speditionstjänster</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>780</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Freight invoice</SimpleValue>
+				<SimpleValue>Frakträkning</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>81</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit note related to goods or services</SimpleValue>
+				<SimpleValue>Kreditering varor/tjänster</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>83</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit note related to financial adjustments</SimpleValue>
+				<SimpleValue>Kreditering finansiella tjänster</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>381</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit note</SimpleValue>
+				<SimpleValue>Kreditnota</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>396</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Factored credit note</SimpleValue>
+				<SimpleValue>Hanterad via factoringtjänst</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Annotation>
-				<Description xml:lang="en"/>
+				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
 				<SimpleValue>532</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Forwarder's credit note</SimpleValue>
+				<SimpleValue>Kreditering speditionstjänster</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>

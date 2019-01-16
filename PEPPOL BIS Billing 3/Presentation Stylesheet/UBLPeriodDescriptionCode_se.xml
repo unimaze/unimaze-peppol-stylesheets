@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Identification xmlns="">
-		<ShortName>UNCL1001</ShortName>
+		<ShortName>DescriptionCode</ShortName>
 		<Version></Version>
 		<CanonicalUri></CanonicalUri>
 		<CanonicalVersionUri></CanonicalVersionUri>
@@ -26,10 +26,10 @@
 				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
-				<SimpleValue>Invoice</SimpleValue>
+				<SimpleValue>3</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Faktura</SimpleValue>
+				<SimpleValue>Fakturadatum</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -37,10 +37,21 @@
 				<Description xml:lang="se"/>
 			</Annotation>
 			<Value ColumnRef="code">
-				<SimpleValue>CreditNote</SimpleValue>
+				<SimpleValue>35</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Kreditnota</SimpleValue>
+				<SimpleValue>Leveransdatum (verkligt)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="se"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>432</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Betalningsdatum</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>
