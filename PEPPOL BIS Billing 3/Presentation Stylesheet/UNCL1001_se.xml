@@ -62,7 +62,7 @@
 				<SimpleValue>380</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Faktura/SimpleValue</SimpleValue>
+				<SimpleValue>Faktura</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
