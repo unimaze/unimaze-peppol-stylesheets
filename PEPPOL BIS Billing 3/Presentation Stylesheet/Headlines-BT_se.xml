@@ -42,6 +42,10 @@
 	<BusinessTerm id="BT-16" lang="se">
 		<TermName>Referens leveransavisering</TermName>
 	</BusinessTerm>
+	<BusinessTerm id="BT-17" lang="se">
+		<TermName>Upphandlingsreferens</TermName>
+	</BusinessTerm>
+		
 	<BusinessTerm id="BT-18" lang="se">
 		<TermName>Faktureringsobjekt</TermName>
 	</BusinessTerm>
@@ -56,6 +60,14 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-22" lang="se">
 		<TermName>Anteckning</TermName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-23" lang="se">
+		<TermName>Business process type</TermName>
+
+	</BusinessTerm>
+	<BusinessTerm id="BT-24" lang="se">
+		<TermName>Specification identifier</TermName>
+
 	</BusinessTerm>
 	<BusinessTerm id="BG-3" lang="se">
 		<TermName>TIDIGARE FAKTURA</TermName>
@@ -128,10 +140,10 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-44" lang="se">
 		<TermName>Köparens namn</TermName>
-		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-45" lang="se">
 		<TermName>Köparens alternativa namn</TermName>
+		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-46" lang="se">
 		<TermName>Köparens ID</TermName>
@@ -244,7 +256,7 @@
 		<TermName>Betalsätt beskrivning</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-83" lang="se">
-		<TermName>Ange vid betalning</TermName>
+		<TermName>Referens vid betalning</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-17" lang="se">
 		<TermName>BETALNING ÖVERFÖRING</TermName>
@@ -422,6 +434,9 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-129" lang="se">
 		<TermName>Fakturerad kvantitet</TermName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-130" lang="se">
+		<TermName>Kvantitetskod</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-131" lang="se">
 		<TermName>Radbelopp</TermName>

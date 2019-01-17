@@ -288,12 +288,13 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-44" lang="en">
 		<TermName>Buyer name</TermName>
 		<Definition>The full name of the Buyer. </Definition>
-		<DisplayName/>
+		
 	</BusinessTerm>
 	<BusinessTerm id="BT-45" lang="en">
 		<TermName>Buyer trading name</TermName>
 		<Definition>A name by which the Buyer is known, other than Buyer name (also known as Business name).</Definition>
 		<Description>This may be used if different from the Buyer name. </Description>
+		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-46" lang="en">
 		<TermName>Buyer identifier</TermName>
