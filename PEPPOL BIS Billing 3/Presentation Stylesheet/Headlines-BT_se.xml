@@ -1,564 +1,564 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SemanticModel>
-	<BusinessTerm id="BT-1" lang="se">
+	<BusinessTerm id="BT-1">
 		<TermName>Fakturanummer</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-2" lang="se">
+	<BusinessTerm id="BT-2">
 		<TermName>Fakturadatum</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-3" lang="se">
+	<BusinessTerm id="BT-3">
 		<TermName>Fakturatyp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-5" lang="se">
+	<BusinessTerm id="BT-5">
 		<TermName>Fakturans valuta</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-6" lang="se">
+	<BusinessTerm id="BT-6">
 		<TermName>Redovisningsvaluta för moms</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-7" lang="se">
+	<BusinessTerm id="BT-7">
 		<TermName>Momsdatum</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-9" lang="se">
+	<BusinessTerm id="BT-9">
 		<TermName>Sista betaldatum</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-10" lang="se">
+	<BusinessTerm id="BT-10">
 		<TermName>Beställarreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-11" lang="se">
+	<BusinessTerm id="BT-11">
 		<TermName>Projektreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-12" lang="se">
+	<BusinessTerm id="BT-12">
 		<TermName>Kontraktsreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-13" lang="se">
+	<BusinessTerm id="BT-13">
 		<TermName>Orderreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-14" lang="se">
+	<BusinessTerm id="BT-14">
 		<TermName>Säljorderreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-15" lang="se">
+	<BusinessTerm id="BT-15">
 		<TermName>Referens mottagningskvittens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-16" lang="se">
+	<BusinessTerm id="BT-16">
 		<TermName>Referens leveransavisering</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-17" lang="se">
+	<BusinessTerm id="BT-17">
 		<TermName>Upphandlingsreferens</TermName>
 	</BusinessTerm>
 		
-	<BusinessTerm id="BT-18" lang="se">
+	<BusinessTerm id="BT-18">
 		<TermName>Faktureringsobjekt</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-18-1" lang="se">
+	<BusinessTerm id="BT-18-1">
 		<TermName>Typ av objekt</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-19" lang="se">
+	<BusinessTerm id="BT-19">
 		<TermName>Konteringsreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-20" lang="se">
+	<BusinessTerm id="BT-20">
 		<TermName>Betalningsvillkor</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-22" lang="se">
+	<BusinessTerm id="BT-22">
 		<TermName>Anteckning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-23" lang="se">
+	<BusinessTerm id="BT-23">
 		<TermName>Business process type</TermName>
 
 	</BusinessTerm>
-	<BusinessTerm id="BT-24" lang="se">
+	<BusinessTerm id="BT-24">
 		<TermName>Specification identifier</TermName>
 
 	</BusinessTerm>
-	<BusinessTerm id="BG-3" lang="se">
+	<BusinessTerm id="BG-3">
 		<TermName>TIDIGARE FAKTURA</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-25" lang="se">
+	<BusinessTerm id="BT-25">
 		<TermName>Tidigare fakturareferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-26" lang="se">
+	<BusinessTerm id="BT-26">
 		<TermName>Datum för tidigare faktura</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-27" lang="se">
+	<BusinessTerm id="BT-27">
 		<TermName>Säljarens namn</TermName>
 		<DisplayName/>
 	</BusinessTerm>
-	<BusinessTerm id="BT-28" lang="se">
+	<BusinessTerm id="BT-28">
 		<TermName>Säljarens alternativa namn </TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-29" lang="se">
+	<BusinessTerm id="BT-29">
 		<TermName>Säljarens ID</TermName>
 		<DisplayName>ID</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-29-1" lang="se">
+	<BusinessTerm id="BT-29-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-30" lang="se">
+	<BusinessTerm id="BT-30">
 		<TermName>Säljarens organisationsnummer</TermName>
 		<DisplayName>Organisationsnummer</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-30-1" lang="se">
+	<BusinessTerm id="BT-30-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-31" lang="se">
+	<BusinessTerm id="BT-31">
 		<TermName>Säljarens momsregistreringsnummer</TermName>
 		<DisplayName>Momsregistreringsnummer</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-32" lang="se">
+	<BusinessTerm id="BT-32">
 		<TermName>ID för säljarens skatteregistrering</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-33" lang="se">
+	<BusinessTerm id="BT-33">
 		<TermName>Ytterligare legal upplysning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-34" lang="se">
+	<BusinessTerm id="BT-34">
 		<TermName>Säljarens elektroniska adress</TermName>
 		<DisplayName>Säljarens PEPPOL-ID</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-34-1" lang="se">
+	<BusinessTerm id="BT-34-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-5" lang="se">
+	<BusinessTerm id="BG-5">
 		<TermName>SÄLJARENS ADRESS</TermName>
 		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-6" lang="se">
+	<BusinessTerm id="BG-6">
 		<TermName>SÄLJARENS KONTAKT</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-41" lang="se">
+	<BusinessTerm id="BT-41">
 		<TermName>Säljarens kontakt</TermName>
 		<DisplayName>Kontakt</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-42" lang="se">
+	<BusinessTerm id="BT-42">
 		<TermName>Säljarens telefon</TermName>
 		<DisplayName>Telefon</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-43" lang="se">
+	<BusinessTerm id="BT-43">
 		<TermName>Säljarens email</TermName>
 		<DisplayName>E-mail</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-7" lang="se">
+	<BusinessTerm id="BG-7">
 		<TermName>KÖPAREN</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-44" lang="se">
+	<BusinessTerm id="BT-44">
 		<TermName>Köparens namn</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-45" lang="se">
+	<BusinessTerm id="BT-45">
 		<TermName>Köparens alternativa namn</TermName>
 		<DisplayName/>
 	</BusinessTerm>
-	<BusinessTerm id="BT-46" lang="se">
+	<BusinessTerm id="BT-46">
 		<TermName>Köparens ID</TermName>
 			<DisplayName>ID</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-46-1" lang="se">
+	<BusinessTerm id="BT-46-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-47" lang="se">
+	<BusinessTerm id="BT-47">
 		<TermName>Köparens organisationsnummer</TermName>
 		<DisplayName>Organisationsnummer</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-47-1" lang="se">
+	<BusinessTerm id="BT-47-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-48" lang="se">
+	<BusinessTerm id="BT-48">
 		<TermName>Köparens momsregistreringsnummer</TermName>
 		<DisplayName>Momsregistreringsnummer</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-49" lang="se">
+	<BusinessTerm id="BT-49">
 		<TermName>Köparens elektroniska adress</TermName>
 		<DisplayName>Köparens PEPPOL-ID</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-49-1" lang="se">
+	<BusinessTerm id="BT-49-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-8" lang="se">
+	<BusinessTerm id="BG-8">
 		<TermName>KÖPARENS ADRESS</TermName>
 		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-9" lang="se">
+	<BusinessTerm id="BG-9">
 		<TermName>KÖPARENS KONTAKT</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-56" lang="se">
+	<BusinessTerm id="BT-56">
 		<TermName>Köparens kontakt</TermName>
 		<DisplayName/>
 	</BusinessTerm>
-	<BusinessTerm id="BT-57" lang="se">
+	<BusinessTerm id="BT-57">
 		<TermName>Köparens telefonnummer</TermName>
 		<DisplayName>Telefon</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-10" lang="se">
+	<BusinessTerm id="BG-10">
 		<TermName>BETALNINGSMOTTAGARE</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-59" lang="se">
+	<BusinessTerm id="BT-59">
 		<TermName>Betalningsmottagarens namn</TermName>
 		<DisplayName>Namn</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-60" lang="se">
+	<BusinessTerm id="BT-60">
 		<TermName>Betalningsmottagarens ID</TermName>
 		<DisplayName>ID</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-60-1" lang="se">
+	<BusinessTerm id="BT-60-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-61" lang="se">
+	<BusinessTerm id="BT-61">
 		<TermName>Betalningsmottagarens organisationsnummer</TermName>
 		<DisplayName>Organisationsnummer</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-61-1" lang="se">
+	<BusinessTerm id="BT-61-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-11" lang="se">
+	<BusinessTerm id="BG-11">
 		<TermName>SKATTEOMBUD</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-62" lang="se">
+	<BusinessTerm id="BT-62">
 		<TermName>Skatteombud namn</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-63" lang="se">
+	<BusinessTerm id="BT-63">
 		<TermName>Skatteombud momsregistreringsnummer</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-12" lang="se">
+	<BusinessTerm id="BG-12">
 		<TermName>SKATTEOMBUD ADRESS</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-13" lang="se">
+	<BusinessTerm id="BG-13">
 		<TermName>LEVERANSINFORMATION</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-70" lang="se">
+	<BusinessTerm id="BT-70">
 		<TermName>Leveransmottagare</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-71" lang="se">
+	<BusinessTerm id="BT-71">
 		<TermName>Leveransplats (ID)</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-71-1" lang="se">
+	<BusinessTerm id="BT-71-1">
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-72" lang="se">
+	<BusinessTerm id="BT-72">
 		<TermName>Verkligt leveransdatum</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-14" lang="se">
+	<BusinessTerm id="BG-14">
 		<TermName>Faktureringsperiod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-73" lang="se">
+	<BusinessTerm id="BT-73">
 		<TermName>Faktureringsperiod start</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-74" lang="se">
+	<BusinessTerm id="BT-74">
 		<TermName>Faktureringsperiod slut</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-15" lang="se">
+	<BusinessTerm id="BG-15">
 		<TermName>LEVERANSPLATS</TermName>
 		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-16" lang="se">
+	<BusinessTerm id="BG-16">
 		<TermName>BETALINSTRUKTION</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-81" lang="se">
+	<BusinessTerm id="BT-81">
 		<TermName>Betalsätt kod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-82" lang="se">
+	<BusinessTerm id="BT-82">
 		<TermName>Betalsätt beskrivning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-83" lang="se">
+	<BusinessTerm id="BT-83">
 		<TermName>Referens vid betalning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-17" lang="se">
+	<BusinessTerm id="BG-17">
 		<TermName>BETALNING ÖVERFÖRING</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-84" lang="se">
+	<BusinessTerm id="BT-84">
 		<TermName>Kontonr</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-85" lang="se">
+	<BusinessTerm id="BT-85">
 		<TermName>Kontonamn</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-86" lang="se">
+	<BusinessTerm id="BT-86">
 		<TermName>Betalsystem eller BIC</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-18" lang="se">
+	<BusinessTerm id="BG-18">
 		<TermName>KORTINFORMATION</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-87" lang="se">
+	<BusinessTerm id="BT-87">
 		<TermName>Kortkontonummer </TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-88" lang="se">
+	<BusinessTerm id="BT-88">
 		<TermName>Kontoinnehavarens namn</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG19" lang="se">
+	<BusinessTerm id="BG19">
 		<TermName>DIREKTBETALNING</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-89" lang="se">
+	<BusinessTerm id="BT-89">
 		<TermName>Referens till överenskommelse</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-90" lang="se">
+	<BusinessTerm id="BT-90">
 		<TermName>Bankens ID på betalningsmottagare</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-91" lang="se">
+	<BusinessTerm id="BT-91">
 		<TermName>Konto som betalning dras från</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-20" lang="se">
+	<BusinessTerm id="BG-20">
 		<TermName>RABATTER</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-92" lang="se">
+	<BusinessTerm id="BT-92">
 		<TermName>Rabattbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-93" lang="se">
+	<BusinessTerm id="BT-93">
 		<TermName>Underlagsbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-94" lang="se">
+	<BusinessTerm id="BT-94">
 		<TermName>Procent</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-95" lang="se">
+	<BusinessTerm id="BT-95">
 		<TermName>Momskategori</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-96" lang="se">
+	<BusinessTerm id="BT-96">
 		<TermName>Skattesats</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-97" lang="se">
+	<BusinessTerm id="BT-97">
 		<TermName>Orsak</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-98" lang="se">
+	<BusinessTerm id="BT-98">
 		<TermName>Orsakskod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-21" lang="se">
+	<BusinessTerm id="BG-21">
 		<TermName>AVGIFTER</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-99" lang="se">
+	<BusinessTerm id="BT-99">
 		<TermName>Avgiftsbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-100" lang="se">
+	<BusinessTerm id="BT-100">
 		<TermName>Underlagsbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-101" lang="se">
+	<BusinessTerm id="BT-101">
 		<TermName>Procent</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-102" lang="se">
+	<BusinessTerm id="BT-102">
 		<TermName>Momskategori</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-103" lang="se">
+	<BusinessTerm id="BT-103">
 		<TermName>Skattesats</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-104" lang="se">
+	<BusinessTerm id="BT-104">
 		<TermName>Orsak</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-105" lang="se">
+	<BusinessTerm id="BT-105">
 		<TermName>Orsakskod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-22" lang="se">
+	<BusinessTerm id="BG-22">
 		<TermName>SAMMANRÄKNING</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-106" lang="se">
+	<BusinessTerm id="BT-106">
 		<TermName>Summa radbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-107" lang="se">
+	<BusinessTerm id="BT-107">
 		<TermName>Summa rabatter (huvudnivå)</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-108" lang="se">
+	<BusinessTerm id="BT-108">
 		<TermName>Summa avgifter (huvudnivå)</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-109" lang="se">
+	<BusinessTerm id="BT-109">
 		<TermName>Totalbelopp exkl moms</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-110" lang="se">
+	<BusinessTerm id="BT-110">
 		<TermName>Totalt momsbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-111" lang="se">
+	<BusinessTerm id="BT-111">
 		<TermName>Momsbelopp i redovisningsvaluta</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-112" lang="se">
+	<BusinessTerm id="BT-112">
 		<TermName>Totalbelopp inkl moms</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-113" lang="se">
+	<BusinessTerm id="BT-113">
 		<TermName>Förbetalt belopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-114" lang="se">
+	<BusinessTerm id="BT-114">
 		<TermName>Beloppsutjämning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-115" lang="se">
+	<BusinessTerm id="BT-115">
 		<TermName>Belopp att betala</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-23" lang="se">
+	<BusinessTerm id="BG-23">
 		<TermName>SKATTESAMMANRÄKNING</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-116" lang="se">
+	<BusinessTerm id="BT-116">
 		<TermName>Skattepliktigt belopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-117" lang="se">
+	<BusinessTerm id="BT-117">
 		<TermName>Skattebelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-118" lang="se">
+	<BusinessTerm id="BT-118">
 		<TermName>Momskategori</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-119" lang="se">
+	<BusinessTerm id="BT-119">
 		<TermName>Skattesats</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-120" lang="se">
+	<BusinessTerm id="BT-120">
 		<TermName>Undantagsorsak</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-121" lang="se">
+	<BusinessTerm id="BT-121">
 		<TermName>Undantagsorsakskod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-24" lang="se">
+	<BusinessTerm id="BG-24">
 		<TermName>ÖVRIGA DOKUMENTREFERENSER</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-122" lang="se">
+	<BusinessTerm id="BT-122">
 		<TermName>Dokumentreferens</TermName>
 		<DisplayName>Referens</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-123" lang="se">
+	<BusinessTerm id="BT-123">
 		<TermName>Dokumentbeskrivning</TermName>
 		<DisplayName>Beskrivning</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-124" lang="se">
+	<BusinessTerm id="BT-124">
 		<TermName>Länk till externt dokument</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-125" lang="se">
+	<BusinessTerm id="BT-125">
 		<TermName>Bilagt dokument</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-125-1" lang="se">
+	<BusinessTerm id="BT-125-1">
 		<TermName>Filtyp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-125-2" lang="se">
+	<BusinessTerm id="BT-125-2">
 		<TermName>Filnamn</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-25" lang="se">
+	<BusinessTerm id="BG-25">
 		<TermName>FAKTURARADER</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-126" lang="se">
+	<BusinessTerm id="BT-126">
 		<TermName>Radnr</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-127" lang="se">
+	<BusinessTerm id="BT-127">
 		<TermName>Anteckning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-128" lang="se">
+	<BusinessTerm id="BT-128">
 		<TermName>Objektreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-128-1" lang="se">
+	<BusinessTerm id="BT-128-1">
 		<TermName>Objektreferenstyp</TermName>
 		<DisplayName>Typ</DisplayName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-129" lang="se">
+	<BusinessTerm id="BT-129">
 		<TermName>Fakturerad kvantitet</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-130" lang="se">
+	<BusinessTerm id="BT-130">
 		<TermName>Kvantitetskod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-131" lang="se">
+	<BusinessTerm id="BT-131">
 		<TermName>Radbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-132" lang="se">
+	<BusinessTerm id="BT-132">
 		<TermName>Referens orderrad</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-133" lang="se">
+	<BusinessTerm id="BT-133">
 		<TermName>Konteringsreferens</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-26" lang="se">
+	<BusinessTerm id="BG-26">
 		<TermName>FAKTURERINGSPERIOD</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-134" lang="se">
+	<BusinessTerm id="BT-134">
 		<TermName>Startdatum</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-135" lang="se">
+	<BusinessTerm id="BT-135">
 		<TermName>Slutdatum</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-27" lang="se">
+	<BusinessTerm id="BG-27">
 		<TermName>Rabatter</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-136" lang="se">
+	<BusinessTerm id="BT-136">
 		<TermName>Rabattbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-137" lang="se">
+	<BusinessTerm id="BT-137">
 		<TermName>Underlagsbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-138" lang="se">
+	<BusinessTerm id="BT-138">
 		<TermName>Procent</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-139" lang="se">
+	<BusinessTerm id="BT-139">
 		<TermName>Orsak</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-140" lang="se">
+	<BusinessTerm id="BT-140">
 		<TermName>Orsakskod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-28" lang="se">
+	<BusinessTerm id="BG-28">
 		<TermName>Avgifter</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-141" lang="se">
+	<BusinessTerm id="BT-141">
 		<TermName>Avgiftsbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-142" lang="se">
+	<BusinessTerm id="BT-142">
 		<TermName>Underlagsbelopp</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-143" lang="se">
+	<BusinessTerm id="BT-143">
 		<TermName>Procent</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-144" lang="se">
+	<BusinessTerm id="BT-144">
 		<TermName>Orsak</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-145" lang="se">
+	<BusinessTerm id="BT-145">
 		<TermName>Orsakskod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-29" lang="se">
+	<BusinessTerm id="BG-29">
 		<TermName>PRIS</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-146" lang="se">
+	<BusinessTerm id="BT-146">
 		<TermName>Á-pris</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-147" lang="se">
+	<BusinessTerm id="BT-147">
 		<TermName>Prisrabatt</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-148" lang="se">
+	<BusinessTerm id="BT-148">
 		<TermName>Bruttopris</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-149" lang="se">
+	<BusinessTerm id="BT-149">
 		<TermName>Baskvantitet</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-150" lang="se">
+	<BusinessTerm id="BT-150">
 		<TermName>Baskvantitet kod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-30" lang="se">
+	<BusinessTerm id="BG-30">
 		<TermName>FAKTURARAD SKATTEINFORMATION</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-151" lang="se">
+	<BusinessTerm id="BT-151">
 		<TermName>Momskategori</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-152" lang="se">
+	<BusinessTerm id="BT-152">
 		<TermName>Skattesats</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-31" lang="se">
+	<BusinessTerm id="BG-31">
 		<TermName>ARTIKELINFORMATION</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-153" lang="se">
+	<BusinessTerm id="BT-153">
 		<TermName>Benämning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-154" lang="se">
+	<BusinessTerm id="BT-154">
 		<TermName>Beskrivning</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-155" lang="se">
+	<BusinessTerm id="BT-155">
 		<TermName>Säljarens artikelnr</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-156" lang="se">
+	<BusinessTerm id="BT-156">
 		<TermName>Köparens artikelnr</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-157" lang="se">
+	<BusinessTerm id="BT-157">
 		<TermName>Standard artikelnr</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-157-1" lang="se">
+	<BusinessTerm id="BT-157-1">
 		<TermName>Typ</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-158" lang="se">
+	<BusinessTerm id="BT-158">
 		<TermName>Klassifiseringskod</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-158-1" lang="se">
+	<BusinessTerm id="BT-158-1">
 		<TermName>Typ</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-158-2" lang="se">
+	<BusinessTerm id="BT-158-2">
 		<TermName>Version</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-159" lang="se">
+	<BusinessTerm id="BT-159">
 		<TermName>Ursprungsland</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG-32" lang="se">
+	<BusinessTerm id="BG-32">
 		<TermName>ARTIKELEGENSKAPER</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-160" lang="se">
+	<BusinessTerm id="BT-160">
 		<TermName>Egenskap</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BT-161" lang="se">
+	<BusinessTerm id="BT-161">
 		<TermName>Värde</TermName>
 	</BusinessTerm>
 </SemanticModel>
