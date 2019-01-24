@@ -30,7 +30,7 @@
 		
 ******************************************************************************************************************
 -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fcn="urn:sfti:se:xsl:functions" xmlns:n1="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:n2="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2" xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cac cbc ccts sdt udt">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fcn="urn:sfti:se:xsl:functions" xmlns:n1="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:n2="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cdl="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2" xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts sdt udt">
 	<xsl:include href="CommonTemplates.xsl"/>
 	<xsl:output method="html" doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" doctype-system="http://www.w3.org/TR/html4/loose.dtd" indent="yes"/>
 	<xsl:strip-space elements="*"/>
@@ -354,7 +354,8 @@ padding-top:1vw;
 											</b>
 											<br/>
 											<!-- Inserting Total Payable amount  -->
-											<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
+											
+											<xsl:value-of select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
 											<br/>
 										</p>
 									</xsl:when>
@@ -365,7 +366,8 @@ padding-top:1vw;
 											</b>
 											<br/>
 											<!-- Inserting Total Payable amount  -->
-											<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
+											
+											<xsl:value-of select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
 											<br/>
 										</p>
 									</xsl:otherwise>
@@ -569,7 +571,7 @@ padding-top:1vw;
 						<div class="col-6">
 							<p align="right">
 								<b>
-									<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID"/>
+									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:LineExtensionAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID"/>
 								</b>
 							</p>
 						</div>
@@ -634,7 +636,7 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="right">
 									<b>
-										<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID"/>
+										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID"/>
 									</b>
 								</p>
 							</div>
@@ -699,7 +701,7 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="right">
 									<b>
-										<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID"/>
+										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:ChargeTotalAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID"/>
 									</b>
 								</p>
 							</div>
@@ -792,13 +794,13 @@ padding-top:1vw;
 								</div>
 								<div class="col-3">
 									<p align="right">
-										<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode]"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode]/@currencyID"/>
+										<xsl:apply-templates select="fcn:Currency(cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode])"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode]/@currencyID"/>
 									</p>
 								</div>
 								<div class="col-3">
 									<p align="right">
 										<b>
-											<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]/@currencyID"/>
+											<xsl:apply-templates select="fcn:Currency(cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode])"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]/@currencyID"/>
 										</b>
 									</p>
 								</div>
@@ -817,7 +819,7 @@ padding-top:1vw;
 						</div>
 						<div class="col-6">
 							<p align="right">
-								<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/>
+								<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount)"/>
 							</p>
 						</div>
 					</div>
@@ -834,7 +836,7 @@ padding-top:1vw;
 						<div class="col-6">
 							<p align="right">
 								<b>
-									<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/>
+									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount)"/>
 								</b>
 							</p>
 						</div>
@@ -852,7 +854,7 @@ padding-top:1vw;
 							</div>
 							<div class="col-6">
 								<p align="right">
-									<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PrepaidAmount"/>
+									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PrepaidAmount)"/>
 								</p>
 							</div>
 						</div>
@@ -870,7 +872,7 @@ padding-top:1vw;
 							</div>
 							<div class="col-6">
 								<p align="right">
-									<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"/>
+									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableRoundingAmount)"/>
 								</p>
 							</div>
 						</div>
@@ -887,7 +889,7 @@ padding-top:1vw;
 								</div>
 								<div class="col-6">
 									<h2 align="right" style="color:red">
-										<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
+										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
 									</h2>
 								</div>
 							</xsl:when>
@@ -899,7 +901,7 @@ padding-top:1vw;
 								</div>
 								<div class="col-6">
 									<h2 align="right">
-										<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
+										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
 									</h2>
 								</div>
 							</xsl:otherwise>
@@ -1109,7 +1111,8 @@ padding-top:1vw;
 										[<xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/>]
 
 					</xsl:if>
-					<br/>This invoice visualization is generated from SFTI BIS Billing 3 XSL Stylesheet Version 1.0.0<br/>
+					<br/>This invoice visualization is generated from SFTI BIS Billing 3 XSL Stylesheet Version 1.0.1<br/>
+					This stylesheet uses business terms defined the CEN/EN16931-1 and is reproduced with permission from CEN. CEN bears no liability from the use of the content and implementation of this stylesheet and gives no warranties expressed or implied for any purpose.<br/>
 					
 									
 								</xsl:if>

@@ -15,7 +15,8 @@
 		
 ******************************************************************************************************************
 -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fcn="urn:sfti:se:xsl:functions" xmlns:n1="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:n2="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2" xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cac cbc ccts sdt udt">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fcn="urn:sfti:se:xsl:functions" xmlns:n1="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:n2="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cdl="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2" xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts sdt udt">
+	<xsl:include href="user_config.xsl"/>
 	<xsl:variable name="moduleDocBT_en" select="document('Headlines-BT_en.xml')"/>
 	<xsl:variable name="moduleDocBT" select="document(concat('Headlines-BT_', $lang, '.xml'))"/>
 	<xsl:variable name="invoiceBaseType" select="document(concat('UBLInvoiceBaseType_',$lang, '.xml'))"/>
@@ -36,7 +37,6 @@
 	<xsl:variable name="UBLClassificationCode_en" select="document('UBLClassificationCode_en.xml')"/>
 	<xsl:variable name="invoiceBaseType_en" select="document('UBLInvoiceBaseType_en.xml')"/>
 	<xsl:variable name="UNECE_en" select="document('UNECE_en.xml')"/>
-	<xsl:variable name="lang" select="'se'"/>
 	<xsl:template match="/">
 		<xsl:apply-templates/>
 	</xsl:template>
@@ -50,7 +50,22 @@
 		<xsl:value-of select="$LabelVariable"/>
 		<xsl:if test="$Colon-Suffix ='true' and $LabelVariable != '' ">:&#160;</xsl:if>
 	</xsl:function>
+	<!--A function to display currencies with spaces as thousand delimiter-->
+	<xsl:function name="fcn:Currency">
+		<xsl:param name="currencyvalue"/>
+		<xsl:variable name="integers" select="substring-before($currencyvalue, '.')"/>
+		<xsl:choose>
+			<xsl:when test="$integers != ''">
+				<xsl:variable name="decimals" select="substring-after($currencyvalue, '.')"/>
+				<xsl:variable name="transformedIntegers" select="translate(format-number(number($integers), '#,###'), ',', ' ' )"/>
+				<xsl:value-of select="concat($transformedIntegers,'.', $decimals)"/>
+			</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="translate(format-number($currencyvalue, '#,###'), ',', ' ' )"/>
+		</xsl:otherwise>
+	</xsl:choose>
 	
+	</xsl:function>
 	<!--Function to pick the UNCL1001 codes for document header--> 
 	<xsl:function name="fcn:DocumentHeader">
 		<xsl:param name="DocumentCode"/>
@@ -912,11 +927,11 @@
 					<small>
 						<xsl:choose>
 							<xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !=''">
-								<br/>(<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount"/>)
+								<br/>(<xsl:apply-templates select="fcn:Currency(cac:TaxTotal/cbc:TaxAmount)"/>)
 
 						</xsl:when>
 							<xsl:otherwise>
-							(<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount"/>)
+							(<xsl:apply-templates select="fcn:Currency(cac:TaxTotal/cbc:TaxAmount)"/>)
 
 						</xsl:otherwise>
 						</xsl:choose>
@@ -929,7 +944,7 @@
 				</xsl:if>
 			</td>
 			<td align="right">
-				<xsl:apply-templates select="cbc:LineExtensionAmount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:LineExtensionAmount)"/>
 			</td>
 		</tr>
 		<!-- Invoice line/part 3: -->
@@ -997,7 +1012,7 @@
 		<xsl:apply-templates select="cbc:ID"/>
 	</xsl:template>
 	<xsl:template match="cac:Price">
-		<xsl:apply-templates select="cbc:PriceAmount"/>&#160;<xsl:apply-templates select="cbc:PriceAmount/@currencyID"/>
+		<xsl:apply-templates select="fcn:Currency(cbc:PriceAmount)"/>&#160;<xsl:apply-templates select="cbc:PriceAmount/@currencyID"/>
 	</xsl:template>
 	<!--Invoiceline end-->
 	<!-- Document legal totals from here-->
@@ -1046,7 +1061,7 @@
 				</xsl:if>
 			</td>
 			<td valign="top" align="right">
-				<xsl:apply-templates select="cbc:Amount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:Amount)"/>
 			</td>
 		</tr>
 	</xsl:template>
@@ -1083,10 +1098,10 @@
 				</xsl:if>
 			</td>
 			<td valign="top" align="right">
-				<xsl:apply-templates select="cbc:BaseAmount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:BaseAmount)"/>
 			</td>
 			<td valign="top" align="right">
-				<xsl:apply-templates select="cbc:Amount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:Amount)"/>
 			</td>
 		</tr>
 	</xsl:template>
@@ -1121,17 +1136,17 @@
 				</xsl:if>
 			</td>
 			<td valign="top" align="right">
-				<xsl:apply-templates select="cbc:BaseAmount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:BaseAmount)"/>
 			</td>
 			<td valign="top" align="right">
-				<xsl:apply-templates select="cbc:Amount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:Amount)"/>
 			</td>
 		</tr>
 	</xsl:template>
 	
 	<!-- 2) A/C on line level -->
 	<xsl:template match="cac:AllowanceCharge" mode="LineLevel-new">
-		<xsl:apply-templates select="cbc:Amount"/>
+		<xsl:apply-templates select="fcn:Currency(cbc:Amount)"/>
 		<small>
 			<br/>
 			<xsl:apply-templates select="cbc:AllowanceChargeReason"/> (<xsl:apply-templates select="cbc:AllowanceChargeReasonCode"/>) 
@@ -1155,13 +1170,13 @@
 		</b>
 		<xsl:choose>
 			<xsl:when test="cbc:BaseAmount !='' ">
-				<xsl:apply-templates select="cbc:Amount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:Amount)"/>
 				<br/><b><xsl:value-of select="fcn:LabelName('BT-148', 'true')"/></b>
 
-				<xsl:apply-templates select="cbc:BaseAmount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:BaseAmount)"/>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:apply-templates select="cbc:Amount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:Amount)"/>
 			</xsl:otherwise>
 		</xsl:choose>
 		<br/>
@@ -1189,10 +1204,10 @@
 				</xsl:if>
 			</td>
 			<td colspan="2">
-				<xsl:apply-templates select="cbc:TaxableAmount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:TaxableAmount)"/>
 			</td>
 			<td align="right">
-				<xsl:apply-templates select="cbc:TaxAmount"/>
+				<xsl:apply-templates select="fcn:Currency(cbc:TaxAmount)"/>
 			</td>
 		</tr>
 	</xsl:template>
