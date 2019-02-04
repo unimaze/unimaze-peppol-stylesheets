@@ -277,18 +277,21 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-86">
 		<TermName>Betalsystem eller BIC</TermName>
-		<DisplayName>NätverksID för kontokort</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-86-1">
+		<TermName>NätverksID för kontokort</TermName>
+
 	</BusinessTerm>
 	<BusinessTerm id="BG-18">
 		<TermName>KORTINFORMATION</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-87">
-		<TermName>Kortkontonummer </TermName>
+		<TermName>Kortkontonummer</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-88">
 		<TermName>Kontoinnehavarens namn</TermName>
 	</BusinessTerm>
-	<BusinessTerm id="BG19">
+	<BusinessTerm id="BG-19">
 		<TermName>DIREKTBETALNING</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-89">

@@ -32,3 +32,5 @@ Change-log Stylesheet version 1.0.2:
 -Added "Säljaren" to Swedish BT-list 
 
 -Fixed a bug for empty currency values
+
+-Removed deprecated Contact id:s

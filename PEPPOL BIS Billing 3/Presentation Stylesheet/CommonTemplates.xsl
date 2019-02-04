@@ -348,12 +348,6 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template name="SellerContact">
-		<xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ID">
-			<small>
-				<xsl:value-of select="fcn:LabelName('BT-22', 'true')"/>
-				<xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ID"/>
-			</small>
-		</xsl:if>
 		<xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name !=''">
 			<br/>
 			<xsl:value-of select="fcn:LabelName('BT-41', 'true')"/>
@@ -514,13 +508,6 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template name="BuyerContact">
-		<xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ID">
-			<small>
-				<xsl:value-of select="fcn:LabelName('BT-10', 'true')"/>
-				<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ID"/>
-				<br/>
-			</small>
-		</xsl:if>
 		<xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name !=''">
 			<xsl:value-of select="fcn:LabelName('BT-56', 'true')"/>
 			<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name"/>
@@ -1266,7 +1253,7 @@
 			</td>
 			<td colspan="2">
 				<xsl:if test="cac:TaxCategory/cbc:TaxExemptionReason !=''">
-					<xsl:apply-templates select="cac:TaxCategory/cbc:TaxExemptionReason"/> [<xsl:apply-templates select="cac:TaxCategory/cbc:TaxExemptionReasonCode"/>]
+					<xsl:apply-templates select="cac:TaxCategory/cbc:TaxExemptionReason"/><xsl:if test="cac:TaxCategory/cbc:TaxExemptionReasonCode !=''"> [<xsl:apply-templates select="cac:TaxCategory/cbc:TaxExemptionReasonCode"/>] </xsl:if>
 				</xsl:if>
 			</td>
 			<td colspan="2">
@@ -1411,7 +1398,7 @@
 	<small>
 	<xsl:if test="cbc:DocumentType !='' or cbc:DocumentTypeCode !=''">
 			<br/>
-			-&#160;<xsl:value-of select="fcn:LabelName('BT-123', 'true')"/> <xsl:apply-templates select="cbc:DocumentType"/>&#160;[<xsl:apply-templates select="cbc:DocumentTypeCode"/>]
+			-&#160;<xsl:value-of select="fcn:LabelName('BT-123', 'true')"/> <xsl:apply-templates select="cbc:DocumentType"/><xsl:if test="cbc:DocumentTypeCode !=''">&#160;[<xsl:apply-templates select="cbc:DocumentTypeCode"/>]</xsl:if>
 		</xsl:if>	
 		<xsl:if test="cbc:DocumentDescription">	
 			-&#160;<xsl:apply-templates select="cbc:DocumentDescription"/>	

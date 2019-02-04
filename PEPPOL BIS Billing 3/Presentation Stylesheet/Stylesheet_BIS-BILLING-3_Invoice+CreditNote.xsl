@@ -1017,7 +1017,7 @@ padding-top:1vw;
 								</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-86', 'false')"/>
+												<xsl:value-of select="fcn:LabelName('BT-86-1', 'false')"/>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2">
