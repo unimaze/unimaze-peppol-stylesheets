@@ -1,0 +1,30 @@
+Change-log Stylesheet version 1.0.2:
+
+
+-Added Currency handling
+
+-Removed language information from code lists
+
+-Added file user_config for language control
+
+-Changed namespaces in code lists
+
+-Added footer notes
+
+-Fixed a bug regarding header references dependencies on additional documents
+
+-Prepared stylesheet for InvoicePeriod/DescriptionCode
+
+-Changed Buyer accounting reference to header reference instead of item row reference
+
+-Added support for undefined Payment means
+
+-Added column for SEPA values in Payment means direct debit
+
+-Added logic for first occurrence of credit note due date
+
+-Edited display of document level allowances and charges base amount
+
+-Added text for allowance or charge on line-level
+
+-Added timestamp in technical footer
