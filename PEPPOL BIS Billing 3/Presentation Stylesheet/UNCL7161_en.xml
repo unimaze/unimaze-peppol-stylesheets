@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<CodeList xmlns:cdl="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
-	<Identification xmlns="">
+<CodeList xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+	<Identification>
 		<ShortName>UNCL7161</ShortName>
 		<Version></Version>
 		<CanonicalUri></CanonicalUri>
 		<CanonicalVersionUri></CanonicalVersionUri>
 	</Identification>
-	<ColumnSet xmlns="">
+	<ColumnSet>
 		<Column Id="code" Use="required">
 			<ShortName>Code</ShortName>
 			<Data Type="string"/>
@@ -20,11 +20,9 @@
 			<ColumnRef Ref="code"/>
 		</Key>
 	</ColumnSet>
-	<SimpleCodeList xmlns="">
+	<SimpleCodeList>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AA</SimpleValue>
 			</Value>
@@ -33,9 +31,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAA</SimpleValue>
 			</Value>
@@ -44,9 +40,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAC</SimpleValue>
 			</Value>
@@ -55,9 +49,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAD</SimpleValue>
 			</Value>
@@ -66,9 +58,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAE</SimpleValue>
 			</Value>
@@ -77,9 +67,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAF</SimpleValue>
 			</Value>
@@ -88,9 +76,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAH</SimpleValue>
 			</Value>
@@ -99,9 +85,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAI</SimpleValue>
 			</Value>
@@ -110,9 +94,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAS</SimpleValue>
 			</Value>
@@ -121,9 +103,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAT</SimpleValue>
 			</Value>
@@ -132,9 +112,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAV</SimpleValue>
 			</Value>
@@ -143,9 +121,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAY</SimpleValue>
 			</Value>
@@ -154,9 +130,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AAZ</SimpleValue>
 			</Value>
@@ -165,9 +139,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABA</SimpleValue>
 			</Value>
@@ -176,9 +148,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABB</SimpleValue>
 			</Value>
@@ -187,9 +157,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABC</SimpleValue>
 			</Value>
@@ -198,9 +166,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABD</SimpleValue>
 			</Value>
@@ -209,9 +175,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABF</SimpleValue>
 			</Value>
@@ -220,9 +184,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABK</SimpleValue>
 			</Value>
@@ -231,9 +193,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABL</SimpleValue>
 			</Value>
@@ -242,9 +202,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABN</SimpleValue>
 			</Value>
@@ -253,9 +211,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABR</SimpleValue>
 			</Value>
@@ -264,9 +220,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABS</SimpleValue>
 			</Value>
@@ -275,9 +229,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABT</SimpleValue>
 			</Value>
@@ -286,9 +238,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ABU</SimpleValue>
 			</Value>
@@ -297,9 +247,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACF</SimpleValue>
 			</Value>
@@ -308,9 +256,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACG</SimpleValue>
 			</Value>
@@ -319,9 +265,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACH</SimpleValue>
 			</Value>
@@ -330,9 +274,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACI</SimpleValue>
 			</Value>
@@ -341,9 +283,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACJ</SimpleValue>
 			</Value>
@@ -352,9 +292,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACK</SimpleValue>
 			</Value>
@@ -363,9 +301,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACL</SimpleValue>
 			</Value>
@@ -374,9 +310,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACM</SimpleValue>
 			</Value>
@@ -385,9 +319,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ACS</SimpleValue>
 			</Value>
@@ -396,9 +328,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADC</SimpleValue>
 			</Value>
@@ -407,9 +337,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADE</SimpleValue>
 			</Value>
@@ -418,9 +346,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADJ</SimpleValue>
 			</Value>
@@ -429,9 +355,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADK</SimpleValue>
 			</Value>
@@ -440,9 +364,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADL</SimpleValue>
 			</Value>
@@ -451,9 +373,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADM</SimpleValue>
 			</Value>
@@ -462,9 +382,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADN</SimpleValue>
 			</Value>
@@ -473,9 +391,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADO</SimpleValue>
 			</Value>
@@ -484,9 +400,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADP</SimpleValue>
 			</Value>
@@ -495,9 +409,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADQ</SimpleValue>
 			</Value>
@@ -506,9 +418,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADR</SimpleValue>
 			</Value>
@@ -517,9 +427,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADT</SimpleValue>
 			</Value>
@@ -528,9 +436,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADW</SimpleValue>
 			</Value>
@@ -539,9 +445,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADY</SimpleValue>
 			</Value>
@@ -550,9 +454,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ADZ</SimpleValue>
 			</Value>
@@ -561,9 +463,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEA</SimpleValue>
 			</Value>
@@ -572,9 +472,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEB</SimpleValue>
 			</Value>
@@ -583,9 +481,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEC</SimpleValue>
 			</Value>
@@ -594,9 +490,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AED</SimpleValue>
 			</Value>
@@ -605,9 +499,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEF</SimpleValue>
 			</Value>
@@ -616,9 +508,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEH</SimpleValue>
 			</Value>
@@ -627,9 +517,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEI</SimpleValue>
 			</Value>
@@ -638,9 +526,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEJ</SimpleValue>
 			</Value>
@@ -649,9 +535,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEK</SimpleValue>
 			</Value>
@@ -660,9 +544,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEL</SimpleValue>
 			</Value>
@@ -671,9 +553,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEM</SimpleValue>
 			</Value>
@@ -682,9 +562,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEN</SimpleValue>
 			</Value>
@@ -693,9 +571,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEO</SimpleValue>
 			</Value>
@@ -704,9 +580,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEP</SimpleValue>
 			</Value>
@@ -715,9 +589,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AES</SimpleValue>
 			</Value>
@@ -726,9 +598,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AET</SimpleValue>
 			</Value>
@@ -737,9 +607,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEU</SimpleValue>
 			</Value>
@@ -748,9 +616,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEV</SimpleValue>
 			</Value>
@@ -759,9 +625,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEW</SimpleValue>
 			</Value>
@@ -770,9 +634,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEX</SimpleValue>
 			</Value>
@@ -781,9 +643,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEY</SimpleValue>
 			</Value>
@@ -792,9 +652,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AEZ</SimpleValue>
 			</Value>
@@ -803,9 +661,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AJ</SimpleValue>
 			</Value>
@@ -814,9 +670,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>AU</SimpleValue>
 			</Value>
@@ -825,9 +679,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CA</SimpleValue>
 			</Value>
@@ -836,9 +688,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAB</SimpleValue>
 			</Value>
@@ -847,9 +697,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAD</SimpleValue>
 			</Value>
@@ -858,9 +706,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAE</SimpleValue>
 			</Value>
@@ -869,9 +715,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAF</SimpleValue>
 			</Value>
@@ -880,9 +724,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAI</SimpleValue>
 			</Value>
@@ -891,9 +733,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAJ</SimpleValue>
 			</Value>
@@ -902,9 +742,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAK</SimpleValue>
 			</Value>
@@ -913,9 +751,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAL</SimpleValue>
 			</Value>
@@ -924,9 +760,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAM</SimpleValue>
 			</Value>
@@ -935,9 +769,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAN</SimpleValue>
 			</Value>
@@ -946,9 +778,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAO</SimpleValue>
 			</Value>
@@ -957,9 +787,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAP</SimpleValue>
 			</Value>
@@ -968,9 +796,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAQ</SimpleValue>
 			</Value>
@@ -979,9 +805,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAR</SimpleValue>
 			</Value>
@@ -990,9 +814,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAS</SimpleValue>
 			</Value>
@@ -1001,9 +823,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAT</SimpleValue>
 			</Value>
@@ -1012,9 +832,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAU</SimpleValue>
 			</Value>
@@ -1023,9 +841,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAV</SimpleValue>
 			</Value>
@@ -1034,9 +850,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CAW</SimpleValue>
 			</Value>
@@ -1045,9 +859,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CD</SimpleValue>
 			</Value>
@@ -1056,9 +868,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CG</SimpleValue>
 			</Value>
@@ -1067,9 +877,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CS</SimpleValue>
 			</Value>
@@ -1078,9 +886,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CT</SimpleValue>
 			</Value>
@@ -1089,9 +895,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>DAB</SimpleValue>
 			</Value>
@@ -1100,9 +904,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>DAD</SimpleValue>
 			</Value>
@@ -1111,9 +913,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>DL</SimpleValue>
 			</Value>
@@ -1122,9 +922,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>EG</SimpleValue>
 			</Value>
@@ -1133,9 +931,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>EP</SimpleValue>
 			</Value>
@@ -1144,9 +940,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ER</SimpleValue>
 			</Value>
@@ -1155,9 +949,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>FAA</SimpleValue>
 			</Value>
@@ -1166,9 +958,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>FAB</SimpleValue>
 			</Value>
@@ -1177,9 +967,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>FAC</SimpleValue>
 			</Value>
@@ -1188,9 +976,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>FC</SimpleValue>
 			</Value>
@@ -1199,9 +985,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>FH</SimpleValue>
 			</Value>
@@ -1210,9 +994,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>FI</SimpleValue>
 			</Value>
@@ -1221,9 +1003,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>GAA</SimpleValue>
 			</Value>
@@ -1232,9 +1012,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>HAA</SimpleValue>
 			</Value>
@@ -1243,9 +1021,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>HD</SimpleValue>
 			</Value>
@@ -1254,9 +1030,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>HH</SimpleValue>
 			</Value>
@@ -1265,9 +1039,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>IAA</SimpleValue>
 			</Value>
@@ -1276,9 +1048,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>IAB</SimpleValue>
 			</Value>
@@ -1287,9 +1057,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ID</SimpleValue>
 			</Value>
@@ -1298,9 +1066,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>IF</SimpleValue>
 			</Value>
@@ -1309,9 +1075,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>IR</SimpleValue>
 			</Value>
@@ -1320,9 +1084,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>IS</SimpleValue>
 			</Value>
@@ -1331,9 +1093,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>KO</SimpleValue>
 			</Value>
@@ -1342,9 +1102,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>L1</SimpleValue>
 			</Value>
@@ -1353,9 +1111,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>LA</SimpleValue>
 			</Value>
@@ -1364,9 +1120,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>LAA</SimpleValue>
 			</Value>
@@ -1375,9 +1129,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>LAB</SimpleValue>
 			</Value>
@@ -1386,9 +1138,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>LF</SimpleValue>
 			</Value>
@@ -1397,9 +1147,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>MAE</SimpleValue>
 			</Value>
@@ -1408,9 +1156,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>MI</SimpleValue>
 			</Value>
@@ -1419,9 +1165,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ML</SimpleValue>
 			</Value>
@@ -1430,9 +1174,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>NAA</SimpleValue>
 			</Value>
@@ -1441,9 +1183,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>OA</SimpleValue>
 			</Value>
@@ -1452,9 +1192,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>PA</SimpleValue>
 			</Value>
@@ -1463,9 +1201,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>PAA</SimpleValue>
 			</Value>
@@ -1474,9 +1210,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>PC</SimpleValue>
 			</Value>
@@ -1485,9 +1219,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>PL</SimpleValue>
 			</Value>
@@ -1496,9 +1228,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RAB</SimpleValue>
 			</Value>
@@ -1507,9 +1237,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RAC</SimpleValue>
 			</Value>
@@ -1518,9 +1246,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RAD</SimpleValue>
 			</Value>
@@ -1529,9 +1255,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RAF</SimpleValue>
 			</Value>
@@ -1540,9 +1264,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RE</SimpleValue>
 			</Value>
@@ -1551,9 +1273,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RF</SimpleValue>
 			</Value>
@@ -1562,9 +1282,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RH</SimpleValue>
 			</Value>
@@ -1573,9 +1291,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>RV</SimpleValue>
 			</Value>
@@ -1584,9 +1300,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SA</SimpleValue>
 			</Value>
@@ -1595,9 +1309,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SAA</SimpleValue>
 			</Value>
@@ -1606,9 +1318,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SAD</SimpleValue>
 			</Value>
@@ -1617,9 +1327,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SAE</SimpleValue>
 			</Value>
@@ -1628,9 +1336,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SAI</SimpleValue>
 			</Value>
@@ -1639,9 +1345,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SG</SimpleValue>
 			</Value>
@@ -1650,9 +1354,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SH</SimpleValue>
 			</Value>
@@ -1661,9 +1363,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SM</SimpleValue>
 			</Value>
@@ -1672,9 +1372,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>SU</SimpleValue>
 			</Value>
@@ -1683,9 +1381,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>TAB</SimpleValue>
 			</Value>
@@ -1694,9 +1390,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>TAC</SimpleValue>
 			</Value>
@@ -1705,9 +1399,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>TT</SimpleValue>
 			</Value>
@@ -1716,9 +1408,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>TV</SimpleValue>
 			</Value>
@@ -1727,9 +1417,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>V1</SimpleValue>
 			</Value>
@@ -1738,9 +1426,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>V2</SimpleValue>
 			</Value>
@@ -1749,9 +1435,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>WH</SimpleValue>
 			</Value>
@@ -1760,9 +1444,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>XAA</SimpleValue>
 			</Value>
@@ -1771,9 +1453,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>YY</SimpleValue>
 			</Value>
@@ -1782,9 +1462,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>ZZZ</SimpleValue>
 			</Value>

@@ -444,6 +444,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller tax representative VAT identifier</TermName>
 		<Definition>The VAT identifier of the Seller's tax representative party.</Definition>
 		<Description>VAT number prefixed by a country code based on EN ISO 3166-1 "Codes for the representation of names of countries and their subdivisions".</Description>
+		<DisplayName>VAT identifier</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-12">
 		<TermName>SELLER TAX REPRESENTATIVE POSTAL ADDRESS</TermName>
@@ -610,6 +611,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Payment service provider identifier</TermName>
 		<Definition>An identifier for the payment service provider where a payment account is located.</Definition>
 		<Description>Such as a BIC or a national clearing code where required. No identification scheme to be used.</Description>
+		<DisplayName>Card network identifier</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-18">
 		<TermName>PAYMENT CARD INFORMATION</TermName>
@@ -639,6 +641,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Bank assigned creditor identifier</TermName>
 		<Definition>Unique banking reference identifier of the Payee or Seller assigned by the Payee or Seller bank.</Definition>
 		<Description>Used in order to pre-notify the Buyer of a SEPA direct debit. </Description>
+		<DisplayName>Bank assigned creditor ID</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-91">
 		<TermName>Debited account identifier</TermName>
@@ -658,7 +661,7 @@ If remittance information is to be mapped to the End To End Identification field
 	<BusinessTerm id="BT-93">
 		<TermName>Document level allowance base amount</TermName>
 		<Definition>The base amount that may be used, in conjunction with the document level allowance percentage, to calculate the document level allowance amount.</Definition>
-		<DisplayName>Base amount</DisplayName>
+		<DisplayName>Basis for calculation</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-94">
 		<TermName>Document level allowance percentage</TermName>
@@ -699,6 +702,7 @@ If remittance information is to be mapped to the End To End Identification field
 	<BusinessTerm id="BG-21">
 		<TermName>DOCUMENT LEVEL CHARGES</TermName>
 		<Definition>A group of business terms providing information about charges and taxes other than VAT, applicable to the Invoice as a whole.</Definition>
+		<DisplayName>CHARGES</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-99">
 		<TermName>Document level charge amount</TermName>
@@ -708,7 +712,7 @@ If remittance information is to be mapped to the End To End Identification field
 	<BusinessTerm id="BT-100">
 		<TermName>Document level charge base amount</TermName>
 		<Definition>The base amount that may be used, in conjunction with the document level charge percentage, to calculate the document level charge amount.</Definition>
-		<DisplayName>Base amount</DisplayName>
+		<DisplayName>Basis for calculation</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-101">
 		<TermName>Document level charge percentage</TermName>
@@ -932,6 +936,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Referenced purchase order line reference</TermName>
 		<Definition>An identifier for a referenced line within a purchase order, issued by the Buyer.</Definition>
 		<Description>The purchase order identifier is referenced on document level. </Description>
+		<DisplayName>Purchase order line reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-133">
 		<TermName>Invoice line Buyer accounting reference</TermName>
@@ -956,6 +961,7 @@ If remittance information is to be mapped to the End To End Identification field
 	<BusinessTerm id="BG-27">
 		<TermName>INVOICE LINE ALLOWANCES</TermName>
 		<Definition>A group of business terms providing information about allowances applicable to the individual Invoice line.</Definition>
+		<DisplayName>Allowance</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-136">
 		<TermName>Invoice line allowance amount</TermName>
@@ -983,10 +989,12 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>INVOICE LINE CHARGES</TermName>
 		<Definition>A group of business terms providing information about charges and taxes other than VAT applicable to the individual Invoice line.</Definition>
 		<Description>All charges and taxes are assumed to be liable to the same VAT rate as the Invoice line.</Description>
+		<DisplayName>Charge</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-141">
 		<TermName>Invoice line charge amount</TermName>
 		<Definition>The amount of a charge, without VAT. </Definition>
+		<DisplayName>Charge amount</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-142">
 		<TermName>Invoice line charge base amount</TermName>
@@ -1096,7 +1104,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Item classification identifier</TermName>
 		<Definition>A code for classifying the item by its type or nature.</Definition>
 		<Description>Classification codes are used to allow grouping of similar items for a various purposes e.g. public procurement (CPV), e Commerce (UNSPSC) etc.</Description>
-		<DisplayName>Classification ID</DisplayName>
+		<DisplayName>Classification code</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-158-1">
 		<TermName>Scheme identifier</TermName>
@@ -1121,7 +1129,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Item attribute name</TermName>
 		<Definition>The name of the attribute or property of the item. </Definition>
 		<Description>Such as “Colour”. </Description>
-		<DisplayName>Attribute name</DisplayName>
+		<DisplayName>Attribute</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-161">
 		<TermName>Item attribute value</TermName>

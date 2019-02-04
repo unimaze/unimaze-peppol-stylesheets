@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<CodeList xmlns:cdl="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
-	<Identification xmlns="">
+<CodeList xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+	<Identification>
 		<ShortName>UNCL1001</ShortName>
 		<Version></Version>
 		<CanonicalUri></CanonicalUri>
 		<CanonicalVersionUri></CanonicalVersionUri>
 	</Identification>
-	<ColumnSet xmlns="">
+	<ColumnSet>
 		<Column Id="code" Use="required">
 			<ShortName>Code</ShortName>
 			<Data Type="string"/>
@@ -20,11 +20,9 @@
 			<ColumnRef Ref="code"/>
 		</Key>
 	</ColumnSet>
-	<SimpleCodeList xmlns="">
+	<SimpleCodeList>
 		<Row>
-			<Annotation>
-				<Description xml:lang="se"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>Invoice</SimpleValue>
 			</Value>
@@ -33,9 +31,7 @@
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="se"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
 				<SimpleValue>CreditNote</SimpleValue>
 			</Value>

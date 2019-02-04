@@ -18,6 +18,9 @@
 	<BusinessTerm id="BT-7">
 		<TermName>Momsdatum</TermName>
 	</BusinessTerm>
+		<BusinessTerm id="BT-8">
+		<TermName>Kod för momsdatum</TermName>
+	</BusinessTerm>
 	<BusinessTerm id="BT-9">
 		<TermName>Sista betaldatum</TermName>
 	</BusinessTerm>
@@ -214,6 +217,7 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-63">
 		<TermName>Skatteombud momsregistreringsnummer</TermName>
+		<DisplayName>Momsregistreringsnummer</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-12">
 		<TermName>SKATTEOMBUD ADRESS</TermName>
@@ -226,6 +230,7 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-71">
 		<TermName>Leveransplats (ID)</TermName>
+		<DispalyName>LeveransplatsID</DispalyName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-71-1">
 		<TermName>Typ av ID</TermName>
@@ -269,6 +274,7 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-86">
 		<TermName>Betalsystem eller BIC</TermName>
+		<DisplayName>NätverksID för kontokort</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-18">
 		<TermName>KORTINFORMATION</TermName>
@@ -287,9 +293,10 @@
 	</BusinessTerm>
 	<BusinessTerm id="BT-90">
 		<TermName>Bankens ID på betalningsmottagare</TermName>
+		<DisplayName>Bankens ID på fordringsägaren</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-91">
-		<TermName>Konto som betalning dras från</TermName>
+		<TermName>Konto som belastas</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-20">
 		<TermName>RABATTER</TermName>
