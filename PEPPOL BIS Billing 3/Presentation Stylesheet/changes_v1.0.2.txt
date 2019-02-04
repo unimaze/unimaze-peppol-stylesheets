@@ -28,3 +28,7 @@ Change-log Stylesheet version 1.0.2:
 -Added text for allowance or charge on line-level
 
 -Added timestamp in technical footer
+
+-Added "Säljaren" to Swedish BT-list 
+
+-Fixed a bug for empty currency values

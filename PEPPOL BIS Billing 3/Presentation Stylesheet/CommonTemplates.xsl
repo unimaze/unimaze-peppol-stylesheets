@@ -58,10 +58,26 @@
 			<xsl:when test="$integers != ''">
 				<xsl:variable name="decimals" select="substring-after($currencyvalue, '.')"/>
 				<xsl:variable name="transformedIntegers" select="translate(format-number(number($integers), '#,###'), ',', ' ' )"/>
-				<xsl:value-of select="concat($transformedIntegers,'.', $decimals)"/>
+				<xsl:choose>
+					<xsl:when test="$transformedIntegers !='NaN'">
+						<xsl:value-of select="concat($transformedIntegers,'.', $decimals)"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$currencyvalue"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:when>
 		<xsl:otherwise>
-			<xsl:value-of select="translate(format-number($currencyvalue, '#,###'), ',', ' ' )"/>
+			<xsl:variable name="transformedIntegers" select="translate(format-number($currencyvalue, '#,###'), ',', ' ' )"/>
+			<xsl:choose>
+				<xsl:when test="$transformedIntegers !='NaN'">
+					<xsl:value-of select="$transformedIntegers"/>
+				</xsl:when>
+				<xsl:otherwise>
+				<xsl:value-of select="$currencyvalue"/>
+				</xsl:otherwise>
+			</xsl:choose>
+			
 		</xsl:otherwise>
 	</xsl:choose>
 	

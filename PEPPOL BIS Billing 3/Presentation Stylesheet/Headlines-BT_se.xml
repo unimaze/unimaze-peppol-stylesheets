@@ -81,6 +81,9 @@
 	<BusinessTerm id="BT-26">
 		<TermName>Datum för tidigare faktura</TermName>
 	</BusinessTerm>
+		<BusinessTerm id="BG-4">
+		<TermName>SÄLJAREN</TermName>
+	</BusinessTerm>
 	<BusinessTerm id="BT-27">
 		<TermName>Säljarens namn</TermName>
 		<DisplayName/>

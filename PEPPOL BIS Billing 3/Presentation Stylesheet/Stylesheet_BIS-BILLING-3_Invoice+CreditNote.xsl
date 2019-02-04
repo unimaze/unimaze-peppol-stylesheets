@@ -761,8 +761,9 @@ padding-top:1vw;
 											<xsl:value-of select="fcn:LabelName('BT-8', 'true')"/>
 										</b>
 										<xsl:value-of select="fcn:UBLDescriptionCode(cac:InvoicePeriod/cbc:DescriptionCode)"/> [<xsl:value-of select="cac:InvoicePeriod/cbc:DescriptionCode"/>]
+<br/>
 								</xsl:if>
-									<br/>
+									
 								
 							</p>
 						</div>
@@ -1162,9 +1163,9 @@ padding-top:1vw;
 										[<xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/>]
 										</xsl:if>
 										</xsl:if>
-					<br/>This invoice visualization is generated from SFTI BIS Billing 3 XSL Stylesheet Version 1.0.1<br/>
+					<br/>This invoice visualization is generated from SFTI BIS Billing 3 XSL Stylesheet Version 1.0.2<br/>
 					This stylesheet uses business terms defined the CEN/EN16931-1 and is reproduced with permission from CEN. CEN bears no liability from the use of the content and implementation of this stylesheet and gives no warranties expressed or implied for any purpose.<br/>
-					This stylesheet was generated: <xsl:value-of  select="current-dateTime()"/>
+					This visualization was generated: <xsl:value-of  select="current-dateTime()"/>
 					
 					
 								
