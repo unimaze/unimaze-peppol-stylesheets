@@ -2,19 +2,20 @@
 
 In order to add another language to the stylesheet, there are a few steps.
 
-* is your language code
+`*` is your language code
 
-Create a file named Headlines-BT_*.xml (or copy and rename Headlines-BT_en.xml)
+Create a file named Headlines-BT_&ast;.xml (or copy and rename Headlines-BT_en.xml)
 The structure of the xml should be:
 
-`<Semantic Model>
-	<BusinessTerm id= "BT or BG code">
-		<TermName> The official term name in your language </Termname>
-		<Definition> The definition of the term </Definition> --->Optional
-		<Description> A description of the term </Description> --->Optional
-		<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present but empty, no lead text will be shown in the stylesheet. </DisplayName> --> Optional
-	</BusinessTerm>
-</Semantic Model>`
+`<Semantic Model>`
+	`<BusinessTerm id= "BT or BG code">`
+		`<TermName> The official term name in your language </Termname>`
+		`<Definition> The definition of the term </Definition> --->Optional`
+		`<Description> A description of the term </Description> --->Optional`
+		`<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present but empty, no lead text will be shown in the stylesheet.` 
+	`</DisplayName> --> Optional`
+	`</BusinessTerm>`
+`</Semantic Model>`
 
 Pleas make sure to add all the BusinessTerms you wish to be visible in the stylesheet, there is no fallback if a term is missing, the lead text will then be abscent.
 
@@ -25,15 +26,15 @@ The format of all of the code lists below are in generic code 1.0 : http://docs.
 
 The relevant code lists are:
 
-UBLClassificationCode_*.xml --> Item classification identifier
-UBLInvoiceBaseType_*.xml --> Base type of document: Invoice or Credit Note
-UBLPeriodDescriptionCode_*.xml --> Invoice period description code
-UBLTaxCategoryCode_*.xml --> Tax category code
-UNCL1001_*.xml --> Sub-type of document
-UNCL4461_*.xml --> Payment means code
-UNCL5189_*.xml --> Allowance reason code
-UNCL7161_*.xml --> Charge reason code
-UNECE_*.xml --> Unit of measure code
+* UBLClassificationCode_&ast;.xml --> Item classification identifier
+* UBLInvoiceBaseType_&ast;.xml --> Base type of document: Invoice or Credit Note
+* UBLPeriodDescriptionCode_&ast;.xml --> Invoice period description code
+* UBLTaxCategoryCode_&ast;.xml --> Tax category code
+* UNCL1001_&ast;.xml --> Sub-type of document
+* UNCL4461_&ast;.xml --> Payment means code
+* UNCL5189_&ast;.xml --> Allowance reason code
+* UNCL7161_&ast;.xml --> Charge reason code
+* UNECE_&ast;.xml --> Unit of measure code
 
 
-Finally, open the user_config.xsl and under the tag: <xsl:variable name="lang" select="'*'"/> change the * to your language code, correspondign to the * in your file names.
+Finally, open the user_config.xsl and under the tag: `<xsl:variable name="lang" select="'&ast;'"/>` change the `*` to your language code, correspondign to the `*` in your file names.
