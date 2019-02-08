@@ -7,15 +7,15 @@ In order to add another language to the stylesheet, there are a few steps.
 Create a file named Headlines-BT_&ast;.xml (or copy and rename Headlines-BT_en.xml)
 The structure of the xml should be:
 
-`<Semantic Model>`
-	`<BusinessTerm id= "BT or BG code">`
-		`<TermName> The official term name in your language </Termname>`
-		`<Definition> The definition of the term </Definition> --->Optional`
-		`<Description> A description of the term </Description> --->Optional`
-		`<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present but empty, no lead text will be shown in the stylesheet.` 
-	`</DisplayName> --> Optional`
-	`</BusinessTerm>`
-`</Semantic Model>`
+`<Semantic Model>`<br/>
+	`<BusinessTerm id= "BT or BG code">`<br/>
+		`<TermName> The official term name in your language </Termname>`<br/>
+		`<Definition> The definition of the term </Definition> --->Optional`<br/>
+		`<Description> A description of the term </Description> --->Optional`<br/>
+		`<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present but empty, no lead text will be shown in the stylesheet.` <br/>
+	`</DisplayName> --> Optional`<br/>
+	`</BusinessTerm>`<br/>
+`</Semantic Model>`<br/>
 
 Pleas make sure to add all the BusinessTerms you wish to be visible in the stylesheet, there is no fallback if a term is missing, the lead text will then be abscent.
 
@@ -37,4 +37,4 @@ The relevant code lists are:
 * UNECE_&ast;.xml --> Unit of measure code
 
 
-Finally, open the user_config.xsl and under the tag: `<xsl:variable name="lang" select="'&ast;'"/>` change the `*` to your language code, correspondign to the `*` in your file names.
+Finally, open the user_config.xsl and under the tag: `<xsl:variable name="lang" select="'*'"/>` change the `*` to your language code, correspondign to the `*` in your file names.
