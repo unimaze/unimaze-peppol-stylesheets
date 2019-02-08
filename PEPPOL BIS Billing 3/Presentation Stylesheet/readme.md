@@ -1,4 +1,4 @@
-Readme:
+# Readme:
 
 In order to add another language to the stylesheet, there are a few steps.
 
