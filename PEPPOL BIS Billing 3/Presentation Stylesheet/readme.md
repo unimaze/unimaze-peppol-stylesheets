@@ -8,13 +8,13 @@ Create a file named Headlines-BT_&ast;.xml (or copy and rename Headlines-BT_en.x
 The structure of the xml should be:
 
 `<Semantic Model>`<br/>
-	`<BusinessTerm id= "BT or BG code">`<br/>
-		`<TermName> The official term name in your language </Termname>`<br/>
-		`<Definition> The definition of the term </Definition> --->Optional`<br/>
-		`<Description> A description of the term </Description> --->Optional`<br/>
-		`<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present but empty, no lead text will be shown in the stylesheet.` <br/>
-	`</DisplayName> --> Optional`<br/>
-	`</BusinessTerm>`<br/>
+	&nbsp; &nbsp; `<BusinessTerm id= "BT or BG code">`<br/>
+		&nbsp; &nbsp; &nbsp;&nbsp;  `<TermName> The official term name in your language </Termname>`<br/>
+		&nbsp; &nbsp; &nbsp; &nbsp; `<Definition> The definition of the term </Definition> --->Optional`<br/>
+		&nbsp; &nbsp; &nbsp; &nbsp; `<Description> A description of the term </Description> --->Optional`<br/>
+		&nbsp; &nbsp; &nbsp; &nbsp; `<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present but empty, no lead text will be shown in the stylesheet.` <br/>
+	&nbsp; &nbsp; &nbsp; &nbsp; `</DisplayName> --> Optional`<br/>
+	&nbsp; &nbsp; `</BusinessTerm>`<br/>
 `</Semantic Model>`<br/>
 
 Pleas make sure to add all the BusinessTerms you wish to be visible in the stylesheet, there is no fallback if a term is missing, the lead text will then be abscent.
