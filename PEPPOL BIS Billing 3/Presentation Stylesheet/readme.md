@@ -12,7 +12,8 @@ The structure of the xml should be:
 		&nbsp; &nbsp; &nbsp;&nbsp;  `<TermName> The official term name in your language </Termname>`<br/>
 		&nbsp; &nbsp; &nbsp; &nbsp; `<Definition> The definition of the term </Definition> --->Optional`<br/>
 		&nbsp; &nbsp; &nbsp; &nbsp; `<Description> A description of the term </Description> --->Optional`<br/>
-		&nbsp; &nbsp; &nbsp; &nbsp; `<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present but empty, no lead text will be shown in the stylesheet.` <br/>
+		&nbsp; &nbsp; &nbsp; &nbsp; `<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present 
+		&nbsp; &nbsp; &nbsp; &nbsp; but empty, no lead text will be shown in the stylesheet.` <br/>
 	&nbsp; &nbsp; &nbsp; &nbsp; `</DisplayName> --> Optional`<br/>
 	&nbsp; &nbsp; `</BusinessTerm>`<br/>
 `</Semantic Model>`<br/>
