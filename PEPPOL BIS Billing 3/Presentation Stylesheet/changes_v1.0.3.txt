@@ -1,3 +1,19 @@
+Change-log Stylesheet version 1.0.3
+
+-Added language support for Poland (PL)
+
+-Changed XSLT version to 1.0
+
+-Removed stylesheet technical footer timestamp due to XSLT 1.0 compability issues.
+
+-OrderReference/SalesOrderID lead texts (BT-14) is now in in Bold.
+
+-The values of CreditNote/PaymentMeans/PaymentDueDate was displayed once for every occurance. Only the first occurrance is now showed.
+
+
+_____________________________________________________________________________________
+
+
 Change-log Stylesheet version 1.0.2:
 
 
