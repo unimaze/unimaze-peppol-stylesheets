@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification xmlns="">
+		<ShortName>UNCL5189</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>41</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Premia za prace przed upływem terminu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>42</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Inne premie</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>60</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zniżka producenta dla odbiorcy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>62</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>W związku ze statusem wojskowym</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>63</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>W związku z wypadkiem w pracy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>64</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Szczególna umowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>65</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zniżka przez błąd produkcyjny</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>66</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zniżka dla nowego punktu sprzedaży</SimpleValue>
+			UWAGA: new outlet czy o to chodzi?
+			
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>67</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przykładowa zniżka</SimpleValue> zniżka na próbki? sample discount
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>68</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zniżka dla końcówki asortymentu</SimpleValue> zakresu?
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>70</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zniżka Incoterm</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>71</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pułap rezerwy punktów sprzedaży</SimpleValue>???
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>88</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Dopłata/potrącenie</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>95</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zniżka</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>100</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Specjalna bonifikata</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>102</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Stałe długookresowe</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>103</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Tymczasowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>104</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Standardowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>105</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Roczny obrót</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>

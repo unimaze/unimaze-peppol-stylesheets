@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification xmlns="">
+		<ShortName>UNCL1001</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>80</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nota debetowa odnosząca się do towarów i usług</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>82</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Faktura dla mierzonych usług</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>84</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nota debetowa odnosząca się do korekt finansowych</SimpleValue>  dostosowanie? financial adjustments
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>380</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Faktura handlowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>383</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nota debetowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>386</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przedpłata faktury</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>393</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Wliczona faktura</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>395</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Faktura wysyłkowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>575</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Faktura ubezpieczyciela</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>623</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Faktura spedytora</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>780</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Faktura towarów</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>81</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nota kredytowa odnosząca się do towarów i usług</SimpleValue> uznaniowa?
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>83</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nota kredytowa odnosząca się do korekt finansowych</SimpleValue> "uznaniowa" i "korekta" j.w.
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>381</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nota kredytowa</SimpleValue> uznaniowa?
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>396</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Wlicznona nota kredytowa</SimpleValue> ???
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>532</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nota kredytowa spedytora</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>

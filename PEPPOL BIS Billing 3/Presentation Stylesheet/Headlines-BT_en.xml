@@ -86,9 +86,6 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Definition>The identification of the call for tender or lot the invoice relates to.</Definition>
 		<Description>In some countries a reference to the call for tender that has led to the contract shall be provided.</Description>
 	</BusinessTerm>
-	<BusinessTerm id="BT-17">
-		<TermName>Upphandlingsreferens</TermName>
-	</BusinessTerm>
 	<BusinessTerm id="BT-18">
 		<TermName>Invoiced object identifier</TermName>
 		<Definition>An identifier for an object on which the invoice is based, given by the Seller.</Definition>

@@ -30,8 +30,9 @@
 		
 ******************************************************************************************************************
 -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fcn="urn:sfti:se:xsl:functions" xmlns:n1="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:n2="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cdl="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2" xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts sdt udt">
-	<xsl:include href="CommonTemplates.xsl"/>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fcn="urn:sfti:se:xsl:functions" xmlns:n1="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:n2="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cdl="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2" xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
+xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts sdt udt">
+	<xsl:import href="CommonTemplates.xsl"/>
 	<xsl:output method="html" doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" doctype-system="http://www.w3.org/TR/html4/loose.dtd" indent="yes"/>
 	<xsl:strip-space elements="*"/>
 	<xsl:param name="stylesheet_url" select="'NONE'"/>
@@ -241,21 +242,21 @@ padding-top:1vw;
 							<!--<xsl:value-of select="fcn:LabelName('BT-3', 'true')"/>-->
 							<xsl:if test="local-name(.)  = 'Invoice'">
 								<h2 style="margin-bottom:0px">
-									<xsl:value-of select="fcn:DocumentHeader(local-name(.))"/>
+									<xsl:call-template name="DocumentHeader"><xsl:with-param name="DocumentCode" select="local-name(.)" /></xsl:call-template>
 								</h2>
 								<xsl:if test="cbc:InvoiceTypeCode !='380'">
 									<h3 style="margin-top:0px">
-										<xsl:value-of select="fcn:DocumentCode(cbc:InvoiceTypeCode)"/>
+										<xsl:call-template name="DocumentCode"><xsl:with-param name="DCode" select="cbc:InvoiceTypeCode"/></xsl:call-template>
 									</h3>
 								</xsl:if>
 							</xsl:if>
 							<xsl:if test="local-name(.)  = 'CreditNote'">
 								<h2 style="margin-bottom:0px">
-									<xsl:value-of select="fcn:DocumentHeader(local-name(.))"/>
+									<xsl:call-template name="DocumentHeader"><xsl:with-param name="DocumentCode" select="local-name(.)"/></xsl:call-template>
 								</h2>
 								<xsl:if test="cbc:CreditNoteTypeCode != '381'">
 									<h3 style="margin-top:0px">
-										<xsl:value-of select="fcn:DocumentCode(cbc:CreditNoteTypeCode)"/>
+										<xsl:call-template name="DocumentCode"><xsl:with-param name="DCode" select="cbc:CreditNoteTypeCode"/></xsl:call-template>
 									</h3>
 								</xsl:if>
 							</xsl:if>
@@ -274,7 +275,7 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-2', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-2'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<!-- Inserting Invoice Date -->
@@ -283,19 +284,17 @@ padding-top:1vw;
 								</p>
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-9', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-9'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<!-- Inserting Due Date:  -->
 									<xsl:if test="local-name(.) = 'CreditNote'">
-										<xsl:variable name="DueDates">
-											<xsl:for-each select="cac:PaymentMeans">
+											<!--xsl:for-each select="cac:PaymentMeans">
 												<xsl:if test="cbc:PaymentDueDate !=''">
 													<item><xsl:value-of select="cbc:PaymentDueDate"/></item>
 												</xsl:if>
-											</xsl:for-each>
-										</xsl:variable>
-									<xsl:value-of select="$DueDates[1]"/>
+											</xsl:for-each-->
+									<xsl:value-of select="cac:PaymentMeans[1]/cbc:PaymentDueDate"/>
 									</xsl:if>
 									<xsl:if test="local-name(.) = 'Invoice'">
 										<xsl:value-of select="cbc:DueDate"/>
@@ -306,7 +305,7 @@ padding-top:1vw;
 									<xsl:if test="cac:InvoicePeriod/cbc:StartDate !=''">
 										<p align="left">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-73', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-73'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 											<br/>
 											<xsl:apply-templates select="cac:InvoicePeriod/cbc:StartDate"/>
@@ -316,7 +315,7 @@ padding-top:1vw;
 									<xsl:if test="cac:InvoicePeriod/cbc:EndDate !='' ">
 										<p align="left">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-74', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-74'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 											<br/>
 											<xsl:apply-templates select="cac:InvoicePeriod/cbc:EndDate"/>
@@ -328,7 +327,7 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-1', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-1'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<!-- Inserting Invoice ID -->
 									<br/>
@@ -337,7 +336,7 @@ padding-top:1vw;
 								</p>
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-13', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-13'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<!-- Inserting Order reference number  -->
@@ -346,7 +345,7 @@ padding-top:1vw;
 								</p>
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-10', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-10'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<!-- Inserting Buyer Reference::  -->
@@ -357,24 +356,24 @@ padding-top:1vw;
 									<xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
 										<p align="left" style="color:red">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-115', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-115'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 											<br/>
 											<!-- Inserting Total Payable amount  -->
 											
-											<xsl:value-of select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
+											<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/></xsl:call-template>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
 											<br/>
 										</p>
 									</xsl:when>
 									<xsl:otherwise>
 										<p align="left">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-115', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-115'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 											<br/>
 											<!-- Inserting Total Payable amount  -->
 											
-											<xsl:value-of select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
+											<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/></xsl:call-template>&#160;<xsl:value-of select="cbc:DocumentCurrencyCode"/>
 											<br/>
 										</p>
 									</xsl:otherwise>
@@ -388,7 +387,7 @@ padding-top:1vw;
 							<!-- Inserting Accounting Customer Party -->
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-7', 'false')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-7'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 								</b>
 								<br/>
 								<xsl:apply-templates select="cac:AccountingCustomerParty"/>
@@ -400,14 +399,14 @@ padding-top:1vw;
 								<!-- Inserting Contact information-->
 								
 									<b>
-										<xsl:value-of select="fcn:LabelName('BG-9', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-9'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<xsl:call-template name="BuyerContact"/>
 							</xsl:if>
 							<xsl:if test="cbc:AccountingCost !=''">
 										<b>
-										<xsl:value-of select="fcn:LabelName('BT-19', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-19'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										</b>
 									<xsl:value-of select="cbc:AccountingCost"/>
 							</xsl:if>
@@ -417,7 +416,7 @@ padding-top:1vw;
 						<xsl:if test="cac:ContractDocumentReference !=''">
 								<p>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-12', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-12'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 									<xsl:apply-templates select="cac:ContractDocumentReference"/>
 								</p>
@@ -425,7 +424,7 @@ padding-top:1vw;
 							<xsl:if test="cbc:Note[.!='']">
 								<p>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-22', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-22'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<xsl:apply-templates select="cbc:Note"/>
@@ -442,7 +441,7 @@ padding-top:1vw;
 								<xsl:if test="cac:Delivery/cbc:ActualDeliveryDate !=''">
 									<p>
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-72', 'true')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-72'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										</b>
 										<xsl:apply-templates select="cac:Delivery/cbc:ActualDeliveryDate"/>
 									</p>
@@ -454,7 +453,7 @@ padding-top:1vw;
 								<!-- Inserting Payee Party -->
 								<p>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BG-10', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-10'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<xsl:call-template name="PayeeParty"/>
@@ -466,10 +465,10 @@ padding-top:1vw;
 							<xsl:if test="cac:AdditionalDocumentReference !=''">
 								
 									<b>
-										<xsl:value-of select="fcn:LabelName('BG-24', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-24'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
-									<xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode != '130' and cbc:DocumentTypeCode != '50' or not(exists(cbc:DocumentTypeCode))]" mode="Supporting"/>
+									<xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode != '130' and cbc:DocumentTypeCode != '50' or  not(cbc:DocumentTypeCode)]" mode="Supporting"/>
 								
 							</xsl:if>
 							<xsl:if test="cac:BillingReference !=''">
@@ -477,7 +476,7 @@ padding-top:1vw;
 									<xsl:for-each select="cac:BillingReference/cac:InvoiceDocumentReference">
 										<br/>
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-25', 'true')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-25'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										</b>
 										<!-- Inserting Preceding invoice number  -->
 										<xsl:value-of select="cbc:ID"/>
@@ -497,7 +496,7 @@ padding-top:1vw;
 								
 									<br/>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-16', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-16'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 									<!-- Inserting Despatch advice reference  -->
 									<xsl:value-of select="cac:DespatchDocumentReference/cbc:ID"/>
@@ -507,7 +506,7 @@ padding-top:1vw;
 								
 										<br/>
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-15', 'true')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-15'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										</b>
 										<!-- Inserting Receipt advice reference  -->
 										<xsl:value-of select="cac:ReceiptDocumentReference/cbc:ID"/>
@@ -517,7 +516,7 @@ padding-top:1vw;
 								
 									<br/>
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-17', 'true')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-17'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										</b>
 										<!-- Inserting Originator advice reference  -->
 										<xsl:value-of select="cac:OriginatorDocumentReference/cbc:ID"/>
@@ -527,7 +526,7 @@ padding-top:1vw;
 									
 										<br/>
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-11', 'true')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-11'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										</b>
 										<!-- Inserting Project advice reference  -->
 										<xsl:value-of select="cac:ProjectReference/cbc:ID"/>
@@ -544,42 +543,42 @@ padding-top:1vw;
 								<tr class="UBLInvoiceLineHeader">
 									<th align="left" valign="top" width="5%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-126', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-126'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 									<th align="left" valign="top" width="10%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-155', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-155'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 									<th align="left" valign="top" width="35%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-153', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-153'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 									<th valign="top" align="left" width="10%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-129', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-129'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 									<th align="left" valign="top" width="10%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-146', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-146'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 									<th align="left" valign="top" width="10%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-151', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-151'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 									<th align="left" valign="top" width="10%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BG-28', 'false')"/><br/><xsl:value-of select="fcn:LabelName('BG-27', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-28'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template><br/><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-27'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 									<th align="right" valign="top" width="10%">
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-131', 'false')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-131'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
 									</th>
 								</tr>
@@ -598,14 +597,14 @@ padding-top:1vw;
 						<div class="col-6">
 							<p align="left">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-106', 'true')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-106'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 								</b>
 							</p>
 						</div>
 						<div class="col-6">
 							<p align="right">
 								<b>
-									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:LineExtensionAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID"/>
+									<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/></xsl:call-template>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID"/>
 								</b>
 							</p>
 						</div>
@@ -617,33 +616,33 @@ padding-top:1vw;
 						<div class="row" id="tablerow">
 							<div class="col-12">
 								<h3>
-									<xsl:value-of select="fcn:LabelName('BG-20', 'false')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-20'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 								</h3>
 								<table>
 									<tr>
 										<th align="left" valign="top" colspan="2" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-105', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-105'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-104', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-104'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-102', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-102'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="right" valign="top" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-93', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-93'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th valign="top" align="right" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-99', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-99'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 									</tr>
@@ -663,14 +662,14 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-107', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-107'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 								</p>
 							</div>
 							<div class="col-6">
 								<p align="right">
 									<b>
-										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID"/>
+										<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount"/></xsl:call-template>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID"/>
 									</b>
 								</p>
 							</div>
@@ -682,33 +681,33 @@ padding-top:1vw;
 						<div class="row" id="tablerow">
 							<div class="col-12">
 								<h3>
-									<xsl:value-of select="fcn:LabelName('BG-21', 'false')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-21'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 								</h3>
 								<table>
 									<tr>
 										<th align="left" valign="top" colspan="2" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-98', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-98'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-97', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-97'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-95', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-95'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="right" valign="top" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-100', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-100'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th valign="top" align="right" width="20%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-92', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-92'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 									</tr>
@@ -728,14 +727,14 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-108', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-108'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 								</p>
 							</div>
 							<div class="col-6">
 								<p align="right">
 									<b>
-										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:ChargeTotalAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID"/>
+										<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount"/></xsl:call-template>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID"/>
 									</b>
 								</p>
 							</div>
@@ -746,21 +745,21 @@ padding-top:1vw;
 					<div class="row" id="tablerow">
 						<div class="col-12">
 							<h3>
-								<xsl:value-of select="fcn:LabelName('BG-23', 'false')"/>
+								<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-23'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 							</h3>
 							<p>
 								<xsl:if test="cbc:TaxPointDate !=''">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-7', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-7'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 									<xsl:value-of select="cbc:TaxPointDate"/>
 								</xsl:if>
 								<xsl:if test="cac:InvoicePeriod/cbc:DescriptionCode != ''">
 										<br/>
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-8', 'true')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-8'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 										</b>
-										<xsl:value-of select="fcn:UBLDescriptionCode(cac:InvoicePeriod/cbc:DescriptionCode)"/> [<xsl:value-of select="cac:InvoicePeriod/cbc:DescriptionCode"/>]
+										<xsl:call-template name="UBLDescriptionCode"><xsl:with-param name="Code" select="cac:InvoicePeriod/cbc:DescriptionCode"/></xsl:call-template> [<xsl:value-of select="cac:InvoicePeriod/cbc:DescriptionCode"/>]
 <br/>
 								</xsl:if>
 									
@@ -775,17 +774,17 @@ padding-top:1vw;
 									<tr class="TAXInformationHeader">
 										<th align="left" valign="top" colspan="2" width="25%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-118', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-118'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2" width="25%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-120', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-120'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2" width="25%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-116', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-116'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<!--th valign="top" align="right">
@@ -795,7 +794,7 @@ padding-top:1vw;
 									</th-->
 										<th valign="top" align="right" width="25%">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-117', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-117'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 									</tr>
@@ -811,7 +810,7 @@ padding-top:1vw;
 							<div class="col-12">
 								<p>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-6', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-6'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 									<xsl:value-of select="cbc:TaxCurrencyCode"/>
 								</p>
@@ -824,19 +823,19 @@ padding-top:1vw;
 								<div class="col-6">
 									<p>
 										<b>
-											<xsl:value-of select="fcn:LabelName('BT-110', 'true')"/>
+											<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-110'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										</b>
 									</p>
 								</div>
 								<div class="col-3">
 									<p align="right">
-										<xsl:apply-templates select="fcn:Currency(cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode])"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode]/@currencyID"/>
+										<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode]"/></xsl:call-template>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:TaxCurrencyCode]/@currencyID"/>
 									</p>
 								</div>
 								<div class="col-3">
 									<p align="right">
 										<b>
-											<xsl:apply-templates select="fcn:Currency(cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode])"/>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]/@currencyID"/>
+											<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/></xsl:call-template>&#160;<xsl:apply-templates select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]/@currencyID"/>
 										</b>
 									</p>
 								</div>
@@ -849,13 +848,13 @@ padding-top:1vw;
 						<div class="col-6">
 							<p align="left">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-109', 'true')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-109'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 								</b>
 							</p>
 						</div>
 						<div class="col-6">
 							<p align="right">
-								<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount)"/>
+								<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/></xsl:call-template>
 							</p>
 						</div>
 					</div>
@@ -865,14 +864,14 @@ padding-top:1vw;
 						<div class="col-6">
 							<p align="left">
 								<b>
-									<xsl:value-of select="fcn:LabelName('BT-112', 'true')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-112'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 								</b>
 							</p>
 						</div>
 						<div class="col-6">
 							<p align="right">
 								<b>
-									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount)"/>
+									<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/></xsl:call-template>
 								</b>
 							</p>
 						</div>
@@ -884,13 +883,13 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-113', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-113'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 								</p>
 							</div>
 							<div class="col-6">
 								<p align="right">
-									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PrepaidAmount)"/>
+									<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PrepaidAmount"/></xsl:call-template>
 								</p>
 							</div>
 						</div>
@@ -902,13 +901,13 @@ padding-top:1vw;
 							<div class="col-6">
 								<p align="left">
 									<b>
-										<xsl:value-of select="fcn:LabelName('BT-114', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-114'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</b>
 								</p>
 							</div>
 							<div class="col-6">
 								<p align="right">
-									<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableRoundingAmount)"/>
+									<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"/></xsl:call-template>
 								</p>
 							</div>
 						</div>
@@ -920,24 +919,24 @@ padding-top:1vw;
 							<xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
 								<div class="col-6">
 									<h2 align="left" style="color:red">
-										<xsl:value-of select="fcn:LabelName('BT-115', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-115'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</h2>
 								</div>
 								<div class="col-6">
 									<h2 align="right" style="color:red">
-										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
+										<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/></xsl:call-template>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
 									</h2>
 								</div>
 							</xsl:when>
 							<xsl:otherwise>
 								<div class="col-6">
 									<h2 align="left">
-										<xsl:value-of select="fcn:LabelName('BT-115', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-115'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 									</h2>
 								</div>
 								<div class="col-6">
 									<h2 align="right">
-										<xsl:apply-templates select="fcn:Currency(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
+										<xsl:call-template name="Currency"><xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/></xsl:call-template>&#160;<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID"/>
 									</h2>
 								</div>
 							</xsl:otherwise>
@@ -950,7 +949,7 @@ padding-top:1vw;
 						<div class="row" id="tablerow">
 							<div class="col-12">
 								<h3>
-									<xsl:value-of select="fcn:LabelName('BT-20', 'true')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-20'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 								</h3>
 								<p>
 									<xsl:apply-templates select="cac:PaymentTerms"/>
@@ -962,36 +961,36 @@ padding-top:1vw;
 					<div class="row" id="tablerow">
 						<div class="col-12">
 							<h3>
-								<xsl:value-of select="fcn:LabelName('BG-16', 'false')"/>
+								<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-16'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 							</h3>
 							<xsl:if test="cac:PaymentMeans/cac:PayeeFinancialAccount !=''">
 								<table>
 									<tr>
 										<th align="left" valign="top">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-81', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-81'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>&#160;&#160;
 								</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-86', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-86'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 									
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-84', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-84'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 											
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-85', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-85'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="right" valign="top">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-83', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-83'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 									</tr>
@@ -1012,27 +1011,27 @@ padding-top:1vw;
 									<tr>
 										<th align="left" valign="top">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-81', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-81'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>&#160;&#160;
 								</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-86-1', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-86-1'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-87', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-87'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-88', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-88'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="right" valign="top">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-83', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-83'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 									</tr>
@@ -1048,27 +1047,27 @@ padding-top:1vw;
 									<tr>
 										<th align="left" valign="top">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-81', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-81'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>&#160;&#160;
 								</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-91', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-91'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-89', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-89'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="left" valign="top" colspan="2">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-90', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-90'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 										<th align="right" valign="top">
 											<b>
-												<xsl:value-of select="fcn:LabelName('BT-83', 'false')"/>
+												<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-83'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 											</b>
 										</th>
 									</tr>
@@ -1089,7 +1088,7 @@ padding-top:1vw;
 							<!-- Inserting Accounting Supplier Party-->
 							<p>
 								<b>
-									<xsl:value-of select="fcn:LabelName('BG-4', 'false')"/>
+									<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-4'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 								</b>
 								<br/>
 								<xsl:apply-templates select="cac:AccountingSupplierParty"/>
@@ -1100,14 +1099,14 @@ padding-top:1vw;
 							<xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact !=''">
 								<p>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BG-6', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-6'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<xsl:call-template name="SellerContact"/>
 								</p>
 							</xsl:if>
 							<xsl:if test="cac:OrderReference/cbc:SalesOrderID">
 								<p align="left">
-									<xsl:value-of select="fcn:LabelName('BT-14', 'true')"/>
+									<b><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-14'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template></b>
 									<!-- Inserting Sales order reference number  -->
 									<xsl:value-of select="cac:OrderReference/cbc:SalesOrderID"/>
 									<br/>
@@ -1119,7 +1118,7 @@ padding-top:1vw;
 							<xsl:if test="cac:TaxRepresentativeParty !=''">
 								<p>
 									<b>
-										<xsl:value-of select="fcn:LabelName('BG-11', 'false')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-11'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template>
 									</b>
 									<br/>
 									<xsl:apply-templates select="cac:TaxRepresentativeParty"/>
@@ -1135,10 +1134,10 @@ padding-top:1vw;
 							<small>
 								<xsl:value-of select="cbc:UBLVersionID"/>
 								<br/>
-								<xsl:value-of select="fcn:LabelName('BT-23', 'true')"/>
+								<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-23'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 								<xsl:value-of select="cbc:ProfileID"/>
 								<br/>
-								<xsl:value-of select="fcn:LabelName('BT-24', 'true')"/>
+								<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-24'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 								<xsl:value-of select="cbc:CustomizationID"/>
 								<xsl:if test="cbc:UUID !=''">
 									<xsl:value-of select="cbc:UUID"/>
@@ -1147,7 +1146,7 @@ padding-top:1vw;
 								<xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
 									<br/>
 								
-										<xsl:value-of select="fcn:LabelName('BT-34', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-34'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										<xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID"/>
 										<xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID !='' ">
 											[<xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/>]
@@ -1157,15 +1156,14 @@ padding-top:1vw;
 								<xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID">
 									<br/>
 								
-										<xsl:value-of select="fcn:LabelName('BT-49', 'true')"/>
+										<xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-49'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template>
 										<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID"/>
 										<xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID !='' ">
 										[<xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/>]
 										</xsl:if>
 										</xsl:if>
-					<br/>This invoice visualization is generated from SFTI BIS Billing 3 XSL Stylesheet Version 1.0.2<br/>
+					<br/>This invoice visualization is generated from SFTI BIS Billing 3 XSL Stylesheet Version 1.0.3<br/>
 					This stylesheet uses business terms defined the CEN/EN16931-1 and is reproduced with permission from CEN. CEN bears no liability from the use of the content and implementation of this stylesheet and gives no warranties expressed or implied for any purpose.<br/>
-					This visualization was generated: <xsl:value-of  select="current-dateTime()"/>
 					
 					
 								

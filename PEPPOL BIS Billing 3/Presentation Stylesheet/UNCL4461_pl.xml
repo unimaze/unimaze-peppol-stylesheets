@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification xmlns="">
+		<ShortName>UNCL4461</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Niezdefiniowany instrument</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>2</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>kredyt automatycznego systemu rozrachunkowego</SimpleValue> ???
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>3</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>debet automatycznego systemu rozrachunkowego</SimpleValue> ???
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>4</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH żądanie odwrócenia debetu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>5</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH odwrócenie zdolności kredytowej</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>6</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH kredyt na żądanie</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>7</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH żądanie debetowe</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>8</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hold</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>9</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Krajowe i regionalne rozliczenia</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>10</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>W gotówce</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>11</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH odwrócenie kredytu oszczędnościowego</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>12</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH oszczędności debetowe</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>13</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH kredyt oszczędnościowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>14</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH debet oszczędnościowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>15</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Kredyt księgowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>16</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Debet księgowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>17</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH popyt na koncentrację gotówkową / wypłatę (CCD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>18</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH żądanie debetu na koncentrację gotówkową / wypłatę (CCD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>19</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH żądanie spłaty kredytu korporacyjnego (CTP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>20</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Czek</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>21</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przekaz bankowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>22</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Uwierzytelniony przekaz bankowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>23</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Czek bankowy (wystawiony przez instytucję bankową lub podobną)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>24</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel oczekujący na akceptację</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>25</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Uwierzytelniony czek</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>26</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Lokalny czek</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>27</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH żądanie/wymaga zapłaty z tytułu transakcji handlowych (CTP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>28</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH żądanie/wymaga kredytu korporacyjnego wymiany handlowej (CTX)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>29</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH żądanie/wymaga debetu na giełdzie korporacyjnej (CTX)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>30</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przelew kredytowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>31</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przelew debetowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>32</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH popyt na koncentrację gotówkową / wypłatę plus (CCD +) kredyt</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>33</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH popyt na koncentrację gotówkową / wypłatę plus (CCD +) debet</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>34</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH wstępnie ustalona płatność i kaucja (PPD)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>35</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH środki pieniężne na koncentrację / wydatkowanie środków (CCD) kredyt</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>36</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH dochód z oszczędności / koncentracji środków pieniężnych (CCD) debet</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>37</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH kredyt oszczędnościowy w formie korporacyjnego kredytu handlowego (CTP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>38</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH oszczędności na obciążeniach korporacyjnych (CTP)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>39</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH oszczędności na korporacyjnej wymianie handlowej (CTX)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>40</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH oszczędności korporacyjnej wymiany handlowej (CTX)debet</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>41</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH środki pieniężne na koncentrację / wydatkowanie plus (CCD +) kredyt</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>42</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Wpłata na rachunek bankowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>43</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ACH saldo środków pieniężnych na koncentrację / wydatkowanie plus (CCD +) debet</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>44</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zaakceptowany weksel</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>45</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przekierowanie przelewu na bankowość prywatną</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>46</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przelew debetowy międzybankowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>47</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przelew debetowy na bankowość prywatną</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>48</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Karta bankowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>49</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Polecenie zapłaty</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>50</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Płatność za pośrednictwem poczty </SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>51</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>FR, norme 6 97-Telereglement CFONB (French Organisation for</SimpleValue>
+			
+			UWAGA: brakuje tekstu
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>52</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pilna płatność handlowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>53</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pilna płatność skarbowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>54</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Karta kredytowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>55</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Karta debetowa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>56</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przelew bankowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>57</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Umowa stała</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>58</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Polecenie przelewu SEPA </SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>59</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Polecenie zapłaty SEPA</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>60</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>61</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny podpisany przez dłużnika</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>62</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny podpisany przez dłużnika i zatwierdzony przez bank</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>63</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny podpisany przez dłużnika i zatwierdzony przez trzecią stronę</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>64</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny podpisany przez przez bank</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>65</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny podpisany przez bank i zatwierdzony przez inny bank</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>66</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny podpisany przez trzecią stronę</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>67</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Weksel własny podpisany przez trzecią stronę i zatwierdzony przez bank</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>68</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>System płatności online</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>70</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rachunek sporządzony przez wierzyciela wobec dłużnika</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>74</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rachunek sporządzony przez wierzyciela wobec banku</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>75</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rachunek sporządzony przez wierzyciela, zatwierdzony przez inny bank</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>76</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rachunek sporządzony przez wierzyciela wobec banku i zatwierdzony przez trzecią stronę</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>77</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rachunek sporządzony przez wierzyciela wobec trzeciej strony</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>78</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rachunek sporządzony przez wierzyciela wobec trzeciej strony, zaakceptowany i zatwierdzony przez bank</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>91</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Niezbywalny przekaz bankowy</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>92</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Niezbywalny czek lokalny</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>93</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przekaz pocztowy</SimpleValue> ????
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>94</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pilny przekaz pocztowy</SimpleValue> ??? giro
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>95</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Przekaz w dowolnym formacie</SimpleValue> ??? f
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>96</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Żądana metoda płatności nie była wykorzystana</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>97</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Rozliczanie między partnerami</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>ZZZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Wzajemnie zdefiniowane</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Identification xmlns="">
+		<ShortName>InvoiceBaseType</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet xmlns="">
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList xmlns="">
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>S</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Podstawowa</SimpleValue>  
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>AE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Odwrotne obciążenie</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>E</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zwolniony</SimpleValue>
+			</Value>
+		</Row>
+		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>G</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Eksport</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>O</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Nie podlega opodatkowaniu VAT</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>K</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Wewnątrzwspólnotowa dostawa</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>Z</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Zerowa stawka VAT</SimpleValue>
+			</Value>
+		</Row>		
+		<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>L</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Podatek ogólny pośredni na Wyspach Kanaryjskich</SimpleValue>
+			</Value>
+		</Row>		
+				<Row>
+			<Annotation>
+				<Description xml:lang="en"/>
+			</Annotation>
+			<Value ColumnRef="code">
+				<SimpleValue>M</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Podatek dla produkcji, usług i przywozu w Ceucie i Melilli</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>
