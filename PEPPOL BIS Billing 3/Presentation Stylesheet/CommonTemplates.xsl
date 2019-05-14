@@ -1309,12 +1309,6 @@ xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaMo
 				<xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''">
 					<xsl:apply-templates select="cac:CardAccount/cbc:NetworkID"/>
 				</xsl:if>
-				<xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID">
-					<xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''">
-						<br/>
-					</xsl:if>
-					<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID"/>&#160;
-				</xsl:if>
 				<xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID !='' ">
 						<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"/>&#160;
 					</xsl:if>
@@ -1327,8 +1321,7 @@ xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaMo
 				<xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''">
 					***<xsl:apply-templates select="cac:CardAccount/cbc:PrimaryAccountNumberID"/>&#160;
 				</xsl:if>
-				<xsl:if test="cac:PayeeFinancialAccount/cbc:ID !='' or 
-							cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID !=''">
+				<xsl:if test="cac:PayeeFinancialAccount/cbc:ID !=''">
 					<xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''">
 					</xsl:if>
 					<xsl:apply-templates select="cac:PayeeFinancialAccount/cbc:ID"/>&#160;
