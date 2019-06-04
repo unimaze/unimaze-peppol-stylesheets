@@ -1,0 +1,119 @@
+Change-log Stylesheet version 1.1.0
+- Change look and feel to mimic the Icelandic stylesheet used for NESUBL and CENBII documents.
+- Add Icelandic translations.
+- Add new label files to ensure former "business terms" files are not touched.
+- Simplify folder structre (remove UBL/CII transforms).
+- Add CSS styling to allow expanding/collapsing item line details.
+- Different colors scheme used for invoice (blue) and credit note(red).
+- Use of Flexbox to render tables and boxes.
+
+Change-log Stylesheet version 1.0.4
+-Removed deprecated mapping for cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID.
+Value not in use in PEPPOL BIS billing 3
+
+
+Change-log Stylesheet version 1.0.3
+
+-Added language support for Poland (PL)
+
+-Changed XSLT version to 1.0
+
+-Removed stylesheet technical footer timestamp due to XSLT 1.0 compability issues.
+
+-OrderReference/SalesOrderID lead texts (BT-14) is now in in Bold.
+
+-The values of CreditNote/PaymentMeans/PaymentDueDate was displayed once for every occurance. Only the first occurrance is now showed.
+
+
+
+
+Change-log Stylesheet version 1.0.2:
+
+
+-Added Currency handling
+
+-Removed language information from code lists
+
+-Added file user_config for language control
+
+-Changed namespaces in code lists
+
+-Added footer notes
+
+-Fixed a bug regarding header references dependencies on additional documents
+
+-Prepared stylesheet for InvoicePeriod/DescriptionCode
+
+-Changed Buyer accounting reference to header reference instead of item row reference
+
+-Added support for undefined Payment means
+
+-Added column for SEPA values in Payment means direct debit
+
+-Added logic for first occurrence of credit note due date
+
+-Edited display of document level allowances and charges base amount
+
+-Added text for allowance or charge on line-level
+
+-Added timestamp in technical footer
+
+-Added "Säljaren" to Swedish BT-list 
+
+-Fixed a bug for empty currency values
+
+-Removed deprecated Contact id:s
+
+
+Change-log Stylesheet version 1.0.3
+
+-Added language support for Poland (PL)
+
+-Changed XSLT version to 1.0
+
+-Removed stylesheet technical footer timestamp due to XSLT 1.0 compability issues.
+
+-OrderReference/SalesOrderID lead texts (BT-14) is now in in Bold.
+
+-The values of CreditNote/PaymentMeans/PaymentDueDate was displayed once for every occurance. Only the first occurrance is now showed.
+
+
+_____________________________________________________________________________________
+
+
+Change-log Stylesheet version 1.0.2:
+
+
+-Added Currency handling
+
+-Removed language information from code lists
+
+-Added file user_config for language control
+
+-Changed namespaces in code lists
+
+-Added footer notes
+
+-Fixed a bug regarding header references dependencies on additional documents
+
+-Prepared stylesheet for InvoicePeriod/DescriptionCode
+
+-Changed Buyer accounting reference to header reference instead of item row reference
+
+-Added support for undefined Payment means
+
+-Added column for SEPA values in Payment means direct debit
+
+-Added logic for first occurrence of credit note due date
+
+-Edited display of document level allowances and charges base amount
+
+-Added text for allowance or charge on line-level
+
+-Added timestamp in technical footer
+
+-Added "Säljaren" to Swedish BT-list 
+
+-Fixed a bug for empty currency values
+
+-Removed deprecated Contact id:s

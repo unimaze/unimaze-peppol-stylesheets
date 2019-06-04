@@ -26,7 +26,7 @@
 				<SimpleValue>Invoice</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>INVOICE</SimpleValue>
+				<SimpleValue>Commercial Invoice</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -34,7 +34,7 @@
 				<SimpleValue>CreditNote</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>CREDIT NOTE</SimpleValue>
+				<SimpleValue>Credit note</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>

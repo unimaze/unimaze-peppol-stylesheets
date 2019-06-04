@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SemanticModel>
+	<BusinessTerm id="UMZ-BT-001">
+		<TermName>Fax</TermName>
+		<DisplayName>Fax</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-002">
+		<TermName>Settlement period date</TermName>
+		<DisplayName>Settlement period date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-003">
+		<TermName>Trade account</TermName>
+		<DisplayName>Trade account</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-004">
+		<TermName></TermName>
+		<DisplayName></DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-005">
+		<TermName>Description</TermName>
+		<DisplayName>Description</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-006">
+		<TermName>Tax inclusive amount&#160;</TermName>
+		<DisplayName>Tax inclusive amount&#160;</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-007">
+		<TermName>Invoice currency</TermName>
+		<DisplayName>Invoice currency</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-008">
+		<TermName>Further information</TermName>
+		<DisplayName>Further information</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-009">
+		<TermName>Additional buyer's information</TermName>
+		<DisplayName>Additional buyer's information</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-010">
+		<TermName>Account type</TermName>
+		<DisplayName>Account type</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-011">
+		<TermName>Invoice period</TermName>
+		<DisplayName>Invoice period</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-020">
+		<TermName>Legal name and address</TermName>
+		<DisplayName>Legal name and address</DisplayName>
+	</BusinessTerm>
+
+	<!-- CREDIT NOTE TITLES -->
+	<BusinessTerm id="UMZ-BT-012">
+		<TermName>Credited</TermName>
+		<DisplayName>Credited</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-013">
+		<TermName>Booking information</TermName>
+		<DisplayName>Booking information</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-014">
+		<TermName>Credit note currency</TermName>
+		<DisplayName>Credit note currency</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-015">
+		<TermName>Credit note issue date</TermName>
+		<DisplayName>Credit note issue date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-016">
+		<TermName>Address ID</TermName>
+		<DisplayName>Address ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-017">
+		<TermName>Client number</TermName>
+		<DisplayName>Client number</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-018">
+		<TermName>Reference to credit invoice</TermName>
+		<DisplayName>Reference to credit invoice</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-019">
+		<TermName>No.</TermName>
+		<DisplayName>No.</DisplayName>
+	</BusinessTerm>
+</SemanticModel>
