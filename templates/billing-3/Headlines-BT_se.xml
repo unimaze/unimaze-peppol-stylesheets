@@ -82,7 +82,7 @@
 		<TermName>Datum för tidigare faktura</TermName>
 	</BusinessTerm>
 		<BusinessTerm id="BG-4">
-		<TermName>SÄLJAREN</TermName>
+		<TermName>Säljaren</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-27">
 		<TermName>Säljarens namn</TermName>
@@ -123,11 +123,11 @@
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-5">
-		<TermName>SÄLJARENS ADRESS</TermName>
+		<TermName>Säljarens adress</TermName>
 		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-6">
-		<TermName>SÄLJARENS KONTAKT</TermName>
+		<TermName>Säljarens kontakt</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-41">
 		<TermName>Säljarens kontakt</TermName>
@@ -142,7 +142,7 @@
 		<DisplayName>E-mail</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-7">
-		<TermName>KÖPAREN</TermName>
+		<TermName>Köparen</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-44">
 		<TermName>Köparens namn</TermName>
@@ -192,7 +192,7 @@
 		<DisplayName>Telefon</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-10">
-		<TermName>BETALNINGSMOTTAGARE</TermName>
+		<TermName>Betalningsmottagare</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-59">
 		<TermName>Betalningsmottagarens namn</TermName>
@@ -213,7 +213,7 @@
 		<TermName>Typ av ID</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-11">
-		<TermName>SKATTEOMBUD</TermName>
+		<TermName>Skatteombud</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-62">
 		<TermName>Skatteombud namn</TermName>
@@ -255,7 +255,7 @@
 		<DisplayName>Adress</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-16">
-		<TermName>BETALINSTRUKTION</TermName>
+		<TermName>Betalinstruktion</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-81">
 		<TermName>Betalsätt kod</TermName>
@@ -407,7 +407,7 @@
 		<TermName>Undantagsorsakskod</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-24">
-		<TermName>ÖVRIGA DOKUMENTREFERENSER</TermName>
+		<TermName>Övriga dokumentreferenser</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-122">
 		<TermName>Dokumentreferens</TermName>

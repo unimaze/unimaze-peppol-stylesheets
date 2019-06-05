@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SemanticModel>
+	<BusinessTerm id="UMZ-BT-001">
+		<TermName>Fax</TermName>
+		<DisplayName>Fax</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-002">
+		<TermName>Eindagi</TermName>
+		<DisplayName>Eindagi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-003">
+		<TermName>Viðskiptareikningur</TermName>
+		<DisplayName>Viðskiptareikningur</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-004">
+		<TermName>Þessi reikningur á uppruna sinn í rafrænu bókhaldskerfi skv. reglugerð nr. 505/2013.</TermName>
+		<DisplayName>Þessi reikningur á uppruna sinn í rafrænu bókhaldskerfi skv. reglugerð nr. 505/2013.</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-005">
+		<TermName>Lýsing</TermName>
+		<DisplayName>Lýsing</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-006">
+		<TermName>Upphæð m. VSK&#160;</TermName>
+		<DisplayName>Upphæð m. VSK&#160;</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-007">
+		<TermName>Gjaldmiðill á reikningi</TermName>
+		<DisplayName>Gjaldmiðill á reikningi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-008">
+		<TermName>Nánari upplýsingar</TermName>
+		<DisplayName>Nánari upplýsingar</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-009">
+		<TermName>Ítarupplýsingar kaupanda</TermName>
+		<DisplayName>Ítarupplýsingar kaupanda</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-010">
+		<TermName>Höfuðbók</TermName>
+		<DisplayName>Höfuðbók</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-011">
+		<TermName>Reikningstímabil</TermName>
+		<DisplayName>Reikningstímabil</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-020">
+		<TermName>Lögskráð nafn og heimili</TermName>
+		<DisplayName>Lögskráð nafn og heimili</DisplayName>
+	</BusinessTerm>
+
+	<!-- CREDIT NOTE TITLES -->
+	<BusinessTerm id="UMZ-BT-012">
+		<TermName>Kreditfært</TermName>
+		<DisplayName>Kreditfært</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-013">
+		<TermName>Tilvísun í kredit reikning</TermName>
+		<DisplayName>Tilvísun í kredit reikning</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-014">
+		<TermName>Gjaldmiðill á kreditnótu</TermName>
+		<DisplayName>Gjaldmiðill á kreditnótu</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-015">
+		<TermName>Útgáfudagur kreditreiknings</TermName>
+		<DisplayName>Útgáfudagur kreditreiknings</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-016">
+		<TermName>Auðkenni staðsetningar</TermName>
+		<DisplayName>Auðkenni staðsetningar</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-017">
+		<TermName>Viðskiptamannanúmer</TermName>
+		<DisplayName>Viðskiptamannanúmer</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-018">
+		<TermName>Tilvísun í kredit reikning</TermName>
+		<DisplayName>Tilvísun í kredit reikning</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-019">
+		<TermName>Kreditnótunr</TermName>
+		<DisplayName>Kreditnótunr</DisplayName>
+	</BusinessTerm>
+</SemanticModel>

@@ -1,5 +1,19 @@
 # Readme:
 
+This template is being implemented by Unimaze Software with feedback from the FUT Technical Committee of Icelandic Standards, which 
+is a member of the European standards organizations CEN, CENELEC and ETSI as well as the international standards organizations ISO and IEC.
+
+#Mission
+The implementation of this template aims to:
+- Provide easy visual access to most relevant data the accountant needs.
+- Distinguish easily between invoice and credit note.
+- Suppport most XSLT processors.
+- Be purely HTML and CSS based (no Javascript shall be used).
+
+#Requirements
+Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7.
+
+#Adding a new language
 In order to add another language to the stylesheet, there are a few steps.
 
 `*` is your language code

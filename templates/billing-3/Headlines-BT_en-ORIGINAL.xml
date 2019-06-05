@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SemanticModel>
+	<BusinessTerm id="BT-1">
+		<TermName>Invoice number</TermName>
+		<Definition>A unique identification of the Invoice.</Definition>
+		<Description>The sequential number required in Article 226(2) of the directive 2006/112/EC [2], to uniquely identify the Invoice within the business context, time-frame, operating systems and records of the Seller. It may be based on one or more series of numbers, which may include alphanumeric characters. No identification scheme is to be used.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-2">
+		<TermName>Invoice issue date</TermName>
+		<Definition>The date when the Invoice was issued. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-3">
+		<TermName>Invoice type code</TermName>
+		<Definition>A code specifying the functional type of the Invoice.</Definition>
+		<Description>Commercial invoices and credit notes are defined according the entries in UNTDID 1001 [6]. 
+Other entries of UNTDID 1001 [6] with specific invoices or credit notes may be used if applicable.</Description>
+		<DisplayName>Invoice type</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-5">
+		<TermName>Invoice currency code</TermName>
+		<Definition>The currency in which all Invoice amounts are given, except for the Total VAT amount in accounting currency.</Definition>
+		<Description>Only one currency shall be used in the Invoice, except for the Invoice total VAT amount in accounting currency (BT-111) in accordance with article 230 of Directive 2006/112/EC on VAT [2]. 
+The lists of valid currencies are registered with the ISO 4217 Maintenance Agency “Codes for the representation of currencies and funds”.</Description>
+		<DisplayName>Invoice curreny</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-6">
+		<TermName>VAT accounting currency code</TermName>
+		<Definition>The currency used for VAT accounting and reporting purposes as accepted or required in the country of the Seller.</Definition>
+		<Description>Shall be used in combination with the Invoice total VAT amount in accounting currency (BT-111) when the VAT accounting currency code differs from the Invoice currency code. 
+The lists of valid currencies are registered with the ISO 4217 Maintenance Agency “Codes for the representation of currencies and funds”. Please refer to Article 230 of the Council Directive 2006/112/EC [2] for more information.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-7">
+		<TermName>Value added tax point date</TermName>
+		<Definition>The date when the VAT becomes accountable for the Seller and for the Buyer in so far as that date can be determined and differs from the date of issue of the invoice, according to the VAT directive.</Definition>
+		<Description>The tax point is usually the date goods were supplied or services completed (the 'basic tax point'). There are some variations. Please refer to Article 226 (7) of the Council Directive 2006/112/EC [2] for more information. 
+This element is required if the Value added tax point date is different from the Invoice issue date. 
+Both Buyer and Seller should use the Tax Point Date when provided by the Seller. The use of BT-7 and BT-8 is mutually exclusive.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-8">
+		<TermName>Value added tax point date code</TermName>
+		<Definition>The code of the date when the VAT becomes accountable for the Seller and for the Buyer.</Definition>
+		<Description>The code shall distinguish between the following entries of UNTDID 2005 [6]:
+- Invoice document issue date
+- Delivery date, actual
+- Paid to date
+The Value added tax point date code is used if the Value added tax point date is not known when the invoice is issued. The use of BT-8 and BT-7 is mutually exclusive.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-9">
+		<TermName>Payment due date</TermName>
+		<Definition>The date when the payment is due.</Definition>
+		<Description>The payment due date reflects the due date of the net payment. For partial payments it states the first net due date. The corresponding description of more complex payment terms can be stated in BT-20 Payment terms.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-10">
+		<TermName>Buyer reference</TermName>
+		<Definition>An identifier assigned by the Buyer used for internal routing purposes.</Definition>
+		<Description>The identifier is defined by the Buyer (e.g. contact ID, department, office id, project code), but provided by the Seller in the Invoice.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-11">
+		<TermName>Project reference</TermName>
+		<Definition>The identification of the project the invoice refers to </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-12">
+		<TermName>Contract reference</TermName>
+		<Definition>The identification of a contract.</Definition>
+		<Description>The contract identifier should be unique in the context of the specific trading relationship and for a defined time period.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-13">
+		<TermName>Purchase order reference</TermName>
+		<Definition>An identifier of a referenced purchase order, issued by the Buyer.</Definition>
+		<DisplayName>Order reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-14">
+		<TermName>Sales order reference</TermName>
+		<Definition>An identifier of a referenced sales order, issued by the Seller. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-15">
+		<TermName>Receiving advice reference</TermName>
+		<Definition>An identifier of a referenced receiving advice.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-16">
+		<TermName>Despatch advice reference</TermName>
+		<Definition>An identifier of a referenced despatch advice.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-17">
+		<TermName>Tender or lot reference</TermName>
+		<Definition>The identification of the call for tender or lot the invoice relates to.</Definition>
+		<Description>In some countries a reference to the call for tender that has led to the contract shall be provided.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-17">
+		<TermName>Upphandlingsreferens</TermName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-18">
+		<TermName>Invoiced object identifier</TermName>
+		<Definition>An identifier for an object on which the invoice is based, given by the Seller.</Definition>
+		<Description>It may be a subscription number, telephone number, meter point, vehicle, person etc., as applicable.
+</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-18-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Invoiced object identifier.</Definition>
+		<Description>If it may be not clear for the receiver what scheme is used for the identifier, a conditional scheme identifier should be used that shall be chosen from the UNTDID 1153 code list [6] entries.</Description>
+		<DisplayName>Object type</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-19">
+		<TermName>Buyer accounting reference</TermName>
+		<Definition>A textual value that specifies where to book the relevant data into the Buyer's financial accounts.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-20">
+		<TermName>Payment terms</TermName>
+		<Definition>A textual description of the payment terms that apply to the amount due for payment (Including description of possible penalties).</Definition>
+		<Description>This element may contain multiple lines and multiple terms. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-1">
+		<TermName>INVOICE NOTE</TermName>
+		<Definition>A group of business terms providing textual notes that are relevant for the invoice, together with an indication of the note subject.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-21">
+		<TermName>Invoice note subject code</TermName>
+		<Definition>The subject of the textual note in BT-22.</Definition>
+		<Description>To be chosen from the entries in UNTDID 4451 [6]. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-22">
+		<TermName>Invoice note</TermName>
+		<Definition>A textual note that gives unstructured information that is relevant to the Invoice as a whole.</Definition>
+		<Description>Such as the reason for any correction or assignment note in case the invoice has been factored</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-2">
+		<TermName>PROCESS CONTROL</TermName>
+		<Definition>A group of business terms providing information on the business process and rules applicable to the Invoice document.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-23">
+		<TermName>Business process type</TermName>
+		<Definition>Identifies the business process context in which the transaction appears, to enable the Buyer to process the Invoice in an appropriate way.</Definition>
+		<Description>To be specified by the Buyer.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-24">
+		<TermName>Specification identifier</TermName>
+		<Definition>An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</Definition>
+		<Description>This identifies compliance or conformance to this document. Compliant invoices specify: urn:cen.eu:en16931:2017. Invoices, compliant to a user specification may identify that user specification here. No identification scheme is to be used.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-3">
+		<TermName>PRECEDING INVOICE REFERENCE</TermName>
+		<Definition>A group of business terms providing information on one or more preceding Invoices.</Definition>
+		<Description>To be used in case:
+- a preceding invoice is corrected
+- preceding partial invoices are referred to from a final invoice
+-preceding pre-payment invoices are referred to from a final invoice</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-25">
+		<TermName>Preceding Invoice reference</TermName>
+		<Definition>The identification of an Invoice that was previously sent by the Seller.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-26">
+		<TermName>Preceding Invoice issue date</TermName>
+		<Definition>The date when the Preceding Invoice was issued.</Definition>
+		<Description>The Preceding Invoice issue date shall be provided in case the Preceding Invoice identifier is not unique.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-4">
+		<TermName>SELLER</TermName>
+		<Definition>A group of business terms providing information about the Seller. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-27">
+		<TermName>Seller name</TermName>
+		<Definition>The full formal name by which the Seller is registered in the national registry of legal entities or as a Taxable person or otherwise trades as a person or persons.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-28">
+		<TermName>Seller trading name</TermName>
+		<Definition>A name by which the Seller is known, other than Seller name (also known as Business name).</Definition>
+		<Description>This may be used if different from the Seller name.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-29">
+		<TermName>Seller identifier</TermName>
+		<Definition>An identification of the Seller.</Definition>
+		<Description>For many systems, the Seller identifier is a key piece of information. Multiple Seller identifiers may be assigned or specified. They may be differentiated by using various identification schemes. If no scheme is specified, it should be known by Buyer and Seller, e.g. a previously exchanged Buyer assigned identifier of the Seller.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-29-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Seller identifier.</Definition>
+		<Description>If used, the identification scheme identifier shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-30">
+		<TermName>Seller legal registration identifier</TermName>
+		<Definition>An identifier issued by an official registrar that identifies the Seller as a legal entity or person.</Definition>
+		<Description>If no identification scheme is specified, it should be known by Buyer and Seller. </Description>
+		<DisplayName>Legal registration identifier</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-30-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Seller legal registration identifier.</Definition>
+		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-31">
+		<TermName>Seller VAT identifier</TermName>
+		<Definition>The Seller's VAT identifier (also known as Seller VAT identification number).</Definition>
+		<Description>VAT number prefixed by a country code. A VAT registered Supplier shall include his VAT ID, except when he uses a tax representative.</Description>
+		<DisplayName>VAT identifier</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-32">
+		<TermName>Seller tax registration identifier</TermName>
+		<Definition>The local identification (defined by the Seller’s address) of the Seller for tax purposes or a reference that enables the Seller to state his registered tax status.</Definition>
+		<Description>This information may affect how the Buyer settles the payment (such as for social security fees). E.g. in some countries, if the Seller is not registered as a tax paying entity then the Buyer is required to withhold the amount of the tax and pay it on behalf of the Seller.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-33">
+		<TermName>Seller additional legal information</TermName>
+		<Definition>Additional legal information relevant for the Seller. </Definition>
+		<Description>Such as share capital. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-34">
+		<TermName>Seller electronic address</TermName>
+		<Definition>Identifies the Seller's electronic address to which the application level response to the invoice may be delivered.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-34-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Seller electronic address.</Definition>
+		<Description>The scheme identifier shall be chosen from a list to be maintained by the Connecting Europe Facility.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-5">
+		<TermName>SELLER POSTAL ADDRESS</TermName>
+		<Definition>A group of business terms providing information about the address of the Seller.</Definition>
+		<Description>Sufficient components of the address are to be filled to comply with legal requirements. </Description>
+		<DisplayName>Address</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-35">
+		<TermName>Seller address line 1</TermName>
+		<Definition>The main address line in an address. </Definition>
+		<Description>Usually the street name and number or post office box. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-36">
+		<TermName>Seller address line 2</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-162">
+		<TermName>Seller address line 3</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-37">
+		<TermName>Seller city</TermName>
+		<Definition>The common name of the city, town or village, where the Seller address is located.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-38">
+		<TermName>Seller post code</TermName>
+		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
+		<Description>Such as a ZIP code or a post code. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-39">
+		<TermName>Seller country subdivision</TermName>
+		<Definition>The subdivision of a country. </Definition>
+		<Description>Such as a region, a county, a state, a province, etc. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-40">
+		<TermName>Seller country code</TermName>
+		<Definition>A code that identifies the country.</Definition>
+		<Description>If no tax representative is specified, this is the country where VAT is liable. The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BG-6">
+		<TermName>SELLER CONTACT</TermName>
+		<Definition>A group of business terms providing contact information about the Seller. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-41">
+		<TermName>Seller contact point</TermName>
+		<Definition>A contact point for a legal entity or person.</Definition>
+		<Description>Such as person name, contact identification, department or office identification. </Description>
+		<DisplayName>Contact Point</DisplayName>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-42">
+		<TermName>Seller contact telephone number</TermName>
+		<Definition>A phone number for the contact point. </Definition>
+		<DisplayName>Telephone number</DisplayName>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-43">
+		<TermName>Seller contact email address</TermName>
+		<Definition>An e-mail address for the contact point. </Definition>
+		<DisplayName>E-mail address</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-7">
+		<TermName>BUYER</TermName>
+		<Definition>A group of business terms providing information about the Buyer. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-44">
+		<TermName>Buyer name</TermName>
+		<Definition>The full name of the Buyer. </Definition>
+		
+	</BusinessTerm>
+	<BusinessTerm id="BT-45">
+		<TermName>Buyer trading name</TermName>
+		<Definition>A name by which the Buyer is known, other than Buyer name (also known as Business name).</Definition>
+		<Description>This may be used if different from the Buyer name. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-46">
+		<TermName>Buyer identifier</TermName>
+		<Definition>An identifier of the Buyer.</Definition>
+		<Description>If no scheme is specified, it should be known by Buyer and Seller, e.g. a previously exchanged Seller assigned identifier of the Buyer.</Description>
+		<DisplayName>ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-46-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Buyer identifier.</Definition>
+		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+		<DisplayName>Typ av ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-47">
+		<TermName>Buyer legal registration identifier</TermName>
+		<Definition>An identifier issued by an official registrar that identifies the Buyer as a legal entity or person.</Definition>
+		<Description>If no identification scheme is specified, it should be known by Buyer and Seller, e.g. the identifier that is exclusively used in the applicable legal environment.</Description>
+		<DisplayName>Legal registration ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-47-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Buyer legal registration identifier.</Definition>
+		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-48">
+		<TermName>Buyer VAT identifier</TermName>
+		<Definition>The Buyer's VAT identifier (also known as Buyer VAT identification number).</Definition>
+		<Description>VAT number prefixed by a country code based on EN ISO 3166-1 "Codes for the representation of names of countries and their subdivisions"</Description>
+		<DisplayName>VAT ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-49">
+		<TermName>Buyer electronic address</TermName>
+		<Definition>Identifies the Buyer's electronic address to which the invoice is delivered.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-49-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Buyer electronic address.</Definition>
+		<Description>The scheme identifier shall be chosen from a list to be maintained by the Connecting Europe Facility.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-8">
+		<TermName>BUYER POSTAL ADDRESS</TermName>
+		<Definition>A group of business terms providing information about the postal address for the Buyer.</Definition>
+		<Description>Sufficient components of the address are to be filled to comply with legal requirements. </Description>
+		<DisplayName>Address</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-50">
+		<TermName>Buyer address line 1</TermName>
+		<Definition>The main address line in an address. </Definition>
+		<Description>Usually the street name and number or post office box. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-51">
+		<TermName>Buyer address line 2</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-163">
+		<TermName>Buyer address line 3</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-52">
+		<TermName>Buyer city</TermName>
+		<Definition>The common name of the city, town or village, where the Buyer's address is located.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-53">
+		<TermName>Buyer post code</TermName>
+		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
+		<Description>Such as a ZIP code or a post code. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-54">
+		<TermName>Buyer country subdivision</TermName>
+		<Definition>The subdivision of a country. </Definition>
+		<Description>Such as a region, a county, a state, a province, etc. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-55">
+		<TermName>Buyer country code</TermName>
+		<Definition>A code that identifies the country.</Definition>
+		<Description>The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BG-9">
+		<TermName>BUYER CONTACT</TermName>
+		<Definition>A group of business terms providing contact information relevant for the Buyer.</Definition>
+		<Description>Contact details can be given by the Buyer at the time of the ordering or as master data exchanged prior to ordering. Contact details should not be used for the purpose of routing the received Invoice internally by the recipient; the Buyer reference identifier should be used for this purpose.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-56">
+		<TermName>Buyer contact point</TermName>
+		<Definition>A contact point for a legal entity or person.</Definition>
+		<Description>Such as person name, contact identification, department or office identification. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-57">
+		<TermName>Buyer contact telephone number</TermName>
+		<Definition>A phone number for the contact point. </Definition>
+		<DisplayName>Telephone number</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-58">
+		<TermName>Buyer contact email address</TermName>
+		<Definition>An e-mail address for the contact point. </Definition>
+		<DisplayName>e-mail</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-10">
+		<TermName>PAYEE</TermName>
+		<Definition>A group of business terms providing information about the Payee, i.e. the role that receives the payment.</Definition>
+		<Description>The role of Payee may be fulfilled by another party than the Seller, e.g. a factoring service.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-59">
+		<TermName>Payee name</TermName>
+		<Definition>The name of the Payee.</Definition>
+		<Description>Shall be used when the Payee is different from the Seller. The Payee name may however be the same as the Seller name.</Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-60">
+		<TermName>Payee identifier</TermName>
+		<Definition>An identifier for the Payee.</Definition>
+		<Description>If no scheme is specified, it should be known by Buyer and Seller, e.g. a previously exchanged Buyer or Seller assigned identifier.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-60-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Payee identifier.</Definition>
+		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-61">
+		<TermName>Payee legal registration identifier</TermName>
+		<Definition>An identifier issued by an official registrar that identifies the Payee as a legal entity or person.</Definition>
+		<Description>If no scheme is specified, it should be known by Buyer and Seller, e.g. the identifier that is exclusively used in the applicable legal environment.</Description>
+	<DisplayName>Legal registration ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-61-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Payee legal registration identifier.</Definition>
+		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-11">
+		<TermName>SELLER TAX REPRESENTATIVE PARTY</TermName>
+		<Definition>A group of business terms providing information about the Seller's tax representative.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-62">
+		<TermName>Seller tax representative name</TermName>
+		<Definition>The full name of the Seller's tax representative party. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-63">
+		<TermName>Seller tax representative VAT identifier</TermName>
+		<Definition>The VAT identifier of the Seller's tax representative party.</Definition>
+		<Description>VAT number prefixed by a country code based on EN ISO 3166-1 "Codes for the representation of names of countries and their subdivisions".</Description>
+		<DisplayName>VAT identifier</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-12">
+		<TermName>SELLER TAX REPRESENTATIVE POSTAL ADDRESS</TermName>
+		<Definition>A group of business terms providing information about the postal address for the tax representative party.</Definition>
+		<Description>The Seller tax representative name/postal address shall be provided in the invoice, if the Seller has a tax representative who is liable to pay the VAT due. Sufficient components of the address are to be filled to comply with legal requirements.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-64">
+		<TermName>Tax representative address line 1</TermName>
+		<Definition>The main address line in an address. </Definition>
+		<Description>Usually the street post office box. name and number or the </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-65">
+		<TermName>Tax representative address line 2</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-164">
+		<TermName>Tax representative address line 3</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-66">
+		<TermName>Tax representative city</TermName>
+		<Definition>The common name of the city, town or village, where the tax representative address is located.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-67">
+		<TermName>Tax representative post code</TermName>
+		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
+		<Description>Such as a ZIP code or a post code. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-68">
+		<TermName>Tax representative country subdivision</TermName>
+		<Definition>The subdivision of a country. </Definition>
+		<Description>Such as a region, a county, a state, a province, etc. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-69">
+		<TermName>Tax representative country code</TermName>
+		<Definition>A code that identifies the country.</Definition>
+		<Description>Country where VAT is liable. The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-13">
+		<TermName>DELIVERY INFORMATION</TermName>
+		<Definition>A group of business terms providing information about where and when the goods and services invoiced are delivered.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-70">
+		<TermName>Deliver to party name</TermName>
+		<Definition>The name of the party to which the goods and services are delivered.</Definition>
+		<Description>Shall be used if the Deliver to party is different from the Buyer. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-71">
+		<TermName>Deliver to location identifier</TermName>
+		<Definition>An identifier for the location at which the goods and services are delivered.</Definition>
+		<Description>If no scheme is specified, it should be known by Buyer and Seller, e.g. a previously exchanged Buyer or Seller assigned identifier.</Description>
+		<DisplayName>Location ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-71-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Deliver to location identifier.</Definition>
+		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-72">
+		<TermName>Actual delivery date</TermName>
+		<Definition>the date on which the supply of goods or services was made or completed.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BG-14">
+		<TermName>INVOICING PERIOD</TermName>
+		<Definition>A group of business terms providing information on the invoice period.</Definition>
+		<Description>Used to indicate when the period covered by the invoice starts and when it ends. Also called delivery period.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-73">
+		<TermName>Invoicing period start date</TermName>
+		<Definition>The date when the Invoice period starts.</Definition>
+		<Description>The initial date of delivery of goods or services. </Description>
+		<DisplayName>Period start date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-74">
+		<TermName>Invoicing period end date</TermName>
+		<Definition>The date when the Invoice period ends.</Definition>
+		<Description>The date on which the delivery of goods or services was completed. </Description>
+		<DisplayName>Period end date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-15">
+		<TermName>DELIVER TO ADDRESS</TermName>
+		<Definition>A group of business terms providing information about the address to which goods and services invoiced were or are delivered.</Definition>
+		<Description>In the case of pick-up, the deliver to address is the pick-up address. Sufficient components of the address are to be filled to comply with legal requirements.</Description>
+		<DisplayName>Address</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-75">
+		<TermName>Deliver to address line 1</TermName>
+		<Definition>The main address line in an address. </Definition>
+		<Description>Usually the street name and number. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-76">
+		<TermName>Deliver to address line 2</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-165">
+		<TermName>Deliver to address line 3</TermName>
+		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-77">
+		<TermName>Deliver to city</TermName>
+		<Definition>The common name of the city, town or village, where the deliver to address is located.</Definition>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-78">
+		<TermName>Deliver to post code</TermName>
+		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
+		<Description>Such as a ZIP code or a post code. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-79">
+		<TermName>Deliver to country subdivision</TermName>
+		<Definition>The subdivision of a country. </Definition>
+		<Description>Such as a region, a county, a state, a province, etc. </Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BT-80">
+		<TermName>Deliver to country code</TermName>
+		<Definition>A code that identifies the country.</Definition>
+		<Description>The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+		<DisplayName/>
+	</BusinessTerm>
+	<BusinessTerm id="BG-16">
+		<TermName>PAYMENT INSTRUCTIONS</TermName>
+		<Definition>A group of business terms providing information about the payment. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-81">
+		<TermName>Payment means type code</TermName>
+		<Definition>The means, expressed as code, for how a payment is expected to be or has been settled.</Definition>
+		<Description>Entries from the UNTDID 4461 code list [6] shall be used. Distinction should be made between SEPA and non-SEPA payments, and between credit payments, direct debits, card payments and other instruments.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-82">
+		<TermName>Payment means text</TermName>
+		<Definition>The means, expressed as text, for how a payment is expected to be or has been settled.</Definition>
+		<Description>Such as cash, credit transfer, direct debit, credit card, etc. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-83">
+		<TermName>Remittance information</TermName>
+		<Definition>A textual value used to establish a link between the payment and the Invoice, issued by the Seller.</Definition>
+		<Description>Used for creditor's critical reconciliation information. This information element helps the Seller to assign an incoming payment to the relevant payment process. When specifying the textual value, which is commonly the invoice number of the invoice being paid, but may be another seller reference, the buyer should indicate this reference in his payment order when executing the payment. In a payment transaction this reference is transferred back to the Seller as Remittance Information.
+
+In order to allow for automatic processing of cross-border SEPA payments, only Latin characters should be used in this field, with a maximum of 140 characters. Reference section 1.4 of the SEPA credit transfer and SEPA direct debit scheme implementation guides [13] and [14] for details of the allowed characters. Other rules may apply for SEPA payments within national borders.
+
+If remittance information is structured according to the ISO 11649:2009 standard [16] for Structured RF Creditor Reference, it shall be mapped to the Structured Remittance Information Creditor Reference field in SEPA payments messages. If remittance information is structured according to the EACT standard for automated reconciliation [17], it shall be mapped to the Unstructured Remittance Information field in SEPA payments messages.”
+
+If remittance information is to be mapped to the End To End Identification field or to the Structured Remittance Information Creditor Reference field in SEPA payments messages, then in addition to the Latin character set restriction, the content shall not start or end with a '/' and the content shall not contain '//'s. See reference [15].</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-17">
+		<TermName>CREDIT TRANSFER</TermName>
+		<Definition>A group of business terms to specify credit transfer payments. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-84">
+		<TermName>Payment account identifier</TermName>
+		<Definition>A unique identifier of the financial payment account, at a payment service provider, to which payment should be made.</Definition>
+		<Description>Such as IBAN (in case of a SEPA payment) or a national account number.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-85">
+		<TermName>Payment account name</TermName>
+		<Definition>The name of the payment account, at a payment service provider, to which payment should be made.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-86">
+		<TermName>Payment service provider identifier</TermName>
+		<Definition>An identifier for the payment service provider where a payment account is located.</Definition>
+		<Description>Such as a BIC or a national clearing code where required. No identification scheme to be used.</Description>
+	</BusinessTerm>
+		<BusinessTerm id="BT-86-1">
+		<TermName>Card network identifier</TermName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-18">
+		<TermName>PAYMENT CARD INFORMATION</TermName>
+		<Definition>A group of business terms providing information about card used for payment contemporaneous with invoice issuance.</Definition>
+		<Description>Only used if the Buyer had opted to pay by using a payment card such as a credit or debit card.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-87">
+		<TermName>Payment card primary account number</TermName>
+		<Definition>The Primary Account Number (PAN) of the card used for payment.</Definition>
+		<Description>In accordance with card payments security standards an invoice should never include a full card primary account number. At the moment PCI Security Standards Council has defined that the first 6 digits and last 4 digits are the maximum number of digits to be shown.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-88">
+		<TermName>Payment card holder name</TermName>
+		<Definition>The name of the payment card holder. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BG-19">
+		<TermName>DIRECT DEBIT</TermName>
+		<Definition>A group of business terms to specify a direct debit.</Definition>
+		<Description>This group may be used to give prior notice in the invoice that payment will be made through a SEPA or other direct debit initiated by the Seller, in accordance with the rules of the SEPA or other direct debit scheme.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-89">
+		<TermName>Mandate reference identifier</TermName>
+		<Definition>Unique identifier assigned by the Payee for referencing the direct debit mandate.</Definition>
+		<Description>Used in order to pre-notify the Buyer of a SEPA direct debit. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-90">
+		<TermName>Bank assigned creditor identifier</TermName>
+		<Definition>Unique banking reference identifier of the Payee or Seller assigned by the Payee or Seller bank.</Definition>
+		<Description>Used in order to pre-notify the Buyer of a SEPA direct debit. </Description>
+		<DisplayName>Bank assigned creditor ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-91">
+		<TermName>Debited account identifier</TermName>
+		<Definition>The account to be debited by the direct debit. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BG-20">
+		<TermName>DOCUMENT LEVEL ALLOWANCES</TermName>
+		<Definition>A group of business terms providing information about allowances applicable to the Invoice as a whole.</Definition>
+		<Description>Deductions, such as withheld tax may also be specified in this group. </Description>
+		<DisplayName>ALLOWANCES</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-92">
+		<TermName>Document level allowance amount</TermName>
+		<Definition>The amount of an allowance, without VAT.</Definition>
+		<DisplayName>Amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-93">
+		<TermName>Document level allowance base amount</TermName>
+		<Definition>The base amount that may be used, in conjunction with the document level allowance percentage, to calculate the document level allowance amount.</Definition>
+		<DisplayName>Basis for calculation</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-94">
+		<TermName>Document level allowance percentage</TermName>
+		<Definition>The percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance amount.</Definition>
+		<DisplayName>Percentage</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-95">
+		<TermName>Document level allowance VAT category code</TermName>
+		<Definition>A coded identification of what VAT category applies to the document level allowance.</Definition>
+		<Description>The following entries of UNTDID 5305 [6] are used (further clarification between brackets):
+- Standard rate (Liable for VAT in a standard way)
+- Zero rated goods (Liable for VAT with a percentage rate of zero)
+- Exempt from tax (VAT/IGIC/IPSI)
+- VAT Reverse Charge (Reverse charge VAT/IGIC/IPSI rules apply)
+- VAT exempt for intra community supply of goods (VAT/IGIC/IPSI not levied due to Intra-community supply rules)
+- Free export item, tax not charged (VAT/IGIC/IPSI not levied due to export outside of the EU)
+- Services outside scope of tax (Sale is not subject to VAT/IGIC/IPSI)
+- Canary Islands General Indirect Tax (Liable for IGIC tax)
+- Liable for IPSI (Ceuta/Melilla tax)</Description>
+		<DisplayName>VAT category code</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-96">
+		<TermName>Document level allowance VAT rate</TermName>
+		<Definition>The VAT rate, represented as percentage that applies to the document level allowance.</Definition>
+		<DisplayName>VAT rate</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-97">
+		<TermName>Document level allowance reason</TermName>
+		<Definition>The reason for the document level allowance, expressed as text. </Definition>
+		<DisplayName>Reason</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-98">
+		<TermName>Document level allowance reason code</TermName>
+		<Definition>The reason for the document level allowance, expressed as a code.</Definition>
+		<Description>Use entries of the UNTDID 5189 code list [6]. The Document level allowance reason code and the Document level allowance reason shall indicate the same allowance reason.</Description>
+		<DisplayName>Reason code</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-21">
+		<TermName>DOCUMENT LEVEL CHARGES</TermName>
+		<Definition>A group of business terms providing information about charges and taxes other than VAT, applicable to the Invoice as a whole.</Definition>
+		<DisplayName>CHARGES</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-99">
+		<TermName>Document level charge amount</TermName>
+		<Definition>The amount of a charge, without VAT.</Definition>
+		<DisplayName>Amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-100">
+		<TermName>Document level charge base amount</TermName>
+		<Definition>The base amount that may be used, in conjunction with the document level charge percentage, to calculate the document level charge amount.</Definition>
+		<DisplayName>Basis for calculation</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-101">
+		<TermName>Document level charge percentage</TermName>
+		<Definition>The percentage that may be used, in conjunction with the document level charge base amount, to calculate the document level charge amount.</Definition>
+		<DisplayName>Percent</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-102">
+		<TermName>Document level charge VAT category code</TermName>
+		<Definition>A coded identification of what VAT category applies to the document level charge.</Definition>
+		<Description>The following entries of UNTDID 5305 [6] are used (further clarification between brackets):
+- Standard rate (Liable for VAT in a standard way)
+- Zero rated goods (Liable for VAT with a percentage rate of zero)
+- Exempt from tax (VAT/IGIC/IPSI)
+- VAT Reverse Charge (Reverse charge VAT/IGIC/IPSI rules apply)
+- VAT exempt for intra community supply of goods (VAT/IGIC/IPSI not levied due to Intra-community supply rules)
+- Free export item, tax not charged (VAT/IGIC/IPSI not levied due to export outside of the EU)
+- Services outside scope of tax (Sale is not subject to VAT/IGIC/IPSI)
+- Canary Islands General Indirect Tax (Liable for IGIC tax)
+- Liable for IPSI (Ceuta/Melilla tax)</Description>
+		<DisplayName>VAT category code</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-103">
+		<TermName>Document level charge VAT rate</TermName>
+		<Definition>The VAT rate, represented as percentage that applies to the document level charge.</Definition>
+		<DisplayName>VAT rate</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-104">
+		<TermName>Document level charge reason</TermName>
+		<Definition>The reason for the document level charge, expressed as text.</Definition>
+		<DisplayName>Reason</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-105">
+		<TermName>Document level charge reason code</TermName>
+		<Definition>The reason for the document level charge, expressed as a code.</Definition>
+		<Description>Use entries of the UNTDID 7161 code list [6]. The Document level charge reason code and the Document level charge reason shall indicate the same charge reason.</Description>
+		<DisplayName>Reason code</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-22">
+		<TermName>DOCUMENT TOTALS</TermName>
+		<Definition>A group of business terms providing the monetary totals for the Invoice. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-106">
+		<TermName>Sum of Invoice line net amount</TermName>
+		<Definition>Sum of all Invoice line net amounts in the Invoice. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-107">
+		<TermName>Sum of allowances on document level</TermName>
+		<Definition>Sum of all allowances on document level in the Invoice.</Definition>
+		<Description>Allowances on line level are included in the Invoice line net amount which is summed up into the Sum of Invoice line net amount.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-108">
+		<TermName>Sum of charges on document level</TermName>
+		<Definition>Sum of all charges on document level in the Invoice.</Definition>
+		<Description>Charges on line level are included in the Invoice line net amount which is summed up into the Sum of Invoice line net amount.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-109">
+		<TermName>Invoice total amount without VAT</TermName>
+		<Definition>The total amount of the Invoice without VAT.</Definition>
+		<Description>The Invoice total amount without VAT is the Sum of Invoice line net amount minus Sum of allowances on document level plus Sum of charges on document level.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-110">
+		<TermName>Invoice total VAT amount</TermName>
+		<Definition>The total VAT amount for the Invoice.</Definition>
+		<Description>The Invoice total VAT amount is the sum of all VAT category tax amounts.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-111">
+		<TermName>Invoice total VAT amount in accounting currency</TermName>
+		<Definition>The VAT total amount expressed in the accounting currency accepted or required in the country of the Seller.</Definition>
+		<Description>To be used when the VAT accounting currency (BT-6) differs from the Invoice currency code (BT-5) in accordance with article 230 of Directive 2006/112 / EC on VAT. The VAT amount in accounting currency is not used in the calculation of the Invoice totals.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-112">
+		<TermName>Invoice total amount with VAT</TermName>
+		<Definition>The total amount of the Invoice with VAT.</Definition>
+		<Description>The Invoice total amount with VAT is the Invoice total amount without VAT plus the Invoice total VAT amount.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-113">
+		<TermName>Paid amount</TermName>
+		<Definition>The sum of amounts which have been paid in advance.</Definition>
+		<Description>This amount is subtracted from the invoice total amount with VAT to calculate the amount due for payment.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-114">
+		<TermName>Rounding amount</TermName>
+		<Definition>The amount to be added to the invoice total to round the amount to be paid.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-115">
+		<TermName>Amount due for payment</TermName>
+		<Definition>The outstanding amount that is requested to be paid.</Definition>
+		<Description>This amount is the Invoice total amount with VAT minus the paid amount that has been paid in advance. The amount is zero in case of a fully paid Invoice. The amount may be negative; in that case the Seller owes the amount to the Buyer.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-23">
+		<TermName>VAT BREAKDOWN</TermName>
+		<Definition>A group of business terms providing information about VAT breakdown by different categories, rates and exemption reasons</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-116">
+		<TermName>VAT category taxable amount</TermName>
+		<Definition>Sum of all taxable amounts subject to a specific VAT category code and VAT category rate (if the VAT category rate is applicable).</Definition>
+		<Description>The sum of Invoice line net amount minus allowances plus charges on document level which are subject to a specific VAT category code and VAT category rate (if the VAT category rate is applicable).</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-117">
+		<TermName>VAT category tax amount</TermName>
+		<Definition>The total VAT amount for a given VAT category.</Definition>
+		<Description>Calculated by multiplying the VAT category taxable amount with the VAT category rate for the relevant VAT category.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-118">
+		<TermName>VAT category code</TermName>
+		<Definition>Coded identification of a VAT category.</Definition>
+		<Description>The following entries of UNTDID 5305 [6] are used (further clarification between brackets):
+- Standard rate (Liable for VAT in a standard way)
+- Zero rated goods (Liable for VAT with a percentage rate of zero)
+- Exempt from tax (VAT/IGIC/IPSI)
+- VAT Reverse Charge (Reverse charge VAT/IGIC/IPSI rules apply)
+- VAT exempt for intra community supply of goods (VAT/IGIC/IPSI not levied due to Intra-community supply rules)
+- Free export item, tax not charged (VAT/IGIC/IPSI not levied due to export outside of the EU)
+- Services outside scope of tax (Sale is not subject to VAT/IGIC/IPSI)
+- Canary Islands General Indirect Tax (Liable for IGIC tax)
+- Liable for IPSI (Ceuta/Melilla tax)</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-119">
+		<TermName>VAT category rate</TermName>
+		<Definition>The VAT rate, represented as percentage that applies for the relevant VAT category.</Definition>
+		<Description>The VAT category code and the VAT category rate shall be consistent.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-120">
+		<TermName>VAT exemption reason text</TermName>
+		<Definition>A textual statement of the reason why the amount is exempted from VAT or why no VAT is being charged</Definition>
+		<Description>Articles 226 items 11 to 15 Directive 2006/112/EC [2].</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-121">
+		<TermName>VAT exemption reason code</TermName>
+		<Definition>A coded statement of the reason for why the amount is exempted from VAT.</Definition>
+		<Description>Code list issued and maintained by the Connecting Europe Facility.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-24">
+		<TermName>ADDITIONAL SUPPORTING DOCUMENTS</TermName>
+		<Definition>A group of business terms providing information about additional supporting documents substantiating the claims made in the Invoice.</Definition>
+		<Description>The additional supporting documents can be used for both referencing a document number which is expected to be known by the receiver, an external document (referenced by a URL) or as an embedded document (such as a time report in pdf). The option to link to an external document will be needed, for example in the case of large attachments and/or when sensitive information, e.g. person-related services, has to be separated from the Invoice itself.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-122">
+		<TermName>Supporting document reference</TermName>
+		<Definition>An identifier of the supporting document. </Definition>
+		<DisplayName>Reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-123">
+		<TermName>Supporting document description</TermName>
+		<Definition>A description of the supporting document. </Definition>
+		<Description>Such as: timesheet, usage report etc. </Description>
+		<DisplayName>Description</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-124">
+		<TermName>External document location</TermName>
+		<Definition>The URL (Uniform Resource Locator) that identifies where the external document is located.</Definition>
+		<Description>A means of locating the resource including its primary access mechanism, e.g. http:// or ftp://. External document location shall be used if the Buyer requires additional information to support the Invoice. External documents do not form part of the invoice. Risks can be involved when accessing external documents.</Description>
+		<DisplayName>Link to external document</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-125">
+		<TermName>Attached document</TermName>
+		<Definition>An attached document embedded as binary object or sent together with the invoice.</Definition>
+		<Description>Attached document is used when documentation shall be stored with the Invoice for future reference or audit purposes.</Description>
+		<DisplayName>Attachment</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-125-1">
+		<TermName>Attached document Mime code</TermName>
+		<Definition>The mime code of the attached document.</Definition>
+		<Description>Allowed mime codes:
+- application/pdf
+- image/png
+- image/jpeg
+- text/csv
+- application/vnd.openxmlformats officedocument.spreadsheetml.sheet
+- application/vnd.oasis.opendocument. spreadsheet</Description>
+		<DisplayName>Type</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-125-2">
+		<TermName>Attached document Filename</TermName>
+		<Definition>The file name of the attached document</Definition>
+		<DisplayName>Filename</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-25">
+		<TermName>INVOICE LINE</TermName>
+		<Definition>A group of business terms providing information on individual Invoice lines.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-126">
+		<TermName>Invoice line identifier</TermName>
+		<Definition>A unique identifier for the individual line within the Invoice. </Definition>
+		<DisplayName>Line ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-127">
+		<TermName>Invoice line note</TermName>
+		<Definition>A textual note that gives unstructured information that is relevant to the Invoice line.</Definition>
+		<DisplayName>Note</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-128">
+		<TermName>Invoice line object identifier</TermName>
+		<Definition>An identifier for an object on which the invoice line is based, given by the Seller.</Definition>
+		<Description>It may be a subscription number, telephone number, meter point etc., as applicable. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-128-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Invoice line object identifier.</Definition>
+		<Description>If it may be not clear for the receiver what scheme is used for the identifier, a conditional scheme identifier should be used that shall be chosen from the UNTDID 1153 code list [6] entries.</Description>
+		<DisplayName>Type</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-129">
+		<TermName>Invoiced quantity</TermName>
+		<Definition>The quantity of items (goods or services) that is charged in the Invoice line.</Definition>
+		<DisplayName>Quantity</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-130">
+		<TermName>Invoiced quantity unit of measure code</TermName>
+		<Definition>The unit of measure that applies to the invoiced quantity.</Definition>
+		<Description>The unit of measure shall be chosen from the lists in UN/ECE Recommendation N°. 20 “Codes for Units of Measure Used in International Trade” [7] and UN/ECE Recommendation N° 21 “Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)” [19] applying the method described in UN/ECE Rec N° 20 Intro 2.a). Note that in most cases it is not needed for Buyers and Sellers to implement these lists fully in their software. Sellers need only to support the units needed for their goods and services; Buyers only need to verify that the units used in the Invoice are equal to the units used in other documents (such as Contract, Catalogue, Order and Despatch advice).</Description>
+		<DisplayName>Unit of measure</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-131">
+		<TermName>Invoice line net amount</TermName>
+		<Definition>The total amount of the Invoice line.</Definition>
+		<Description>The amount is “net” without VAT, i.e. inclusive of line level allowances and charges as well as other relevant taxes.</Description>
+		<DisplayName>Net amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-132">
+		<TermName>Referenced purchase order line reference</TermName>
+		<Definition>An identifier for a referenced line within a purchase order, issued by the Buyer.</Definition>
+		<Description>The purchase order identifier is referenced on document level. </Description>
+		<DisplayName>Purchase order line reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-133">
+		<TermName>Invoice line Buyer accounting reference</TermName>
+		<Definition>A textual value that specifies where to book the relevant data into the Buyer's financial accounts.</Definition>
+		<Description>If required, this reference shall be provided by the Buyer to the Seller prior to the issuing of the Invoice.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-26">
+		<TermName>INVOICE LINE PERIOD</TermName>
+		<Definition>A group of business terms providing information about the period relevant for the Invoice line.</Definition>
+		<Description>Is also called Invoice line delivery period. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-134">
+		<TermName>Invoice line period start date</TermName>
+		<Definition>The date when the Invoice period for this Invoice line starts. </Definition>
+		<Description>The date is the first day of the period. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-135">
+		<TermName>Invoice line period end date</TermName>
+		<Definition>The date when the Invoice period for this Invoice line ends. </Definition>
+		<Description>The date is the last day of the period. </Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-27">
+		<TermName>INVOICE LINE ALLOWANCES</TermName>
+		<Definition>A group of business terms providing information about allowances applicable to the individual Invoice line.</Definition>
+		<DisplayName>Allowance</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-136">
+		<TermName>Invoice line allowance amount</TermName>
+		<Definition>The amount of an allowance, without VAT.</Definition>
+		<DisplayName>Allowance amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-137">
+		<TermName>Invoice line allowance base amount</TermName>
+		<Definition>The base amount that may be used, in conjunction with the Invoice line allowance percentage, to calculate the Invoice line allowance amount.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-138">
+		<TermName>Invoice line allowance percentage</TermName>
+		<Definition>The percentage that may be used, in conjunction with the Invoice line allowance base amount, to calculate the Invoice line allowance amount.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-139">
+		<TermName>Invoice line allowance reason</TermName>
+		<Definition>The reason for the Invoice line allowance, expressed as text. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-140">
+		<TermName>Invoice line allowance reason code</TermName>
+		<Definition>The reason for the Invoice line allowance, expressed as a code.</Definition>
+		<Description>Use entries of the UNTDID 5189 code list [6]. The Invoice line level allowance reason code and the Invoice line level allowance reason shall indicate the same allowance reason.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-28">
+		<TermName>INVOICE LINE CHARGES</TermName>
+		<Definition>A group of business terms providing information about charges and taxes other than VAT applicable to the individual Invoice line.</Definition>
+		<Description>All charges and taxes are assumed to be liable to the same VAT rate as the Invoice line.</Description>
+		<DisplayName>Charge</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-141">
+		<TermName>Invoice line charge amount</TermName>
+		<Definition>The amount of a charge, without VAT. </Definition>
+		<DisplayName>Charge amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-142">
+		<TermName>Invoice line charge base amount</TermName>
+		<Definition>The base amount that may be used, in conjunction with the Invoice line charge percentage, to calculate the Invoice line charge amount.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-143">
+		<TermName>Invoice line charge percentage</TermName>
+		<Definition>The percentage that may be used, in conjunction with the Invoice line charge base amount, to calculate the Invoice line charge amount.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-144">
+		<TermName>Invoice line charge reason</TermName>
+		<Definition>The reason for the Invoice line charge, expressed as text. </Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-145">
+		<TermName>Invoice line charge reason code</TermName>
+		<Definition>The reason for the Invoice line charge, expressed as a code.</Definition>
+		<Description>Use entries of the UNTDID 7161 code list [6]. The Invoice line charge reason code and the Invoice line charge reason shall indicate the same charge reason.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-29">
+		<TermName>PRICE DETAILS</TermName>
+		<Definition>A group of business terms providing information about the price applied for the goods and services invoiced on the Invoice line.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-146">
+		<TermName>Item net price</TermName>
+		<Definition>The price of an item, exclusive of VAT, after subtracting item price discount.</Definition>
+		<Description>The Item net price has to be equal with the Item gross price less the Item price discount.</Description>
+		<DisplayName>Net price</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-147">
+		<TermName>Item price discount</TermName>
+		<Definition>The total discount subtracted from the Item gross price to calculate the Item net price.</Definition>
+		<Description>Only applies if the discount is provided per unit and if it is not included in the Item gross price.</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-148">
+		<TermName>Item gross price</TermName>
+		<Definition>The unit price, exclusive of VAT, before subtracting Item price discount.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-149">
+		<TermName>Item price base quantity</TermName>
+		<Definition>The number of item units to which the price applies. </Definition>
+		<DisplayName>Base quantity</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-150">
+		<TermName>Item price base quantity unit of measure code</TermName>
+		<Definition>The unit of measure that applies to the Item price base quantity.</Definition>
+		<Description>The Item price base quantity unit of measure shall be the same as the Invoiced quantity unit of measure (BT-130).</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BG-30">
+		<TermName>LINE VAT INFORMATION</TermName>
+		<Definition>A group of business terms providing information about the VAT applicable for the goods and services invoiced on the Invoice line.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-151">
+		<TermName>Invoiced item VAT category code</TermName>
+		<Definition>The VAT category code for the invoiced item.</Definition>
+		<Description>The following entries of UNTDID 5305 [6] are used (further clarification between brackets):
+- Standard rate (Liable for VAT in a standard way)
+- Zero rated goods (Liable for VAT with a percentage rate of zero)
+- Exempt from tax (VAT/IGIC/IPSI)
+- VAT Reverse Charge (Reverse charge VAT/IGIC/IPSI rules apply)
+- VAT exempt for intra community supply of goods (VAT/IGIC/IPSI not levied due to Intra-community supply rules)
+- Free export item, tax not charged (VAT/IGIC/IPSI not levied due to export outside of the EU)
+- Services outside scope of tax (Sale is not subject to VAT/IGIC/IPSI)
+- Canary Islands General Indirect Tax (Liable for IGIC tax)
+- Liable for IPSI (Ceuta/Melilla tax)</Description>
+		<DisplayName>VAT rate</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-152">
+		<TermName>Invoiced item VAT rate</TermName>
+		<Definition>The VAT rate, represented as percentage that applies to the invoiced item.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BG-31">
+		<TermName>ITEM INFORMATION</TermName>
+		<Definition>A group of business terms providing information about the goods and services invoiced.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-153">
+		<TermName>Item name</TermName>
+		<Definition>A name for an item. </Definition>
+		<DisplayName>Name</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-154">
+		<TermName>Item description</TermName>
+		<Definition>A description for an item. </Definition>
+		<Description>The Item description allows for describing the item and its features in more detail than the Item name.</Description>
+		<DisplayName>Description</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-155">
+		<TermName>Item Seller's identifier</TermName>
+		<Definition>An identifier, assigned by the Seller, for the item.</Definition>
+		<DisplayName>Seller's ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-156">
+		<TermName>Item Buyer's identifier</TermName>
+		<Definition>An identifier, assigned by the Buyer, for the item.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-157">
+		<TermName>Item standard identifier</TermName>
+		<Definition>An item identifier based on a registered scheme.</Definition>
+		<DisplayName>Standard ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-157-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Item standard identifier</Definition>
+		<Description>The identification scheme shall be identified from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
+		<DisplayName>Typ</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-158">
+		<TermName>Item classification identifier</TermName>
+		<Definition>A code for classifying the item by its type or nature.</Definition>
+		<Description>Classification codes are used to allow grouping of similar items for a various purposes e.g. public procurement (CPV), e Commerce (UNSPSC) etc.</Description>
+		<DisplayName>Classification code</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-158-1">
+		<TermName>Scheme identifier</TermName>
+		<Definition>The identification scheme identifier of the Item classification identifier</Definition>
+		<Description>The identification scheme shall be chosen from the entries in UNTDID 7143 [6].</Description>
+	</BusinessTerm>
+	<BusinessTerm id="BT-158-2">
+		<TermName>Scheme version identifier</TermName>
+		<Definition>The version of the identification scheme.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-159">
+		<TermName>Item country of origin</TermName>
+		<Definition>The code identifying the country from which the item originates.</Definition>
+		<Description>The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+		<DisplayName>Country of origin</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BG-32">
+		<TermName>ITEM ATTRIBUTES</TermName>
+		<Definition>A group of business terms providing information about properties of the goods and services invoiced.</Definition>
+	</BusinessTerm>
+	<BusinessTerm id="BT-160">
+		<TermName>Item attribute name</TermName>
+		<Definition>The name of the attribute or property of the item. </Definition>
+		<Description>Such as “Colour”. </Description>
+		<DisplayName>Attribute</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="BT-161">
+		<TermName>Item attribute value</TermName>
+		<Definition>The value of the attribute or property of the item. </Definition>
+		<Description>Such as “Red”. </Description>
+		<DisplayName>Attribute value</DisplayName>
+	</BusinessTerm>
+</SemanticModel>

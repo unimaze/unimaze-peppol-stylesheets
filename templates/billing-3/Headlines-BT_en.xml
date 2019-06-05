@@ -4,9 +4,10 @@
 		<TermName>Invoice number</TermName>
 		<Definition>A unique identification of the Invoice.</Definition>
 		<Description>The sequential number required in Article 226(2) of the directive 2006/112/EC [2], to uniquely identify the Invoice within the business context, time-frame, operating systems and records of the Seller. It may be based on one or more series of numbers, which may include alphanumeric characters. No identification scheme is to be used.</Description>
+		<DisplayName>No.</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-2">
-		<TermName>Invoice issue date</TermName>
+		<TermName>Issue date</TermName>
 		<Definition>The date when the Invoice was issued. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-3">
@@ -30,7 +31,7 @@ The lists of valid currencies are registered with the ISO 4217 Maintenance Agenc
 The lists of valid currencies are registered with the ISO 4217 Maintenance Agency “Codes for the representation of currencies and funds”. Please refer to Article 230 of the Council Directive 2006/112/EC [2] for more information.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-7">
-		<TermName>Value added tax point date</TermName>
+		<TermName>Tax reference day</TermName>
 		<Definition>The date when the VAT becomes accountable for the Seller and for the Buyer in so far as that date can be determined and differs from the date of issue of the invoice, according to the VAT directive.</Definition>
 		<Description>The tax point is usually the date goods were supplied or services completed (the 'basic tax point'). There are some variations. Please refer to Article 226 (7) of the Council Directive 2006/112/EC [2] for more information. 
 This element is required if the Value added tax point date is different from the Invoice issue date. 
@@ -54,6 +55,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Buyer reference</TermName>
 		<Definition>An identifier assigned by the Buyer used for internal routing purposes.</Definition>
 		<Description>The identifier is defined by the Buyer (e.g. contact ID, department, office id, project code), but provided by the Seller in the Invoice.</Description>
+		<DisplayName>Buyer reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-11">
 		<TermName>Project reference</TermName>
@@ -103,7 +105,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Definition>A textual value that specifies where to book the relevant data into the Buyer's financial accounts.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-20">
-		<TermName>Payment terms</TermName>
+		<TermName>Terms</TermName>
 		<Definition>A textual description of the payment terms that apply to the amount due for payment (Including description of possible penalties).</Definition>
 		<Description>This element may contain multiple lines and multiple terms. </Description>
 	</BusinessTerm>
@@ -117,7 +119,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>To be chosen from the entries in UNTDID 4451 [6]. </Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-22">
-		<TermName>Invoice note</TermName>
+		<TermName>Fax</TermName>
 		<Definition>A textual note that gives unstructured information that is relevant to the Invoice as a whole.</Definition>
 		<Description>Such as the reason for any correction or assignment note in case the invoice has been factored</Description>
 	</BusinessTerm>
@@ -136,7 +138,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>This identifies compliance or conformance to this document. Compliant invoices specify: urn:cen.eu:en16931:2017. Invoices, compliant to a user specification may identify that user specification here. No identification scheme is to be used.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-3">
-		<TermName>PRECEDING INVOICE REFERENCE</TermName>
+		<TermName>Preceding invoice reference</TermName>
 		<Definition>A group of business terms providing information on one or more preceding Invoices.</Definition>
 		<Description>To be used in case:
 - a preceding invoice is corrected
@@ -144,7 +146,7 @@ The Value added tax point date code is used if the Value added tax point date is
 -preceding pre-payment invoices are referred to from a final invoice</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-25">
-		<TermName>Preceding Invoice reference</TermName>
+		<TermName>Preceding invoice reference</TermName>
 		<Definition>The identification of an Invoice that was previously sent by the Seller.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-26">
@@ -153,7 +155,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>The Preceding Invoice issue date shall be provided in case the Preceding Invoice identifier is not unique.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-4">
-		<TermName>SELLER</TermName>
+		<TermName>Seller</TermName>
 		<Definition>A group of business terms providing information about the Seller. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-27">
@@ -179,8 +181,8 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-30">
 		<TermName>Seller legal registration identifier</TermName>
 		<Definition>An identifier issued by an official registrar that identifies the Seller as a legal entity or person.</Definition>
-		<Description>If no identification scheme is specified, it should be known by Buyer and Seller. </Description>
-		<DisplayName>Legal registration identifier</DisplayName>
+		<Description>If no identification scheme is specified, it should be known by Buyer and Seller.</Description>
+		<DisplayName>Id</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-30-1">
 		<TermName>Scheme identifier</TermName>
@@ -191,7 +193,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller VAT identifier</TermName>
 		<Definition>The Seller's VAT identifier (also known as Seller VAT identification number).</Definition>
 		<Description>VAT number prefixed by a country code. A VAT registered Supplier shall include his VAT ID, except when he uses a tax representative.</Description>
-		<DisplayName>VAT identifier</DisplayName>
+		<DisplayName>VAT no.</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-32">
 		<TermName>Seller tax registration identifier</TermName>
@@ -199,7 +201,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>This information may affect how the Buyer settles the payment (such as for social security fees). E.g. in some countries, if the Seller is not registered as a tax paying entity then the Buyer is required to withhold the amount of the tax and pay it on behalf of the Seller.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-33">
-		<TermName>Seller additional legal information</TermName>
+		<TermName>Additional seller's information</TermName>
 		<Definition>Additional legal information relevant for the Seller. </Definition>
 		<Description>Such as share capital. </Description>
 	</BusinessTerm>
@@ -213,7 +215,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>The scheme identifier shall be chosen from a list to be maintained by the Connecting Europe Facility.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-5">
-		<TermName>SELLER POSTAL ADDRESS</TermName>
+		<TermName>Seller postal address</TermName>
 		<Definition>A group of business terms providing information about the address of the Seller.</Definition>
 		<Description>Sufficient components of the address are to be filled to comply with legal requirements. </Description>
 		<DisplayName>Address</DisplayName>
@@ -257,7 +259,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BG-6">
-		<TermName>SELLER CONTACT</TermName>
+		<TermName>Seller contact</TermName>
 		<Definition>A group of business terms providing contact information about the Seller. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-41">
@@ -270,16 +272,16 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-42">
 		<TermName>Seller contact telephone number</TermName>
 		<Definition>A phone number for the contact point. </Definition>
-		<DisplayName>Telephone number</DisplayName>
+		<DisplayName>Phone</DisplayName>
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-43">
 		<TermName>Seller contact email address</TermName>
 		<Definition>An e-mail address for the contact point. </Definition>
-		<DisplayName>E-mail address</DisplayName>
+		<DisplayName>E-mail</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-7">
-		<TermName>BUYER</TermName>
+		<TermName>Buyer</TermName>
 		<Definition>A group of business terms providing information about the Buyer. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-44">
@@ -332,7 +334,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>The scheme identifier shall be chosen from a list to be maintained by the Connecting Europe Facility.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-8">
-		<TermName>BUYER POSTAL ADDRESS</TermName>
+		<TermName>Buyer postal address</TermName>
 		<Definition>A group of business terms providing information about the postal address for the Buyer.</Definition>
 		<Description>Sufficient components of the address are to be filled to comply with legal requirements. </Description>
 		<DisplayName>Address</DisplayName>
@@ -377,7 +379,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BG-9">
-		<TermName>BUYER CONTACT</TermName>
+		<TermName>Buyer contact</TermName>
 		<Definition>A group of business terms providing contact information relevant for the Buyer.</Definition>
 		<Description>Contact details can be given by the Buyer at the time of the ordering or as master data exchanged prior to ordering. Contact details should not be used for the purpose of routing the received Invoice internally by the recipient; the Buyer reference identifier should be used for this purpose.</Description>
 	</BusinessTerm>
@@ -395,10 +397,10 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-58">
 		<TermName>Buyer contact email address</TermName>
 		<Definition>An e-mail address for the contact point. </Definition>
-		<DisplayName>e-mail</DisplayName>
+		<DisplayName>Email</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-10">
-		<TermName>PAYEE</TermName>
+		<TermName>Payee</TermName>
 		<Definition>A group of business terms providing information about the Payee, i.e. the role that receives the payment.</Definition>
 		<Description>The role of Payee may be fulfilled by another party than the Seller, e.g. a factoring service.</Description>
 	</BusinessTerm>
@@ -430,7 +432,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-11">
-		<TermName>SELLER TAX REPRESENTATIVE PARTY</TermName>
+		<TermName>Seller tax representative party</TermName>
 		<Definition>A group of business terms providing information about the Seller's tax representative.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-62">
@@ -441,10 +443,10 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller tax representative VAT identifier</TermName>
 		<Definition>The VAT identifier of the Seller's tax representative party.</Definition>
 		<Description>VAT number prefixed by a country code based on EN ISO 3166-1 "Codes for the representation of names of countries and their subdivisions".</Description>
-		<DisplayName>VAT identifier</DisplayName>
+		<DisplayName>VAT no.</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-12">
-		<TermName>SELLER TAX REPRESENTATIVE POSTAL ADDRESS</TermName>
+		<TermName>Seller tax representative postal address</TermName>
 		<Definition>A group of business terms providing information about the postal address for the tax representative party.</Definition>
 		<Description>The Seller tax representative name/postal address shall be provided in the invoice, if the Seller has a tax representative who is liable to pay the VAT due. Sufficient components of the address are to be filled to comply with legal requirements.</Description>
 	</BusinessTerm>
@@ -481,7 +483,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>Country where VAT is liable. The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-13">
-		<TermName>DELIVERY INFORMATION</TermName>
+		<TermName>Delivery information</TermName>
 		<Definition>A group of business terms providing information about where and when the goods and services invoiced are delivered.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-70">
@@ -505,7 +507,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Definition>the date on which the supply of goods or services was made or completed.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BG-14">
-		<TermName>INVOICING PERIOD</TermName>
+		<TermName>Invoicing period</TermName>
 		<Definition>A group of business terms providing information on the invoice period.</Definition>
 		<Description>Used to indicate when the period covered by the invoice starts and when it ends. Also called delivery period.</Description>
 	</BusinessTerm>
@@ -522,10 +524,10 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>Period end date</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-15">
-		<TermName>DELIVER TO ADDRESS</TermName>
+		<TermName>Delivery location</TermName>
 		<Definition>A group of business terms providing information about the address to which goods and services invoiced were or are delivered.</Definition>
 		<Description>In the case of pick-up, the deliver to address is the pick-up address. Sufficient components of the address are to be filled to comply with legal requirements.</Description>
-		<DisplayName>Address</DisplayName>
+		<DisplayName>Delivery location</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-75">
 		<TermName>Deliver to address line 1</TermName>
@@ -567,7 +569,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BG-16">
-		<TermName>PAYMENT INSTRUCTIONS</TermName>
+		<TermName>Payment means</TermName>
 		<Definition>A group of business terms providing information about the payment. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-81">
@@ -592,11 +594,11 @@ If remittance information is structured according to the ISO 11649:2009 standard
 If remittance information is to be mapped to the End To End Identification field or to the Structured Remittance Information Creditor Reference field in SEPA payments messages, then in addition to the Latin character set restriction, the content shall not start or end with a '/' and the content shall not contain '//'s. See reference [15].</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-17">
-		<TermName>CREDIT TRANSFER</TermName>
+		<TermName>Transfer</TermName>
 		<Definition>A group of business terms to specify credit transfer payments. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-84">
-		<TermName>Payment account identifier</TermName>
+		<TermName>Account No.</TermName>
 		<Definition>A unique identifier of the financial payment account, at a payment service provider, to which payment should be made.</Definition>
 		<Description>Such as IBAN (in case of a SEPA payment) or a national account number.</Description>
 	</BusinessTerm>
@@ -605,7 +607,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Definition>The name of the payment account, at a payment service provider, to which payment should be made.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-86">
-		<TermName>Payment service provider identifier</TermName>
+		<TermName>Bank</TermName>
 		<Definition>An identifier for the payment service provider where a payment account is located.</Definition>
 		<Description>Such as a BIC or a national clearing code where required. No identification scheme to be used.</Description>
 	</BusinessTerm>
@@ -613,7 +615,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Card network identifier</TermName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-18">
-		<TermName>PAYMENT CARD INFORMATION</TermName>
+		<TermName>Payment card information</TermName>
 		<Definition>A group of business terms providing information about card used for payment contemporaneous with invoice issuance.</Definition>
 		<Description>Only used if the Buyer had opted to pay by using a payment card such as a credit or debit card.</Description>
 	</BusinessTerm>
@@ -627,7 +629,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Definition>The name of the payment card holder. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BG-19">
-		<TermName>DIRECT DEBIT</TermName>
+		<TermName>Direct debit</TermName>
 		<Definition>A group of business terms to specify a direct debit.</Definition>
 		<Description>This group may be used to give prior notice in the invoice that payment will be made through a SEPA or other direct debit initiated by the Seller, in accordance with the rules of the SEPA or other direct debit scheme.</Description>
 	</BusinessTerm>
@@ -647,7 +649,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Definition>The account to be debited by the direct debit. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BG-20">
-		<TermName>DOCUMENT LEVEL ALLOWANCES</TermName>
+		<TermName>Document level allowances</TermName>
 		<Definition>A group of business terms providing information about allowances applicable to the Invoice as a whole.</Definition>
 		<Description>Deductions, such as withheld tax may also be specified in this group. </Description>
 		<DisplayName>ALLOWANCES</DisplayName>
@@ -699,7 +701,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Reason code</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-21">
-		<TermName>DOCUMENT LEVEL CHARGES</TermName>
+		<TermName>Document level charges</TermName>
 		<Definition>A group of business terms providing information about charges and taxes other than VAT, applicable to the Invoice as a whole.</Definition>
 		<DisplayName>CHARGES</DisplayName>
 	</BusinessTerm>
@@ -750,11 +752,11 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Reason code</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-22">
-		<TermName>DOCUMENT TOTALS</TermName>
+		<TermName>Document totals</TermName>
 		<Definition>A group of business terms providing the monetary totals for the Invoice. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-106">
-		<TermName>Sum of Invoice line net amount</TermName>
+		<TermName>Total</TermName>
 		<Definition>Sum of all Invoice line net amounts in the Invoice. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-107">
@@ -768,22 +770,22 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>Charges on line level are included in the Invoice line net amount which is summed up into the Sum of Invoice line net amount.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-109">
-		<TermName>Invoice total amount without VAT</TermName>
+		<TermName>Total amount without VAT</TermName>
 		<Definition>The total amount of the Invoice without VAT.</Definition>
 		<Description>The Invoice total amount without VAT is the Sum of Invoice line net amount minus Sum of allowances on document level plus Sum of charges on document level.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-110">
-		<TermName>Invoice total VAT amount</TermName>
+		<TermName>VAT total</TermName>
 		<Definition>The total VAT amount for the Invoice.</Definition>
 		<Description>The Invoice total VAT amount is the sum of all VAT category tax amounts.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-111">
-		<TermName>Invoice total VAT amount in accounting currency</TermName>
+		<TermName>Total VAT amount in accounting currency</TermName>
 		<Definition>The VAT total amount expressed in the accounting currency accepted or required in the country of the Seller.</Definition>
 		<Description>To be used when the VAT accounting currency (BT-6) differs from the Invoice currency code (BT-5) in accordance with article 230 of Directive 2006/112 / EC on VAT. The VAT amount in accounting currency is not used in the calculation of the Invoice totals.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-112">
-		<TermName>Invoice total amount with VAT</TermName>
+		<TermName>Total amount with VAT</TermName>
 		<Definition>The total amount of the Invoice with VAT.</Definition>
 		<Description>The Invoice total amount with VAT is the Invoice total amount without VAT plus the Invoice total VAT amount.</Description>
 	</BusinessTerm>
@@ -797,26 +799,26 @@ If remittance information is to be mapped to the End To End Identification field
 		<Definition>The amount to be added to the invoice total to round the amount to be paid.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-115">
-		<TermName>Amount due for payment</TermName>
+		<TermName>Amount payable</TermName>
 		<Definition>The outstanding amount that is requested to be paid.</Definition>
 		<Description>This amount is the Invoice total amount with VAT minus the paid amount that has been paid in advance. The amount is zero in case of a fully paid Invoice. The amount may be negative; in that case the Seller owes the amount to the Buyer.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-23">
-		<TermName>VAT BREAKDOWN</TermName>
+		<TermName>VAT breakdown</TermName>
 		<Definition>A group of business terms providing information about VAT breakdown by different categories, rates and exemption reasons</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-116">
-		<TermName>VAT category taxable amount</TermName>
+		<TermName>Taxable amount</TermName>
 		<Definition>Sum of all taxable amounts subject to a specific VAT category code and VAT category rate (if the VAT category rate is applicable).</Definition>
 		<Description>The sum of Invoice line net amount minus allowances plus charges on document level which are subject to a specific VAT category code and VAT category rate (if the VAT category rate is applicable).</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-117">
-		<TermName>VAT category tax amount</TermName>
+		<TermName>Tax</TermName>
 		<Definition>The total VAT amount for a given VAT category.</Definition>
 		<Description>Calculated by multiplying the VAT category taxable amount with the VAT category rate for the relevant VAT category.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-118">
-		<TermName>VAT category code</TermName>
+		<TermName>Tax overview</TermName>
 		<Definition>Coded identification of a VAT category.</Definition>
 		<Description>The following entries of UNTDID 5305 [6] are used (further clarification between brackets):
 - Standard rate (Liable for VAT in a standard way)
@@ -845,7 +847,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>Code list issued and maintained by the Connecting Europe Facility.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-24">
-		<TermName>ADDITIONAL SUPPORTING DOCUMENTS</TermName>
+		<TermName>Additional supporting documents</TermName>
 		<Definition>A group of business terms providing information about additional supporting documents substantiating the claims made in the Invoice.</Definition>
 		<Description>The additional supporting documents can be used for both referencing a document number which is expected to be known by the receiver, an external document (referenced by a URL) or as an embedded document (such as a time report in pdf). The option to link to an external document will be needed, for example in the case of large attachments and/or when sensitive information, e.g. person-related services, has to be separated from the Invoice itself.</Description>
 	</BusinessTerm>
@@ -890,7 +892,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Filename</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-25">
-		<TermName>INVOICE LINE</TermName>
+		<TermName>Invoice line</TermName>
 		<Definition>A group of business terms providing information on individual Invoice lines.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-126">
@@ -929,7 +931,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Invoice line net amount</TermName>
 		<Definition>The total amount of the Invoice line.</Definition>
 		<Description>The amount is “net” without VAT, i.e. inclusive of line level allowances and charges as well as other relevant taxes.</Description>
-		<DisplayName>Net amount</DisplayName>
+		<DisplayName>Amount</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-132">
 		<TermName>Referenced purchase order line reference</TermName>
@@ -943,7 +945,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>If required, this reference shall be provided by the Buyer to the Seller prior to the issuing of the Invoice.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-26">
-		<TermName>INVOICE LINE PERIOD</TermName>
+		<TermName>Invoice line period</TermName>
 		<Definition>A group of business terms providing information about the period relevant for the Invoice line.</Definition>
 		<Description>Is also called Invoice line delivery period. </Description>
 	</BusinessTerm>
@@ -958,7 +960,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>The date is the last day of the period. </Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-27">
-		<TermName>INVOICE LINE ALLOWANCES</TermName>
+		<TermName>Invoice line allowances</TermName>
 		<Definition>A group of business terms providing information about allowances applicable to the individual Invoice line.</Definition>
 		<DisplayName>Allowance</DisplayName>
 	</BusinessTerm>
@@ -985,7 +987,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>Use entries of the UNTDID 5189 code list [6]. The Invoice line level allowance reason code and the Invoice line level allowance reason shall indicate the same allowance reason.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-28">
-		<TermName>INVOICE LINE CHARGES</TermName>
+		<TermName>Invoice line charges</TermName>
 		<Definition>A group of business terms providing information about charges and taxes other than VAT applicable to the individual Invoice line.</Definition>
 		<Description>All charges and taxes are assumed to be liable to the same VAT rate as the Invoice line.</Description>
 		<DisplayName>Charge</DisplayName>
@@ -1013,14 +1015,14 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>Use entries of the UNTDID 7161 code list [6]. The Invoice line charge reason code and the Invoice line charge reason shall indicate the same charge reason.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-29">
-		<TermName>PRICE DETAILS</TermName>
+		<TermName>Price details</TermName>
 		<Definition>A group of business terms providing information about the price applied for the goods and services invoiced on the Invoice line.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-146">
 		<TermName>Item net price</TermName>
 		<Definition>The price of an item, exclusive of VAT, after subtracting item price discount.</Definition>
 		<Description>The Item net price has to be equal with the Item gross price less the Item price discount.</Description>
-		<DisplayName>Net price</DisplayName>
+		<DisplayName>Unit amount</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-147">
 		<TermName>Item price discount</TermName>
@@ -1042,7 +1044,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>The Item price base quantity unit of measure shall be the same as the Invoiced quantity unit of measure (BT-130).</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BG-30">
-		<TermName>LINE VAT INFORMATION</TermName>
+		<TermName>Line VAT information</TermName>
 		<Definition>A group of business terms providing information about the VAT applicable for the goods and services invoiced on the Invoice line.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-151">
@@ -1058,14 +1060,14 @@ If remittance information is to be mapped to the End To End Identification field
 - Services outside scope of tax (Sale is not subject to VAT/IGIC/IPSI)
 - Canary Islands General Indirect Tax (Liable for IGIC tax)
 - Liable for IPSI (Ceuta/Melilla tax)</Description>
-		<DisplayName>VAT rate</DisplayName>
+		<DisplayName>VAT</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-152">
 		<TermName>Invoiced item VAT rate</TermName>
 		<Definition>The VAT rate, represented as percentage that applies to the invoiced item.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BG-31">
-		<TermName>ITEM INFORMATION</TermName>
+		<TermName>Item information</TermName>
 		<Definition>A group of business terms providing information about the goods and services invoiced.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-153">
@@ -1080,12 +1082,12 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Description</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-155">
-		<TermName>Item Seller's identifier</TermName>
+		<TermName>Item seller's identifier</TermName>
 		<Definition>An identifier, assigned by the Seller, for the item.</Definition>
-		<DisplayName>Seller's ID</DisplayName>
+		<DisplayName>Item no.</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-156">
-		<TermName>Item Buyer's identifier</TermName>
+		<TermName>Item buyer's identifier</TermName>
 		<Definition>An identifier, assigned by the Buyer, for the item.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-157">
@@ -1121,7 +1123,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Country of origin</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-32">
-		<TermName>ITEM ATTRIBUTES</TermName>
+		<TermName>Item attributes</TermName>
 		<Definition>A group of business terms providing information about properties of the goods and services invoiced.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-160">
