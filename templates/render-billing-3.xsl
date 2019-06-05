@@ -10,7 +10,7 @@
     xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2"
     xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
     xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts sdt udt">
-    <xsl:import href="../CommonTemplates.xsl"/>
+    <xsl:import href="billing-3/CommonTemplates.xsl"/>
     <xsl:output method="html" doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" doctype-system="http://www.w3.org/TR/html4/loose.dtd" indent="yes"/>
     <xsl:strip-space elements="*"/>
     <xsl:param name="stylesheet_url" select="'NONE'"/>

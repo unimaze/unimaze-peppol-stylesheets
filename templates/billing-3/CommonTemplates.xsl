@@ -2,9 +2,9 @@
 <!--
 ******************************************************************************************************************
 
-		PEPPOL Instance Documentation title= PEPPOL_BIS 4A/5ACommonTemplates.xml publisher= "SFTI tekniska kansli" Creator= SFTI/SL created= 2014-02-12 conformsTo= UBL-Invoice-2.1.xsd description= "Common templates for displaying PEPPOL BIS 4A/5A, version 2.0 (Invoice and Credit note)"
+		PEPPOL Instance Documentation title= PEPPOL-BIS-EN-UBL-3.0-CommonTemplates.xml publisher= "Unimaze Software" Creator= "Unimaze SoftwareW created= 2019-02-12 conformsTo= UBL-Invoice-2.1.xsd description= "Common templates for displaying BISENUBL-3.0 - PEPPOL BIS, European Norm, version 3.0 (Invoice and Credit note)"
 
-		Derived from work by OIOUBL, Denmark. For more information, see www.sfti.se or email tekniskt.kansli@skl.se
+		Derived from work by SFTI, Sweden anbd OIOUBL, Denmark. For more information, see www.unimaze.com or email info at unimaze dot com
 
 ******************************************************************************************************************
 -->
@@ -20,41 +20,39 @@
     xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
     xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
     exclude-result-prefixes="n1 n2 cac cdl cbc ccts sdt udt">
-    <xsl:include href="user_config.xsl" />
+    <xsl:include href="../common/user_config.xsl" />
     <xsl:variable name="moduleDocBT_en" select="document('Headlines-BT_en.xml')" />
     <xsl:variable name="moduleDocBT" select="document(concat('Headlines-BT_', $languageCode, '.xml'))" />
     <xsl:variable name="moduleDocUMZBT_en" select="document('Headlines-UMZ-BT_en.xml')" />
     <xsl:variable name="moduleDocUMZBT" select="document(concat('Headlines-UMZ-BT_', $languageCode, '.xml'))" />
     <xsl:variable name="invoiceBaseType" select="document(concat('UBLInvoiceBaseType_',$languageCode, '.xml'))" />
-    <xsl:variable name="UNCL1001" select="document(concat('UNCL1001_', $languageCode, '.xml'))" />
-    <xsl:variable name="UNCL4461" select="document(concat('UNCL4461_', $languageCode, '.xml'))" />
-    <xsl:variable name="UNCL7161" select="document(concat('UNCL7161_', $languageCode, '.xml'))" />
-    <xsl:variable name="UNCL5189" select="document(concat('UNCL5189_', $languageCode, '.xml'))" />
-    <xsl:variable name="UBLDescriptionCode"
-        select="document(concat('UBLPeriodDescriptionCode_', $languageCode, '.xml'))" />
-    <xsl:variable name="UBLTaxCategoryCode" select="document(concat('UBLTaxCategoryCode_', $languageCode, '.xml'))" />
-    <xsl:variable name="UBLClassificationCode"
-        select="document(concat('UBLClassificationCode_', $languageCode, '.xml'))" />
-    <xsl:variable name="UNECE" select="document(concat('UNECE_', $languageCode, '.xml'))" />
-    <xsl:variable name="UNCL1001_en" select="document('UNCL1001_en.xml')" />
-    <xsl:variable name="UNCL4461_en" select="document('UNCL4461_en.xml')" />
-    <xsl:variable name="UNCL7161_en" select="document('UNCL7161_en.xml')" />
-    <xsl:variable name="UNCL5189_en" select="document('UNCL5189_en.xml')" />
-    <xsl:variable name="UBLDescriptionCode_en" select="document('UBLPeriodDescriptionCode_en.xml')" />
-    <xsl:variable name="UBLTaxCategoryCode_en" select="document('UBLTaxCategoryCode_en.xml')" />
-    <xsl:variable name="UBLClassificationCode_en" select="document('UBLClassificationCode_en.xml')" />
+    <xsl:variable name="UNCL1001" select="document(concat('../common/UNCL1001_', $languageCode, '.xml'))" />
+    <xsl:variable name="UNCL4461" select="document(concat('../common/UNCL4461_', $languageCode, '.xml'))" />
+    <xsl:variable name="UNCL7161" select="document(concat('../common/UNCL7161_', $languageCode, '.xml'))" />
+    <xsl:variable name="UNCL5189" select="document(concat('../common/UNCL5189_', $languageCode, '.xml'))" />
+    <xsl:variable name="UBLDescriptionCode" select="document(concat('../common/UBLPeriodDescriptionCode_', $languageCode, '.xml'))" />
+    <xsl:variable name="UBLTaxCategoryCode" select="document(concat('../common/UBLTaxCategoryCode_', $languageCode, '.xml'))" />
+    <xsl:variable name="UBLClassificationCode" select="document(concat('../common/UBLClassificationCode_', $languageCode, '.xml'))" />
+    <xsl:variable name="UNECE" select="document(concat('../common/UNECE_', $languageCode, '.xml'))" />
+    <xsl:variable name="UNCL1001_en" select="document('../common/UNCL1001_en.xml')" />
+    <xsl:variable name="UNCL4461_en" select="document('../common/UNCL4461_en.xml')" />
+    <xsl:variable name="UNCL7161_en" select="document('../common/UNCL7161_en.xml')" />
+    <xsl:variable name="UNCL5189_en" select="document('../common/UNCL5189_en.xml')" />
+    <xsl:variable name="UBLDescriptionCode_en" select="document('../common/UBLPeriodDescriptionCode_en.xml')" />
+    <xsl:variable name="UBLTaxCategoryCode_en" select="document('../common/UBLTaxCategoryCode_en.xml')" />
+    <xsl:variable name="UBLClassificationCode_en" select="document('../common/UBLClassificationCode_en.xml')" />
     <xsl:variable name="invoiceBaseType_en" select="document('UBLInvoiceBaseType_en.xml')" />
-    <xsl:variable name="UNECE_en" select="document('UNECE_en.xml')" />
+    <xsl:variable name="UNECE_en" select="document('../common/UNECE_en.xml')" />
     <xsl:variable name="table_item_ID" select="cbc:ID" />
     <xsl:template match="/">
         <xsl:apply-templates />
     </xsl:template>
-    <!-- En function som i första hand tar DisplayName och i andra hand Business Termför språk istället för i varje xpath -->
+    <!-- A function which will choose first DisplayName, then Business Term for the installed language for every xpath -->
     <xsl:template name="LabelName">
         <xsl:param name="BT-ID" />
         <!-- BT inparameter -->
         <xsl:param name="Colon-Suffix" />
-        <!-- true/false om kolon ska läggas till efter business term name-->
+        <!-- true/false whether the a colon will be added after the business term name-->
         <xsl:choose>
             <xsl:when test="$moduleDocBT/SemanticModel/BusinessTerm[@id=$BT-ID]/DisplayName">
                 <xsl:value-of select="$moduleDocBT/SemanticModel/BusinessTerm[@id=$BT-ID]/DisplayName" />
@@ -80,7 +78,7 @@
         <xsl:param name="BT-ID" />
         <!-- BT inparameter -->
         <xsl:param name="Colon-Suffix" />
-        <!-- true/false om kolon ska läggas till efter business term name-->
+        <!-- true/false whether the a colon will be added after the business term name-->
         <xsl:choose>
             <xsl:when test="$moduleDocUMZBT/SemanticModel/BusinessTerm[@id=$BT-ID]/DisplayName">
                 <xsl:value-of select="$moduleDocUMZBT/SemanticModel/BusinessTerm[@id=$BT-ID]/DisplayName" />
@@ -128,15 +126,15 @@
                         </xsl:if>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:variable name="decimals" select="'00'" />
+                        <xsl:variable name="decimals2" select="'00'" />
                         <xsl:if test="$country = 'is'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimals)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimals2)" />
                         </xsl:if>
                         <xsl:if test="$country = 'en'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimals)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimals2)" />
                         </xsl:if>
                         <xsl:if test="$country = 'se'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimals)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimals2)" />
                         </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
