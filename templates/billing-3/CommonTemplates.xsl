@@ -104,6 +104,7 @@
         <xsl:param name="currencyvalue" />
         <xsl:param name="country" />
         <xsl:variable name="integers" select="substring-before($currencyvalue, '.')" />
+        <xsl:variable name="decimalAddition" select="'00'" />
         <xsl:variable name="transformedIntegers_is"
                     select="translate(format-number(number($integers), '#,###'), ',', '.' )" />
         <xsl:variable name="transformedIntegers_en"
@@ -126,15 +127,14 @@
                         </xsl:if>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:variable name="decimals2" select="'00'" />
                         <xsl:if test="$country = 'is'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimals2)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimalAddition)" />
                         </xsl:if>
                         <xsl:if test="$country = 'en'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimals2)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimalAddition)" />
                         </xsl:if>
                         <xsl:if test="$country = 'se'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimals2)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimalAddition)" />
                         </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
@@ -153,15 +153,14 @@
                         </xsl:if>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:variable name="decimals" select="'00'" />
                         <xsl:if test="$country = 'is'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimals)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimalAddition)" />
                         </xsl:if>
                         <xsl:if test="$country = 'en'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimals)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimalAddition)" />
                         </xsl:if>
                         <xsl:if test="$country = 'se'">
-                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimals)" />
+                            <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimalAddition)" />
                         </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
