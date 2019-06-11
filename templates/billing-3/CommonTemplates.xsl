@@ -1797,7 +1797,7 @@
             <div class="invoice_table_body_data text_right">
                 <xsl:choose>
                     <xsl:when test="((cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !='') and (cbc:LineExtensionAmount !=''))">
-                        <xsl:variable name="taxInclusiveAmount" select="format-number(sum((number(cac:Item/cac:ClassifiedTaxCategory/cbc:Percent) div 100)*number(cbc:LineExtensionAmount)+number(cbc:LineExtensionAmount)),'#.00')" />
+                        <xsl:variable name="taxInclusiveAmount" select="format-number((number(cac:Item/cac:ClassifiedTaxCategory/cbc:Percent) div 100)*number(cbc:LineExtensionAmount)+number(cbc:LineExtensionAmount),'#.00')" />
                         <xsl:call-template name="Currency">
                             <xsl:with-param name="currencyvalue" select="$taxInclusiveAmount" />
                             <xsl:with-param name="country" select="$languageCode" />
@@ -1806,7 +1806,7 @@
                     <xsl:otherwise>
                         <xsl:choose>
                             <xsl:when test="((cac:TaxTotal/cbc:TaxAmount !='') and (cbc:LineExtensionAmount !=''))">
-                                <xsl:variable name="taxInclusiveAmount" select="format-number(sum(round(number(cbc:LineExtensionAmount))+round(number(cac:TaxTotal/cbc:TaxAmount))),'#.00')" />
+                                <xsl:variable name="taxInclusiveAmount" select="format-number(round(number(cbc:LineExtensionAmount))+round(number(cac:TaxTotal/cbc:TaxAmount)),'#.00')" />
                                 <xsl:call-template name="Currency">
                                     <xsl:with-param name="currencyvalue" select="$taxInclusiveAmount" />
                                     <xsl:with-param name="country" select="$languageCode" />
