@@ -1,7 +1,9 @@
-# README
+# UniStyles - README
 
 This template is being implemented by Unimaze Software with feedback from the FUT Technical Committee of Icelandic Standards, which 
 is a member of the European standards organizations CEN, CENELEC and ETSI as well as the international standards organizations ISO and IEC.
+
+Common language files were derived and adapted from the work of SFTI in Sweden and OIOUBL in Denmark.
 
 ## Objectives
 The implementation of this template aims to:
@@ -21,3 +23,8 @@ Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7 
 ## Use and adaptation of the stylesheet
 Please refer to the README in the `template` folder for instructions on:
 - Adding a new language.
+
+## Licensing
+GNU General Public Licence v3.0
+
+See [LICENSE.TXT](LICENSE.TXT) to see the full text.
