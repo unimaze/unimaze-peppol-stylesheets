@@ -1,19 +1,6 @@
-# Readme:
+# USAGE AND CUSTOMIZATION
 
-This template is being implemented by Unimaze Software with feedback from the FUT Technical Committee of Icelandic Standards, which 
-is a member of the European standards organizations CEN, CENELEC and ETSI as well as the international standards organizations ISO and IEC.
-
-#Mission
-The implementation of this template aims to:
-- Provide easy visual access to most relevant data the accountant needs.
-- Distinguish easily between invoice and credit note.
-- Suppport most XSLT processors.
-- Be purely HTML and CSS based (no Javascript shall be used).
-
-#Requirements
-Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7.
-
-#Adding a new language
+## Adding a new language
 In order to add another language to the stylesheet, there are a few steps.
 
 `*` is your language code
@@ -51,5 +38,7 @@ The relevant code lists are:
 * UNCL7161_&ast;.xml --> Charge reason code
 * UNECE_&ast;.xml --> Unit of measure code
 
+## Setting the default language
+Open the user_config.xsl and under the tag: `<xsl:variable name="lang" select="'*'"/>` change the `*` to your language code, corresponding to the `*` in your file names.
 
-Finally, open the user_config.xsl and under the tag: `<xsl:variable name="lang" select="'*'"/>` change the `*` to your language code, correspondign to the `*` in your file names.
+The language can be changed in runtime by setting the `lang` XSLT parameter when invoking the transaction.
