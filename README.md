@@ -3,7 +3,7 @@
 
 [![Version](https://img.shields.io/github/issues/unimaze/unimaze-peppol-stylesheets.svg)](https://github.com/unimaze/unimaze-peppol-stylesheets/issues)
 [![Contributors](https://img.shields.io/github/contributors/unimaze/unimaze-peppol-stylesheets.svg)](https://github.com/unimaze/unimaze-peppol-stylesheets/graphs/contributors)
-[![Version](https://img.shields.io/github/release/unimaze/unimaze-peppol-stylesheets.svg](https://github.com/unimaze/unimaze-peppol-stylesheets/releases)
+[![Version](https://img.shields.io/github/release/unimaze/unimaze-peppol-stylesheets.svg)](https://github.com/unimaze/unimaze-peppol-stylesheets/releases)
 [![License](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)](LICENSE.txt)
  
 This template is being implemented by Unimaze Software with feedback from the FUT Technical Committee of Icelandic Standards, which 
