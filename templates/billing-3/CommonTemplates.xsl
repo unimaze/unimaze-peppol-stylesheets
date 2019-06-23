@@ -103,47 +103,47 @@
     <xsl:template name="Currency">
         <xsl:param name="currencyvalue" />
         <xsl:param name="country" />
-        <xsl:variable name="integers" select="substring-before($currencyvalue, '.')" />
+        <xsl:variable name="integerPart" select="substring-before($currencyvalue, '.')" />
         <xsl:variable name="decimalAddition" select="'00'" />
-        <xsl:variable name="transformedIntegers_is"
-                    select="translate(format-number(number($integers), '#,###'), ',', '.' )" />
-        <xsl:variable name="transformedIntegers_en"
-                    select="translate(format-number(number($integers), '#,###'), ',', ',' )" />
-        <xsl:variable name="transformedIntegers_se"
-                    select="translate(format-number(number($integers), '#,###'), ',', ' ' )" />
+        <xsl:variable name="transformedIntegers_period" select="translate(format-number(number($integerPart), '#,###'), ',', '.' )" />
+        <xsl:variable name="transformedIntegers_comma" select="translate(format-number(number($integerPart), '#,###'), ',', ',' )" />
+        <xsl:variable name="transformedIntegers_space" select="translate(format-number(number($integerPart), '#,###'), ',', ' ' )" />
+        <xsl:variable name="transformedCurrencyValue_period" select="translate(format-number(number($currencyvalue), '#,###'), ',', '.' )" />
+        <xsl:variable name="transformedCurrencyValue_comma" select="translate(format-number(number($currencyvalue), '#,###'), ',', ',' )" />
+        <xsl:variable name="transformedCurrencyValue_space" select="translate(format-number(number($currencyvalue), '#,###'), ',', ' ' )" />
         <xsl:choose>
-            <xsl:when test="$integers != ''">
-                <xsl:variable name="decimals" select="substring-after($currencyvalue, '.')" />
+            <xsl:when test="$integerPart != ''">
+                <xsl:variable name="decimalPart" select="substring-after($currencyvalue, '.')" />
                 <xsl:choose>
-                    <xsl:when test="(($transformedIntegers_is !='NaN') and ($transformedIntegers_en !='NaN') and ($transformedIntegers_se !='NaN'))">
+                    <xsl:when test="(($transformedIntegers_period !='NaN') and ($transformedIntegers_comma !='NaN') and ($transformedIntegers_space !='NaN'))">
                         <xsl:choose>
                             <xsl:when test="$country = 'is'">
-                                <xsl:value-of select="concat($transformedIntegers_is,',', $decimals)" />
+                                <xsl:value-of select="concat($transformedIntegers_period,',', $decimalPart)" />
                             </xsl:when>
                             <xsl:when test="$country = 'en'">
-                                <xsl:value-of select="concat($transformedIntegers_en,'.', $decimals)" />
+                                <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalPart)" />
                             </xsl:when>
                             <xsl:when test="$country = 'se'">
-                                <xsl:value-of select="concat($transformedIntegers_se,',', $decimals)" />
+                                <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="concat($transformedIntegers_se,',', $decimals)" />
+                                <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:choose>
                             <xsl:when test="$country = 'is'">
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_period, ',', $decimalAddition)" />
                             </xsl:when>
                             <xsl:when test="$country = 'en'">
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_comma, '.', $decimalAddition)" />
                             </xsl:when>
                             <xsl:when test="$country = 'se'">
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_space, ',', $decimalAddition)" />
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_space, ',', $decimalAddition)" />
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:otherwise>
@@ -151,35 +151,35 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
-                    <xsl:when test="(($transformedIntegers_is !='NaN') and ($transformedIntegers_en !='NaN') and ($transformedIntegers_se !='NaN'))">
+                    <xsl:when test="(($transformedIntegers_period !='NaN') and ($transformedIntegers_comma !='NaN') and ($transformedIntegers_space !='NaN'))">
                         <xsl:choose>
                             <xsl:when test="$country = 'is'">
-                                <xsl:value-of select="$transformedIntegers_is" />
+                                <xsl:value-of select="$transformedIntegers_period" />
                             </xsl:when>
                             <xsl:when test="$country = 'en'">
-                                <xsl:value-of select="$transformedIntegers_en" />
+                                <xsl:value-of select="$transformedIntegers_comma" />
                             </xsl:when>
                             <xsl:when test="$country = 'se'">
-                                <xsl:value-of select="$transformedIntegers_se" />
+                                <xsl:value-of select="$transformedIntegers_space" />
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="$transformedIntegers_se" />
+                                <xsl:value-of select="$transformedIntegers_space" />
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:choose>
                             <xsl:when test="$country = 'is'">
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', '.' ), ',',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_period, ',',$decimalAddition)" />
                             </xsl:when>
                             <xsl:when test="$country = 'en'">
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ',' ), '.',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_comma, '.',$decimalAddition)" />
                             </xsl:when>
                             <xsl:when test="$country = 'se'">
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_space, ',',$decimalAddition)" />
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="concat(translate(format-number(number($currencyvalue),'#,###'), ',', ' ' ), ',',$decimalAddition)" />
+                                <xsl:value-of select="concat($transformedCurrencyValue_space, ',',$decimalAddition)" />
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:otherwise>
@@ -297,17 +297,24 @@
         <xsl:variable name="month" select="substring-before(substring-after($dateTime, '-'), '-')" />
         <xsl:variable name="day" select="substring-after(substring-after($dateTime, '-'), '-')" />
         <xsl:choose>
-            <xsl:when test="$country = 'is'">
-                <xsl:value-of select="concat($day, '.', $month, '.', $year)" />
-            </xsl:when>
-            <xsl:when test="$country = 'en'">
-                <xsl:value-of select="concat( $month, '/', $day, '/', $year)" />
-            </xsl:when>
-            <xsl:when test="$country = 'se'">
-                <xsl:value-of select="concat($year, '-', $month, '-' , $day)" />
+            <xsl:when test="($year !='') or ($month !='') or ($day !='')">
+                <xsl:choose>
+                    <xsl:when test="$country = 'is'">
+                        <xsl:value-of select="concat($day, '.', $month, '.', $year)" />
+                    </xsl:when>
+                    <xsl:when test="$country = 'en'">
+                        <xsl:value-of select="concat( $month, '/', $day, '/', $year)" />
+                    </xsl:when>
+                    <xsl:when test="$country = 'se'">
+                        <xsl:value-of select="concat($year, '-', $month, '-' , $day)" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="concat($day, '.', $month, '.', $year)" />
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="concat($day, '.', $month, '.', $year)" />
+                <xsl:value-of select="$dateTime" />
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
