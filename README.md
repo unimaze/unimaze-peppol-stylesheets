@@ -1,4 +1,4 @@
-# UniStyles - README
+# README - UniStyles
 
 
 [![Version](https://img.shields.io/github/issues/unimaze/unimaze-peppol-stylesheets.svg)](https://github.com/unimaze/unimaze-peppol-stylesheets/issues)
@@ -9,7 +9,9 @@
 This template is being implemented by Unimaze Software with feedback from the FUT Technical Committee of Icelandic Standards, which 
 is a member of the European standards organizations CEN, CENELEC and ETSI as well as the international standards organizations ISO and IEC.
 
-Common language files were derived and adapted from the work of SFTI in Sweden and OIOUBL in Denmark.
+Common language files were derived and adapted from the work of SFTI in Sweden and OIOUBL in Denmark. Layout and visual appearance was inspired from the work of the  Authoritiy of Iceland and Icelandic Standards.
+
+As part of the POOL-TSPs project and during its duration, the work been co-financed by the European Commission through its eInvoicing 2017 CEF Telecom Call, CEF-TC-2017-3.
 
 ## Objectives
 The implementation of this template aims to:
@@ -28,10 +30,14 @@ List of features:
 Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7 and MSXML 3.0.
 
 ## Use and adaptation of the stylesheet
-Please refer to the README in the `template` folder for instructions on:
+Please refer to the [README](templates/readme.md) in the `template` folder for instructions on:
 - Adding a new language.
 
 ## Licensing
 GNU General Public Licence v3.0
 
 See [LICENSE](LICENSE.txt) for the full text.
+
+---
+
+![CEF - Connecting Europe Facility](resources/en_cef_300x42.png)
