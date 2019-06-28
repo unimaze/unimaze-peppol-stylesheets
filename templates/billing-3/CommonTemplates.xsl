@@ -318,6 +318,70 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <!-- Function to format numbers -->
+    <xsl:template name="NumberFormat">
+        <xsl:param name="value" />
+        <xsl:param name="decimalDigits" />
+        <xsl:param name="country" />
+        <xsl:variable name="integerPart" select="substring-before($value, '.')" />
+        <xsl:variable name="decimalPart" select="substring-after($value, '.')" />
+        <xsl:choose>
+            <xsl:when test="($decimalDigits = 1) or ($decimalDigits = '1')">
+                <xsl:choose>
+                    <xsl:when test="$integerPart != ''">
+                        <xsl:variable name="cutedDecimalPart" select="substring($decimalPart, 1, 1)" />
+                        <xsl:choose>
+                            <xsl:when test="$cutedDecimalPart != '0'">
+                                <xsl:choose>
+                                    <xsl:when test="$country = 'en'">
+                                        <xsl:value-of select="concat($integerPart, '.' , $cutedDecimalPart )" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($integerPart, ',' , $cutedDecimalPart )" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="$integerPart" />
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$value" />
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="($decimalDigits = 2) or ($decimalDigits = '2')">
+                <xsl:choose>
+                    <xsl:when test="$integerPart != ''">
+                        <xsl:variable name="cutedDecimalPart" select="substring($decimalPart, 1, 2)" />
+                        <xsl:choose>
+                            <xsl:when test="$cutedDecimalPart != '00'">
+                                <xsl:choose>
+                                    <xsl:when test="$country = 'en'">
+                                        <xsl:value-of select="concat($integerPart, '.' , $cutedDecimalPart )" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($integerPart, ',' , $cutedDecimalPart )" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="$integerPart" />
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$value" />
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$value" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <!-- Function Replace -->
     <xsl:template name="replace">
         <xsl:param name="string" />
         <xsl:choose>
@@ -865,30 +929,36 @@
     <xsl:template name="SellerContact">
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone !=''">
             <span class="UBLTelephone">
-                <xsl:call-template name="LabelName">
-                    <xsl:with-param name="BT-ID" select="'BT-42'" />
-                    <xsl:with-param name="Colon-Suffix" select="'true'" />
-                </xsl:call-template>
+                <b class="seller_contact_label">
+                    <xsl:call-template name="LabelName">
+                        <xsl:with-param name="BT-ID" select="'BT-42'" />
+                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                    </xsl:call-template>
+                </b>
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone" />
             </span>
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telefax !=''">
             <br />
             <span class="UBLTelefax">
-                <xsl:call-template name="UMZLabelName">
-                    <xsl:with-param name="BT-ID" select="'UMZ-BT-001'" />
-                    <xsl:with-param name="Colon-Suffix" select="'true'" />
-                </xsl:call-template>
+                <b class="seller_contact_label">
+                    <xsl:call-template name="UMZLabelName">
+                        <xsl:with-param name="BT-ID" select="'UMZ-BT-001'" />
+                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                    </xsl:call-template>
+                </b>
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telefax" />
             </span>
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail !=''">
             <br />
             <span class="UBLElectronicMail">
-                <xsl:call-template name="LabelName">
-                    <xsl:with-param name="BT-ID" select="'BT-43'" />
-                    <xsl:with-param name="Colon-Suffix" select="'true'" />
-                </xsl:call-template>
+                <b class="seller_contact_label">
+                    <xsl:call-template name="LabelName">
+                        <xsl:with-param name="BT-ID" select="'BT-43'" />
+                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                    </xsl:call-template>
+                </b>
                 <xsl:apply-templates
                         select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail" />
             </span>
@@ -1787,7 +1857,11 @@
                     <xsl:choose>
                         <xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !=''">
                             <xsl:apply-templates select="cac:Item/cac:ClassifiedTaxCategory/cbc:ID" />
-                            <xsl:apply-templates select="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent" />
+                            <xsl:call-template name="NumberFormat">
+                                <xsl:with-param name="value" select="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent" />
+                                <xsl:with-param name="decimalDigits" select="2" />
+                                <xsl:with-param name="country" select="$languageCode" />
+                            </xsl:call-template>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:apply-templates select="cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID" />
@@ -2161,13 +2235,21 @@
     <xsl:template match="cac:TaxTotal/cac:TaxSubtotal">
         <div class="tax_table_body_data">
             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
-            <xsl:apply-templates select="cac:TaxCategory/cbc:Percent" />
+            <xsl:call-template name="NumberFormat">
+                <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
+                <xsl:with-param name="decimalDigits" select="1" />
+                <xsl:with-param name="country" select="$languageCode" />
+            </xsl:call-template>
         </div>
         <div class="tax_table_body_data">
             <xsl:choose>
                 <xsl:when test="cac:TaxCategory/cbc:Percent !=''">&#160;(
                     
-                    <xsl:apply-templates select="cac:TaxCategory/cbc:Percent" />%)
+                    <xsl:call-template name="NumberFormat">
+                        <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
+                        <xsl:with-param name="decimalDigits" select="2" />
+                        <xsl:with-param name="country" select="$languageCode" />
+                    </xsl:call-template>% )
                 
                 </xsl:when>
                 <xsl:otherwise>
