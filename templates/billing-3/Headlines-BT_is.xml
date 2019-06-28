@@ -68,7 +68,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-13">
 		<TermName>Pöntunarnúmer</TermName>
 		<Definition>An identifier of a referenced purchase order, issued by the Buyer.</Definition>
-		<DisplayName>Order reference</DisplayName>
+		<DisplayName>Pöntunartilvísun</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-14">
 		<TermName>Sölupöntunarnúmer</TermName>
@@ -796,7 +796,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>The Invoice total amount with VAT is the Invoice total amount without VAT plus the Invoice total VAT amount.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-113">
-		<TermName>Greitt(staðgreitt/fyrirframgreitt)</TermName>
+		<TermName>Staðgreitt/áður greitt</TermName>
 		<Definition>The sum of amounts which have been paid in advance.</Definition>
 		<Description>This amount is subtracted from the invoice total amount with VAT to calculate the amount due for payment.</Description>
 	</BusinessTerm>
