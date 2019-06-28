@@ -32,10 +32,12 @@
     xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
     xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts fcn sdt udt">
     <xsl:import href="billing-3/CommonTemplates.xsl"/>
+    <xsl:import href="./unimaze-common.xsl" />
           
     <xsl:output method="html" indent="yes"/>
     <xsl:strip-space elements="*"/>
     <xsl:param name="stylesheet_url" select="'NONE'"/>
+    <xsl:param name="requestedContentFormat" />
     <xsl:variable name="borderColor">
         <xsl:choose>
             <xsl:when test="/Invoice !=''">
@@ -62,13 +64,18 @@
 					body {
 						font-family: verdana, Helvetica, sans-serif;
 						font-size: 76%;
-                        margin: 1em;
+                        margin: 0 !important;
+                        padding: 0 !important;
 					}
 
 					p {
 						margin: 0;
 						padding: 0;
 					}
+
+                    .wrapper {
+                        margin: 1em;
+                    }
 
                     .container {
                         min-width:775px;
@@ -632,6 +639,10 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />                        
             </head>
             <body>
+		<xsl:if test="$requestedContentFormat!='pdf'">
+                    <xsl:call-template name="UnimazeHeader"/>
+                </xsl:if>
+                <div class="wrapper">
                 <div class="container">
                     <header class="main_header row">
                         <!-- SELLER -->
@@ -2702,6 +2713,7 @@
                     <br/>
                     <br/>
                     <br/>
+		</div>
                 </div>
             </body>
         </html>
