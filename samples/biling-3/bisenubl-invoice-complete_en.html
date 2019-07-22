@@ -1,0 +1,892 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:fcn="urn:sfti:se:xsl:functions">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>
+                    
+					* {
+						box-sizing: border-box;
+					}
+
+					body {
+						font-family: verdana, Helvetica, sans-serif;
+						font-size: 76%;
+                        margin: 1em;
+					}
+
+					p {
+						margin: 0;
+						padding: 0;
+					}
+
+                    .container {
+                        min-width:775px;
+                        margin: 3em auto 0;
+                    }
+
+					.corner_title_center_content>h1 {
+						padding: 0;
+						margin: 0;
+						font-size: 0.8em;
+						font-weight: 700;
+					}
+
+					.corner_title_center_content>div {
+						font-family: arial, verdana, Helvetica, sans-serif;
+						text-align: center;
+						line-height: 240%;
+						font-size: 1.7em;
+					}
+
+					.blue_box {
+						border: 1px solid #A6C3D1;
+						background-color: #F4FBFE;
+						padding: 0.2em;
+						min-height: 6em;
+						margin-bottom: 0.8em;
+					}
+					.red_box {
+						border: 1px solid #CDA1B6;
+						background-color: #FEF5F9;
+						padding: 0.2em;
+						min-height: 6em;
+						margin-bottom: 0.8em;
+					}
+
+					.blue_box_no_back {
+						border: 1px solid #A6C3D1;
+						padding: 0.5em;
+					}
+
+					.red_box_no_back {
+						border: 1px solid #CDA1B6;
+						padding: 0.5em;
+					}
+
+					.text_center {
+						padding: 0.5em;
+						text-align: center;
+					}
+					.text_right {
+						text-align: right;
+					}
+
+                    .blue_title,
+                    .red_title {
+                        padding: 0.8em 0 0.4em 0.4em;
+                        text-align: left;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                    }
+                    .blue_title {
+                        color: #5f92a8;
+                    }
+                    .red_title {
+                        color: #8F5873;
+                    }
+
+                    .document_info {
+                        font-size:1.2em;
+                    }
+
+                    .document_info span {
+                        display: inline-block;
+                        min-width: 4em;
+                    }
+
+                    .main_header .seller {
+                        align-items: flex-end;
+                    }
+
+                    .main_header .document_details {
+						font-family: arial, verdana, Helvetica, sans-serif;
+                        justify-self: flex-end;
+                        align-self: flex-end;
+                        text-align: right;
+                    }
+
+                    .main_header .document_details h1{
+						margin: 0 0 .2em 0;
+                        font-size: 1.6em;
+                    }
+
+                    .buyer_payment_info_holder {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .buyer_payment_info_holder .blue_box {
+                        height: 80px;
+                    }
+
+                    .buyer_payment_info_holder .amount_payable .blue_box {
+                        margin-bottom: 0.3em;
+                    }
+
+                    .buyer_payment_info_holder .credit_note_buyer_payment_info_wrapper,
+                    .credit_note_buyer_payment_info_wrapper .date_holder {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .amount_payable {
+                        position: relative;
+                    }
+
+                    .credit_note_buyer_payment_info_wrapper .red_box{
+                        position: relative;
+                        height: 80px;
+                    }
+                    .credit_note_buyer_payment_info_wrapper .grid_spliter {
+                        display: grid;
+                        grid-template-columns: repeat(2,1fr);
+                        grid-gap: 1em;
+                    }
+
+                    .credit_note_buyer_payment_info_wrapper .red_box .currency{
+                        position: absolute;
+                        right: 1px;
+                        bottom: -1.8em;
+                    }
+
+                    .table_header, .credit_note_table_header {
+                        font-weight: normal;
+						background-color: #F4FBFE;
+                        padding: 0.5em;
+                        border-bottom: 1px solid #A6C3D1;
+                    } 
+
+                    .table_header {
+						background-color: #F4FBFE;
+                    } 
+
+                    .credit_note_table_header {
+                        background-color: #FEF5F9;
+                    } 
+
+                    .table_body {
+                        font-weight: normal;
+                        padding: 0 0.5em;
+                    } 
+
+					.buyer_info {
+						margin: 1.2em 0 1.2em 1.2em;
+					}
+
+					.title {
+						margin: 0.1em 0 0.6em 0;
+						text-transform: capitalize;
+						font-size: 0.9em;
+					}
+
+                    .payment_table .blue_box_no_back, 
+                    .payment_table .red_box_no_back {
+                        padding: 0;
+                        border-top: none;
+                    }
+
+                    .payment_table .payment_table_header {
+                        display: grid;
+                        grid-template-columns: 50% 50%;
+                        margin-bottom: 0.5em;
+                    }
+
+					.payment_table .red_box_no_back .payment_table_header {
+                        border-top: 1px solid #CDA1B6;
+					}
+
+					.payment_table .blue_box_no_back .payment_table_header {
+                        border-top: 1px solid #A6C3D1;
+					}
+
+                    .payment_table .payment_table_header_title:last-child {
+                        margin-right: none;
+                    }
+
+                    .payment_table .payment_table_body {
+                        min-height: 5em;
+                    }
+                    
+                    .payment_table .payment_table_body_data:last-of-type {
+                        margin-bottom: 1em;
+                    }
+
+                    .transfer {
+                        padding: 0.5em;
+                    }
+
+					.payment_table_header .transfer {
+                        border-bottom: 1px solid #A6C3D1;
+                        border-left: 1px solid #A6C3D1;
+                        border-top: none;
+					}
+
+					.blue_box_no_back .payment_table_header .transfer {
+                        border-color: #A6C3D1;
+					}
+
+					.red_box_no_back .payment_table_header .transfer {
+                        border-color: #CDA1B6;
+					}
+                    
+
+					.payment_table .payment_table_body .table_body {
+                        display: flex;
+                        justify-content: space-between;
+                        background: #fff;
+                        border-bottom: none;
+					}
+
+					.payment_table .payment_table_body .payment_table_cell {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+					}
+                    
+					.payment_table .payment_table_body .payment_table_cell:last-of-type {
+                        text-align: right;
+					}
+					.payment_table .payment_table_body .payment_table_cell:first-of-type {
+                        text-align: left;
+					}
+
+					.payment_table .payment_table_body .payment_table_body_data {
+                        margin-bottom: 1em;
+					}
+
+                    .payment_table_row_blue {
+                        border-top: 1px solid #A6C3D1;
+                    }
+
+                    .credit_note_description {
+                        height: fit-content;
+                    }
+
+                    .invoice_table .blue_box_no_back, 
+                    .invoice_table .red_box_no_back {
+                        padding:0;
+                    }
+
+                    .invoice_table .invoice_table_body_data_name_column_header {
+                        width: 100%;
+                        margin-bottom: 0.5em;
+                    }
+
+                    .invoice_table .invoice_table_body_data_name_column_body {
+                        width: 150%;
+                    }
+
+                    .payable_amount {
+                        font-weight: 700;
+                    }
+
+                    .document_info_currency {
+                        text-align: right;
+                        position: absolute;
+                        right: 0;
+                    }
+
+                    .tax_amount .grid_spliter {
+                        display: grid;
+                        grid-template-columns: 2fr 1fr;
+                        padding-right: 26%;
+                    }
+                    
+                    .invoice_table_body_data label,
+                    .collapse_expand_all_label {
+                        cursor:pointer;
+                    }
+                    .invoice_table_body_data label {
+                        position: relative;
+                        top: -1.2em;
+                    }
+
+                    .expand_arrow, .double_expand_arrow {
+                        font-size: 2.2em;
+                        font-weight: bold;
+                        display: inline-block;
+                        transition: all .3s;
+                        transform: rotate(-90deg);
+                        -webkit-transform: rotate(-90deg);
+                        -moz-transform: rotate(-90deg);
+                        -ms-transform: rotate(-90deg);
+                        -o-transform: rotate(-90deg);
+                        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+                        margin-right:5px;
+                        user-select: none;
+                        position: relative;
+                        top: 6px;
+                    }
+
+                    .double_expand_arrow {
+                        padding: 3px 3px 3px 0;
+                        box-sizing: content-box;
+                        font-size: 2em;
+                        left: -0.2em;
+                        top: 0;
+                    }
+
+                    .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .expand_arrow,
+                    .hide_all_content_input:checked + .invoice_table_header .invoice_table_header_title .collapse_expand_all_label .double_expand_arrow {
+                        transition: all .3s;
+                        transform: rotate(-180deg);
+                        -webkit-transform: rotate(-180deg);
+                        -moz-transform: rotate(-180deg);
+                        -ms-transform: rotate(-180deg);
+                        -o-transform: rotate(-180deg);
+                    }
+
+                    .hide_content {
+                        min-height: 2em; /* any arbitrary height but best at the minimum initial height you would want. */
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                    }
+
+                    .hide_content_input, .hide_all_content_input {
+                        display: none;
+                    }           
+                    
+                    .invoice_table_body > .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .hide_content,
+                    .invoice_table .hide_all_content_input:checked ~ .invoice_table_body .invoice_table_body_holder .invoice_table_body_data .hide_content {
+                        min-height: 0;
+                        height: 0;
+                        opacity: 0;
+                        display: block;
+                        transition: all 0.3s ease;
+                    }
+                    
+
+                    .invoice_table_header {
+                        display: grid;
+                        grid-template-columns: 7% 10% auto 10% 12% 6% 10% 12%;
+                        align-items: center;
+                    }
+
+                    .invoice_table_body_holder {
+                        display: grid;
+                        padding: 0.5em;
+                        grid-template-columns: 7% 10% auto 10% 12% 6% 10% 12%;
+                        align-items: flex-start;
+                    }
+
+
+                    .tax_table .blue_box_no_back,
+                    .tax_table .red_box_no_back {
+                        padding: 0;
+                    }
+
+                    .tax_table .table_header,
+                    .tax_table .credit_note_table_header {
+                        display: grid;
+                        grid-template-columns: 1fr 3fr 3fr 3fr;
+                        padding: 0.5em 0;
+                    }
+
+                    .tax_table .table_body {
+                        display: grid;
+                        padding: 0;
+                    }
+
+                    .tax_table .table_header .tax_table_header_title,
+                    .tax_table .credit_note_table_header .tax_table_header_title {
+                        justify-self: flex-end;
+                        padding: .5em;
+                        text-align: right;
+                    }
+
+
+                    .tax_table .table_body .table_body_data_row1 {
+                        display: grid;
+                        grid-template-columns: 1fr 3fr 3fr 3fr;
+                        border-bottom: 1px solid #A6C3D1;
+                    }
+
+                    .tax_table .table_body .table_body_data_row2 {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+
+                    .tax_table .table_body .tax_table_body_data {
+                        justify-self: flex-end;
+                        padding: .5em;
+                        margin-right: 0.2em;
+                    }
+
+
+                    .information_banner .blue_box,
+                    .information_banner .red_box {
+                        min-height:4em;
+                    }
+
+                    .information_banner .blue_box .blue_title,
+                    .information_banner .red_box .red_title {
+                        font-size:1.5em;
+                        margin:0;
+                    }
+
+                    .seller_information .seller_contact_label {
+                        display: none;
+                    }
+
+					
+                    @media print {
+                        .container {
+                            width:80em;
+                        }
+
+                        .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .expand_arrow,
+                        .expand_arrow,
+                        .collapse_expand_all_label {
+                            transform: rotate(0);
+                            display: none;
+                        }
+                        .invoice_table_body > .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .hide_content,
+                        .invoice_table .hide_all_content_input:checked ~ .invoice_table_body .invoice_table_body_holder .invoice_table_body_data .hide_content {
+                            min-height: 2em; /* any arbitrary height but best at the minimum initial height you would want. */
+                            overflow: hidden;
+                            height: unset;
+                            opacity: 1;
+                        }    
+                    }
+                    
+                    
+					.space_between {
+						display: flex;
+						justify-content: space-between;
+					}
+
+                    .grid_big_2fr_spliter {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 2em;
+                    }
+                    
+                    .grid_small_2fr_spliter {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 1em;
+                    }
+                    
+                </style><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="Stylesheet" type="text/css" href="PEPPOL.css">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>PEPPOL BIS-BILLING 3 Invoice AND CREDIT NOTE</title>
+   </head>
+   <body>
+      <div class="container">
+         <header class="main_header grid_big_2fr_spliter">
+            <div class="seller grid_small_2fr_spliter">
+               <div class="seller_info">
+                  <p class="title">Seller:&nbsp;</p>
+                  <p><b>Prufufyrirtæki slf.</b><p>0987654321</p><span class="UBLStreetName">Prufutúni 37</span>&nbsp;
+                     <br><span class="UBLAdditionalStreetName">4th floor</span><br><span class="UBLCityName">116
+                        &nbsp;
+                        Reykjavík,
+                        </span>IS
+                  </p>
+               </div>
+               <div class="seller-contact"><br><small><span class="UBLTelephone"><b class="seller_contact_label">Phone:&nbsp;</b>1234567</span><br><span class="UBLElectronicMail"><b class="seller_contact_label">E-mail:&nbsp;</b>gudmundur@test.test</span></small><br><small><b>VAT no.&nbsp;
+                        </b>IS65321</small></div>
+            </div>
+            <div class="document_details"><br><h1>INVOICE&nbsp;
+                  ABC123
+               </h1><small><b>Order reference:&nbsp;</b><span>ORD123</span><br></small><small><b>Buyer reference:&nbsp;<span>BUY123</span></b><br></small></div>
+         </header><br><br><div class="grid_big_2fr_spliter">
+            <div class="buyer">
+               <div class="blue_box">
+                  <p class="title">Buyer:&nbsp;</p>
+                  <div class="buyer_info">
+                     <p><b>Prufufyrirtækið ehf.</b></p><span class="UBLStreetName">Prufugata 20</span>
+                     &nbsp;
+                     <br><span class="UBLAdditionalStreetName">Þriðja hæð</span><br><span class="UBLAdditionalStreetName">Door on the right</span><span class="UBLCityName"><br>115&nbsp;
+                        Reykjavík,&nbsp;
+                        </span><br>Gullbringusýsla,
+                     <span>IS</span><br><span class="UBLID">1234567890</span></div>
+               </div>
+            </div>
+            <div class="buyer_payment_info_holder">
+               <div class="grid_small_2fr_spliter">
+                  <div class="blue_box corner_title_center_content">
+                     <h1>Payment due date</h1>
+                     <div>12/07/2018</div>
+                  </div>
+                  <div class="amount_payable">
+                     <div class="blue_box corner_title_center_content">
+                        <p align="left">
+                           <h1>Amount payable</h1>
+                           <div class="payable_amount">50,151.00</div>
+                        </p>
+                     </div>
+                     <div class="document_info_currency">
+                        <div><small>Invoice currency:&nbsp;</small>ISK
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="grid_small_2fr_spliter">
+                  <div>
+                     <p align="left"><b><small>Issue date</small></b><br><small>11/22/2018</small><br></p>
+                     <p align="left"><b><small>Invoice period</small></b></p>
+                     <p align="left"><small>11/07/2018</small> - 
+                        <small>11/21/2018</small></p>
+                     <p><b><small>Tax reference day:&nbsp;</small></b><br><small>11/23/2018</small></p>
+                  </div>
+                  <div></div>
+               </div>
+            </div>
+         </div><br><div class="grid_big_2fr_spliter">
+            <div class="payment_table">
+               <div class="blue_box_no_back">
+                  <div class="payment_table_header">
+                     <div class="payment" data-name="payment">
+                        <p class="text_center"><b>Payment means</b></p>
+                     </div>
+                     <div class="transfer" data-name="transfer">
+                        <p>
+                           ( 
+                           42
+                           )
+                           Payment to bank account
+                        </p>
+                     </div>
+                  </div>
+                  <div class="payment_table_body">
+                     <div class="table_body">
+                        <div class="payment_table_cell">
+                           <div class="payment_table_header_title"><small><b>Account No.</b></small></div>
+                           <div class="payment_table_body_data"><small>432126123456&nbsp;
+                                 </small></div>
+                        </div>
+                        <div class="payment_table_cell">
+                           <div class="payment_table_header_title"><b><small>Payment account name</small></b></div>
+                           <div class="payment_table_body_data"><small>Jón Jónsson</small></div>
+                        </div>
+                        <div class="payment_table_cell">
+                           <div class="payment_table_header_title"><b><small>Remittance information</small></b></div>
+                           <div class="payment_table_body_data"><small>12345</small></div>
+                        </div>
+                        <div class="payment_table_cell">
+                           <div class="payment_table_header_title"><b><small>Id</small></b></div>
+                           <div class="payment_table_body_data"><small>0987654321</small></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="blue_box_no_back description">
+               <p><small></small></p>
+               <p><small><b>Description</b></small></p><br><p><small><b>Trade account:&nbsp;</b>1234567890</small></p>
+               <p><small><b>Actual delivery date:&nbsp;</b>12/07/2018</small></p>
+               <p><small><b>Terms:&nbsp;</b>Payment terms note</small></p>
+            </div>
+         </div><br><br><div>
+            <div class="invoice_table">
+               <div class="blue_box_no_back"><input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"><div class="invoice_table_header table_header">
+                     <div class="invoice_table_header_title"><label for="collapse_expand_all" class="collapse_expand_all_label">
+                           <div class="double_expand_arrow">«</div></label></div>
+                     <div class="invoice_table_header_title"><b>Item no.</b></div>
+                     <div class="invoice_table_header_title"><b>Name</b></div>
+                     <div class="invoice_table_header_title"><b>Quantity</b></div>
+                     <div class="invoice_table_header_title"><b>Unit amount</b></div>
+                     <div class="invoice_table_header_title"><b>VAT</b></div>
+                     <div class="invoice_table_header_title text_right"><b>Amount</b></div>
+                     <div class="invoice_table_header_title text_right"><b>Tax inclusive amount&nbsp;<br></b></div>
+                  </div>
+                  <div class="invoice_table_body"><input type="checkbox" name="one" class="hide_content_input" id="1"><div class="invoice_table_body_holder">
+                        <div class="invoice_table_body_data"><label for="1">
+                              <div class="expand_arrow">‹</div>1.
+                              </label></div>
+                        <div class="invoice_table_body_data">HÚLEIG</div>
+                        <div class="invoice_table_body_data">
+                           <div class="invoice_table_body_data_name_column_header">Húsaleiga</div><small class="hide_content invoice_table_body_data_name_column_body"></small></div>
+                        <div class="invoice_table_body_data">0.5&nbsp;
+                           MON<br><small class="hide_content">(
+                              month
+                              )
+                              </small></div>
+                        <div class="invoice_table_body_data">64,000.00</div>
+                        <div class="invoice_table_body_data">Z0.0
+                           <div class="hide_content"></div>
+                        </div>
+                        <div class="invoice_table_body_data text_right">32,000.00</div>
+                        <div class="invoice_table_body_data text_right">32,000.00</div>
+                     </div><input type="checkbox" name="one" class="hide_content_input" id="2"><div class="invoice_table_body_holder">
+                        <div class="invoice_table_body_data"><label for="2">
+                              <div class="expand_arrow">‹</div>2.
+                              </label></div>
+                        <div class="invoice_table_body_data">REKSTUR</div>
+                        <div class="invoice_table_body_data">
+                           <div class="invoice_table_body_data_name_column_header">Rekstrarkostnaður</div><small class="hide_content invoice_table_body_data_name_column_body"><b>Standard ID:&nbsp;</b>REK<small>
+                                 &nbsp;
+                                 [
+                                 0160]
+                                 </small><br><b>Description:&nbsp;</b>Rekstrarkostnaður vegna einhvers<br><b>Attribute:&nbsp;</b>Auka =
+                              Hlutur<br><b>Classification code:&nbsp;</b>9873242<small>&nbsp;[
+                                 CPV
+                                 ]
+                                 </small>
+                              [
+                              MP
+                              ]
+                              <br><b>Item buyer's identifier:&nbsp;</b>REK<br><b>Country of origin:&nbsp;</b>IS<br></small></div>
+                        <div class="invoice_table_body_data">0.5&nbsp;
+                           MON<br><small class="hide_content">(
+                              month
+                              )
+                              </small></div>
+                        <div class="invoice_table_body_data">24,250.00</div>
+                        <div class="invoice_table_body_data">S25.5
+                           <div class="hide_content"></div>
+                        </div>
+                        <div class="invoice_table_body_data text_right">12,117.50</div>
+                        <div class="invoice_table_body_data text_right">15,207.46</div>
+                     </div><input type="checkbox" name="one" class="hide_content_input" id="3"><div class="invoice_table_body_holder">
+                        <div class="invoice_table_body_data"><label for="3">
+                              <div class="expand_arrow">‹</div>3.
+                              </label></div>
+                        <div class="invoice_table_body_data">MATUR</div>
+                        <div class="invoice_table_body_data">
+                           <div class="invoice_table_body_data_name_column_header">Matarkostnaður</div><small class="hide_content invoice_table_body_data_name_column_body"></small></div>
+                        <div class="invoice_table_body_data">3&nbsp;
+                           C62<br><small class="hide_content">(
+                              one
+                              )
+                              </small></div>
+                        <div class="invoice_table_body_data">1,000.00</div>
+                        <div class="invoice_table_body_data">S11.0
+                           <div class="hide_content"></div>
+                        </div>
+                        <div class="invoice_table_body_data text_right">2,700.00</div>
+                        <div class="invoice_table_body_data text_right">2,997.00</div>
+                     </div><input type="checkbox" name="one" class="hide_content_input" id="4"><div class="invoice_table_body_holder">
+                        <div class="invoice_table_body_data"><label for="4">
+                              <div class="expand_arrow">‹</div>4.
+                              </label></div>
+                        <div class="invoice_table_body_data">HLT</div>
+                        <div class="invoice_table_body_data">
+                           <div class="invoice_table_body_data_name_column_header">Hlutur</div><small class="hide_content invoice_table_body_data_name_column_body"><b>Note:&nbsp;</b>Line note<br><b>Buyer accounting reference:&nbsp;</b>LAC=1234<br><b>Invoicing period:&nbsp;</b>2018-11-08&nbsp;-&nbsp;
+                              2018-11-20&nbsp;
+                              <br><b>Item price discount:&nbsp;</b>20.00<br><b>Item gross price:&nbsp;</b>100.00<br><b>Purchase order line reference:&nbsp;</b>LORD123<br><b>Invoice line object identifier:&nbsp;</b>LHLT[
+                              ZZZ]
+                              <br></small></div>
+                        <div class="invoice_table_body_data">1&nbsp;
+                           MON<br><small class="hide_content">(
+                              month
+                              )
+                              </small></div>
+                        <div class="invoice_table_body_data">80.00<small class="hide_content"><br><b>Base quantity:&nbsp;</b>1</small></div>
+                        <div class="invoice_table_body_data">E0.0
+                           <div class="hide_content"></div>
+                        </div>
+                        <div class="invoice_table_body_data text_right">80.00</div>
+                        <div class="invoice_table_body_data text_right">80.00</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div><br><div class="grid_big_2fr_spliter">
+            <div class="tax_table">
+               <div class="blue_box_no_back">
+                  <div class="table_header">
+                     <div class="tax_table_header_title"></div>
+                     <div class="tax_table_header_title"><b>Tax overview:&nbsp;</b></div>
+                     <div class="tax_table_header_title"><b>Taxable amount:&nbsp;</b></div>
+                     <div class="tax_table_header_title"><b>Tax:&nbsp;</b></div>
+                  </div>
+                  <div class="table_body">
+                     <div class="table_body_data_row1">
+                        <div class="tax_table_body_data">Z0</div>
+                        <div class="tax_table_body_data">&nbsp;(
+                           
+                           0.0% )
+                           
+                           
+                        </div>
+                        <div class="tax_table_body_data">32,000.00</div>
+                        <div class="tax_table_body_data">0.00</div>
+                        <div class="tax_table_body_data">S25.5</div>
+                        <div class="tax_table_body_data">&nbsp;(
+                           
+                           25.5% )
+                           
+                           
+                        </div>
+                        <div class="tax_table_body_data">12,117.50</div>
+                        <div class="tax_table_body_data">3,089.96</div>
+                        <div class="tax_table_body_data">S11</div>
+                        <div class="tax_table_body_data">&nbsp;(
+                           
+                           11.0% )
+                           
+                           
+                        </div>
+                        <div class="tax_table_body_data">2,580.00</div>
+                        <div class="tax_table_body_data">283.80</div>
+                        <div class="tax_table_body_data">E0</div>
+                        <div class="tax_table_body_data">&nbsp;(
+                           
+                           0.0% )
+                           
+                           
+                        </div>
+                        <div class="tax_table_body_data">80.00</div>
+                        <div class="tax_table_body_data">0.00</div>
+                     </div>
+                     <div class="table_body_data_row2">
+                        <div class="tax_table_body_data"><b>VAT total:&nbsp;3,373.76</b></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tax_amount">
+               <div class="grid_spliter" id="sum">
+                  <div>
+                     <p align="right">Total:&nbsp;</p>
+                  </div>
+                  <div>
+                     <p align="right">46,897.50</p>
+                  </div>
+               </div>
+               <div class="grid_spliter">
+                  <div>
+                     <p align="right">VAT total:&nbsp;</p>
+                  </div>
+                  <div>
+                     <p align="right">3,373.76</p>
+                  </div>
+               </div>
+               <div class="grid_spliter">
+                  <div>
+                     <p align="right">Total amount without VAT:&nbsp;</p>
+                  </div>
+                  <div>
+                     <p align="right">46,777.50</p>
+                  </div>
+               </div>
+               <div class="grid_spliter">
+                  <div>
+                     <p align="right">Total amount with VAT:&nbsp;</p>
+                  </div>
+                  <div>
+                     <p align="right"><b>50,151.26</b></p>
+                  </div>
+               </div>
+               <div class="grid_spliter">
+                  <div>
+                     <p align="right">Paid amount:&nbsp;</p>
+                  </div>
+                  <div>
+                     <p align="right">0.00</p>
+                  </div>
+               </div>
+               <div class="grid_spliter">
+                  <div>
+                     <p align="right">Rounding amount:&nbsp;</p>
+                  </div>
+                  <div>
+                     <p align="right">-0.26</p>
+                  </div>
+               </div>
+               <div class="grid_spliter">
+                  <div><b>
+                        <p align="right">Amount payable:&nbsp;</p></b></div>
+                  <div><b>
+                        <p align="right">50,151.00</p></b></div>
+               </div>
+            </div>
+         </div><br><div class="information_banner">
+            <div class="blue_box">
+               <h1 class="blue_title">Further information</h1>
+            </div>
+         </div>
+         <div class="grid_big_2fr_spliter">
+            <div class="delivery_location">
+               <p class="blue_title">Delivery location:&nbsp;</p>
+               <div class="blue_box_no_back">Location ID:&nbsp;1234562540
+                  &nbsp;[
+                  0196
+                  ]
+                  
+                  <p class="UBLStreetName">Prufutúni 37</p>
+                  <p class="UBLAdditionalStreetName">4th floor</p>
+                  <p class="UBLAdditionalStreetName">Door on the right</p>
+                  <p class="UBLCityName">116&nbsp;
+                     Reykjavík,&nbsp;
+                     Gullbringusýsla,
+                     <span>IS</span></p>
+                  <p class="UBLActualDeliveryDate">
+                     <p><b>Actual delivery date:&nbsp;</b><br>2018-12-07
+                     </p>
+                  </p>
+               </div>
+            </div>
+            <div>
+               <p class="blue_title">Payee:&nbsp;</p>
+               <div class="blue_box_no_back">Sindri Jónsson<br><small>Payee identifier:&nbsp;0123456789&nbsp;[
+                     0196
+                     ]
+                     </small><br><small>Legal registration ID:&nbsp;9874651230&nbsp;
+                     [
+                     0196
+                     ]
+                     </small></div>
+            </div>
+         </div><br><div class="grid_big_2fr_spliter">
+            <div class="seller_information">
+               <p class="blue_title">Additional seller's information:&nbsp;</p>
+               <div class="blue_box_no_back">
+                  <p></p>
+                  <p><b>Legal name and address:&nbsp;</b></p>Prufufyrirtæki slf.<br><span class="UBLAdditionalStreetName">4th floor</span><br><span class="UBLCityName">Reykjavík,
+                     </span>IS
+                  <p class="UBLName">Contact Point:&nbsp;Guðmundur Guðmundsson</p>
+                  <p><b>Seller contact:&nbsp;</b></p>
+                  <p><span class="UBLTelephone"><b class="seller_contact_label">Phone:&nbsp;</b>1234567</span><br><span class="UBLElectronicMail"><b class="seller_contact_label">E-mail:&nbsp;</b>gudmundur@test.test</span></p>
+                  <p>
+                     <p><b>Client number:&nbsp;</b></p><span class="UBLID">0987654321</span></p>
+                  <p><b>Seller electronic address:&nbsp;</b></p>
+                  <p>0987654321 
+                     (
+                     0196
+                     )
+                     
+                  </p><br><p><b>Seller tax representative party:&nbsp;</b></p>Tax name<br>Tax street 23<br>Additional Tax Street<br>Third tax street<br>101&nbsp;
+                  Reykjavík<br>Gullbringusýsla,
+                  <span>IS</span><br><small>VAT no.:&nbsp;IS645789</small></div>
+            </div>
+            <div class="buyer_information">
+               <p class="blue_title">Additional buyer's information:&nbsp;</p>
+               <div class="blue_box_no_back">
+                  <p><b>Legal name and address:&nbsp;</b></p><span class="UBLCityName">Prufufyrirtækið ehf</span><span class="UBLCityName"><br>Reykjavík,&nbsp;
+                     </span><br>Gullbringusýsla,
+                  <span>IS</span><p><b>Client number:&nbsp;</b></p><span class="UBLID">1234567890</span><p><b>Buyer electronic address:&nbsp;</b></p>
+                  <p>1234567890 (
+                     0196
+                     )
+                     
+                  </p>
+               </div><br><div class="supporting_documents">
+                  <p class="blue_title">Additional supporting documents</p>
+                  <div class="blue_box_no_back">
+                     <p>Reference:&nbsp;helloWorld&nbsp;[
+                        ZZZ
+                        ]
+                        
+                     </p><small>-&nbsp;
+                        Hello world pdf<br>-&nbsp;
+                        Type:&nbsp;application/pdf<br>-&nbsp;
+                        Filename:&nbsp;helloWorld<br></small><br><b>Preceding invoice reference:&nbsp;</b>INV123
+                     										 ( 
+                     
+                     2018-11-22 )
+                     
+                     <br><b>Invoiced object identifier:&nbsp;</b>INV1234[
+                     ZZZ
+                     ]
+                     <br><b>Despatch advice reference:&nbsp;</b>DESP123<br><b>Receiving advice reference:&nbsp;</b>RECPT123<br><b>Tender or lot reference:&nbsp;</b>PPID123<br><b>Project reference:&nbsp;</b>PID123
+                  </div>
+               </div>
+            </div>
+         </div><br><br><br><br><br></div>
+   </body>
+</html>
