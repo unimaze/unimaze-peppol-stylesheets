@@ -29,8 +29,8 @@ List of features:
 ### Samples
 [Samples](samples)
 
-![![](samples/biling-3/thumbnail_bisenubl-invoice-complete_en.png)](samples/biling-3/bisenubl-invoice-complete_en.png)
-![![](samples/biling-3/thumbnail_bisenubl-creditnote-complete_en.png)](samples/biling-3/bisenubl-creditnote-complete_en.png)
+![![](<img src="samples/biling-3/thumbnail_bisenubl-invoice-complete_en.png" width="320" />)](samples/biling-3/bisenubl-invoice-complete_en.png)
+![![](<img src="samples/biling-3/thumbnail_bisenubl-creditnote-complete_en.png" width="320" />)](samples/biling-3/bisenubl-creditnote-complete_en.png)
 
 ## Requirements
 Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7 and MSXML 3.0.
