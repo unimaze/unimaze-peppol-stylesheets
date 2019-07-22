@@ -45,7 +45,7 @@
 				<SimpleValue>E</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Exempt</SimpleValue>
+				<SimpleValue>Undanþegið</SimpleValue>
 			</Value>
 		</Row>
 		
@@ -55,7 +55,7 @@
 				<SimpleValue>G</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Export</SimpleValue>
+				<SimpleValue>Útflutningur</SimpleValue>
 			</Value>
 		</Row>		
 		<Row>
@@ -64,7 +64,7 @@
 				<SimpleValue>O</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Outside scope of VAT</SimpleValue>
+				<SimpleValue>Án VSK</SimpleValue>
 			</Value>
 		</Row>		
 		<Row>
@@ -73,7 +73,7 @@
 				<SimpleValue>K</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Intra-EU supply</SimpleValue>
+				<SimpleValue>Innan-ESB</SimpleValue>
 			</Value>
 		</Row>		
 		<Row>
@@ -82,7 +82,7 @@
 				<SimpleValue>Z</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Zero % VAT</SimpleValue>
+				<SimpleValue>0 % VSK</SimpleValue>
 			</Value>
 		</Row>		
 		<Row>

@@ -13,8 +13,8 @@
 		<DisplayName>Viðskiptareikningur</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-004">
-		<TermName>Þessi reikningur á uppruna sinn í rafrænu bókhaldskerfi skv. reglugerð nr. 505/2013.</TermName>
-		<DisplayName>Þessi reikningur á uppruna sinn í rafrænu bókhaldskerfi skv. reglugerð nr. 505/2013.</DisplayName>
+		<TermName>Reglugerð nr. 505/2013.</TermName>
+		<DisplayName>Útgefinn skv. heimild í reglugerð nr. 505/2013.</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-005">
 		<TermName>Lýsing</TermName>
@@ -45,7 +45,7 @@
 		<DisplayName>Reikningstímabil</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-020">
-		<TermName>Lögskráð nafn og heimili</TermName>
+		<TermName>Skráð nafn og heimili</TermName>
 		<DisplayName>Lögskráð nafn og heimili</DisplayName>
 	</BusinessTerm>
 
