@@ -27,7 +27,7 @@
 				<SimpleValue>3</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Invoice document issue date time</SimpleValue>
+				<SimpleValue>Útgáfudagur/tími</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -36,7 +36,7 @@
 				<SimpleValue>35</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Delivery date/time, actual</SimpleValue>
+				<SimpleValue>Afhending, dags/tími, staðfest</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
