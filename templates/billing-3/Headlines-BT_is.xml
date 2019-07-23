@@ -184,7 +184,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>Kennitala</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-30-1">
-		<TermName>Tegund Kennitölu</TermName>
+		<TermName>Tegund kennitölu</TermName>
 		<Definition>The identification scheme identifier of the Seller legal registration identifier.</Definition>
 		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
 	</BusinessTerm>
@@ -309,7 +309,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>Kennitala</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-47-1">
-		<TermName>Tegund Kennitölu</TermName>
+		<TermName>Tegund kennitölu</TermName>
 		<Definition>The identification scheme identifier of the Buyer legal registration identifier.</Definition>
 		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
 	</BusinessTerm>
@@ -422,7 +422,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>KT</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-61-1">
-		<TermName>Tegund Kennitölu</TermName>
+		<TermName>Tegund kennitölu</TermName>
 		<Definition>The identification scheme identifier of the Payee legal registration identifier.</Definition>
 		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
 	</BusinessTerm>
