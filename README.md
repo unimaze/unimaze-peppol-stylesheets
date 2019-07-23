@@ -29,8 +29,11 @@ List of features:
 ### Samples
 [Samples](samples)
 
-<img src="samples/biling-3/bisenubl-invoice-complete_en.png" width="320" />
-<img src="samples/biling-3/bisenubl-creditnote-complete_en.png" width="320" />
+<p align="center">
+  <img src="samples/biling-3/bisenubl-invoice-complete_en.png" width="320" />
+  <span>&#160;&#160;&#160;&#160;&#160;&#160;</span>
+  <img src="samples/biling-3/bisenubl-creditnote-complete_en.png" width="320" />
+<p>
 
 ## Requirements
 Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7 and MSXML 3.0.
