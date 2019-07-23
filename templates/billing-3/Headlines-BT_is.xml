@@ -86,13 +86,13 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>In some countries a reference to the call for tender that has led to the contract shall be provided.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-18">
-		<TermName>Veitunúmer</TermName>
+		<TermName>Viðfang</TermName>
 		<Definition>An identifier for an object on which the invoice is based, given by the Seller.</Definition>
 		<Description>It may be a subscription number, telephone number, meter point, vehicle, person etc., as applicable.
 </Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-18-1">
-		<TermName>Tegund veitu</TermName>
+		<TermName>Tegund viðfangs</TermName>
 		<Definition>The identification scheme identifier of the Invoiced object identifier.</Definition>
 		<Description>If it may be not clear for the receiver what scheme is used for the identifier, a conditional scheme identifier should be used that shall be chosen from the UNTDID 1153 code list [6] entries.</Description>
 	</BusinessTerm>
@@ -184,7 +184,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>Kennitala</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-30-1">
-		<TermName>Tegund KT (skráningarauðkennis)</TermName>
+		<TermName>Tegund Kennitölu</TermName>
 		<Definition>The identification scheme identifier of the Seller legal registration identifier.</Definition>
 		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
 	</BusinessTerm>
@@ -276,7 +276,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-43">
 		<TermName>Tölvupóstur tengiliðs seljanda</TermName>
 		<Definition>An e-mail address for the contact point. </Definition>
-		<DisplayName>E-mail</DisplayName>
+		<DisplayName>Tölvupóstur</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-7">
 		<TermName>Kaupandi</TermName>
@@ -309,7 +309,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>Kennitala</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-47-1">
-		<TermName>Tegund KT (skráningarauðkennis)</TermName>
+		<TermName>Tegund Kennitölu</TermName>
 		<Definition>The identification scheme identifier of the Buyer legal registration identifier.</Definition>
 		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
 	</BusinessTerm>
@@ -324,7 +324,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Definition>Identifies the Buyer's electronic address to which the invoice is delivered.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-49-1">
-		<TermName>Tegund Póstfangs</TermName>
+		<TermName>Tegund póstfangs</TermName>
 		<Definition>The identification scheme identifier of the Buyer electronic address.</Definition>
 		<Description>The scheme identifier shall be chosen from a list to be maintained by the Connecting Europe Facility.</Description>
 	</BusinessTerm>
@@ -422,7 +422,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>KT</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-61-1">
-		<TermName>Tegund KT (skráningarauðkennis)</TermName>
+		<TermName>Tegund Kennitölu</TermName>
 		<Definition>The identification scheme identifier of the Payee legal registration identifier.</Definition>
 		<Description>If used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</Description>
 	</BusinessTerm>
@@ -438,7 +438,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>VSK númer skattfulltrúa</TermName>
 		<Definition>The VAT identifier of the Seller's tax representative party.</Definition>
 		<Description>VAT number prefixed by a country code based on EN ISO 3166-1 "Codes for the representation of names of countries and their subdivisions".</Description>
-		<DisplayName>VSKnr</DisplayName>
+		<DisplayName>VSK númer</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BG-12">
 		<TermName>Póstfang skattfulltrúa</TermName>
@@ -688,9 +688,9 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>VSK %</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-97">
-		<TermName>Lýsing afsláttar í haus</TermName>
+		<TermName>Ástæða afsláttar í haus</TermName>
 		<Definition>The reason for the document level allowance, expressed as text. </Definition>
-		<DisplayName>Lýsing afsláttar</DisplayName>
+		<DisplayName>Ástæða afsláttar</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-98">
 		<TermName>Kóti afsláttar í haus</TermName>
@@ -739,12 +739,12 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>VSK %</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-104">
-		<TermName>Lýsing gjalda í haus</TermName>
+		<TermName>Ástæða gjalda í haus</TermName>
 		<Definition>The reason for the document level charge, expressed as text.</Definition>
-		<DisplayName>Lýsing gjalda</DisplayName>
+		<DisplayName>Ástæða gjalda</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-105">
-		<TermName>Kótalýsing gjalda í haus</TermName>
+		<TermName>Kóti gjalda í haus</TermName>
 		<Definition>The reason for the document level charge, expressed as a code.</Definition>
 		<Description>Use entries of the UNTDID 7161 code list [6]. The Document level charge reason code and the Document level charge reason shall indicate the same charge reason.</Description>
 		<DisplayName>Kóti gjalda</DisplayName>
@@ -873,10 +873,10 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Slóð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-125">
-		<TermName>Skrá</TermName>
+		<TermName>Viðhengi</TermName>
 		<Definition>An attached document embedded as binary object or sent together with the invoice.</Definition>
 		<Description>Attached document is used when documentation shall be stored with the Invoice for future reference or audit purposes.</Description>
-		<DisplayName>Skrá</DisplayName>
+		<DisplayName>Viðhengi</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-125-1">
 		<TermName>Mime gerð skrár</TermName>
@@ -984,9 +984,9 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>%</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-139">
-		<TermName>Lýsing afsláttar</TermName>
+		<TermName>Ástæða afsláttar</TermName>
 		<Definition>The reason for the Invoice line allowance, expressed as text. </Definition>
-		<DisplayName>Lýsing</DisplayName>
+		<DisplayName>Ástæða</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-140">
 		<TermName>Tegund afsláttar</TermName>
@@ -1013,9 +1013,9 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>%</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-144">
-		<TermName>Lýsing gjalda</TermName>
+		<TermName>Ástæða gjalda</TermName>
 		<Definition>The reason for the Invoice line charge, expressed as text. </Definition>
-		<DisplayName>Lýsing</DisplayName>
+		<DisplayName>Ástæða</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-145">
 		<TermName>Tegund gjalda</TermName>
