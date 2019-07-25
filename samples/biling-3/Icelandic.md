@@ -1,4 +1,4 @@
-# Reiknigur
+# Reikningur
 
 ![](images/bisenubl-invoice-complete_is.png)
 
