@@ -27,12 +27,12 @@ List of features:
 - Language support: English, Swedish, Polish and Icelandic. Please create pull requests or contact us for adding new translations.
 
 ### Samples
-[Samples](samples)
+See [samples](samples) files.
 
 <p align="center">
-  <img src="samples/biling-3/bisenubl-invoice-complete_en.png" width="320" />
+  <img src="samples/biling-3/images/bisenubl-invoice-complete_en.png" width="320" />
   <span>&#160;&#160;&#160;&#160;&#160;&#160;</span>
-  <img src="samples/biling-3/bisenubl-creditnote-complete_en.png" width="320" />
+  <img src="samples/biling-3/images/bisenubl-creditnote-complete_en.png" width="320" />
 <p>
 
 ## Requirements
