@@ -26,6 +26,15 @@ List of features:
 - Line details can be shown (expanded) or hidden (collapsed).
 - Language support: English, Swedish, Polish and Icelandic. Please create pull requests or contact us for adding new translations.
 
+### Samples
+See [samples](samples) files.
+
+<p align="center">
+  <img src="samples/biling-3/images/bisenubl-invoice-complete_en.png" width="320" />
+  <span>&#160;&#160;&#160;&#160;&#160;&#160;</span>
+  <img src="samples/biling-3/images/bisenubl-creditnote-complete_en.png" width="320" />
+<p>
+
 ## Requirements
 Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7 and MSXML 3.0.
 
