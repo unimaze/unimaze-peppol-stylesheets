@@ -82,4 +82,22 @@
 		<TermName>No.</TermName>
 		<DisplayName>No.</DisplayName>
 	</BusinessTerm>
+	
+	<!-- PAYMENT NOTIFICATION TITLES -->
+	<BusinessTerm id="UMZ-BT-021">
+		<TermName>Document</TermName>
+		<DisplayName>Document</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-022">
+		<TermName>Payment date</TermName>
+		<DisplayName>Payment date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-023">
+		<TermName>Payment reference</TermName>
+		<DisplayName>Payment reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-024">
+		<TermName>Remittance advice</TermName>
+		<DisplayName>Remittance advice</DisplayName>
+	</BusinessTerm>
 </SemanticModel>
