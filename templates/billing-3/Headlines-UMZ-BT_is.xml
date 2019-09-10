@@ -82,4 +82,22 @@
 		<TermName>Kreditnótunr</TermName>
 		<DisplayName>Kreditnótunr</DisplayName>
 	</BusinessTerm>
+	
+	<!-- PAYMENT NOTIFICATION TITLES -->
+	<BusinessTerm id="UMZ-BT-021">
+		<TermName>Skjal</TermName>
+		<DisplayName>Skjal</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-022">
+		<TermName>Greitt dags.</TermName>
+		<DisplayName>Greitt dags.</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-023">
+		<TermName>Greiðslutilvísun</TermName>
+		<DisplayName>Greiðslutilvísun</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-024">
+		<TermName>Greiðslutilkynning</TermName>
+		<DisplayName>Greiðslutilkynning</DisplayName>
+	</BusinessTerm>
 </SemanticModel>

@@ -537,17 +537,28 @@
         </xsl:if>
     </xsl:template>
     <xsl:template name="SellerAdditionalInfo">
-        <p>
-            <b>
-                <xsl:call-template name="UMZLabelName">
-                    <xsl:with-param name="BT-ID" select="'UMZ-BT-020'" />
-                    <xsl:with-param name="Colon-Suffix" select="'true'" />
-                </xsl:call-template>
-            </b>
-        </p>
         <xsl:choose>
             <xsl:when test="cac:AccountingSupplierParty/cac:Party/cac:PartyName !=''">
+                <p>
+                    <b>
+                        <xsl:call-template name="UMZLabelName">
+                            <xsl:with-param name="BT-ID" select="'UMZ-BT-020'" />
+                            <xsl:with-param name="Colon-Suffix" select="'true'" />
+                        </xsl:call-template>
+                    </b>
+                </p>
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyName" />
+            </xsl:when>
+            <xsl:when test="cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name !=''">
+                <p>
+                    <b>
+                        <xsl:call-template name="UMZLabelName">
+                            <xsl:with-param name="BT-ID" select="'UMZ-BT-020'" />
+                            <xsl:with-param name="Colon-Suffix" select="'true'" />
+                        </xsl:call-template>
+                    </b>
+                </p>
+                <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name" />
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates
@@ -1175,7 +1186,6 @@
                     <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country" />
                 </xsl:when>
                 <xsl:otherwise>
-                    <!-- <br/> -->
                     <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !=''">
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-54'" />
@@ -1183,6 +1193,7 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />
+                        <br />
                     </xsl:if>
                     <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country !=''">
                         <xsl:call-template name="LabelName">
@@ -1191,28 +1202,42 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode" />
+                        <br />
                     </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
-        <br />
         <xsl:call-template name="BuyerPostalID" />
     </xsl:template>
     <xsl:template name="BuyerAdditionalInfo">
-        <p>
-            <b>
-                <xsl:call-template name="UMZLabelName">
-                    <xsl:with-param name="BT-ID" select="'UMZ-BT-020'" />
-                    <xsl:with-param name="Colon-Suffix" select="'true'" />
-                </xsl:call-template>
-            </b>
-        </p>
-        <xsl:if
-            test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName !=''">
-            <span class="UBLCityName">
-                <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName" />
-            </span>
-        </xsl:if>
+    <xsl:choose>
+            <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PartyName !=''">
+                <p>
+                    <b>
+                        <xsl:call-template name="UMZLabelName">
+                            <xsl:with-param name="BT-ID" select="'UMZ-BT-020'" />
+                            <xsl:with-param name="Colon-Suffix" select="'true'" />
+                        </xsl:call-template>
+                    </b>
+                </p>
+                <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyName" />
+            </xsl:when>
+            <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name !=''">
+                <p>
+                    <b>
+                        <xsl:call-template name="UMZLabelName">
+                            <xsl:with-param name="BT-ID" select="'UMZ-BT-020'" />
+                            <xsl:with-param name="Colon-Suffix" select="'true'" />
+                        </xsl:call-template>
+                    </b>
+                </p>
+                <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates
+                        select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName" />
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:if
             test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName !=''">
             <span class="UBLCityName">
