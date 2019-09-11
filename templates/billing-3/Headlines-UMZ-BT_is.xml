@@ -100,4 +100,8 @@
 		<TermName>Greiðslutilkynning</TermName>
 		<DisplayName>Greiðslutilkynning</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-025">
+		<TermName>Samtals greitt</TermName>
+		<DisplayName>Samtals greitt</DisplayName>
+	</BusinessTerm>
 </SemanticModel>

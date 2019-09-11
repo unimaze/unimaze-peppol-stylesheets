@@ -100,4 +100,8 @@
 		<TermName>Remittance advice</TermName>
 		<DisplayName>Remittance advice</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-025">
+		<TermName>Total paid</TermName>
+		<DisplayName>Total paid</DisplayName>
+	</BusinessTerm>
 </SemanticModel>
