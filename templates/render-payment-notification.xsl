@@ -478,8 +478,8 @@
                                             <xsl:when test="cbc:TotalPaymentAmount &lt; '0'">
                                                 <p align="left">
                                                     <h1 style="color:red">
-                                                        <xsl:call-template name="LabelName">
-                                                            <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                        <xsl:call-template name="UMZLabelName">
+                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-025'"/>
                                                             <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                                         </xsl:call-template>
                                                     </h1>
@@ -494,8 +494,8 @@
                                             <xsl:otherwise>
                                                 <p align="left">
                                                     <h1>
-                                                        <xsl:call-template name="LabelName">
-                                                            <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                        <xsl:call-template name="UMZLabelName">
+                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-025'"/>
                                                             <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                                         </xsl:call-template>
                                                     </h1>
@@ -798,8 +798,8 @@
                                     <div>
                                         <b>
                                             <p align="right">
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                <xsl:call-template name="UMZLabelName">
+                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-025'"/>
                                                     <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                                 </xsl:call-template>
                                             </p>
