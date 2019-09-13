@@ -864,24 +864,26 @@
                                 <p>
                                     <xsl:call-template name="SellerID" />
                                 </p>
-                                <p>
-                                    <b>
-                                        <xsl:call-template name="LabelName">
-                                            <xsl:with-param name="BT-ID" select="'BT-34'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                        </xsl:call-template>
-                                    </b>
-                                </p>
-                                <p>
-                                    <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
+                                <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
+                                    <p>
+                                        <b>
+                                            <xsl:call-template name="LabelName">
+                                                <xsl:with-param name="BT-ID" select="'BT-34'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            </xsl:call-template>
+                                        </b>
+                                    </p>
+                                    <p>
                                         <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID"/>
                                         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID !='' "> 
                                             (
+                                            
                                             <xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/>
                                             )
+                                        
                                         </xsl:if>
-                                    </xsl:if>
-                                </p>
+                                    </p>
+                                </xsl:if>
                                 <xsl:if test="cac:TaxRepresentativeParty !=''">
                                     <br/>
                                     <p>
@@ -906,23 +908,25 @@
                             <div class="yellow_box_no_back">
                                 <xsl:call-template name="BuyerAdditionalInfo" />
                                 <xsl:call-template name="BuyerID" />
-                                <p>
-                                    <b>
-                                        <xsl:call-template name="LabelName">
-                                            <xsl:with-param name="BT-ID" select="'BT-49'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                        </xsl:call-template>
-                                    </b>
-                                </p>
-                                <p>
-                                    <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID">
+                                <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID">
+                                    <p>
+                                        <b>
+                                            <xsl:call-template name="LabelName">
+                                                <xsl:with-param name="BT-ID" select="'BT-49'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            </xsl:call-template>
+                                        </b>
+                                    </p>
+                                    <p>
                                         <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID"/>
                                         <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID !='' "> (
+                                            
                                             <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/>
                                                 )
+                                        
                                         </xsl:if>
-                                    </xsl:if>
-                                </p>
+                                    </p>
+                                </xsl:if>
                             </div>
                             <br/>
                         </div>
