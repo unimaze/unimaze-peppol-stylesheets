@@ -94,16 +94,16 @@
                         font-size: 1.6em;
                     }
 
-                    .buyer_payment_info_holder {
+                    .payment_info_holder {
                         display: flex;
                         flex-direction: column;
                     }
 
-                    .buyer_payment_info_holder .yellow_box {
+                    .payment_info_holder .yellow_box {
                         height: 80px;
                     }
 
-                    .buyer_payment_info_holder .amount_payable .yellow_box {
+                    .payment_info_holder .amount_payable .yellow_box {
                         margin-bottom: 0.3em;
                     }
 
@@ -120,7 +120,7 @@
                         padding: 0 0.5em;
                     } 
 
-					.buyer_info {
+					.box-with_margin {
 						margin: 1.2em 0 1.2em 1.2em;
 					}
 
@@ -387,18 +387,24 @@
             <body>
                 <div class="container">
                     <header class="main_header grid_big_2fr_spliter">
-                        <!-- SELLER -->
-                        <div class="seller_info">
+                        <!-- BUYER -->
+                        <div>
                             <p class="title">
                                 <xsl:call-template name="LabelName">
-                                    <xsl:with-param name="BT-ID" select="'BG-4'"/>
+                                    <xsl:with-param name="BT-ID" select="'BG-7'"/>
                                     <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                 </xsl:call-template>
                             </p>
-                            <p>
-                                <xsl:call-template name="Seller"/>
-                            </p>
+                            <div class="buyer_info">
+                                <p>
+                                    <b>
+                                        <xsl:call-template name="BuyerPartyName" />
+                                    </b>
+                                </p>
+                                <xsl:call-template name="BuyerPostalAddress" />
+                            </div>
                         </div>
+                        <!-- /BUYER -->
                         <div class="document_details">
                             <br/>
                             <!-- DOCUMENT DETAILS -->
@@ -429,29 +435,51 @@
                     </header>
                     <br/>
                     <br/>
-                    <!-- buyer_and_due_dates_holder -->
+                    <!-- seller_and_due_dates_holder -->
                     <div class="grid_big_2fr_spliter">
-                        <div class="buyer">
-                            <!-- BUYER -->
-                            <div class="yellow_box">
-                                <p class="title">
-                                    <xsl:call-template name="LabelName">
-                                        <xsl:with-param name="BT-ID" select="'BG-7'"/>
-                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                    </xsl:call-template>
-                                </p>
-                                <div class="buyer_info">
-                                    <p>
-                                        <b>
-                                            <xsl:call-template name="BuyerPartyName" />
-                                        </b>
+                        <div class="yellow_box">
+                            <div class="grid_small_2fr_spliter">
+                                <!-- SELLER -->
+                                <div class="seller">
+                                    <p class="title">
+                                        <xsl:call-template name="LabelName">
+                                            <xsl:with-param name="BT-ID" select="'BG-4'"/>
+                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                        </xsl:call-template>
                                     </p>
-                                    <xsl:call-template name="BuyerPostalAddress" />
+                                    <div class="box_with_margin">
+                                        <p>
+                                            <xsl:call-template name="Seller"/>
+                                        </p>
+                                    </div>
                                 </div>
+                                <!-- /SELLER -->
+                                <!-- PAYEE-->
+                                <div>
+                                    <xsl:if test="cac:PayeeParty != ''">
+                                        <p class="title">
+                                            <xsl:call-template name="LabelName">
+                                                <xsl:with-param name="BT-ID" select="'BG-10'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            </xsl:call-template>
+                                        </p>
+                                        <div class="box_with_margin">
+                                            <b>
+                                                <xsl:if test="cac:PayeeParty/cac:PartyName !=''">
+                                                    <xsl:apply-templates select="cac:PayeeParty/cac:PartyName" />
+                                                </xsl:if>
+                                            </b>
+                                            <xsl:if test="cac:PayeeParty/cac:PartyIdentification/cbc:ID !='' ">
+                                                <br />
+                                                <xsl:apply-templates select="cac:PayeeParty/cac:PartyIdentification/cbc:ID" />
+                                            </xsl:if>
+                                        </div>
+                                    </xsl:if>
+                                </div>
+                                <!-- /PAYEE -->
                             </div>
-                            <!-- /BUYER -->
                         </div>
-                        <div class="buyer_payment_info_holder">
+                        <div class="payment_info_holder">
                             <div class="grid_small_2fr_spliter">
                                 <div class="yellow_box corner_title_center_content">
                                     <!-- Inserting Issue date Label:  -->
@@ -524,7 +552,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /buyer_and_due_dates_holder -->
+                    <!-- /seller_and_due_dates_holder -->
                     <br/>
                     <div class="grid_big_2fr_spliter">
                         <xsl:if test="cac:PaymentMeans != ''">
@@ -932,25 +960,6 @@
                         </div>
                     </div>
                     <!-- /Additional Information -->
-                    <!-- Payee-->
-                    <div class="grid_big_2fr_spliter">
-                        <div></div>
-                        <div>
-                            <xsl:if test="cac:PayeeParty != ''">
-                                <p class="yellow_title">
-                                    <xsl:call-template name="LabelName">
-                                        <xsl:with-param name="BT-ID" select="'BG-10'"/>
-                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                    </xsl:call-template>
-                                </p>
-                                <div class="yellow_box_no_back">
-                                    <xsl:call-template name="PayeeParty"/>
-                                </div>
-                            </xsl:if>
-                        </div>
-                    </div>
-                    <br/>
-                    <!-- /Payee -->
                     <br/>
                     <br/>
                     <br/>
