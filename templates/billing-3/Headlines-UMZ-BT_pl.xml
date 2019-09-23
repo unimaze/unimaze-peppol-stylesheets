@@ -48,6 +48,10 @@
 		<TermName>Legal name and address</TermName>
 		<DisplayName>Legal name and address</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-026">
+		<TermName>Legal name</TermName>
+		<DisplayName>Legal name</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">
