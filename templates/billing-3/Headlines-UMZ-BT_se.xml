@@ -48,6 +48,10 @@
 		<TermName>Legal name and address</TermName>
 		<DisplayName>Legal name and address</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-026">
+		<TermName>Legal name</TermName>
+		<DisplayName>Legal name</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">
@@ -81,5 +85,27 @@
 	<BusinessTerm id="UMZ-BT-019">
 		<TermName>No.</TermName>
 		<DisplayName>No.</DisplayName>
+	</BusinessTerm>
+	
+	<!-- PAYMENT NOTIFICATION TITLES -->
+	<BusinessTerm id="UMZ-BT-021">
+		<TermName>Document</TermName>
+		<DisplayName>Document</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-022">
+		<TermName>Payment date</TermName>
+		<DisplayName>Payment date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-023">
+		<TermName>Payment reference</TermName>
+		<DisplayName>Payment reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-024">
+		<TermName>Remittance advice</TermName>
+		<DisplayName>Remittance advice</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-025">
+		<TermName>Total paid</TermName>
+		<DisplayName>Total paid</DisplayName>
 	</BusinessTerm>
 </SemanticModel>

@@ -48,6 +48,10 @@
 		<TermName>Skráð nafn og heimili</TermName>
 		<DisplayName>Lögskráð nafn og heimili</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-026">
+		<TermName>Skráð nafn</TermName>
+		<DisplayName>Lögskráð nafn</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">
@@ -81,5 +85,27 @@
 	<BusinessTerm id="UMZ-BT-019">
 		<TermName>Kreditnótunr</TermName>
 		<DisplayName>Kreditnótunr</DisplayName>
+	</BusinessTerm>
+	
+	<!-- PAYMENT NOTIFICATION TITLES -->
+	<BusinessTerm id="UMZ-BT-021">
+		<TermName>Skjal</TermName>
+		<DisplayName>Skjal</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-022">
+		<TermName>Greitt dags.</TermName>
+		<DisplayName>Greitt dags.</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-023">
+		<TermName>Greiðslutilvísun</TermName>
+		<DisplayName>Greiðslutilvísun</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-024">
+		<TermName>Greiðslutilkynning</TermName>
+		<DisplayName>Greiðslutilkynning</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-025">
+		<TermName>Samtals greitt</TermName>
+		<DisplayName>Samtals greitt</DisplayName>
 	</BusinessTerm>
 </SemanticModel>
