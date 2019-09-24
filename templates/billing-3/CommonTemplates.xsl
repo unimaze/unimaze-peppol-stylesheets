@@ -331,7 +331,7 @@
                     <xsl:when test="$integerPart != ''">
                         <xsl:variable name="cutedDecimalPart" select="substring($decimalPart, 1, 1)" />
                         <xsl:choose>
-                            <xsl:when test="$cutedDecimalPart != '0'">
+                            <xsl:when test="($cutedDecimalPart != '0') or ($cutedDecimalPart != 0)">
                                 <xsl:value-of select="concat($integerPart , $cutedDecimalPart )" />
                             </xsl:when>
                             <xsl:otherwise>
@@ -349,8 +349,11 @@
                     <xsl:when test="$integerPart != ''">
                         <xsl:variable name="cutedDecimalPart" select="substring($decimalPart, 1, 2)" />
                         <xsl:choose>
-                            <xsl:when test="$cutedDecimalPart != '00'">
-                                <xsl:choose>
+                            <xsl:when test="($cutedDecimalPart = '00') or ($cutedDecimalPart = '0') or ($cutedDecimalPart = 0) or ($cutedDecimalPart = 00)">
+                                <xsl:value-of select="$integerPart" />
+                            </xsl:when>
+                            <xsl:otherwise>
+                             <xsl:choose>
                                     <xsl:when test="$country = 'en'">
                                         <xsl:value-of select="concat($integerPart, '.' , $cutedDecimalPart )" />
                                     </xsl:when>
@@ -358,9 +361,6 @@
                                         <xsl:value-of select="concat($integerPart, ',' , $cutedDecimalPart )" />
                                     </xsl:otherwise>
                                 </xsl:choose>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of select="$integerPart" />
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
