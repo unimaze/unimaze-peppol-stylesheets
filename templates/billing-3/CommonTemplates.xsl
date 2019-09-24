@@ -321,25 +321,18 @@
     <!-- Function to format numbers -->
     <xsl:template name="NumberFormat">
         <xsl:param name="value" />
-        <xsl:param name="decimalDigits" />
+        <xsl:param name="formatToDecimal" />
         <xsl:param name="country" />
         <xsl:variable name="integerPart" select="substring-before($value, '.')" />
         <xsl:variable name="decimalPart" select="substring-after($value, '.')" />
         <xsl:choose>
-            <xsl:when test="($decimalDigits = 1) or ($decimalDigits = '1')">
+            <xsl:when test="($formatToDecimal = 'false')  or ($formatToDecimal = '')">
                 <xsl:choose>
                     <xsl:when test="$integerPart != ''">
                         <xsl:variable name="cutedDecimalPart" select="substring($decimalPart, 1, 1)" />
                         <xsl:choose>
                             <xsl:when test="$cutedDecimalPart != '0'">
-                                <xsl:choose>
-                                    <xsl:when test="$country = 'en'">
-                                        <xsl:value-of select="concat($integerPart, '.' , $cutedDecimalPart )" />
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="concat($integerPart, ',' , $cutedDecimalPart )" />
-                                    </xsl:otherwise>
-                                </xsl:choose>
+                                <xsl:value-of select="concat($integerPart , $cutedDecimalPart )" />
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="$integerPart" />
@@ -351,7 +344,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <xsl:when test="($decimalDigits = 2) or ($decimalDigits = '2')">
+            <xsl:when test="$formatToDecimal = 'true'">
                 <xsl:choose>
                     <xsl:when test="$integerPart != ''">
                         <xsl:variable name="cutedDecimalPart" select="substring($decimalPart, 1, 2)" />
@@ -1937,7 +1930,7 @@
                             <xsl:apply-templates select="cac:Item/cac:ClassifiedTaxCategory/cbc:ID" />
                             <xsl:call-template name="NumberFormat">
                                 <xsl:with-param name="value" select="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent" />
-                                <xsl:with-param name="decimalDigits" select="2" />
+                                <xsl:with-param name="formatToDecimal" select="'false'" />
                                 <xsl:with-param name="country" select="$languageCode" />
                             </xsl:call-template>
                         </xsl:when>
@@ -2315,7 +2308,7 @@
             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
             <xsl:call-template name="NumberFormat">
                 <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
-                <xsl:with-param name="decimalDigits" select="1" />
+                <xsl:with-param name="formatToDecimal" select="'false'" />
                 <xsl:with-param name="country" select="$languageCode" />
             </xsl:call-template>
         </div>
@@ -2325,7 +2318,7 @@
                     
                     <xsl:call-template name="NumberFormat">
                         <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
-                        <xsl:with-param name="decimalDigits" select="2" />
+                        <xsl:with-param name="formatToDecimal" select="'true'" />
                         <xsl:with-param name="country" select="$languageCode" />
                     </xsl:call-template>% )
                 
