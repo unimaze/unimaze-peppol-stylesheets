@@ -317,9 +317,13 @@
                         padding:0;
                     }
 
+                    .invoice_table .invoice_table_body_data:first-of-type {
+                        height: 15px;
+                    }
+
                     .invoice_table .invoice_table_body_data_name_column_header {
                         width: 100%;
-                        margin-bottom: 0.5em;
+                        margin-bottom: 0.1em;
                     }
 
                     .invoice_table .invoice_table_body_data_name_column_body {
@@ -414,9 +418,17 @@
 
                     .invoice_table_body_holder {
                         display: grid;
-                        padding: 0.5em;
+                        padding: 0.3em 0.5em;
                         grid-template-columns: 7% 10% auto 10% 12% 6% 10% 12%;
                         align-items: flex-start;
+                    }
+
+                    .invoice_table_body_holder:first-of-type {
+                        padding-top: 0.6em;
+                    }
+
+                    .invoice_table_body_holder:last-of-type {
+                        padding-bottom: 0.6em;
                     }
 
 
