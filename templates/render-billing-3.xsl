@@ -312,21 +312,21 @@
                         height: fit-content;
                     }
 
-                    .invoice_table .blue_box_no_back, 
-                    .invoice_table .red_box_no_back {
+                    .items_table .blue_box_no_back, 
+                    .items_table .red_box_no_back {
                         padding:0;
                     }
 
-                    .invoice_table .invoice_table_body_data:first-of-type {
+                    .items_table .items_table_body_data:first-of-type {
                         height: 15px;
                     }
 
-                    .invoice_table .invoice_table_body_data_name_column_header {
+                    .items_table .items_table_body_data_name_column_header {
                         width: 100%;
                         margin-bottom: 0.1em;
                     }
 
-                    .invoice_table .invoice_table_body_data_name_column_body {
+                    .items_table .items_table_body_data_name_column_body {
                         width: 150%;
                     }
 
@@ -346,11 +346,11 @@
                         padding-right: 26%;
                     }
                     <!-- HIDE-SHOW TABLE DETAILS -->
-                    .invoice_table_body_data label,
+                    .items_table_body_data label,
                     .collapse_expand_all_label {
                         cursor:pointer;
                     }
-                    .invoice_table_body_data label {
+                    .items_table_body_data label {
                         position: relative;
                         top: -1.2em;
                     }
@@ -380,14 +380,20 @@
                         top: 0;
                     }
 
-                    .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .expand_arrow,
-                    .hide_all_content_input:checked + .invoice_table_header .invoice_table_header_title .collapse_expand_all_label .double_expand_arrow {
+                    .hide_content_input:checked + .items_table_body_holder .items_table_body_data .expand_arrow,
+                    .hide_all_content_input:checked + .items_table_header .items_table_header_title .collapse_expand_all_label .double_expand_arrow {
                         transition: all .3s;
                         transform: rotate(-180deg);
                         -webkit-transform: rotate(-180deg);
                         -moz-transform: rotate(-180deg);
                         -ms-transform: rotate(-180deg);
                         -o-transform: rotate(-180deg);
+                    }
+
+                    .hide_all_content_input:checked ~ .items_table_body .items_table_body_holder .items_table_body_data .expand_arrow {
+                        cursor: default;
+                        transition: all .3s;
+                        opacity: 0;
                     }
 
                     .hide_content {
@@ -400,8 +406,8 @@
                         display: none;
                     }           
                     
-                    .invoice_table_body > .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .hide_content,
-                    .invoice_table .hide_all_content_input:checked ~ .invoice_table_body .invoice_table_body_holder .invoice_table_body_data .hide_content {
+                    .items_table_body > .hide_content_input:checked + .items_table_body_holder .items_table_body_data .hide_content,
+                    .items_table .hide_all_content_input:checked ~ .items_table_body .items_table_body_holder .items_table_body_data .hide_content {
                         min-height: 0;
                         height: 0;
                         opacity: 0;
@@ -410,24 +416,25 @@
                     }
                     <!-- /HIDE-SHOW TABLE DETAILS -->
 
-                    .invoice_table_header {
+                    .items_table_header {
                         display: grid;
                         grid-template-columns: 7% 10% auto 10% 12% 6% 10% 12%;
                         align-items: center;
+                        page-break-inside: avoid;
                     }
 
-                    .invoice_table_body_holder {
+                    .items_table_body_holder {
                         display: grid;
                         padding: 0.3em 0.5em;
                         grid-template-columns: 7% 10% auto 10% 12% 6% 10% 12%;
                         align-items: flex-start;
                     }
 
-                    .invoice_table_body_holder:first-of-type {
+                    .items_table_body_holder:first-of-type {
                         padding-top: 0.6em;
                     }
 
-                    .invoice_table_body_holder:last-of-type {
+                    .items_table_body_holder:last-of-type {
                         padding-bottom: 0.6em;
                     }
 
@@ -496,20 +503,20 @@
                             width:80em;
                         }
 
-                        .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .expand_arrow,
+                        .hide_content_input:checked + .items_table_body_holder .items_table_body_data .expand_arrow,
                         .expand_arrow,
                         .collapse_expand_all_label {
                             transform: rotate(0);
                             display: none;
                         }
-                        .invoice_table_body > .hide_content_input:checked + .invoice_table_body_holder .invoice_table_body_data .hide_content,
-                        .invoice_table .hide_all_content_input:checked ~ .invoice_table_body .invoice_table_body_holder .invoice_table_body_data .hide_content {
+                        .items_table_body > .hide_content_input:checked + .items_table_body_holder .items_table_body_data .hide_content,
+                        .items_table .hide_all_content_input:checked ~ .items_table_body .items_table_body_holder .items_table_body_data .hide_content {
                             min-height: 2em; /* any arbitrary height but best at the minimum initial height you would want. */
                             overflow: hidden;
                             height: unset;
                             opacity: 1;
                         }
-                        .invoice_table_body_data label {
+                        .items_table_body_data label {
                             top: 0;
                         }    
                     }
@@ -524,12 +531,14 @@
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         grid-gap: 2em;
+                        page-break-inside: avoid;
                     }
                     
                     .grid_small_2fr_spliter {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         grid-gap: 1em;
+                        page-break-inside: avoid;
                     }
                     <!-- /GRID CSS -->
                 </style>
@@ -709,12 +718,12 @@
                                         </xsl:call-template>
                                     </p>
                                     <div class="buyer_info">
-                                        <p>
-                                            <b>
-                                                <xsl:call-template name="BuyerPartyName" />
-                                            </b>
-                                        </p>
+                                        <b>
+                                            <xsl:call-template name="BuyerPartyName" />
+                                        </b>
                                         <xsl:call-template name="BuyerPostalAddress" />
+                                        <br/>
+                                        <xsl:call-template name="BuyerPostalID" />
                                     </div>
                                 </div>
                             </xsl:if>
@@ -727,12 +736,12 @@
                                         </xsl:call-template>
                                     </p>
                                     <div class="buyer_info">
-                                        <p>
-                                            <b>
-                                                <xsl:call-template name="BuyerPartyName" />
-                                            </b>
-                                        </p>
+                                        <b>
+                                            <xsl:call-template name="BuyerPartyName" />
+                                        </b>
                                         <xsl:call-template name="BuyerPostalAddress" />
+                                        <br/>
+                                        <xsl:call-template name="BuyerPostalID" />
                                     </div>
                                 </div>
                             </xsl:if>
@@ -1386,17 +1395,17 @@
                     <br/>
                     <div>
                         <!--Start Invoiceline-->
-                        <div class="invoice_table">
+                        <div class="items_table">
                             <xsl:if test="local-name(.)  = 'Invoice'">
                                 <div class="blue_box_no_back">
                                     <input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"/>
-                                    <div class="invoice_table_header table_header">
-                                        <div class="invoice_table_header_title">
+                                    <div class="items_table_header table_header">
+                                        <div class="items_table_header_title">
                                             <label for="collapse_expand_all" class="collapse_expand_all_label">
                                                 <div class="double_expand_arrow">&#171;</div>
                                             </label>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-155'"/>
@@ -1404,7 +1413,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-153'"/>
@@ -1412,7 +1421,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-129'"/>
@@ -1420,7 +1429,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-146'"/>
@@ -1428,7 +1437,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-151'"/>
@@ -1436,7 +1445,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title text_right">
+                                        <div class="items_table_header_title text_right">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-131'"/>
@@ -1444,7 +1453,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title text_right">
+                                        <div class="items_table_header_title text_right">
                                             <b>
                                                 <xsl:call-template name="UMZLabelName">
                                                     <xsl:with-param name="BT-ID" select="'UMZ-BT-006'"/>
@@ -1454,7 +1463,7 @@
                                             </b>
                                         </div>
                                     </div>
-                                    <div class="invoice_table_body">
+                                    <div class="items_table_body">
                                         <xsl:apply-templates select="cac:InvoiceLine"/>
                                     </div>
                                 </div>
@@ -1462,13 +1471,13 @@
                             <xsl:if test="local-name(.)  = 'CreditNote'">
                                 <div class="red_box_no_back">
                                     <input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"/>
-                                    <div class="invoice_table_header credit_note_table_header">
-                                        <div class="invoice_table_header_title">
+                                    <div class="items_table_header credit_note_table_header">
+                                        <div class="items_table_header_title">
                                             <label for="collapse_expand_all" class="collapse_expand_all_label">
                                                 <div class="double_expand_arrow">&#171;</div>
                                             </label>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-155'"/>
@@ -1476,7 +1485,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-153'"/>
@@ -1484,7 +1493,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-129'"/>
@@ -1492,7 +1501,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-146'"/>
@@ -1500,7 +1509,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title">
+                                        <div class="items_table_header_title">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-151'"/>
@@ -1508,7 +1517,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title text_right">
+                                        <div class="items_table_header_title text_right">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-131'"/>
@@ -1516,7 +1525,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="invoice_table_header_title text_right">
+                                        <div class="items_table_header_title text_right">
                                             <b>
                                                 <xsl:call-template name="UMZLabelName">
                                                     <xsl:with-param name="BT-ID" select="'UMZ-BT-006'"/>
@@ -1526,7 +1535,7 @@
                                             </b>
                                         </div>
                                     </div>
-                                    <div class="invoice_table_body">
+                                    <div class="items_table_body">
                                         <xsl:apply-templates select="cac:CreditNoteLine"/>
                                     </div>
                                 </div>
@@ -1950,58 +1959,7 @@
                                     </xsl:call-template>
                                 </p>
                                 <div class="blue_box_no_back">
-                                    <p>
-                                        <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Person/cbc:FirstName !=''">
-                                            <xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cac:Person/cbc:FirstName"/>
-                                        </xsl:if>
-                                    </p>
                                     <xsl:call-template name="SellerAdditionalInfo" />
-                                    <xsl:if test="(cac:AccountingSupplierParty/cac:Party/cac:Contact !='') or (cac:AccountingSupplierParty/cac:Party/cac:Person/cbc:FirstName !='')">
-                                        <p>
-                                            <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BG-6'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                </xsl:call-template>
-                                            </b>
-                                        </p>
-                                    </xsl:if>
-                                    <p>
-                                        <xsl:call-template name="SellerContact" />
-                                    </p>
-                                    <p>
-                                        <xsl:call-template name="SellerID" />
-                                    </p>
-                                    <p>
-                                        <b>
-                                            <xsl:call-template name="LabelName">
-                                                <xsl:with-param name="BT-ID" select="'BT-34'"/>
-                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                            </xsl:call-template>
-                                        </b>
-                                    </p>
-                                    <p>
-                                        <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
-                                            <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID"/>
-                                            <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID !='' "> 
-                                            (
-                                                <xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/>
-                                            )
-                                            </xsl:if>
-                                        </xsl:if>
-                                    </p>
-                                    <xsl:if test="cac:TaxRepresentativeParty !=''">
-                                        <br/>
-                                        <p>
-                                            <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BG-11'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                </xsl:call-template>
-                                            </b>
-                                        </p>
-                                        <xsl:apply-templates select="cac:TaxRepresentativeParty"/>
-                                    </xsl:if>
                                 </div>
                             </xsl:if>
                             <xsl:if test="local-name(.)  = 'CreditNote'">
@@ -2012,60 +1970,7 @@
                                     </xsl:call-template>
                                 </p>
                                 <div class="red_box_no_back">
-                                    <p>
-                                        <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Person/cbc:FirstName !=''">
-                                            <xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cac:Person/cbc:FirstName"/>
-                                        </xsl:if>
-                                    </p>
                                     <xsl:call-template name="SellerAdditionalInfo" />
-                                    <xsl:if test="(cac:AccountingSupplierParty/cac:Party/cac:Contact !='') or (cac:AccountingSupplierParty/cac:Party/cac:Person/cbc:FirstName !='')">
-                                        <p>
-                                            <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BG-6'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                </xsl:call-template>
-                                            </b>
-                                        </p>
-                                    </xsl:if>
-                                    <p>
-                                        <xsl:call-template name="SellerContact" />
-                                    </p>
-                                    <p>
-                                        <xsl:call-template name="SellerPostalID" />
-                                    </p>
-                                    <p>
-                                        <xsl:call-template name="SellerID" />
-                                    </p>
-                                    <p>
-                                        <b>
-                                            <xsl:call-template name="LabelName">
-                                                <xsl:with-param name="BT-ID" select="'BT-34'"/>
-                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                            </xsl:call-template>
-                                        </b>
-                                    </p>
-                                    <p>
-                                        <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
-                                            <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID"/>
-                                            <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID !='' ">(
-                                                <xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/>
-                                                )
-                                            </xsl:if>
-                                        </xsl:if>
-                                    </p>
-                                    <xsl:if test="cac:TaxRepresentativeParty !=''">
-                                        <br/>
-                                        <p>
-                                            <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BG-11'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                </xsl:call-template>
-                                            </b>
-                                        </p>
-                                        <xsl:apply-templates select="cac:TaxRepresentativeParty"/>
-                                    </xsl:if>
                                 </div>
                             </xsl:if>
                         </div>
@@ -2079,24 +1984,6 @@
                                 </p>
                                 <div class="blue_box_no_back">
                                     <xsl:call-template name="BuyerAdditionalInfo" />
-                                    <xsl:call-template name="BuyerID" />
-                                    <p>
-                                        <b>
-                                            <xsl:call-template name="LabelName">
-                                                <xsl:with-param name="BT-ID" select="'BT-49'"/>
-                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                            </xsl:call-template>
-                                        </b>
-                                    </p>
-                                    <p>
-                                        <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID">
-                                            <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID"/>
-                                            <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID !='' "> (
-                                                <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/>
-                                                )
-                                            </xsl:if>
-                                        </xsl:if>
-                                    </p>
                                 </div>
                                 <br/>
                                 <!-- Additional Supporting Documents -->
@@ -2188,7 +2075,7 @@
                                     </xsl:call-template>
                                 </p>
                                 <div class="red_box_no_back">
-                                    <p>
+                                    <!-- <p>
                                         <b>
                                             <xsl:call-template name="UMZLabelName">
                                                 <xsl:with-param name="BT-ID" select="'UMZ-BT-016'"/>
@@ -2214,7 +2101,8 @@
                                                 )
                                             </xsl:if>
                                         </xsl:if>
-                                    </p>
+                                    </p> -->
+                                    <xsl:call-template name="BuyerAdditionalInfo" />
                                 </div>
                                 <br/>
                                 <!-- Additional Supporting Documents -->

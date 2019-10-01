@@ -108,4 +108,96 @@
 		<TermName>Samtals greitt</TermName>
 		<DisplayName>Samtals greitt</DisplayName>
 	</BusinessTerm>
+	
+
+	<!-- ORDER TITLES -->
+	<BusinessTerm id="UMZ-BT-027">
+		<TermName>Originator</TermName>
+		<DisplayName>Originator</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-028">
+		<TermName>Name</TermName>
+		<DisplayName>Name</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-029">
+		<TermName>Customer reference</TermName>
+		<DisplayName>Customer reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-030">
+		<TermName>Accounting Cost</TermName>
+		<DisplayName>Accounting Cost</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-031">
+		<TermName>Final buyer</TermName>
+		<DisplayName>Final buyer</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-032">
+		<TermName>Buyer tax representative VAT identifier</TermName>
+		<DisplayName>VAT no.</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-033">
+		<TermName>Item serial identification</TermName>
+		<DisplayName>Item serial identification</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-034">
+		<TermName>Item lot information</TermName>
+		<DisplayName>Item lot information</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-035">
+		<TermName>Allowance base amount</TermName>
+		<DisplayName>Allowance base amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-036">
+		<TermName>Originator information</TermName>
+		<DisplayName>Originator information</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-037">
+		<TermName>Útgáfudagur pöntunar</TermName>
+		<DisplayName>Útgáfudagur pöntunar</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-038">
+		<TermName>Upphæð pöntunar</TermName>
+		<DisplayName>Upphæð pöntunar</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-039">
+		<TermName>Gjaldmiðill á pöntun</TermName>
+		<DisplayName>Gjaldmiðill á pöntun</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-040">
+		<TermName>Item specification reference</TermName>
+		<DisplayName>Item specification reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-041">
+		<TermName>Endanlegur kaupandi</TermName>
+		<DisplayName>Endanlegur kaupandi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-042">
+		<TermName>Fjöldi lína</TermName>
+		<DisplayName>Fjöldi lína</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-043">
+		<TermName>*Ath. Einingaverð eru birt án VSK</TermName>
+		<DisplayName>*Ath. Einingaverð eru birt án VSK</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-044">
+		<TermName>Útgáfutími</TermName>
+		<DisplayName>Útgáfutími</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-045">
+		<TermName>Rafrænt póstfang kaupandi</TermName>
+		<DisplayName>Rafrænt póstfang kaupandi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-046">
+		<TermName>Originator identifier</TermName>
+		<DisplayName>ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-047">
+		<TermName>Quotation Document Reference</TermName>
+		<DisplayName>Quotation Document Reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-048">
+		<TermName>Order Document Reference</TermName>
+		<DisplayName>Order Document Reference</DisplayName>
+	</BusinessTerm>
+
 </SemanticModel>

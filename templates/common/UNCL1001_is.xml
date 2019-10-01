@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+	<Identification>
+		<ShortName>UNCL1001</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet>
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>80</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Debit note related to goods or services</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>82</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Metered services invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>84</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Debit note related to financial adjustments</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>380</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Commercial invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>383</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Debit note</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>386</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Prepayment invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>393</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Factored invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>395</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Consignment invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>575</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Insurer's invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>623</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Forwarder's invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>780</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Freight invoice</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>81</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Credit note related to goods or services</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>83</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Credit note related to financial adjustments</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>381</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Credit note</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>396</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Factored credit note</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>532</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Forwarder's credit note</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>
