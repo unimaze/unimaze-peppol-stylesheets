@@ -37,5 +37,21 @@
 				<SimpleValue>KREDITNÓTA</SimpleValue>
 			</Value>
 		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>Order</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>PÖNTUN</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>RemittanceAdvice</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>GREIÐSLUTILKYNNING</SimpleValue>
+			</Value>
+		</Row>
 	</SimpleCodeList>
 </CodeList>
