@@ -510,11 +510,8 @@
                         </header>
                         <br/>
                         <br/>
-                        <!-- buyer_and_due_dates_holder -->
+                        <!-- invoicee_and_issue_date_holder -->
                         <div class="grid_big_2fr_spliter">
-                            <!-- BUYER -->
-                            <!-- <div class="buyer"><xsl:if test="local-name(.)  = 'Order'"><div class="green_box"><p class="title"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-7'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template></p><div class="box_with_margin"><p><b><xsl:call-template name="BuyerPartyName" /></b></p><xsl:call-template name="BuyerPostalAddress" /></div></div></xsl:if></div> -->
-                            <!-- /BUYER -->
                             <!-- INVOICEE -->
                             <div class="invoicee">
                                 <xsl:if test="local-name(.)  = 'Order'">
@@ -694,7 +691,7 @@
                                 </div>
                             </xsl:if>
                         </div>
-                        <!-- /buyer_and_due_dates_holder -->
+                        <!-- /invoicee_and_issue_date_holder -->
                         <div class="grid_big_2fr_spliter">
                             <!-- SELLER -->
                             <div class="seller">
@@ -815,11 +812,8 @@
                                         <xsl:with-param name="value" select="count(cac:OrderLine/cac:LineItem/cbc:ID)" />
                                         <xsl:with-param name="decimalDigits" select="2" />
                                         <xsl:with-param name="country" select="$languageCode" />
-                                    </xsl:call-template>&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                    
-                                    
-                                    
-                                    
+                                    </xsl:call-template>
+                                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                     <xsl:call-template name="UMZLabelName">
                                         <xsl:with-param name="BT-ID" select="'UMZ-BT-043'"/>
                                         <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1069,7 +1063,6 @@
                                 </div>
                                 <div class="buyer_information">
                                     <p class="green_title">
-                                        <!-- <xsl:call-template name="UMZLabelName"><xsl:with-param name="BT-ID" select="'UMZ-BT-031'"/><xsl:with-param name="Colon-Suffix" select="'true'"/></xsl:call-template> -->
                                         <xsl:call-template name="UMZLabelName">
                                             <xsl:with-param name="BT-ID" select="'UMZ-BT-009'"/>
                                             <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1214,9 +1207,6 @@
                             </xsl:if>
                         </div>
                         <!-- /Additional Supporting Documents -->
-                        <!-- AllowanceCharge -->
-                        <!-- <br/><div class="grid_big_2fr_spliter"><xsl:if test="cac:AllowanceCharge !=''"><div><p class="green_title"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BG-20'"/><xsl:with-param name="Colon-Suffix" select="'false'"/></xsl:call-template></p><div class="green_box_no_back"><xsl:apply-templates select="cac:AllowanceCharge" mode="LineLevel-new"/></div></div></xsl:if><div></div></div> -->
-                        <!-- /AllowanceCharge -->
                         <br/>
                         <br/>
                         <br/>
