@@ -581,8 +581,7 @@
                                             </div>
                                             <div class="payment_means_code" data-name="transfer">
                                                 <p>
-                                            (
-                                                    <xsl:apply-templates select="cbc:PaymentMeansCode"/>)
+                                            ( <xsl:apply-templates select="cbc:PaymentMeansCode"/> )
                                                     
                                                     <xsl:choose>
                                                         <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode/@name != ''">
@@ -777,18 +776,15 @@
                                                 <div class="remittance_advice_line_table_body_data_name_column_header">
                                                     <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyName/cbc:Name" />
                                                     <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID !=''">
-                                                            ( 
-                                                        <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID" />
+                                                            ( <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID" />
                                                         <xsl:choose>
                                                             <xsl:when test="cac:BuyerCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !=''">
-                                                                    &#160;[
-                                                                <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />]
-                                                                
+                                                                    &#160;[ <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" /> ]
                                                             </xsl:when>
                                                             <xsl:otherwise>
                                                                     &#160;[No schemeID]
-                                                                </xsl:otherwise>
-                                                        </xsl:choose>)
+                                                            </xsl:otherwise>
+                                                        </xsl:choose> )
                                                         <br />
                                                     </xsl:if>
                                                 </div>
@@ -801,13 +797,12 @@
                                                     <xsl:if test="cac:DocumentReference/cbc:ID !=''">
                                                         <xsl:apply-templates select="cac:DocumentReference/cbc:ID" />&#160;
                                                     </xsl:if>
-                                                    ( 
-                                                    <xsl:if test="cac:DocumentReference//cbc:IssueDate !=''">
+                                                    ( <xsl:if test="cac:DocumentReference//cbc:IssueDate !=''">
                                                         <xsl:call-template name="formatDate">
                                                             <xsl:with-param name="dateTime" select="cac:DocumentReference/cbc:IssueDate" />
                                                             <xsl:with-param name="country" select="$languageCode" />
-                                                        </xsl:call-template>&#160;
-                                                    </xsl:if>)
+                                                        </xsl:call-template>
+                                                    </xsl:if> )
                                                 </xsl:if>
                                             </div>
                                             <div class="remittance_advice_line_table_body_data text_right">

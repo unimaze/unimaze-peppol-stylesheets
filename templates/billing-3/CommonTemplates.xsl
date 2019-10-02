@@ -435,11 +435,6 @@
                 </xsl:call-template>
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName" />
             </span>&#160;
-        
-        
-        
-        
-        
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:BuildingNumber !=''">
             <span class="UBLBuildingNumber">
@@ -478,22 +473,12 @@
                         <xsl:apply-templates
                             select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone" />
                         &#160;
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-37'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,
-                    
-                    
-                    
-                    
-                    
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="LabelName">
@@ -502,11 +487,6 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,
-                    
-                    
-                    
-                    
-                    
                     </xsl:otherwise>
                 </xsl:choose>
             </span>
@@ -633,19 +613,8 @@
         <p>
             <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID"/>
-                <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID !='' ">(
-                    
-                    
-                    
-                    
-                    
-                    <xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/>
-                    )
-                
-                
-                
-                
-                
+                <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID !='' ">
+                ( <xsl:value-of select="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/> )
                 </xsl:if>
             </xsl:if>
         </p>
@@ -696,25 +665,9 @@
                     </xsl:call-template>
                     <xsl:apply-templates select="cbc:ID" />
                     <xsl:if test="cbc:ID/@schemeID !='' ">
-                        &#160;[
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates select="cbc:ID/@schemeID" />]
-                    
-                    
-                    
-                    
-                    
+                        &#160;[ <xsl:apply-templates select="cbc:ID/@schemeID" /> ]
                     </xsl:if>
                     &#160;
-                
-                
-                
-                
-                
                 </small>
             </xsl:if>
         </xsl:for-each>
@@ -731,36 +684,7 @@
                         select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
                     <xsl:if
                         test="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID !='' ">
-                        &#160;[
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates
-                            select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" />
-                        ]
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        &#160;[ <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" /> ]
                     </xsl:if>
                 </small>
             </xsl:if>
@@ -796,19 +720,6 @@
                             <xsl:apply-templates
                                 select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName" />
                             ,&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates
                                 select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country" />
                         </xsl:when>
@@ -846,52 +757,13 @@
                                 <xsl:with-param name="BT-ID" select="'BT-32'" />
                                 <xsl:with-param name="Colon-Suffix" select="'true'" />
                             </xsl:call-template>
-                            <xsl:apply-templates select="cbc:CompanyID" />[
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            <xsl:value-of select="cac:TaxScheme/cbc:ID" />]
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                            <xsl:apply-templates select="cbc:CompanyID" />
+                            [ <xsl:value-of select="cac:TaxScheme/cbc:ID" /> ]
                         </xsl:otherwise>
                     </xsl:choose>
                     <xsl:if test="cbc:ExemptionReason">
                         <br />
                         &#160;
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         <xsl:apply-templates select="cbc:ExemptionReason" />
                     </xsl:if>
                 </xsl:for-each>
@@ -978,11 +850,6 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone" />&#160;
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-37'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -1054,36 +921,30 @@
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone !=''">
             <span class="UBLTelephone">
-                <!-- <b class="seller_contact_label"> -->
                 <xsl:call-template name="LabelName">
                     <xsl:with-param name="BT-ID" select="'BT-42'"/>
                     <xsl:with-param name="Colon-Suffix" select="'true'"/>
                 </xsl:call-template>
-                <!-- </b> -->
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone" />
             </span>
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telefax !=''">
             <br />
             <span class="UBLTelefax">
-                <!-- <b class="seller_contact_label"> -->
                 <xsl:call-template name="UMZLabelName">
                     <xsl:with-param name="BT-ID" select="'UMZ-BT-001'" />
                     <xsl:with-param name="Colon-Suffix" select="'true'" />
                 </xsl:call-template>
-                <!-- </b> -->
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telefax" />
             </span>
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail !=''">
             <br />
             <span class="UBLElectronicMail">
-                <!-- <b class="seller_contact_label"> -->
                 <xsl:call-template name="LabelName">
                     <xsl:with-param name="BT-ID" select="'BT-43'" />
                     <xsl:with-param name="Colon-Suffix" select="'true'" />
                 </xsl:call-template>
-                <!-- </b> -->
                 <xsl:apply-templates
                         select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail" />
             </span>
@@ -1128,11 +989,6 @@
                 </xsl:call-template>
                 <xsl:apply-templates select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName" />
             </span>&#160;
-        
-        
-        
-        
-        
         </xsl:if>
         <xsl:if test="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:BuildingNumber !=''">
             <span class="UBLBuildingNumber">
@@ -1171,22 +1027,12 @@
                         <xsl:apply-templates
                             select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone" />
                         &#160;
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-37'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,
-                    
-                    
-                    
-                    
-                    
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="LabelName">
@@ -1195,11 +1041,6 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,
-                    
-                    
-                    
-                    
-                    
                     </xsl:otherwise>
                 </xsl:choose>
             </span>
@@ -1214,12 +1055,7 @@
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                     <xsl:apply-templates
-                        select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />, 
-                    
-                    
-                    
-                    
-                    
+                        select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />,
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-40'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -1227,23 +1063,13 @@
                     <xsl:apply-templates select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cac:Country" />
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:if test="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !=''">, 
-                        
-                        
-                        
-                        
-                        
+                    <xsl:if test="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !=''">,
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-39'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
-                            select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />, 
-                    
-                    
-                    
-                    
-                    
+                            select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />,
                     </xsl:if>
                     <xsl:if test="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cac:Country !=''">
                         <xsl:call-template name="LabelName">
@@ -1304,22 +1130,12 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone" />&#160;
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-37'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,
-                    
-                    
-                    
-                    
-                    
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="LabelName">
@@ -1328,11 +1144,6 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,
-                    
-                    
-                    
-                    
-                    
                     </xsl:otherwise>
                 </xsl:choose>
             </span>
@@ -1349,11 +1160,6 @@
                     </xsl:call-template>
                     <xsl:apply-templates
                         select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />,
-                    
-                    
-                    
-                    
-                    
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-40'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -1369,11 +1175,6 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />,
-                    
-                    
-                    
-                    
-                    
                     </xsl:if>
                     <xsl:if test="cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cac:Country !=''">
                         <xsl:call-template name="LabelName">
@@ -1386,7 +1187,6 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
-        <!-- <xsl:call-template name="SellerSupplierPartyLegalEntity" /> -->
     </xsl:template>
     <xsl:template name="SellerSupplierContact">
         <xsl:if test="((cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Name !='') and (cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Name != cac:SellerSupplierParty/cac:Party/cac:PartyName/cbc:Name))">
@@ -1514,19 +1314,7 @@
             <xsl:if test="cac:SellerSupplierParty/cac:Party/cbc:EndpointID">
                 <xsl:apply-templates select="cac:SellerSupplierParty/cac:Party/cbc:EndpointID"/>
                 <xsl:if test="cac:SellerSupplierParty/cac:Party/cbc:EndpointID/@schemeID !='' "> 
-                (
-                    
-                    
-                    
-                    
-                    
-                    <xsl:value-of select="cac:SellerSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/>
-                )
-                
-                
-                
-                
-                
+                ( <xsl:value-of select="cac:SellerSupplierParty/cac:Party/cbc:EndpointID/@schemeID"/> )
                 </xsl:if>
             </xsl:if>
         </p>
@@ -1596,34 +1384,8 @@
                     </xsl:call-template>
                 </b>
                 <xsl:apply-templates select="cac:Party/cac:PartyIdentification/cbc:ID" />
-                <xsl:if test="cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">&#160;[
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:apply-templates select="cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />]
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                <xsl:if test="cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                    &#160;[ <xsl:apply-templates select="cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" /> ]
                 </xsl:if>
             </small>
         </xsl:if>
@@ -1638,18 +1400,7 @@
                     </xsl:call-template>
                     <xsl:apply-templates select="cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
                     <xsl:if test="cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID !='' ">
-                        &#160;[
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates select="cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" />]
-                    
-                    
-                    
-                    
-                    
+                        &#160;[ <xsl:apply-templates select="cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" /> ]
                     </xsl:if>
                 </small>
             </xsl:if>
@@ -1674,18 +1425,8 @@
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                     <xsl:apply-templates select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />
-                    <xsl:if test="cac:Party/cac:PartyTaxScheme/cbc:CompanyID/@schemeID !='' ">&#160;[
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID/@schemeID" />]
-                    
-                    
-                    
-                    
-                    
+                    <xsl:if test="cac:Party/cac:PartyTaxScheme/cbc:CompanyID/@schemeID !='' ">
+                        &#160;[ <xsl:apply-templates select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID/@schemeID" /> ]
                     </xsl:if>
                 </xsl:if>
                 <xsl:if test="cac:Party/cac:PartyTaxScheme/cbc:ExemptionReason">
@@ -1695,65 +1436,6 @@
             </small>
         </xsl:if>
     </xsl:template>
-    <!-- <xsl:template name="BuyerPostalAddress"><xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName !=''"><span class="UBLStreetName"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-50'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName" /></span>
-            &#160;
-        
-        
-        
-        
-        
-        
-        
-        
-        </xsl:if><xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:BuildingNumber !=''"><span class="UBLStreetName"><xsl:apply-templates
-                    select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:BuildingNumber" /></span></xsl:if><xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName !=''"><br /><span class="UBLAdditionalStreetName"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-51'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                    select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName" /></span></xsl:if><xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line !=''"><br /><span class="UBLAdditionalStreetName"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-163'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                    select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line" /></span></xsl:if><xsl:if
-            test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone !='' or cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName !=''"><br /><span class="UBLCityName"><xsl:choose><xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone !=''"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-53'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                            select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone" />&#160;
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-52'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                            select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    </xsl:when><xsl:otherwise><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-52'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                            select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    </xsl:otherwise></xsl:choose></span></xsl:if><xsl:if
-            test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !='' or cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country !=''"><xsl:choose><xsl:when
-                    test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !='' and cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country !=''"><br /><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-54'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                        select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />,
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-55'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country" /></xsl:when><xsl:otherwise><xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !=''"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-54'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                            select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" /><br /></xsl:if><xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country !=''"><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-55'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template><xsl:apply-templates
-                            select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode" /><br /></xsl:if></xsl:otherwise></xsl:choose></xsl:if><xsl:call-template name="BuyerPostalID" /></xsl:template> -->
     <xsl:template name="BuyerPartyName">
         <xsl:choose>
             <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PartyName !=''">
@@ -1799,21 +1481,8 @@
         <p>
             <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID">
                 <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID"/>
-                <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID !='' "> (
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/>
-                    )
-                
-                
-                
-                
-                
-                
+                <xsl:if test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID !='' ">
+                    ( <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/> )
                 </xsl:if>
             </xsl:if>
         </p>
@@ -1898,22 +1567,12 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone" />&#160;
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-52'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="LabelName">
@@ -1922,11 +1581,6 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
                     </xsl:otherwise>
                 </xsl:choose>
             </span>
@@ -1943,11 +1597,6 @@
                     </xsl:call-template>
                     <xsl:apply-templates
                         select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />,
-                    
-                    
-                    
-                    
-                    
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-55'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -2057,22 +1706,12 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:BuyerCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone" />&#160;
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-52'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:BuyerCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="LabelName">
@@ -2081,11 +1720,6 @@
                         </xsl:call-template>
                         <xsl:apply-templates
                             select="cac:BuyerCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
                     </xsl:otherwise>
                 </xsl:choose>
             </span>
@@ -2102,11 +1736,6 @@
                     </xsl:call-template>
                     <xsl:apply-templates
                         select="cac:BuyerCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity" />,
-                    
-                    
-                    
-                    
-                    
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-55'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -2175,19 +1804,8 @@
         <p>
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cbc:EndpointID">
                 <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cbc:EndpointID"/>
-                <xsl:if test="cac:BuyerCustomerParty/cac:Party/cbc:EndpointID/@schemeID !='' "> (
-                    
-                    
-                    
-                    
-                    
-                    <xsl:value-of select="cac:BuyerCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/>
-                    )
-                
-                
-                
-                
-                
+                <xsl:if test="cac:BuyerCustomerParty/cac:Party/cbc:EndpointID/@schemeID !='' ">
+                    ( <xsl:value-of select="cac:BuyerCustomerParty/cac:Party/cbc:EndpointID/@schemeID"/> )
                 </xsl:if>
             </xsl:if>
         </p>
@@ -2197,27 +1815,23 @@
     <xsl:template name="BuyerCustomerPartyContact">
         <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:Contact !=''">
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Name !=''">
-                <!-- <b><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-56'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template></b> -->
                 <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Name" />
                 <br />
             </xsl:if>
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Telephone !=''">
                 <span class="UBLTelephone">
-                    <!-- <p><b><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-57'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template></b></p> -->
                     <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Telephone" />
                 </span>
                 <br />
             </xsl:if>
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Telefax !=''">
                 <span class="UBLTelefax">
-                    <!-- <p><b><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-22'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template></b></p> -->
                     <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:Telefax" />
                 </span>
                 <br />
             </xsl:if>
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail !=''">
                 <span class="UBLElectronicMail">
-                    <!-- <p><b><xsl:call-template name="LabelName"><xsl:with-param name="BT-ID" select="'BT-58'" /><xsl:with-param name="Colon-Suffix" select="'true'" /></xsl:call-template></b></p> -->
                     <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail" />
                 </span>
                 <br />
@@ -2234,21 +1848,7 @@
             </b>
             <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID/@schemeID !='' ">
-                &#160;[
-                
-                
-                
-                
-                
-                
-                <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID/@schemeID" />]
-            
-            
-            
-            
-            
-            
-            
+                &#160;[ <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID/@schemeID" /> ]
             </xsl:if>
         </xsl:if>
     </xsl:template>
@@ -2263,30 +1863,8 @@
                 </xsl:call-template>
                 <xsl:apply-templates
                         select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
-                <xsl:if
-                        test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID !='' ">
-                        &#160;[
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:apply-templates
-                            select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" />
-                        ]
-                    
-                
-                
-                
-                
-                
-                
-                
-                
+                <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID !='' ">
+                        &#160;[ <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" /> ]
                 </xsl:if>
             </xsl:if>
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName !=''">
@@ -2307,29 +1885,15 @@
                 <br />
                 <xsl:choose>
                     <xsl:when test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName !='' and cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country !=''">
-                        <xsl:apply-templates
-                                select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName" />,&#160;
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates
-                                select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country" />
+                        <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName" />,&#160;
+                        <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country" />
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:if
-                                test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName !=''">
-                            <xsl:apply-templates
-                                    select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName" />
+                        <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName !=''">
+                            <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName" />
                         </xsl:if>
-                        <xsl:if
-                                test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country !=''">
-                            <xsl:apply-templates
-                                    select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country" />
+                        <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country !=''">
+                            <xsl:apply-templates select="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country" />
                         </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
@@ -2352,35 +1916,8 @@
                     <xsl:with-param name="Colon-Suffix" select="'true'" />
                 </xsl:call-template>
                 <xsl:apply-templates select="cac:PayeeParty/cac:PartyIdentification/cbc:ID" />
-                <xsl:if test="cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID !='' ">&#160;[
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:apply-templates select="cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID" />
-                    ]
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                <xsl:if test="cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                    &#160;[ <xsl:apply-templates select="cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID" /> ]
                 </xsl:if>
             </small>
         </xsl:if>
@@ -2394,36 +1931,8 @@
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                     <xsl:apply-templates select="cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID" />
-                    <xsl:if test="cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID !='' ">&#160;
-                    [
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates select="cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" />
-                        ]
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    <xsl:if test="cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID !='' ">
+                        &#160;[ <xsl:apply-templates select="cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" /> ]
                     </xsl:if>
                 </small>
             </xsl:if>
@@ -2438,27 +1947,8 @@
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                     <xsl:apply-templates select="cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID" />
-                    <xsl:if test="cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID/@schemeID !='' ">&#160;[
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates select="cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID/@schemeID" />
-                        ]
-                
-                    
-                    
-                    
-                    
+                    <xsl:if test="cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID/@schemeID !='' ">
+                        &#160;[ <xsl:apply-templates select="cac:PayeeParty/cac:PartyTaxScheme/cbc:CompanyID/@schemeID" /> ]
                     </xsl:if>
                 </xsl:if>
             </small>
@@ -2487,17 +1977,8 @@
                 </xsl:call-template>
             </b>
             <xsl:apply-templates select="cac:OriginatorCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID" />
-            <xsl:if test="cac:OriginatorCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">&#160;[
-                    
-                
-                
-                
-                <xsl:apply-templates select="cac:OriginatorCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />
-                    ]
-                
-            
-            
-            
+            <xsl:if test="cac:OriginatorCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                &#160;[ <xsl:apply-templates select="cac:OriginatorCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" /> ]
             </xsl:if>
         </xsl:if>
         <br />
@@ -2559,8 +2040,7 @@
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                 </b>
-                <xsl:apply-templates
-                        select="cac:OriginatorCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail" />
+                <xsl:apply-templates select="cac:OriginatorCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail" />
             </span>
         </xsl:if>
     </xsl:template>
@@ -2589,50 +2069,11 @@
             <span class="UBLCityName">
                 <xsl:choose>
                     <xsl:when test="cbc:PostalZone !=''">
-                        <xsl:apply-templates select="cbc:PostalZone" />&#160;
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates select="cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        <xsl:apply-templates select="cbc:PostalZone" />
+                        &#160;<xsl:apply-templates select="cbc:CityName" />,&#160;
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates select="cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     </xsl:otherwise>
                 </xsl:choose>
             </span>
@@ -2642,19 +2083,6 @@
                 <xsl:when test="cbc:CountrySubentity !='' and cac:Country !=''">
                     <br />
                     <xsl:apply-templates select="cbc:CountrySubentity" />,
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <xsl:apply-templates select="cac:Country" />
                     <br />
                 </xsl:when>
@@ -2676,49 +2104,8 @@
             <!-- Checking of listID (normally NOT a function of a stylesheet): -->
             <xsl:if test="cbc:IdentificationCode/@listID !=''">
                 <xsl:if test="cbc:IdentificationCode/@listID !='ISO3166-1:Alpha2'">&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <small>
-                        <em>[
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            <xsl:apply-templates select="cbc:IdentificationCode/@listID" />&#160;-invalid listID]
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        </em>
+                        <em>[ <xsl:apply-templates select="cbc:IdentificationCode/@listID" />&#160;-invalid listID ]</em>
                     </small>
                 </xsl:if>
             </xsl:if>
@@ -2746,19 +2133,6 @@
             <xsl:choose>
                 <xsl:when test="cac:PostalAddress/cbc:PostalZone !=''">
                     <xsl:apply-templates select="cac:PostalAddress/cbc:PostalZone" />&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <xsl:apply-templates select="cac:PostalAddress/cbc:CityName" />
                     <br />
                 </xsl:when>
@@ -2772,19 +2146,6 @@
             <xsl:choose>
                 <xsl:when test="cac:PostalAddress/cbc:CountrySubentity !='' and cac:PostalAddress/cac:Country !=''">
                     <xsl:apply-templates select="cac:PostalAddress/cbc:CountrySubentity" />,
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <xsl:apply-templates select="cac:PostalAddress/cac:Country" />
                     <br />
                 </xsl:when>
@@ -2848,17 +2209,7 @@
         <xsl:if test="cac:DeliveryParty/cac:PartyIdentification/cbc:ID">
             <xsl:apply-templates select="cac:DeliveryParty/cac:PartyIdentification/cbc:ID"/>
             <xsl:if test="cac:DeliveryParty/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
-            (
-                
-                
-                
-                
-                <xsl:value-of select="cac:DeliveryParty/cac:PartyIdentification/cbc:ID/@schemeID"/> )
-        
-            
-            
-            
-            
+            ( <xsl:value-of select="cac:DeliveryParty/cac:PartyIdentification/cbc:ID/@schemeID"/> )
             </xsl:if>
         </xsl:if>
     </xsl:template>
@@ -2871,35 +2222,7 @@
             <xsl:apply-templates select="cbc:ID" />
             <xsl:choose>
                 <xsl:when test="cbc:ID/@schemeID !=''">
-                    &#160;[
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:apply-templates select="cbc:ID/@schemeID" />
-                    ]
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                    &#160;[ <xsl:apply-templates select="cbc:ID/@schemeID" /> ]
                 </xsl:when>
                 <xsl:otherwise>
                     &#160;[No schemeID]
@@ -2956,37 +2279,11 @@
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates select="cac:Address/cbc:PostalZone" />&#160;
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-77'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates select="cac:Address/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="LabelName">
@@ -2994,19 +2291,6 @@
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates select="cac:Address/cbc:CityName" />,&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
@@ -3018,19 +2302,6 @@
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates select="cac:Address/cbc:CountrySubentity" />,
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         <xsl:call-template name="LabelName">
                             <xsl:with-param name="BT-ID" select="'BT-80'" />
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -3158,15 +2429,6 @@
                     </xsl:attribute>
                     <div class="expand_arrow">&#8249;</div>
                     <xsl:apply-templates select="cbc:ID" />.
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 </label>
             </div>
             <div class="items_table_body_data">
@@ -3200,26 +2462,7 @@
                         <xsl:choose>
                             <xsl:when test="cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID !=''">
                                 <small>
-                                    &#160;
-                                    [
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <xsl:apply-templates
-                                        select="cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID" />]
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
+                                    &#160;[ <xsl:apply-templates select="cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID" /> ]
                                 </small>
                             </xsl:when>
                             <xsl:otherwise>
@@ -3328,25 +2571,8 @@
                         </b>
                         <xsl:apply-templates select="cac:Item/cac:OriginCountry/cbc:IdentificationCode" />
                         <xsl:if test="cac:Item/cac:OriginCountry/cbc:IdentificationCode/@listID !=''">
-                            <small>&#160;[
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                <xsl:apply-templates
-                                    select="cac:Item/cac:OriginCountry/cbc:IdentificationCode/@listID" />]
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+                            <small>
+                                &#160;[ <xsl:apply-templates select="cac:Item/cac:OriginCountry/cbc:IdentificationCode/@listID" /> ]
                             </small>
                         </xsl:if>
                         <br />
@@ -3368,24 +2594,8 @@
                                 <xsl:with-param name="Colon-Suffix" select="'true'" />
                             </xsl:call-template>
                         </b>
-                        <xsl:apply-templates select="cac:DocumentReference/cbc:ID" />[
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:apply-templates select="cac:DocumentReference/cbc:ID/@schemeID" />]
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                        <xsl:apply-templates select="cac:DocumentReference/cbc:ID" />
+                            [ <xsl:apply-templates select="cac:DocumentReference/cbc:ID/@schemeID" /> ]
                         <br />
                     </xsl:if>
                     <xsl:if test="cac:AllowanceCharge !=''">
@@ -3403,28 +2613,10 @@
                                 <xsl:apply-templates select="cbc:AllowanceChargeReason" />
                             </xsl:if>
                             <xsl:if test="cbc:AllowanceChargeReasonCode !=''">
-                                (
-                                
-                                
-                                
-                                
-                                
-                                <xsl:apply-templates select="cbc:AllowanceChargeReasonCode" />)
-                            
-                            
-                            
-                            
-                            
-                            
+                                ( <xsl:apply-templates select="cbc:AllowanceChargeReasonCode" /> )
                             </xsl:if>
                             <xsl:if test="cbc:MultiplierFactorNumeric !=''">
                                 <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />%
-                            
-                            
-                            
-                            
-                            
-                            
                             </xsl:if>
                             <br />
                             <xsl:if test="cbc:Amount !=''">
@@ -3467,25 +2659,11 @@
                         </b>
                         <xsl:if test="cac:OriginatorParty/cac:PartyName/cbc:Name">
                             <xsl:apply-templates select="cac:OriginatorParty/cac:PartyName/cbc:Name"/>&#160;
-                        
-                        
-                        
-                        
                         </xsl:if>
                         <xsl:if test="cac:OriginatorParty/cac:PartyIdentification/cbc:ID">
                             <xsl:apply-templates select="cac:OriginatorParty/cac:PartyIdentification/cbc:ID"/>
                             <xsl:if test="cac:OriginatorParty/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
-                            (
-                                
-                                
-                                
-                                
-                                <xsl:value-of select="cac:OriginatorParty/cac:PartyIdentification/cbc:ID/@schemeID"/> )
-                        
-                            
-                            
-                            
-                            
+                            ( <xsl:value-of select="cac:OriginatorParty/cac:PartyIdentification/cbc:ID/@schemeID"/> )
                             </xsl:if>
                         </xsl:if>
                         <br />
@@ -3495,19 +2673,6 @@
             <div class="items_table_body_data">
                 <xsl:if test="cbc:InvoicedQuantity !=''">
                     <xsl:apply-templates select="cbc:InvoicedQuantity" />&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <xsl:if test="cbc:InvoicedQuantity/@unitCode !=''">
                         <xsl:value-of select="cbc:InvoicedQuantity/@unitCode" />
                         <small class="hide_content">
@@ -3515,39 +2680,12 @@
                             (
                             <xsl:call-template name="UNECECode">
                                 <xsl:with-param name="Code" select="cbc:InvoicedQuantity/@unitCode" />
-                            </xsl:call-template>
-                            )
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+                            </xsl:call-template> )
                         </small>
                     </xsl:if>
                 </xsl:if>
                 <xsl:if test="cbc:CreditedQuantity !=''">
                     <xsl:apply-templates select="cbc:CreditedQuantity" />&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <xsl:if test="cbc:CreditedQuantity/@unitCode !=''">
                         <xsl:value-of select="cbc:CreditedQuantity/@unitCode" />
                         <small class="hide_content">
@@ -3557,71 +2695,19 @@
                                 <xsl:with-param name="Code" select="cbc:CreditedQuantity/@unitCode" />
                             </xsl:call-template>
                             )
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         </small>
                     </xsl:if>
                 </xsl:if>
                 <xsl:if test="cbc:Quantity !=''">
                     <xsl:apply-templates select="cbc:Quantity" />&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <xsl:if test="cbc:Quantity/@unitCode !=''">
                         <xsl:value-of select="cbc:Quantity/@unitCode" />
                         <br />
-                        <small class="hide_content">(
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            <xsl:call-template name="UNECECode">
+                        <small class="hide_content">
+                            ( <xsl:call-template name="UNECECode">
                                 <xsl:with-param name="Code" select="cbc:Quantity/@unitCode" />
                             </xsl:call-template>
                             )
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         </small>
                     </xsl:if>
                 </xsl:if>
@@ -3666,72 +2752,16 @@
                         <small>
                             <xsl:choose>
                                 <xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !=''">
-                                    (
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <xsl:call-template name="Currency">
+                                    ( <xsl:call-template name="Currency">
                                         <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount" />
                                         <xsl:with-param name="country" select="$languageCode" />
-                                    </xsl:call-template>
-                                    )
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
+                                    </xsl:call-template> )
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    (
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <xsl:call-template name="Currency">
+                                    ( <xsl:call-template name="Currency">
                                         <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount" />
                                         <xsl:with-param name="country" select="$languageCode" />
-                                    </xsl:call-template>
-                                    )
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
+                                    </xsl:call-template> )
                                 </xsl:otherwise>
                             </xsl:choose>
                         </small>
@@ -3795,37 +2825,10 @@
             <xsl:apply-templates select="cbc:CommodityCode" />
             <xsl:choose>
                 <xsl:when test="cbc:CommodityCode/@listID !=''">
-                    <small>&#160;[
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:call-template name="UBLClassificationCode">
+                    <small>&#160;
+                    [ <xsl:call-template name="UBLClassificationCode">
                             <xsl:with-param name="Code" select="cbc:CommodityCode/@listID" />
-                        </xsl:call-template>
-                        ]
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        </xsl:call-template> ]
                     </small>
                 </xsl:when>
                 <xsl:otherwise>
@@ -3833,35 +2836,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:if test="cbc:CommodityCode/@listVersionID !=''">
-                [
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <xsl:apply-templates select="cbc:CommodityCode/@listeVersionID" />
-                ]
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+                [ <xsl:apply-templates select="cbc:CommodityCode/@listeVersionID" /> ]
             </xsl:if>
             <br />
         </xsl:if>
@@ -3875,37 +2850,10 @@
             <xsl:apply-templates select="cbc:ItemClassificationCode" />
             <xsl:choose>
                 <xsl:when test="cbc:ItemClassificationCode/@listID !=''">
-                    <small>&#160;[
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <xsl:call-template name="UBLClassificationCode">
+                    <small>&#160;
+                    [ <xsl:call-template name="UBLClassificationCode">
                             <xsl:with-param name="Code" select="cbc:ItemClassificationCode/@listID" />
-                        </xsl:call-template>
-                        ]
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        </xsl:call-template> ]
                     </small>
                 </xsl:when>
                 <xsl:otherwise>
@@ -3913,35 +2861,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:if test="cbc:ItemClassificationCode/@listVersionID !=''">
-                [
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <xsl:apply-templates select="cbc:ItemClassificationCode/@listVersionID" />
-                ]
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+                [ <xsl:apply-templates select="cbc:ItemClassificationCode/@listVersionID" /> ]
             </xsl:if>
             <br />
         </xsl:if>
@@ -3954,19 +2874,6 @@
             </xsl:call-template>
         </b>
         <xsl:apply-templates select="cbc:Name" /> =
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <xsl:apply-templates select="cbc:Value" />
         <br />
     </xsl:template>
@@ -3978,19 +2885,6 @@
             <xsl:with-param name="currencyvalue" select="cbc:PriceAmount" />
             <xsl:with-param name="country" select="$languageCode" />
         </xsl:call-template>&#160;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <xsl:apply-templates select="cbc:PriceAmount/@currencyID" />
     </xsl:template>
     <!--Invoiceline end-->
@@ -4030,63 +2924,11 @@
                     <xsl:choose>
                         <xsl:when test="cac:TaxCategory/cbc:Percent !=''">
                             <xsl:apply-templates select="cac:TaxCategory/cac:TaxScheme/cbc:ID" />:&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />,&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:Percent" />%
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:apply-templates select="cac:TaxCategory/cac:TaxScheme/cbc:ID" />:&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
                         </xsl:otherwise>
                     </xsl:choose>
@@ -4113,63 +2955,11 @@
                     <xsl:choose>
                         <xsl:when test="cac:TaxCategory/cbc:Percent !=''">
                             <xsl:apply-templates select="cac:TaxCategory/cac:TaxScheme/cbc:ID" />:&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />,&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:Percent" />%
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:apply-templates select="cac:TaxCategory/cac:TaxScheme/cbc:ID" />:&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
                         </xsl:otherwise>
                     </xsl:choose>
@@ -4178,19 +2968,6 @@
             <td valign="top" align="right">
                 <xsl:if test="cbc:MultiplierFactorNumeric != ''">
                     <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />% of
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 </xsl:if>
                 <xsl:call-template name="Currency">
                     <xsl:with-param name="currencyvalue" select="cbc:BaseAmount" />
@@ -4218,63 +2995,11 @@
                     <xsl:choose>
                         <xsl:when test="cac:TaxCategory/cbc:Percent !=''">
                             <xsl:apply-templates select="cac:TaxCategory/cac:TaxScheme/cbc:ID" />:&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />,&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:Percent" />%
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:apply-templates select="cac:TaxCategory/cac:TaxScheme/cbc:ID" />:&#160;
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
                         </xsl:otherwise>
                     </xsl:choose>
@@ -4283,19 +3008,6 @@
             <td valign="top" align="right">
                 <xsl:if test="cbc:MultiplierFactorNumeric != ''">
                     <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />% of
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 </xsl:if>
                 <xsl:call-template name="Currency">
                     <xsl:with-param name="currencyvalue" select="cbc:BaseAmount" />
@@ -4332,33 +3044,9 @@
         </xsl:call-template>
         <small>
             <br />
-            <xsl:apply-templates select="cbc:AllowanceChargeReason" />(
-            
-            
-            
-            
-            
-            
-            
-            
-            <xsl:apply-templates select="cbc:AllowanceChargeReasonCode" />)
-            
-            
-            
-            
-            
-            
-            
-            
+            <xsl:apply-templates select="cbc:AllowanceChargeReason" />
+            ( <xsl:apply-templates select="cbc:AllowanceChargeReasonCode" /> )
             <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />%
-            
-            
-            
-            
-            
-            
-            
-            
             <br />
         </small>
     </xsl:template>
@@ -4420,40 +3108,13 @@
         </div>
         <div class="tax_table_body_data">
             <xsl:choose>
-                <xsl:when test="cac:TaxCategory/cbc:Percent !=''">&#160;(
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:call-template name="NumberFormat">
+                <xsl:when test="cac:TaxCategory/cbc:Percent !=''">
+                &#160;
+                    ( <xsl:call-template name="NumberFormat">
                         <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
                         <xsl:with-param name="formatToDecimal" select="'true'" />
                         <xsl:with-param name="country" select="$languageCode" />
                     </xsl:call-template>% )
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 </xsl:when>
                 <xsl:otherwise>
                     %
@@ -4508,20 +3169,6 @@
                 <div class="payment_table_body_data">
                     <small>
                         <xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"/>&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     </small>
                 </div>
             </div>
@@ -4560,33 +3207,7 @@
                 <div class="payment_table_body_data">
                     <small>
 					***
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         <xsl:apply-templates select="cac:CardAccount/cbc:PrimaryAccountNumberID"/>&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     </small>
                 </div>
             </div>
@@ -4607,19 +3228,6 @@
                     <small>
                         <xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''"></xsl:if>
                         <xsl:apply-templates select="cac:PayeeFinancialAccount[1]/cbc:ID"/>&#160;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     </small>
                 </div>
             </div>
@@ -4783,35 +3391,8 @@
                 </xsl:call-template>
             </b>
             <xsl:value-of select="cbc:ID" />
-            <xsl:if test="cbc:ID/@schemeID != ''">[
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <xsl:value-of select="cbc:ID/@schemeID" />
-                ]
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            <xsl:if test="cbc:ID/@schemeID != ''">
+                [ <xsl:value-of select="cbc:ID/@schemeID" /> ]
             </xsl:if>
         </xsl:if>
         <xsl:if test="cbc:DocumentTypeCode='50'">
@@ -4823,35 +3404,8 @@
                 </xsl:call-template>
             </b>
             <xsl:value-of select="cbc:ID" />
-            <xsl:if test="cbc:ID/@schemeID != ''">[
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <xsl:value-of select="cbc:ID/@schemeID" />
-                ]
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            <xsl:if test="cbc:ID/@schemeID != ''">
+                [ <xsl:value-of select="cbc:ID/@schemeID" /> ]
             </xsl:if>
         </xsl:if>
     </xsl:template>
@@ -4863,35 +3417,8 @@
                     <xsl:with-param name="Colon-Suffix" select="'true'" />
                 </xsl:call-template>
                 <xsl:apply-templates select="cbc:ID" />
-                <xsl:if test="cbc:ID/@schemeID != ''">&#160;[
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:apply-templates select="cbc:ID/@schemeID" />
-                ]
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                <xsl:if test="cbc:ID/@schemeID != ''">
+                    &#160;[ <xsl:apply-templates select="cbc:ID/@schemeID" /> ]
                 </xsl:if>
             </p>
         </xsl:if>
@@ -4899,69 +3426,17 @@
             <xsl:if test="cbc:DocumentType !='' or cbc:DocumentTypeCode !=''">
                 <br/>
                 -&#160;
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 <xsl:call-template name="LabelName">
                     <xsl:with-param name="BT-ID" select="'BT-123'" />
                     <xsl:with-param name="Colon-Suffix" select="'true'" />
                 </xsl:call-template>
                 <xsl:apply-templates select="cbc:DocumentType" />
-                <xsl:if test="cbc:DocumentTypeCode !=''">&#160;[
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <xsl:apply-templates select="cbc:DocumentTypeCode" />
-                    ]
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                <xsl:if test="cbc:DocumentTypeCode !=''">
+                    &#160;[ <xsl:apply-templates select="cbc:DocumentTypeCode" /> ]
                 </xsl:if>
             </xsl:if>
-            <xsl:if test="cbc:DocumentDescription">-&#160;
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+            <xsl:if test="cbc:DocumentDescription">
+                -&#160;
                 <xsl:apply-templates select="cbc:DocumentDescription" />
             </xsl:if>
             <br />
@@ -4970,20 +3445,8 @@
     </xsl:template>
     <xsl:template match="cac:Attachment">
         <!-- No processing of attached document, just info: -->
-        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@mimeCode !=''">-&#160;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@mimeCode !=''">
+            -&#160;
             <xsl:call-template name="LabelName">
                 <xsl:with-param name="BT-ID" select="'BT-125-1'" />
                 <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -4991,20 +3454,8 @@
             <xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@mimeCode" />
             <br />
         </xsl:if>
-        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@format !=''">-&#160;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@format !=''">
+            -&#160;
             <xsl:call-template name="LabelName">
                 <xsl:with-param name="BT-ID" select="'BT-125-1'" />
                 <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -5012,20 +3463,8 @@
             <xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@format" />
             <br />
         </xsl:if>
-        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@filename !=''">-&#160;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@filename !=''">
+            -&#160;
             <xsl:call-template name="LabelName">
                 <xsl:with-param name="BT-ID" select="'BT-125-2'" />
                 <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -5033,20 +3472,8 @@
             <xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@filename" />
             <br />
         </xsl:if>
-        <xsl:if test="cac:ExternalReference !=''">-&#160;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+        <xsl:if test="cac:ExternalReference !=''">
+            -&#160;
             <xsl:apply-templates select="cac:ExternalReference" />
             <br />
         </xsl:if>
@@ -5064,38 +3491,12 @@
         <br />
         <xsl:if test="cac:CreditNoteDocumentReference !=''">
             <xsl:apply-templates select="cac:CreditNoteDocumentReference/cbc:ID" />&#160;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </xsl:if>
         <xsl:if test="cac:InvoiceDocumentReference !=''">
             <xsl:if test="cac:CreditNoteDocumentReference !=''">
                 <br />
             </xsl:if>
             <xsl:apply-templates select="cac:InvoiceDocumentReference/cbc:ID" />&#160;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </xsl:if>
     </xsl:template>
     <!-- Document references end -->
@@ -5103,35 +3504,9 @@
     <xsl:template match="cac:InvoicePeriod">
         <xsl:if test="cbc:StartDate !=''">
             <xsl:apply-templates select="cbc:StartDate" />&#160;-&#160;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </xsl:if>
         <xsl:if test="cbc:EndDate !='' ">
             <xsl:apply-templates select="cbc:EndDate" />&#160;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         </xsl:if>
     </xsl:template>
     <!--Periods end-->
