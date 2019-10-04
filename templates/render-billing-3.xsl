@@ -135,6 +135,10 @@
                         color: #8F5873;
                     }
 
+                    .box_with_top_margin {
+                        margin-top: 0.3em;
+                    }
+
                     .document_info {
                         font-size:1.2em;
                     }
