@@ -78,6 +78,10 @@
                         color: #9fa85f;
                     }
 
+                    .box_with_top_margin {
+                        margin-top: 0.3em;
+                    }
+
                     .main_header .seller {
                         align-items: flex-end;
                     }

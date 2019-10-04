@@ -129,6 +129,10 @@
 					.box_with_margin {
 						margin: 1.2em 0 1.2em 1.2em;
 					}
+
+                    .box_with_top_margin {
+                        margin-top: 0.3em;
+                    }
                     <!-- /GENERAL CSS -->
 
                     .main_header .document_details {

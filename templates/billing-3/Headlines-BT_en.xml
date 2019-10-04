@@ -206,7 +206,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>Such as share capital. </Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-34">
-		<TermName>Seller electronic address</TermName>
+		<TermName>Electronic address</TermName>
 		<Definition>Identifies the Seller's electronic address to which the application level response to the invoice may be delivered.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-34-1">
@@ -328,7 +328,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>VAT ID</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-49">
-		<TermName>Buyer electronic address</TermName>
+		<TermName>Electronic address</TermName>
 		<Definition>Identifies the Buyer's electronic address to which the invoice is delivered.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-49-1">
