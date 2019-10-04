@@ -929,7 +929,7 @@
                                                 <xsl:call-template name="UBLDescriptionCode">
                                                     <xsl:with-param name="Code" select="cac:InvoicePeriod/cbc:DescriptionCode"/>
                                                 </xsl:call-template>
-                                                [ <xsl:value-of select="cac:InvoicePeriod/cbc:DescriptionCode"/> ]
+                                                [<xsl:value-of select="cac:InvoicePeriod/cbc:DescriptionCode"/>]
                                                 <br />
                                             </xsl:if>
                                         </p>
@@ -1052,7 +1052,7 @@
                                                             <xsl:call-template name="UBLDescriptionCode">
                                                                 <xsl:with-param name="Code" select="cac:InvoicePeriod/cbc:DescriptionCode"/>
                                                             </xsl:call-template>
-                                                            [ <xsl:value-of select="cac:InvoicePeriod/cbc:DescriptionCode"/> ]
+                                                            [<xsl:value-of select="cac:InvoicePeriod/cbc:DescriptionCode"/>]
                                                         </small>
                                                     </p>
                                                 </xsl:if>
@@ -1122,7 +1122,7 @@
                                                 </div>
                                                 <div class="transfer" data-name="transfer">
                                                     <p>
-                                                        ( <xsl:apply-templates select="cbc:PaymentMeansCode"/> )
+                                                        [<xsl:apply-templates select="cbc:PaymentMeansCode"/>]
                                                         <xsl:choose>
                                                             <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode/@name != ''">
                                                                 <xsl:apply-templates select="cac:PaymentMeans/cbc:PaymentMeansCode/@name"/>
@@ -1273,7 +1273,7 @@
                                                 </div>
                                                 <div class="transfer" data-name="transfer">
                                                     <p>
-                                                        ( <xsl:apply-templates select="cbc:PaymentMeansCode"/> )
+                                                        [<xsl:apply-templates select="cbc:PaymentMeansCode"/>]
                                                         <xsl:choose>
                                                             <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode/@name != ''">
                                                                 <xsl:apply-templates select="cac:PaymentMeans/cbc:PaymentMeansCode/@name"/>
@@ -2005,7 +2005,7 @@
                                                     <xsl:value-of select="cbc:ID"/>
                                                     <!-- Inserting Preceding Invoice Issue Date  -->
                                                     <xsl:if test="cbc:IssueDate != ''">
-										                ( <xsl:value-of select="cbc:IssueDate"/> )
+										                [<xsl:value-of select="cbc:IssueDate"/>]
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </xsl:if>
@@ -2094,7 +2094,7 @@
                                                     <xsl:value-of select="cbc:ID"/>
                                                     <!-- Inserting Preceding Invoice Issue Date  -->
                                                     <xsl:if test="cbc:IssueDate != ''">
-										                ( <xsl:value-of select="cbc:IssueDate"/> )
+										                [<xsl:value-of select="cbc:IssueDate"/>]
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </xsl:if>
