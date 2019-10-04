@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<Identification xmlns="">
-		<ShortName>InvoiceBaseType</ShortName>
+<CodeList xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+	<Identification>
+		<ShortName>UNCL4343</ShortName>
 		<Version></Version>
 		<CanonicalUri></CanonicalUri>
 		<CanonicalVersionUri></CanonicalVersionUri>
 	</Identification>
-	<ColumnSet xmlns="">
+	<ColumnSet>
 		<Column Id="code" Use="required">
 			<ShortName>Code</ShortName>
 			<Data Type="string"/>
@@ -20,61 +20,69 @@
 			<ColumnRef Ref="code"/>
 		</Key>
 	</ColumnSet>
-	<SimpleCodeList xmlns="">
+	<SimpleCodeList>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
-				<SimpleValue>Invoice</SimpleValue>
+				<SimpleValue>AB</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>FAKTURA</SimpleValue>
+				<SimpleValue>Message acknowledgement</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
+			
 			<Value ColumnRef="code">
-				<SimpleValue>NOTA KREDYTOWA</SimpleValue>
+				<SimpleValue>AP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>NOTA KREDYTOWA</SimpleValue>
+				<SimpleValue>Accepted</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
+			
 			<Value ColumnRef="code">
-				<SimpleValue>Order</SimpleValue>
+				<SimpleValue>RE</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ORDER</SimpleValue>
+				<SimpleValue>Rejected</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
+			
 			<Value ColumnRef="code">
-				<SimpleValue>RemittanceAdvice</SimpleValue>
+				<SimpleValue>IP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>REMITTANCE ADVICE</SimpleValue>
+				<SimpleValue>In process</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
+			
 			<Value ColumnRef="code">
-				<SimpleValue>InvoiceResponse</SimpleValue>
+				<SimpleValue>UQ</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>INVOICE RESPONSE</SimpleValue>
+				<SimpleValue>Under query</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
+			
 			<Value ColumnRef="code">
-				<SimpleValue>CreditNoteResponse</SimpleValue>
+				<SimpleValue>CA</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>CREDIT NOTE RESPONSE</SimpleValue>
+				<SimpleValue>Conditionally accepted</SimpleValue>
 			</Value>
 		</Row>
-
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>PD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Paid</SimpleValue>
+			</Value>
+		</Row>
 	</SimpleCodeList>
 </CodeList>

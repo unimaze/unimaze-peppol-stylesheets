@@ -204,4 +204,75 @@
 		<DisplayName>Validity Period</DisplayName>
 	</BusinessTerm>
 
+
+	<!-- INVOICE RESPONSE -->
+	<BusinessTerm id="UMZ-BT-049">
+		<TermName>Sender</TermName>
+		<DisplayName>Sender</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-050">
+		<TermName>Receiver</TermName>
+		<DisplayName>Receiver</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-051">
+		<TermName>Identifier</TermName>
+		<DisplayName>Identifier</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-052">
+		<TermName>Electronic address</TermName>
+		<DisplayName>Electronic address</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-053">
+		<TermName>Contact</TermName>
+		<DisplayName>Contact</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-054">
+		<TermName>Document response</TermName>
+		<DisplayName>Document response</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-055">
+		<TermName>Invoice status</TermName>
+		<DisplayName>Invoice status</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-056">
+		<TermName>Status date</TermName>
+		<DisplayName>Status date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-057">
+		<TermName>Reason</TermName>
+		<DisplayName>Reason</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-058">
+		<TermName>Condition</TermName>
+		<DisplayName>Condition</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-059">
+		<TermName>Action</TermName>
+		<DisplayName>Action</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-060">
+		<TermName>Effective date</TermName>
+		<DisplayName>Effective date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-061">
+		<TermName>No reason specified</TermName>
+		<DisplayName>No reason specified</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-062">
+		<TermName>No action</TermName>
+		<DisplayName>No action</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-063">
+		<TermName>Additional sender's information</TermName>
+		<DisplayName>Additional sender's information</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-064">
+		<TermName>Additional receiver's information</TermName>
+		<DisplayName>Additional receiver's information</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-065">
+		<TermName>Explanation</TermName>
+		<DisplayName>Explanation</DisplayName>
+	</BusinessTerm>
+
 </SemanticModel>

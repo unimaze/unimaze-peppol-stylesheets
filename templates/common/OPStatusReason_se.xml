@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+	<Identification>
+		<ShortName>OPStatusReason</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet>
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>NON</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>No Issue</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>REF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>References incorrect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>LEG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Legal information incorrect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>REC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Receiver unknown</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>QUA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Item quality insufficient</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>DEL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Delivery issues</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PRI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Prices incorrect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>QTY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Quantity incorrect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>ITM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Items incorrect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>PAY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Payment terms incorrect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>UNR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Not recognized</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>FIN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Finance incorrect</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OTH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Other</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>

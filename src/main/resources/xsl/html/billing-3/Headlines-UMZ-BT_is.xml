@@ -112,44 +112,44 @@
 
 	<!-- ORDER TITLES -->
 	<BusinessTerm id="UMZ-BT-027">
-		<TermName>Originator</TermName>
-		<DisplayName>Originator</DisplayName>
+		<TermName>Upphafsaðili</TermName>
+		<DisplayName>Upphafsaðili</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-028">
-		<TermName>Name</TermName>
-		<DisplayName>Name</DisplayName>
+		<TermName>Nafn</TermName>
+		<DisplayName>Nafn</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-029">
-		<TermName>Customer reference</TermName>
-		<DisplayName>Customer reference</DisplayName>
+		<TermName>Tilvísun viðskiptavinar</TermName>
+		<DisplayName>Tilvísun viðskiptavinar</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-030">
-		<TermName>Accounting Cost</TermName>
-		<DisplayName>Accounting Cost</DisplayName>
+		<TermName>Bókhaldskostnaður</TermName>
+		<DisplayName>Bókhaldskostnaður</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-031">
-		<TermName>Final buyer</TermName>
-		<DisplayName>Final buyer</DisplayName>
+		<TermName>Endanlegur kaupandi</TermName>
+		<DisplayName>Endanlegur kaupandi</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-032">
-		<TermName>Buyer tax representative VAT identifier</TermName>
-		<DisplayName>VAT no.</DisplayName>
+		<TermName>VSK. nr. skattafulltrúa kaupanda</TermName>
+		<DisplayName>VSK. nr.</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-033">
-		<TermName>Item serial identification</TermName>
-		<DisplayName>Item serial identification</DisplayName>
+		<TermName>Raðnúmer vöru</TermName>
+		<DisplayName>Raðnúmer vöru</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-034">
-		<TermName>Item lot information</TermName>
-		<DisplayName>Item lot information</DisplayName>
+		<TermName>Upplýsingar um útboð vöru</TermName>
+		<DisplayName>Upplýsingar um útboð vöru</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-035">
-		<TermName>Allowance base amount</TermName>
-		<DisplayName>Allowance base amount</DisplayName>
+		<TermName>Grunnupphæð afsláttar</TermName>
+		<DisplayName>Grunnupphæð afsláttar</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-036">
-		<TermName>Originator information</TermName>
-		<DisplayName>Originator information</DisplayName>
+		<TermName>Upplýsingar um upphafsaðila</TermName>
+		<DisplayName>Upplýsingar um upphafsaðila</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-037">
 		<TermName>Útgáfudagur pöntunar</TermName>
@@ -164,8 +164,8 @@
 		<DisplayName>Gjaldmiðill á pöntun</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-040">
-		<TermName>Item specification reference</TermName>
-		<DisplayName>Item specification reference</DisplayName>
+		<TermName>Tilvísun í forskrift vöru</TermName>
+		<DisplayName>Tilvísun í forskrift vöru</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-041">
 		<TermName>Endanlegur kaupandi</TermName>
@@ -188,16 +188,87 @@
 		<DisplayName>Rafrænt póstfang kaupandi</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-046">
-		<TermName>Originator identifier</TermName>
-		<DisplayName>ID</DisplayName>
+		<TermName>Auðkenni upphafsaðila</TermName>
+		<DisplayName>auðkenni</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-047">
-		<TermName>Quotation Document Reference</TermName>
-		<DisplayName>Quotation Document Reference</DisplayName>
+		<TermName>Tilvísun í  tilboðsskjal</TermName>
+		<DisplayName>Tilvísun í  tilboðsskjal</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-048">
-		<TermName>Order Document Reference</TermName>
-		<DisplayName>Order Document Reference</DisplayName>
+		<TermName>Tilvísun í pöntunarskjal</TermName>
+		<DisplayName>Tilvísun í pöntunarskjal</DisplayName>
+	</BusinessTerm>
+	
+
+	<!-- INVOICE RESPONSE -->
+	<BusinessTerm id="UMZ-BT-049">
+		<TermName>Sendandi</TermName>
+		<DisplayName>Sendandi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-050">
+		<TermName>Móttakandi</TermName>
+		<DisplayName>Móttakandi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-051">
+		<TermName>Auðkenni</TermName>
+		<DisplayName>Auðkenni</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-052">
+		<TermName>Rafrænt póstfang</TermName>
+		<DisplayName>Rafrænt póstfang</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-053">
+		<TermName>Tengiliður</TermName>
+		<DisplayName>Tengiliður</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-054">
+		<TermName>Svar viðhengis</TermName>
+		<DisplayName>Svar viðhengis</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-055">
+		<TermName>Staða reiknings</TermName>
+		<DisplayName>Staða reiknings</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-056">
+		<TermName>Dagsetning stöðu</TermName>
+		<DisplayName>Dagsetning stöðu</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-057">
+		<TermName>Reason</TermName>
+		<DisplayName>Reason</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-058">
+		<TermName>Condition</TermName>
+		<DisplayName>Condition</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-059">
+		<TermName>Action</TermName>
+		<DisplayName>Action</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-060">
+		<TermName>Effective date</TermName>
+		<DisplayName>Effective date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-061">
+		<TermName>No reason</TermName>
+		<DisplayName>No reason</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-062">
+		<TermName>No action</TermName>
+		<DisplayName>No action</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-063">
+		<TermName>Ítarupplýsingar sendandi</TermName>
+		<DisplayName>Ítarupplýsingar sendandi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-064">
+		<TermName>Ítarupplýsingar móttakanda</TermName>
+		<DisplayName>Ítarupplýsingar móttakanda</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-065">
+		<TermName>Explanation</TermName>
+		<DisplayName>Explanation</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-049">
 		<TermName>Validity Period</TermName>

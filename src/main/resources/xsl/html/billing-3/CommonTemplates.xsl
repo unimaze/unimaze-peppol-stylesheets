@@ -42,17 +42,23 @@
     <xsl:variable name="moduleDocUMZBT" select="document(concat('Headlines-UMZ-BT_', $languageCode, '.xml'))" />
     <xsl:variable name="invoiceBaseType" select="document(concat('UBLInvoiceBaseType_',$languageCode, '.xml'))" />
     <xsl:variable name="UNCL1001" select="document(concat('../common/UNCL1001_', $languageCode, '.xml'))" />
+    <xsl:variable name="UNCL4343OpSubset" select="document(concat('../common/UNCL4343OpSubset_', $languageCode, '.xml'))" />
     <xsl:variable name="UNCL4461" select="document(concat('../common/UNCL4461_', $languageCode, '.xml'))" />
     <xsl:variable name="UNCL7161" select="document(concat('../common/UNCL7161_', $languageCode, '.xml'))" />
     <xsl:variable name="UNCL5189" select="document(concat('../common/UNCL5189_', $languageCode, '.xml'))" />
+    <xsl:variable name="OPStatusReason" select="document(concat('../common/OPStatusReason_', $languageCode, '.xml'))" />
+    <xsl:variable name="OPStatusAction" select="document(concat('../common/OPStatusAction_', $languageCode, '.xml'))" />
     <xsl:variable name="UBLDescriptionCode" select="document(concat('../common/UBLPeriodDescriptionCode_', $languageCode, '.xml'))" />
     <xsl:variable name="UBLTaxCategoryCode" select="document(concat('../common/UBLTaxCategoryCode_', $languageCode, '.xml'))" />
     <xsl:variable name="UBLClassificationCode" select="document(concat('../common/UBLClassificationCode_', $languageCode, '.xml'))" />
     <xsl:variable name="UNECE" select="document(concat('../common/UNECE_', $languageCode, '.xml'))" />
     <xsl:variable name="UNCL1001_en" select="document('../common/UNCL1001_en.xml')" />
+    <xsl:variable name="UNCL4343OpSubset_en" select="document('../common/UNCL4343OpSubset_en.xml')" />
     <xsl:variable name="UNCL4461_en" select="document('../common/UNCL4461_en.xml')" />
     <xsl:variable name="UNCL7161_en" select="document('../common/UNCL7161_en.xml')" />
     <xsl:variable name="UNCL5189_en" select="document('../common/UNCL5189_en.xml')" />
+    <xsl:variable name="OPStatusReason_en" select="document('../common/OPStatusReason_en.xml')" />
+    <xsl:variable name="OPStatusAction_en" select="document('../common/OPStatusAction_en.xml')" />
     <xsl:variable name="UBLDescriptionCode_en" select="document('../common/UBLPeriodDescriptionCode_en.xml')" />
     <xsl:variable name="UBLTaxCategoryCode_en" select="document('../common/UBLTaxCategoryCode_en.xml')" />
     <xsl:variable name="UBLClassificationCode_en" select="document('../common/UBLClassificationCode_en.xml')" />
@@ -268,6 +274,24 @@
             <xsl:with-param name="documentCode" select="$Code" />
         </xsl:call-template>
     </xsl:template>
+    <!--Function to pick the Status Clarification Reason code-->
+    <xsl:template name="StatusClarificationReason">
+        <xsl:param name="Code" />
+        <xsl:call-template name="getGenericCode">
+            <xsl:with-param name="documentName" select="$OPStatusReason" />
+            <xsl:with-param name="documentName_en" select="$OPStatusReason_en" />
+            <xsl:with-param name="documentCode" select="$Code" />
+        </xsl:call-template>
+    </xsl:template>
+    <!--Function to pick the Status Clarification Reason code-->
+    <xsl:template name="StatusClarificationAction">
+        <xsl:param name="Code" />
+        <xsl:call-template name="getGenericCode">
+            <xsl:with-param name="documentName" select="$OPStatusAction" />
+            <xsl:with-param name="documentName_en" select="$OPStatusAction_en" />
+            <xsl:with-param name="documentCode" select="$Code" />
+        </xsl:call-template>
+    </xsl:template>
     <!--Function to pick the AllowanceReasonCodes-->
     <xsl:template name="AllowanceReasonCode">
         <xsl:param name="AllowanceCode" />
@@ -284,6 +308,15 @@
             <xsl:with-param name="documentName" select="$UNCL7161" />
             <xsl:with-param name="documentName_en" select="$UNCL7161_en" />
             <xsl:with-param name="documentCode" select="$ChargeCode" />
+        </xsl:call-template>
+    </xsl:template>
+    <!--Function to pick up ApplicationResponseCode code-->
+    <xsl:template name="ApplicationResponseCode">
+        <xsl:param name="ResponseCode" />
+        <xsl:call-template name="getGenericCode">
+            <xsl:with-param name="documentName" select="$UNCL4343OpSubset" />
+            <xsl:with-param name="documentName_en" select="$UNCL4343OpSubset_en" />
+            <xsl:with-param name="documentCode" select="$ResponseCode" />
         </xsl:call-template>
     </xsl:template>
     <!--Function to pick up payment means code-->
