@@ -1882,8 +1882,9 @@
                     <xsl:apply-templates select="cbc:InvoicedQuantity" />&#160;
                     <xsl:if test="cbc:InvoicedQuantity/@unitCode !=''">
                         <xsl:value-of select="cbc:InvoicedQuantity/@unitCode" />
-                        <br />
-                        <small class="hide_content">(
+                        <small class="hide_content">
+                            <br />
+                            (
                             <xsl:call-template name="UNECECode">
                                 <xsl:with-param name="Code" select="cbc:InvoicedQuantity/@unitCode" />
                             </xsl:call-template>
@@ -1895,8 +1896,9 @@
                     <xsl:apply-templates select="cbc:CreditedQuantity" />&#160;
                     <xsl:if test="cbc:CreditedQuantity/@unitCode !=''">
                         <xsl:value-of select="cbc:CreditedQuantity/@unitCode" />
-                        <br />
-                        <small class="hide_content">(
+                        <small class="hide_content">
+                            <br />
+                            (
                             <xsl:call-template name="UNECECode">
                                 <xsl:with-param name="Code" select="cbc:CreditedQuantity/@unitCode" />
                             </xsl:call-template>
@@ -1940,8 +1942,8 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:if>
-                <div class="hide_content">
-                    <xsl:if test="cac:TaxTotal/cbc:TaxAmount">
+                <xsl:if test="cac:TaxTotal/cbc:TaxAmount">
+                    <div class="hide_content">
                         <small>
                             <xsl:choose>
                                 <xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !=''">
@@ -1962,8 +1964,8 @@
                                 </xsl:otherwise>
                             </xsl:choose>
                         </small>
-                    </xsl:if>
-                </div>
+                    </div>
+                </xsl:if>
             </div>
             <div class="invoice_table_body_data text_right">
                 <xsl:call-template name="Currency">
