@@ -496,6 +496,9 @@
                             overflow: hidden;
                             height: unset;
                             opacity: 1;
+                        }
+                        .invoice_table_body_data label {
+                            top: 0;
                         }    
                     }
                     <!-- /GENERAL CSS -->
