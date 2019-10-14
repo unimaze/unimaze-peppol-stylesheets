@@ -584,7 +584,9 @@
                                     <xsl:when test="cac:AccountingSupplierParty/cac:Party/cac:Contact !=''">
                                         <br/>
                                         <small>
-                                            <xsl:call-template name="SellerContact" />
+                                            <xsl:call-template name="SellerContact">
+                                                <xsl:with-param name="ShowLabel" select="'true'"/>
+                                            </xsl:call-template>
                                         </small>
                                         <br/>
                                         <small>
