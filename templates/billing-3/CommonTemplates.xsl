@@ -576,7 +576,7 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template name="SellerAdditionalInfo">
-        <p class="box_with_top_margin">
+        <p>
             <small>
                 <b>
                     <xsl:call-template name="AdditionalInfoAccountingSupplierPartyNameTitle" />
@@ -1375,9 +1375,11 @@
     </xsl:template>
     <xsl:template name="SellerSupplierPartyAdditionalInfo">
         <p>
-            <b>
-                <xsl:call-template name="AdditionalInfoSellerSupplierPartyNameTitle" />
-            </b>
+            <small>
+                <b>
+                    <xsl:call-template name="AdditionalInfoSellerSupplierPartyNameTitle" />
+                </b>
+            </small>
         </p>
         <xsl:call-template name="SellerSupplierPartyName" />
         <br/>
@@ -2026,9 +2028,11 @@
     </xsl:template>
     <xsl:template name="BuyerCustomerPartyAdditionalInfo">
         <p>
-            <b>
-                <xsl:call-template name="AdditionalInfoBuyerCustomerPartyNameTitle" />
-            </b>
+            <small>
+                <b>
+                    <xsl:call-template name="AdditionalInfoBuyerCustomerPartyNameTitle" />
+                </b>
+            </small>
         </p>
         <xsl:call-template name="BuyerCustomerPartyName" />
         <xsl:call-template name="BuyerCustomerPostalAddress" />
