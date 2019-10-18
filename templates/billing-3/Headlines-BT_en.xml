@@ -161,7 +161,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-27">
 		<TermName>Seller name</TermName>
 		<Definition>The full formal name by which the Seller is registered in the national registry of legal entities or as a Taxable person or otherwise trades as a person or persons.</Definition>
-		<DisplayName/>
+		<DisplayName>Name</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-28">
 		<TermName>Seller trading name</TermName>
@@ -206,7 +206,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Description>Such as share capital. </Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-34">
-		<TermName>Seller electronic address</TermName>
+		<TermName>Electronic address</TermName>
 		<Definition>Identifies the Seller's electronic address to which the application level response to the invoice may be delivered.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-34-1">
@@ -238,24 +238,28 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-37">
 		<TermName>Seller city</TermName>
 		<Definition>The common name of the city, town or village, where the Seller address is located.</Definition>
+		<!-- <DisplayName>City</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-38">
 		<TermName>Seller post code</TermName>
 		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
 		<Description>Such as a ZIP code or a post code. </Description>
+		<!-- <DisplayName>Post code</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-39">
 		<TermName>Seller country subdivision</TermName>
 		<Definition>The subdivision of a country. </Definition>
 		<Description>Such as a region, a county, a state, a province, etc. </Description>
+		<!-- <DisplayName>Region</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-40">
 		<TermName>Seller country code</TermName>
 		<Definition>A code that identifies the country.</Definition>
 		<Description>If no tax representative is specified, this is the country where VAT is liable. The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+		<!-- <DisplayName>Country</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BG-6">
@@ -267,13 +271,11 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Definition>A contact point for a legal entity or person.</Definition>
 		<Description>Such as person name, contact identification, department or office identification. </Description>
 		<DisplayName>Contact Point</DisplayName>
-		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-42">
 		<TermName>Seller contact telephone number</TermName>
 		<Definition>A phone number for the contact point. </Definition>
 		<DisplayName>Phone</DisplayName>
-		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-43">
 		<TermName>Seller contact email address</TermName>
@@ -293,6 +295,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Buyer trading name</TermName>
 		<Definition>A name by which the Buyer is known, other than Buyer name (also known as Business name).</Definition>
 		<Description>This may be used if different from the Buyer name. </Description>
+		<!-- <DisplayName>Name<DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-46">
@@ -325,7 +328,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName>VAT ID</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-49">
-		<TermName>Buyer electronic address</TermName>
+		<TermName>Electronic address</TermName>
 		<Definition>Identifies the Buyer's electronic address to which the invoice is delivered.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-49-1">
@@ -358,24 +361,28 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-52">
 		<TermName>Buyer city</TermName>
 		<Definition>The common name of the city, town or village, where the Buyer's address is located.</Definition>
+		<!-- <DisplayName>City</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-53">
 		<TermName>Buyer post code</TermName>
 		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
 		<Description>Such as a ZIP code or a post code. </Description>
+		<!-- <DisplayName>Post code</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-54">
 		<TermName>Buyer country subdivision</TermName>
 		<Definition>The subdivision of a country. </Definition>
 		<Description>Such as a region, a county, a state, a province, etc. </Description>
+		<!-- <DisplayName>Region</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-55">
 		<TermName>Buyer country code</TermName>
 		<Definition>A code that identifies the country.</Definition>
 		<Description>The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+		<!-- <DisplayName>Country</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BG-9">
@@ -387,7 +394,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Buyer contact point</TermName>
 		<Definition>A contact point for a legal entity or person.</Definition>
 		<Description>Such as person name, contact identification, department or office identification. </Description>
-		<DisplayName/>
+		<DisplayName>Contact point</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-57">
 		<TermName>Buyer contact telephone number</TermName>
@@ -548,24 +555,28 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-77">
 		<TermName>Deliver to city</TermName>
 		<Definition>The common name of the city, town or village, where the deliver to address is located.</Definition>
+		<!-- <DisplayName>City</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-78">
 		<TermName>Deliver to post code</TermName>
 		<Definition>The identifier for an addressable group of properties according to the relevant postal service.</Definition>
 		<Description>Such as a ZIP code or a post code. </Description>
+		<!-- <DisplayName>Post code</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-79">
 		<TermName>Deliver to country subdivision</TermName>
 		<Definition>The subdivision of a country. </Definition>
 		<Description>Such as a region, a county, a state, a province, etc. </Description>
+		<!-- <DisplayName>Region</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-80">
 		<TermName>Deliver to country code</TermName>
 		<Definition>A code that identifies the country.</Definition>
 		<Description>The lists of valid countries are registered with the EN ISO 3166-1 Maintenance agency, “Codes for the representation of names of countries and their subdivisions”.</Description>
+		<!-- <DisplayName>Country</DisplayName> -->
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BG-16">
@@ -652,7 +663,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Document level allowances</TermName>
 		<Definition>A group of business terms providing information about allowances applicable to the Invoice as a whole.</Definition>
 		<Description>Deductions, such as withheld tax may also be specified in this group. </Description>
-		<DisplayName>ALLOWANCES</DisplayName>
+		<DisplayName>Allowance</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-92">
 		<TermName>Document level allowance amount</TermName>
