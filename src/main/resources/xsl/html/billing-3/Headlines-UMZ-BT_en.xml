@@ -200,8 +200,8 @@
 		<DisplayName>Order Document Reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-049">
-		<TermName>Validity Period</TermName>
-		<DisplayName>Validity Period</DisplayName>
+		<TermName>Sender</TermName>
+		<DisplayName>Sender</DisplayName>
 	</BusinessTerm>
 
 

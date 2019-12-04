@@ -235,28 +235,28 @@
 		<DisplayName>Dagsetning stöðu</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-057">
-		<TermName>Reason</TermName>
-		<DisplayName>Reason</DisplayName>
+		<TermName>Ástæða</TermName>
+		<DisplayName>Ástæða</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-058">
-		<TermName>Condition</TermName>
-		<DisplayName>Condition</DisplayName>
+		<TermName>Skilyrði</TermName>
+		<DisplayName>Skilyrði</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-059">
-		<TermName>Action</TermName>
-		<DisplayName>Action</DisplayName>
+		<TermName>Aðgerð</TermName>
+		<DisplayName>Aðgerð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-060">
-		<TermName>Effective date</TermName>
-		<DisplayName>Effective date</DisplayName>
+		<TermName>Dagsetning sem tekur gildi</TermName>
+		<DisplayName>Dagsetning sem tekur gildi</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-061">
-		<TermName>No reason</TermName>
-		<DisplayName>No reason</DisplayName>
+		<TermName>Engin Ástæða</TermName>
+		<DisplayName>Engin Ástæða</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-062">
-		<TermName>No action</TermName>
-		<DisplayName>No action</DisplayName>
+		<TermName>Engin Aðgerð</TermName>
+		<DisplayName>Engin Aðgerð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-063">
 		<TermName>Ítarupplýsingar sendandi</TermName>
@@ -267,12 +267,8 @@
 		<DisplayName>Ítarupplýsingar móttakanda</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-065">
-		<TermName>Explanation</TermName>
-		<DisplayName>Explanation</DisplayName>
-	</BusinessTerm>
-	<BusinessTerm id="UMZ-BT-049">
-		<TermName>Validity Period</TermName>
-		<DisplayName>Validity Period</DisplayName>
+		<TermName>Útskýring</TermName>
+		<DisplayName>Útskýring</DisplayName>
 	</BusinessTerm>
 
 </SemanticModel>
