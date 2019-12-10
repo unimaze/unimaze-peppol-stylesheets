@@ -280,6 +280,23 @@
 	<BusinessTerm id="UMZ-BT-070">
 		<TermName>Response date timestamp</TermName>
 		<DisplayName>Response date timestamp</DisplayName>
+
+	<!-- QUOTATION TITLES -->
+	<BusinessTerm id="UMZ-BT-066">
+		<TermName>Quotation reference</TermName>
+		<DisplayName>Quotation reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-067">
+		<TermName>Request for quotation line ID</TermName>
+		<DisplayName>Request for quotation line ID</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-068">
+		<TermName>Quotation amount</TermName>
+		<DisplayName>Quotation amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-069">
+		<TermName>Quotation currency</TermName>
+		<DisplayName>Quotation currency</DisplayName>
 	</BusinessTerm>
 
 </SemanticModel>
