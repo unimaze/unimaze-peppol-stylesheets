@@ -706,7 +706,7 @@
                                 <xsl:if test="cac:OriginatorParty/cac:PartyIdentification/cbc:ID">
                                     <xsl:apply-templates select="cac:OriginatorParty/cac:PartyIdentification/cbc:ID"/>
                                     <xsl:if test="cac:OriginatorParty/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
-                                    [<xsl:value-of select="cac:OriginatorParty/cac:PartyIdentification/cbc:ID/@schemeID"/>]
+                                        [<xsl:value-of select="cac:OriginatorParty/cac:PartyIdentification/cbc:ID/@schemeID"/>]
                                     </xsl:if>
                                 </xsl:if>
                                 <br />
@@ -1189,7 +1189,8 @@
                                             </small>
                                         </b>
                                         <xsl:if test="cac:RequestForQuotationDocumentReference/cbc:ID != ''">
-                                            <small>[<xsl:apply-templates select="cac:RequestForQuotationDocumentReference/cbc:ID"/>]&#160;
+                                            <small>
+                                                [<xsl:apply-templates select="cac:RequestForQuotationDocumentReference/cbc:ID"/>]&#160;
                                             </small>
                                         </xsl:if>
                                         <xsl:if test="cac:RequestForQuotationDocumentReference/cbc:IssueDate != ''">
@@ -1222,7 +1223,8 @@
                                             </small>
                                         </b>
                                         <xsl:if test="cac:RequestForQuotationDocumentReference/cbc:ID != ''">
-                                            <small>[<xsl:apply-templates select="cac:RequestForQuotationDocumentReference/cbc:ID"/>]&#160;
+                                            <small>
+                                                [<xsl:apply-templates select="cac:RequestForQuotationDocumentReference/cbc:ID"/>]&#160;
                                             </small>
                                         </xsl:if>
                                         <xsl:if test="cac:RequestForQuotationDocumentReference/cbc:IssueDate != ''">
