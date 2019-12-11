@@ -500,9 +500,11 @@
                                                                                                     </xsl:call-template>
                                                                                                 </b>
                                                                                             </p>
-                                                                                            <p>
-                                                                                                <xsl:apply-templates select="cac:Condition/cbc:Description" />
-                                                                                            </p>
+                                                                                            <xsl:for-each select="cac:Condition">
+                                                                                                <p>
+                                                                                                    <xsl:apply-templates select="cbc:Description" />
+                                                                                                </p>
+                                                                                            </xsl:for-each>
                                                                                         </small>
                                                                                     </div>
                                                                                 </xsl:if>
@@ -517,20 +519,22 @@
                                                                                                     </xsl:call-template>
                                                                                                 </b>
                                                                                             </p>
-                                                                                            <p>
-                                                                                                <xsl:choose>
-                                                                                                    <xsl:when test="((starts-with(cac:Condition/cbc:AttributeID ,'BT-')) or (starts-with(cac:Condition/cbc:AttributeID ,'BG-')))">
-                                                                                                        [<xsl:apply-templates select="cac:Condition/cbc:AttributeID" />]
-                                                                                                        <xsl:call-template name="LabelName">
-                                                                                                            <xsl:with-param name="BT-ID" select="cac:Condition/cbc:AttributeID"/>
-                                                                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                                                                        </xsl:call-template>
-                                                                                                    </xsl:when>
-                                                                                                    <xsl:otherwise>
-                                                                                                    [<xsl:apply-templates select="cac:Condition/cbc:AttributeID" />]
-                                                                                                    </xsl:otherwise>
-                                                                                                </xsl:choose>
-                                                                                            </p>
+                                                                                            <xsl:for-each select="cac:Condition">
+                                                                                                <p>
+                                                                                                    <xsl:choose>
+                                                                                                        <xsl:when test="((starts-with(cbc:AttributeID ,'BT-')) or (starts-with(cbc:AttributeID ,'BG-')))">
+                                                                                                            [<xsl:apply-templates select="cbc:AttributeID" />]
+                                                                                                            <xsl:call-template name="LabelName">
+                                                                                                                <xsl:with-param name="BT-ID" select="cbc:AttributeID"/>
+                                                                                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                                                            </xsl:call-template>
+                                                                                                        </xsl:when>
+                                                                                                        <xsl:otherwise>
+                                                                                                        [<xsl:apply-templates select="cbc:AttributeID" />]
+                                                                                                        </xsl:otherwise>
+                                                                                                    </xsl:choose>
+                                                                                                </p>
+                                                                                            </xsl:for-each>
                                                                                         </small>
                                                                                     </div>
                                                                                 </xsl:if>
@@ -668,23 +672,31 @@
                                                                     <xsl:if test="cac:Condition != ''">
                                                                         <xsl:if test="cac:Condition/cbc:Description != ''">
                                                                             <div class="document_response_action_table_cell">
-                                                                                <xsl:apply-templates select="cac:Condition/cbc:Description" />
+                                                                                <xsl:for-each select="cac:Condition">
+                                                                                    <p>
+                                                                                        <xsl:apply-templates select="cbc:Description" />
+                                                                                    </p>
+                                                                                </xsl:for-each>
                                                                             </div>
                                                                         </xsl:if>
                                                                         <xsl:if test="cac:Condition/cbc:AttributeID != ''">
                                                                             <div class="document_response_action_table_cell">
-                                                                                <xsl:choose>
-                                                                                    <xsl:when test="((starts-with(cac:Condition/cbc:AttributeID ,'BT-')) or (starts-with(cac:Condition/cbc:AttributeID ,'BG-')))">
-                                                                                        [<xsl:apply-templates select="cac:Condition/cbc:AttributeID" />]
-                                                                                        <xsl:call-template name="LabelName">
-                                                                                            <xsl:with-param name="BT-ID" select="cac:Condition/cbc:AttributeID"/>
-                                                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                                                        </xsl:call-template>
-                                                                                    </xsl:when>
-                                                                                    <xsl:otherwise>
-                                                                                        [<xsl:apply-templates select="cac:Condition/cbc:AttributeID" />]
-                                                                                    </xsl:otherwise>
-                                                                                </xsl:choose>
+                                                                                <xsl:for-each select="cac:Condition">
+                                                                                    <p>
+                                                                                        <xsl:choose>
+                                                                                            <xsl:when test="((starts-with(cbc:AttributeID ,'BT-')) or (starts-with(cbc:AttributeID ,'BG-')))">
+                                                                                                [<xsl:apply-templates select="cbc:AttributeID" />]
+                                                                                                <xsl:call-template name="LabelName">
+                                                                                                    <xsl:with-param name="BT-ID" select="cbc:AttributeID"/>
+                                                                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                                                </xsl:call-template>
+                                                                                            </xsl:when>
+                                                                                            <xsl:otherwise>
+                                                                                                [<xsl:apply-templates select="cbc:AttributeID" />]
+                                                                                            </xsl:otherwise>
+                                                                                        </xsl:choose>
+                                                                                    </p>
+                                                                                </xsl:for-each>
                                                                             </div>
                                                                         </xsl:if>
                                                                     </xsl:if>
