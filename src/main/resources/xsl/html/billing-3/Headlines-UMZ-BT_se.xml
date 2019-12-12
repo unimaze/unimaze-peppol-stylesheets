@@ -238,8 +238,8 @@
 		<DisplayName>Reason</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-058">
-		<TermName>Condition</TermName>
-		<DisplayName>Condition</DisplayName>
+		<TermName>Conditions</TermName>
+		<DisplayName>Conditions</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-059">
 		<TermName>Action</TermName>
@@ -266,7 +266,8 @@
 		<DisplayName>Additional receiver's information</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-065">
-		<TermName>Explanation</TermName>
-		<DisplayName>Explanation</DisplayName>
+		<TermName>Example</TermName>
+		<DisplayName>Example</DisplayName>
+	</BusinessTerm>
 
 </SemanticModel>
