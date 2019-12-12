@@ -267,8 +267,8 @@
 		<DisplayName>Ítarupplýsingar móttakanda</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-065">
-		<TermName>Útskýring</TermName>
-		<DisplayName>Útskýring</DisplayName>
+		<TermName>Dæmi</TermName>
+		<DisplayName>Dæmi</DisplayName>
 	</BusinessTerm>
 
 </SemanticModel>
