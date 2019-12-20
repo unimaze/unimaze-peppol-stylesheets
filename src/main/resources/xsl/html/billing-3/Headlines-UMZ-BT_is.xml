@@ -270,5 +270,9 @@
 		<TermName>Dæmi</TermName>
 		<DisplayName>Dæmi</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-070">
+		<TermName>Response issue date</TermName>
+		<DisplayName>Response issue date</DisplayName>
+	</BusinessTerm>
 
 </SemanticModel>
