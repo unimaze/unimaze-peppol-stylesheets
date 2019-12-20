@@ -274,5 +274,9 @@
 		<TermName>Example</TermName>
 		<DisplayName>Example</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-070">
+		<TermName>Response issue date</TermName>
+		<DisplayName>Response issue date</DisplayName>
+	</BusinessTerm>
 
 </SemanticModel>

@@ -1,3 +1,25 @@
+<?xml version="1.0"?>
+<!--
+   UniStyles - XSLT transforms for rendering UBL documents.
+   Copyright (C) 2019-present, Unimaze ehf.
+
+   render-invoice-response.xsl - render invoice response of PEPPOL BIS EN16931 (UBL 2.1 format).
+
+   Copyright (C) 2008-2019 Unimaze Software (www.unimaze.com)
+   info[at]unimaze[dot]com
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -43,10 +65,24 @@
 					}
 
 					.corner_title_center_content>div {
-						font-family: arial, verdana, Helvetica, sans-serif;
-						text-align: center;
-						line-height: 240%;
-						font-size: 1.7em;
+                        font-family: arial, verdana, Helvetica, sans-serif;
+                        text-align: center;
+                        font-size: 1.7em;
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+					}
+
+					.corner_title_center_content .centered_content {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: row;
 					}
 
 					.violet_box {
@@ -114,20 +150,27 @@
                         font-size: 1.6em;
                     }
 
-                    .issue_date_holder {
+                    .document_reference_holder {
                         display: flex;
                         flex-direction: column;
                     }
 
-                    .issue_date_holder .violet_box {
-                        height: 80px;
-                    }
-
-                    .issue_date {
+                    .document_reference_holder .violet_box {
+                        height: 95px;
                         position: relative;
                     }
 
-                    .issue_time {
+                    .document_reference_box {
+                        position: relative;
+                    }
+
+                    .document_type_code {
+                        position: absolute;
+                        bottom: 2px;
+                        left: 2px;
+                    }
+
+                    .effective_date {
                         position: absolute;
                         left: 0;
                     }
@@ -168,11 +211,13 @@
                         padding: 0.5em;
 					}                    
 
+					.document_response_table .document_response_table_body .table_header,
 					.document_response_table .document_response_table_body .table_body {
-                        display: flex;
-                        justify-content: space-between;
-                        background: #fff;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        align-items: flex-start;
                         border-bottom: none;
+                        background: #fff;
 					}
 
 					.document_response_table .document_response_table_body .table_body:first-of-type {
@@ -185,6 +230,10 @@
                         justify-content: space-between;
 					}
                     
+					.document_response_table .document_response_table_body .table_header small:last-of-type {
+                        text-align: right;
+					}
+
 					.document_response_table .document_response_table_body .document_response_table_cell:last-of-type {
                         text-align: right;
 					}
@@ -231,6 +280,27 @@
                     .information_banner .violet_box .violet_title {
                         font-size:1.5em;
                         margin:0;
+                    }
+
+                    @media screen and (max-width: 1024px) {
+                        .corner_title_center_content>div {
+                            flex-direction: column;
+					    }
+
+                        .corner_title_center_content .centered_content {
+                            <!-- top: 5px; -->
+                            flex-direction: column;
+					    }
+
+                        .corner_title_center_content span {
+                            display: block;
+                            width: 110px;
+                            text-align: left;
+					    }
+                        
+                        .document_reference_holder .violet_box {
+                            height: 115px;
+                        }
                     }
             
             <!-- GRID CSS -->
@@ -363,60 +433,98 @@
                                 <!-- /RECEIVER -->
                             </div>
                         </xsl:if>
-                        <div class="issue_date_holder">
+                        <div class="document_reference_holder">
                             <div class="grid_small_2fr_spliter">
-                                <div class="issue_date">
-                                    <xsl:if test="cbc:IssueDate !=''">
+                                <div class="document_reference_box">
+                                    <xsl:if test="cac:DocumentResponse/cac:DocumentReference !=''">
                                         <div class="violet_box corner_title_center_content">
-                                            <!-- Inserting Issue date Label:  -->
+                                            <!-- Inserting DocumentReference Label:  -->
                                             <h1>
                                                 <xsl:call-template name="UMZLabelName">
-                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-037'"/>
+                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-021'"/>
                                                     <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                                 </xsl:call-template>
                                             </h1>
-                                            <!-- Inserting Issue date:  -->
+                                            <!-- Inserting DocumentReference:  -->
                                             <div>
-                                                <xsl:call-template name="formatDate">
-                                                    <xsl:with-param name="dateTime" select="cbc:IssueDate" />
-                                                    <xsl:with-param name="country" select="$languageCode" />
-                                                </xsl:call-template>
+                                                <xsl:choose>
+                                                    <xsl:when test="cac:DocumentResponse/cac:DocumentReference/cbc:ID != ''">
+                                                        <!-- <div>
+                                                            <small>
+                                                                <small>
+                                                                    <xsl:call-template name="DocumentCode">
+                                                                            <xsl:with-param name="DCode" select="cac:DocumentResponse/cac:DocumentReference/cbc:DocumentTypeCode" />
+                                                                        </xsl:call-template>
+                                                                </small>
+                                                            </small>
+                                                        </div> -->
+                                                        <div class="centered_content">
+                                                            <span>
+                                                                <xsl:apply-templates select="cac:DocumentResponse/cac:DocumentReference/cbc:ID"/>&#160;
+                                                            </span>
+                                                            <span>
+                                                                <xsl:call-template name="formatDate">
+                                                                    <xsl:with-param name="dateTime" select="cac:DocumentResponse/cac:DocumentReference/cbc:IssueDate" />
+                                                                    <xsl:with-param name="country" select="$languageCode" />
+                                                                </xsl:call-template>
+                                                            </span>
+                                                        </div>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <div>/</div>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
                                             </div>
+                                            <!-- <span class="document_type_code">
+                                                   [<xsl:call-template name="DocumentCode">
+                                                        <xsl:with-param name="DCode" select="cac:DocumentResponse/cac:DocumentReference/cbc:DocumentTypeCode" />
+                                                    </xsl:call-template>]
+                                            </span> -->
                                         </div>
                                     </xsl:if>
-                                    <xsl:if test="cbc:IssueTime !=''">
-                                        <div class="issue_time">
-                                            <small>
-                                                <b>
-                                                    <xsl:call-template name="UMZLabelName">
-                                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-044'"/>
-                                                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                    <xsl:if test="cac:DocumentResponse !=''">
+                                        <div class="effective_date">
+                                            <xsl:if test="cac:DocumentResponse/cac:Response/cbc:EffectiveDate !=''">
+                                                <small>
+                                                    <b>
+                                                        <xsl:call-template name="UMZLabelName">
+                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-060'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                        </xsl:call-template>
+                                                    </b>
+                                                    <br />
+                                                    <xsl:call-template name="formatDate">
+                                                        <xsl:with-param name="dateTime" select="cac:DocumentResponse/cac:Response/cbc:EffectiveDate" />
+                                                        <xsl:with-param name="country" select="$languageCode" />
                                                     </xsl:call-template>
-                                                </b>
-                                                <br />
-                                                <xsl:call-template name="formatTime">
-                                                    <xsl:with-param name="time" select="cbc:IssueTime" />
-                                                </xsl:call-template>
-                                            </small>
+                                                </small>
+                                            </xsl:if>
                                         </div>
                                     </xsl:if>
                                 </div>
                                 <div class="violet_box corner_title_center_content">
-                                    <!-- Inserting Effective date Label:  -->
+                                    <!-- Inserting Response issue date Label:  -->
                                     <h1>
                                         <xsl:call-template name="UMZLabelName">
-                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-060'"/>
+                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-070'"/>
                                             <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                         </xsl:call-template>
                                     </h1>
-                                    <!-- Inserting Effective date:  -->
+                                    <!-- Inserting IssueDate and IssueTime:  -->
                                     <xsl:choose>
-                                        <xsl:when test="cac:DocumentResponse/cac:Response/cbc:EffectiveDate !=''">
-                                            <div>
-                                                <xsl:call-template name="formatDate">
-                                                    <xsl:with-param name="dateTime" select="cac:DocumentResponse/cac:Response/cbc:EffectiveDate" />
-                                                    <xsl:with-param name="country" select="$languageCode" />
-                                                </xsl:call-template>
+                                        <xsl:when test="(cbc:IssueDate !='') or (cbc:IssueTime !='')">
+                                            <div class="centered_content">
+                                                <span>
+                                                    <xsl:call-template name="formatDate">
+                                                        <xsl:with-param name="dateTime" select="cbc:IssueDate" />
+                                                        <xsl:with-param name="country" select="$languageCode" />
+                                                    </xsl:call-template>&#160;
+                                                </span>
+                                                <span>
+                                                    <xsl:call-template name="formatTime">
+                                                        <xsl:with-param name="time" select="cbc:IssueTime" />
+                                                    </xsl:call-template>
+                                                </span>
                                             </div>
                                         </xsl:when>
                                         <xsl:otherwise>
@@ -456,6 +564,36 @@
                                         </div>
                                         <div class="document_response_table_body">
                                             <xsl:if test="cac:DocumentResponse/cac:Response/cac:Status != ''">
+                                                    <xsl:if test="cac:DocumentResponse/cac:Response/cac:Status/cbc:StatusReasonCode/@listID = 'OPStatusReason'">
+                                                <div class="table_header">
+                                                    <!-- <small> -->
+                                                        <small>
+                                                            <b>
+                                                                <xsl:call-template name="UMZLabelName">
+                                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-057'"/>
+                                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                </xsl:call-template>
+                                                            </b>
+                                                        </small>
+                                                        <small>
+                                                            <b>
+                                                                <xsl:call-template name="UMZLabelName">
+                                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-005'"/>
+                                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                </xsl:call-template>
+                                                            </b>
+                                                        </small>
+                                                        <small>
+                                                            <b>
+                                                                <xsl:call-template name="UMZLabelName">
+                                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-058'"/>
+                                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                </xsl:call-template>
+                                                            </b>
+                                                        </small>
+                                                    <!-- </small> -->
+                                                </div>
+                                                    </xsl:if>
                                                 <xsl:choose>
                                                     <xsl:when test="cac:DocumentResponse/cac:Response/cac:Status/cbc:StatusReasonCode/@listID = 'OPStatusReason'">
                                                         <xsl:for-each select="cac:DocumentResponse/cac:Response/cac:Status">
@@ -465,14 +603,14 @@
                                                                         <div class="table_body">
                                                                             <div class="document_response_table_cell">
                                                                                 <small>
-                                                                                    <p>
+                                                                                    <!-- <p>
                                                                                         <b>
                                                                                             <xsl:call-template name="UMZLabelName">
                                                                                                 <xsl:with-param name="BT-ID" select="'UMZ-BT-057'"/>
                                                                                                 <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                                                                             </xsl:call-template>
                                                                                         </b>
-                                                                                    </p>
+                                                                                    </p> -->
                                                                                     <p>
                                                                                         <xsl:call-template name="StatusClarificationReason">
                                                                                             <xsl:with-param name="Code" select="cbc:StatusReasonCode"/>
@@ -483,14 +621,14 @@
                                                                             </div>
                                                                             <xsl:if test="cbc:StatusReason != ''">
                                                                                 <small>
-                                                                                    <p>
+                                                                                    <!-- <p>
                                                                                         <b>
                                                                                             <xsl:call-template name="UMZLabelName">
                                                                                                 <xsl:with-param name="BT-ID" select="'UMZ-BT-005'"/>
                                                                                                 <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                                                                             </xsl:call-template>
                                                                                         </b>
-                                                                                    </p>
+                                                                                    </p> -->
                                                                                     <xsl:apply-templates select="cbc:StatusReason"/>
                                                                                 </small>
                                                                             </xsl:if>
@@ -498,14 +636,14 @@
                                                                                 <xsl:if test="(cac:Condition/cbc:AttributeID != '') or (cac:Condition/cbc:Description != '')">
                                                                                     <div class="document_response_table_cell">
                                                                                         <small>
-                                                                                            <p>
+                                                                                            <!-- <p>
                                                                                                 <b>
                                                                                                     <xsl:call-template name="UMZLabelName">
                                                                                                         <xsl:with-param name="BT-ID" select="'UMZ-BT-058'"/>
                                                                                                         <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                                                                                     </xsl:call-template>
                                                                                                 </b>
-                                                                                            </p>
+                                                                                            </p> -->
                                                                                             <xsl:for-each select="cac:Condition">
                                                                                                 <p>
                                                                                                     <xsl:choose>
@@ -582,7 +720,7 @@
                                 </div>
                             </div>
                         </xsl:if>
-                        <xsl:if test="cac:DocumentResponse/cac:DocumentReference != ''">
+                        <!-- <xsl:if test="cac:DocumentResponse/cac:DocumentReference != ''">
                             <div>
                                 <br/>
                                 <div class="violet_box_no_back document_reference">
@@ -605,7 +743,7 @@
                                     </xsl:if>
                                 </div>
                             </div>
-                        </xsl:if>
+                        </xsl:if> -->
                     </div>
                     <!-- /DocumentResponse and DocumentReference -->
                     <!-- Document Response Action Table -->
