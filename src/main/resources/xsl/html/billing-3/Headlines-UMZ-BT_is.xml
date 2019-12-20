@@ -271,8 +271,8 @@
 		<DisplayName>Dæmi</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-070">
-		<TermName>Response issue date</TermName>
-		<DisplayName>Response issue date</DisplayName>
+		<TermName>Dagsetning og tími svars</TermName>
+		<DisplayName>Dagsetning og tími svars</DisplayName>
 	</BusinessTerm>
 
 </SemanticModel>
