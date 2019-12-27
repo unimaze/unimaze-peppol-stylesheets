@@ -1,3 +1,25 @@
+<?xml version="1.0"?>
+<!--
+   UniStyles - XSLT transforms for rendering UBL documents.
+   Copyright (C) 2019-present, Unimaze ehf.
+
+   render-payment-notification.xsl - render payment notification of PEPPOL BIS EN16931 (UBL 2.1 format).
+
+   Copyright (C) 2008-2019 Unimaze Software (www.unimaze.com)
+   info[at]unimaze[dot]com
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
