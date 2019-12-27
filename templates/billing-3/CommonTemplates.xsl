@@ -940,7 +940,7 @@
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
-                            select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />
+                            select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="LabelName">
@@ -948,7 +948,7 @@
                             <xsl:with-param name="Colon-Suffix" select="'true'" />
                         </xsl:call-template>
                         <xsl:apply-templates
-                            select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />
+                            select="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
                     </xsl:otherwise>
                 </xsl:choose>
             </span>
