@@ -43,7 +43,7 @@ Please refer to the [README](templates/readme.md) in the `template` folder for i
 - Adding a new language.
 
 ## Licensing
-GNU General Public Licence v3.0
+Apache License 2.0
 
 See [LICENSE](LICENSE.txt) for the full text.
 
