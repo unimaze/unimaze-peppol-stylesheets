@@ -31,16 +31,16 @@ Apache License 2.0
 See [LICENSE](LICENSE.txt) for the full text.
 
 ### Samples
-See [samples](doc/samples) files.
+See [samples](docs/samples) files.
 
 <p align="center">
-  <img src="doc/samples/biling-3/images/bisenubl-invoice-complete_en.png" width="320" />
+  <img src="docs/samples/biling-3/images/bisenubl-invoice-complete_en.png" width="320" />
   <span>&#160;&#160;&#160;&#160;&#160;&#160;</span>
-  <img src="doc/samples/biling-3/images/bisenubl-creditnote-complete_en.png" width="320" />
+  <img src="docs/samples/biling-3/images/bisenubl-creditnote-complete_en.png" width="320" />
 <p>
 
 ## Requirements
-Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7 and MSXML 3.0.
+Currently this stylesheet requires XSLT 1.0 and has been tested with Saxon v9.7 & v9.9 and MSXML 3.0.
 
 ## Adding a new language
 In order to add another language to the stylesheet, there are a few steps.
