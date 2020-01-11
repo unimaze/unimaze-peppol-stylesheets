@@ -466,7 +466,7 @@
         </cac:Price>
     </cac:CreditNoteLine>
     <cac:CreditNoteLine>
-        <cbc:ID>6</cbc:ID>
+        <cbc:ID>7</cbc:ID>
         <cbc:CreditedQuantity unitCode="C62">3</cbc:CreditedQuantity>
         <cbc:LineExtensionAmount currencyID="ISK">2700.00</cbc:LineExtensionAmount>
         <cac:AllowanceCharge>
