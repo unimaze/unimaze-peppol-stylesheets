@@ -88,4 +88,4 @@ The language can be changed in runtime by setting the `lang` XSLT parameter when
 
 ---
 
-![CEF - Connecting Europe Facility](resources/en_cef_300x42.png)
+![CEF - Connecting Europe Facility](docs/en_cef_300x42.png)
