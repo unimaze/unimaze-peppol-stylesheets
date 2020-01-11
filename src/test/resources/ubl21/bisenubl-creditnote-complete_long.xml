@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CreditNote xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+    <cbc:ID>ABC123</cbc:ID>
+    <cbc:IssueDate>2018-11-22</cbc:IssueDate>
+    <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
+    <cbc:Note>This is an invoice</cbc:Note>
+    <cbc:DocumentCurrencyCode>ISK</cbc:DocumentCurrencyCode>
+    <cbc:TaxCurrencyCode>EUR</cbc:TaxCurrencyCode>
+    <cbc:AccountingCost>AC=1234</cbc:AccountingCost>
+    <cbc:BuyerReference>BUY123</cbc:BuyerReference>
+    <cac:InvoicePeriod>
+        <cbc:StartDate>2018-11-07</cbc:StartDate>
+        <cbc:EndDate>2018-11-21</cbc:EndDate>
+        <cbc:DescriptionCode>35</cbc:DescriptionCode>
+    </cac:InvoicePeriod>
+    <cac:OrderReference>
+        <cbc:ID>ORD123</cbc:ID>
+        <cbc:SalesOrderID>SALORD123</cbc:SalesOrderID>
+    </cac:OrderReference>
+    <cac:BillingReference>
+        <cac:InvoiceDocumentReference>
+            <cbc:ID>INV123</cbc:ID>
+            <cbc:IssueDate>2018-11-22</cbc:IssueDate>
+        </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+    <cac:DespatchDocumentReference>
+        <cbc:ID>DESP123</cbc:ID>
+    </cac:DespatchDocumentReference>
+    <cac:ReceiptDocumentReference>
+        <cbc:ID>RECPT123</cbc:ID>
+    </cac:ReceiptDocumentReference>
+    <cac:ContractDocumentReference>
+        <cbc:ID>Contract123</cbc:ID>
+    </cac:ContractDocumentReference>
+    <cac:AdditionalDocumentReference>
+        <cbc:ID schemeID="ZZZ">INV1234</cbc:ID>
+        <cbc:DocumentTypeCode>130</cbc:DocumentTypeCode>
+        <cbc:DocumentDescription>Some document</cbc:DocumentDescription>
+        <cac:Attachment>
+            <cac:ExternalReference>
+                <cbc:URI>www.exampleurl.com/someDocument</cbc:URI>
+            </cac:ExternalReference>
+        </cac:Attachment>
+    </cac:AdditionalDocumentReference>
+    <cac:AdditionalDocumentReference>
+        <cbc:ID schemeID="ZZZ">helloWorld</cbc:ID>
+        <cbc:DocumentDescription>Hello world pdf</cbc:DocumentDescription>
+        <cac:Attachment>
+            <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="helloWorld">JVBERi0xLjQKJcfsj6IKNSAwIG9iago8PC9MZW5ndGggNiAwIFIvRmlsdGVyIC9GbGF0ZURlY29kZT4+CnN0cmVhbQp4nFWPO08DMRCExTNg+BEu7eLMvuy9bZEQUjqi64AqEqkOKeH/S9hWDh1282k8Ozs+ekhIHtpdYD+7p536w4/rst+9nuF0cEc3Jm6nC2vez/55qoPmSfz05SCZmXDuj+gVkpplr2J1D/ppdu/hImJiyFzCZRwgARUq4So2GsFojdfVqog6hptmLWSAY7iNQ0sgwJVhE4ecCivLEqBAGu46M0HJ4T4OlKBYxR6HgqB47iOSexoRj7KsYOI/axkpfHzHgZOQVn3TGzEb8PKRXMT+Dzy0HEKQpSlqeGw1SgapeaeqloJgdepz2rqXyb3V+wuv/0z4ZW5kc3RyZWFtCmVuZG9iago2IDAgb2JqCjI0NAplbmRvYmoKNCAwIG9iago8PC9UeXBlL1BhZ2UvTWVkaWFCb3ggWzAgMCA1OTUgODQyXQovUm90YXRlIDAvUGFyZW50IDMgMCBSCi9SZXNvdXJjZXM8PC9Qcm9jU2V0Wy9QREYgL1RleHRdCi9FeHRHU3RhdGUgMTAgMCBSCi9Gb250IDExIDAgUgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFsKNCAwIFIKXSAvQ291bnQgMQovUm90YXRlIDA+PgplbmRvYmoKMSAwIG9iago8PC9UeXBlIC9DYXRhbG9nIC9QYWdlcyAzIDAgUgo+PgplbmRvYmoKNyAwIG9iago8PC9UeXBlL0V4dEdTdGF0ZQovT1BNIDE+PmVuZG9iagoxMCAwIG9iago8PC9SNwo3IDAgUj4+CmVuZG9iagoxMSAwIG9iago8PC9SOQo5IDAgUj4+CmVuZG9iagoxMiAwIG9iago8PC9MZW5ndGgxIDgzODgvRmlsdGVyL0ZsYXRlRGVjb2RlL0xlbmd0aCAxMyAwIFI+PnN0cmVhbQp4nO1aC3QT55X+/9HLtmRpbD2slzWjp22NLcmSLVl+ji1LPBxAGBvLYBcbPxDmZWweSRqCA3GghhTTBMgmbQOx26Rkm8hACklLQhuWdE/aU9JNkzSlaXYLbbbBDc3rNOli7Z2RbGgem+7u2bPn7NmZuf9/7/3f373//WdkI4wQykYjSICiS5a5vYi/TEchWd6zoXswJed7EMItPdu20Dte+9o/geISQoSrf3DNhu1H9SAKZAiJmtasv60/VV/2FkLyhfG+7t7zM00MQvR+UPrjoFBclvwKoYwYyLb4hi23psf7M/S/Zf2mnu6UbCgD+eMN3bcOCiniG1D/DlDSG7s39KXr3w2JfnDT8JaUTK/nksGhvsH3IxMXof7XERI2iVoQN68WpEc96KZL+GUuFbwI+lUIJX/HSTfSmSPJX3+yLuQv39xDchzINide4vDgKVW3UYxmeC4jTV904bNwv4DPzvV2Ka1Vp7UHkAWJkkPJN5J/Qd9HHuDDyZeSfyFeFyz5zP4+gra/hLYfQQ9n8WGg49DPRfwEfgX/Dr/A11EDb0Efo+dhtD+i48Bz+SXcA9wfQf8xuhPdi5pQL+SXgMbRP6CHUBPejsexEn0PvYqGiAHiB4Ja4s/CF0Rq4XvJULJ05jp+hciD0V4hLLibKCN6cSb6CnoeByF/XvAA+gg/AIO/in+CpDDSbwkn/jW+H5/A5XgXfh39FL2LEug+9Af0BxjnAL4dyIfdqB3fgi7jKfQ45H/AQoEGvybwoQOwLgY9RHyPqEAr0I9hlj+G1iz6FvoWnhFsB9Ti6Hb0JNqDF2IrzPlupMO3o62i5zHmMbYTItQBPbagXqIBIbYi4C8v83lLPW5XSTHjLCoscNhtVouZpkz5RoNep83TqFXK3BxSIc+WSbMyMyRikVBAYFSME6ZQLCFgDGazub2kGPEiYbfWpnWcEie0XB07+a45gXLTNSNjka7EyOrEPGtjYl5tutKUUTLbU0rO/4RsmpMXJ5AqEbGGGrmOp1DkdwmkTGBVAnGjYOUiGCndKNw7YA2vTehCvV1d0KLRStKJyDV3eip831PSrJA11JcFC5jKkgIr5ZYSsQ5O4Ugt5hkiEq6cIlBGdklxIpeBJYY5Gkiw+7q49TZCT1CivFFyJnlu/81FCJrNcsoUhxPiUELCj0uvTbDdCbSPnio+N7b/DIlWdzGyXmtvdwcg1w1znEICezjewuEY5qgrTieE0DmfGEBDh+P0mJWDIxzvgtTaCK0+Uw/qzFBsj/mcIZELeTiRw6TMcPtlg2AsrF1Lc+LY2B46cXRp7OZSM5e2t7drYcJjYSt0CJ2FBxpgKVr3rKGFdngW9FrDvWu7aTDxAIAAT/d+DnzzGJmIfGi+4RppuHq7BrgZDnRzqwoP0GP7+viV7ednzIMVjoMZu7+o1thYmBu6u7ch1XsowbbwGWpZEePhAKAb29OqdIUV3Ky5kq7GdnPKNE3NsRA3MWt3oyE11TlNV1oDivBsIc3NYAF0kKB76ARqjlmhagWX9FWgsZ4KfsHmdgytojdaJUR20kqPfYASuMs6ffWvNd1pjdhOfoA4NmKNdI2NRax0ZKxrrPtMcmS1lSatY1NNTWOD4S4YNRqDVmeSz+wzJCL72xNkVxxXgqU4f4k0x+oM5pz2WTE6KyJwQHBDKb+ctO3SGaCMWmJmGoBqjbUbAKcYx7cAn8o5twM3rwCPSMPGYdRXMQdPKM2azZwv7zvDotUgJEaWxlIyjVYbTiDWzYA9uriSc7Ml6lauZGS2ZK55lxVGOYW4w1udyHDMPQpSowzHKxNY8x8U96XKE8pQTGAg2lMcYRBwXBYDcaE6kccAX8iMgREuWhMkkxCFYucM1e00mQMBgzPfMmvT0hWx2TWmJDo8lnYKxI0tic3A2Z85M/Ptmacyf8vP5uark9f8GzqBJGg3EiICkciKKuDN4qfJJEiYzWJ1Ba4Aq4EE8GUzSU5SpqRTQsg9z+BcFMW5rI5gRTpTgM3R0QGyHFNusowg/xF3XcRnsJBtes9BnTyhop58j6aeAEIXyAvRC4kLQvICfcFzgQVh5ML4haOgevPCtQvSkVfwN49oqa8dNFCr7tt0H0Geok91nRo8NX5KRNYbsQYNAr0JJIB1ahANxAJdBBLyZSNAgDE6B3QNSJQE7kSmPPA0MOqT0pwA+QycRzh57uQEZeeWc/K43MQvsvZ4sSuAHkHHyUfI4+PHr02Ir01gxQQ1EX1k/BEheZQ8Rk7SR+nJ8aPjkxL22MjRkclzxy4euzgpRpODkwTX1TGNju9yUirn86O6VNfJSWDIac808ffv0tTjQO9+l6Y838V/Go1SV9+OUn8c0VFvjRioS7vU1K/2WqnX90ap1/YUUj+/K0q9BLTrQJS6a0eU2gP1f7TPQP0QaGyfl9o/0ks9N2qgnt3tpc4CjY96qXtG66kf7PBSd454qe/v7KVGgEy3avK3a4zbNIatGv0WjW5Ys2FQk2fcMJhn2DCoW78J+PWb8gzrN+nWbdQYqHXudUs2rlonROvIde9sTG4URtfhdRt3DunXDKjUxjUDasOaAV3/WuD716oN/Wt1fXGV4UD84fhz8Z/Fk3ERGafjbDwaH4+L+uKjm/Xs+b/rMFBHOg3UIaD7gD/YkU3d22ag9gF9pU1H7YkZqFGg3UB3gW4n0A6gnm4ZtRrI27lSRnUAkTE8EjsXI2LLZVQbUHdrBtUF5F0JyXIgQ0Ct9avV5ercMrXCp5Z51ZmlarFHLXCrkUtdWKRwFMhtdoXFKqfNChMlNxjzs7U6fbZak5edq1RlK8gcmSxbLsvMksrEkgyZQCiSIUzIoj6cyG1CTS0NCSWGfFlDwsc0ncHjzQkv05TIjK6MTWH81XbQJoi9ZzDEduHeMwRkuaEVK2NnsI4rHuWPvKcRxuzovYZ03t7O5Cd6m5bFEoP57Qkvx4zntyPmcy98opVtDa/d18jwlTDDwPs4k2bT16w8vGVWs3WOTWgTAVgA84kmn7qG0wSdQOOtKYnjEfDDqe6Gh7duTddipjI5KKLNDVMmjglEG7QQVJAPNutPRa2waSXIz6olEiQWY6FQwGZm+wWZgk0EaGCbnAYRXtrXE4yb8bn5BLl9bnhKPb4cc04BkA8/6Jv5iaj148d9wnf+ksP13py8QjhE85Ac0aiQzVNosVaL3pIoFQLhW1KpciTfbMkf0TLuaZ97GtXVXfe6O0s92Mu9UYqtlgJHeVnAr0yJEk7hwpwG17fV1o60t9WGqho62muXzasKFRUu8Nf56vDhenZ5+11V7JfaqsOCKbblwf63O+Kjq9/sHFrUBfORJ68IXoBvHzmqRH1sg9erUFAURVAUNynmfoXAaLFwM1P7SRe+6MLIRbpoV9TV5RK5XH5F4c7CA4WCwhF1tXqQ8Ff5N3BwuKc7c3zuzs1DOblB93TQ7UN10/xKQPzMxXAKiVgix/BYLbyae8V2WC2wSEm6KqjwSzeWuX1weHtjwyrd7cUMaSmrq44YJJH6AhOlF2cFgx1soWs0vvGvF/+sx7tiee+WJepqTZFlYUGkJlCrWLt6ORMo8PeX+21FbPfpYjd3IhmSV8WLRetQP3qRPYBMtBsjjRISQgRJT7cbLyphyvCiMj8kC+dD0txahh20CTmYEqhZhcr8VahRRKDG+Quhfgdqbu1AVQYH6kCNqMoD+aJGpDlaNllFTC482mg6VnLM0XOs+VhH9jfqanFtLVrk8SxSGgxIWFVFjjjijo1EY2PGSMeajnUALwDJJ6jO54aHw7hzGpOXL889n7U5AHea8xk5VqvyTNjn5fDlvQdw9Xk5AwD8YoIvvdlAtThtCs4SUKqZLUy1TRVDTb8jZU/4WqygSwrUekXN5jVerbXYWOuNf+PMk7UFWolQpshQlTueevFE66KqfHVWrn3xyVKVSExLi5w/OjUZL/HRfmOeWIGFmGooPj8kWneXtdigXbw9QmYJNcV3x5U6a35RSKYLzas25ZpLdDPbtrwYMKlMauaWsJUOBWmSZlpurzOpMgo8kSEvqdMGIgstioDZbDPKi8u2nrV6rlmWB8xqZ19BHni/IXlFuFFwBZXD1+DDbKPChV2sUu13sfIcSDKlfsq1ykW4XMh/nrJiq1WPpNLcXLIaVz+g1xQdRqTDsQQsdo84O1vcII4TpaVB7iTN0/m5nKWMJj8dHAleDArIIB1kg9HgeFAUvHucwlQ91Q/GHJru3Mzw8cPnJq93cladrpse8rlThh2aho00BObbzO8bE1ZL5uyT2hecXebCgN07t2v4bQSmVVrAaBqfF/RE9xO3sT5CI1XR9KKapua1Nepclbl35+6l5bUtu7Go0lTsNbmt7d2ltYsantpVXO9yRPMEV2Lu2wYOPeTSyEQiuyduLZ6v1y2osG+vj0fvxHnOgVU2z85Kt6fL1nX97Hyvp2pPwMHFOXPyiogStSEPqkNtbJnkUVoqDR5SaUofYGnSzdQxqxgB8xjtRpIJzExUO+SO6lFcj+MEW47Lx/WsnkNnupPzdK+bBK9GdXrddKe2Tg/4+NzAAyI5Kg2HiYpf7hwWaUfk3DovtXJeYfN5sSXlwrz3FziEp7NNNt2xgwdppUBE5dj6dzx0x4KS6sXz74j3belQZNLWkrqDGLUtv/7P9Q5fqbW6vspqEIn+bdPiYrXOYYg67Uqbz7RsOLxi66337r6t3l+WsdxeIFd5FxTNu3463HF4b9h75LEHfYWAhwU8zSq4jBxwvqxmQ4WHMTblRqVdUuKcFEul4m/makoOm0i5fJUTK5xu5yrnJqeQctbxzJPOpFPsfNVWblsLLiY4qy3T9s9GAnAgcJd0hN3cyYdcgMZs4c0+t7k/BQzvQ3YeHisPi0bwoxknde9Sz1aHRaX3rnj44s+/Gi6p6o/t7d/+7GioyO2f0fWxtd4K2pSPzxnqh+0GLWuZH9p+e3Xr5h2P3bMlyKz3L2yJ1i/7fpW/sbjIadJCLFUmrxKvipajItT2NDjFx6xPJhGWY1mOqhwjoQTlqLRIK4OPgAlkMuVMaE2P0TYk0zgcaFSrZUbjGU5tH8GkAx7nAlhLvs95RDqqoYo5L7hxIPrT58dcjPJ5OQiI7mzGrnMXzH/8h4ttLp2zIJM0VjipL60JX/IuycoW6Gae+0VESRr1Zr9Uk58dMGn1uTm37Lr2/n6LlqFKF1Bqx2p6+GTamk9C3MiBU5xhDfpDWZrcQ4hUGOuMhHG32CJeS6h3y81y3ok5G/HbOnX25c2ZgzNGHr8/5/yUOHh6rKe69oVnP3jn/vHEmdPF5SUUFWkvoc2CK6saNwzd8csHDu69++Wrh7/5+3p/9c+izZtbXgk1As6q5FVhUPAGqkJ3PI0qAedbCix0OS5gSsqxgbYgpsSLvAUGZPmOIRBgJrwFGpE282dKrGQz5X6lMjMz8BiNSFLukbNyQZccy2vkA4RAYBj1Vnv7Zn2tczO/C31aCE8MnObBOvxJY3j5tfAuNmcTfmuK1Z+IXDfOltnT/aPyvEyRXpUbvWtlpdFWbGU7feEKda4xRyrRFa2o9HQ9M9XRXJ2vEZIq07zVww8K3jAtLc7fUZW/0unuoWtsAXVd35GAKU9mCBXVZKkoY7isSEkZVn5YUiAzlnvCFhfikXpbFBP8GuLSOjZkmtDDC4/CrViiWKV4WCFWTGRUAjiCQ8Ws6VGLpVijVCoerXyUriXt9oxRfb0+TpCYxiyOwhk16mV5bFJhys1jcxnAgVNZN63XkteDmItcneRlPlbxuxHijgunTJ9ySkmOatYjUjjNoVM268FcVWLhcH6FVCMVqozB1c881YcJXFn6ix1bPVaByCxT+fq2nFsSwlRRgXr4/PkqwePX/+UJs9bz7clqXZ7C5KrVutZJLZ7wzDyLUetaUZqvoWul1vCmzkvNlRbZ8qV5Kq36Fh0DX5rvJt+SfAh+1IY+YHvVYncDbmioKy0tVzgPOH/jFCj4iPSc8x2nyOksoPUjekKvN9VUVb2+rFm1bFlzMBDYY0cqux3ZrNbXJSKVRCIyU9SebJkqO1uWLaPMVptdIkKBYFXNsmYysyBaL8UKVAdUDlQAZAIisYK1aFtbMzURl5b8VDNVtAk3NbWr3NxrZm5eEF6FfAA6Oc1fOaDZI3cx8h3keci1n8PgHDBV6kUVEi7nHNgOiEM8FPDmwGCRWQvQnI3mDg/HrAlT/pzSp9+Eyua8P/VOy/clnFxjU+fYHI96qu21tpmXm5yqcvjKvfWruI4Su8scmkZTheVo9+4j95BWqavQbAsU0nnuhjtbGxweo6je7rF8vLHF1vbdb1VoGmbeXOarwe/dZicVkiLdIsq0XVOSmaVp6+mlKHuh1rxYq/AF84w2mdLQdkv3Aq2y0GguU+VnZ5TStEaUJy8LzRhfXsn/9jIzIXwfrB1CX2cZcxZbiisqygsLS3xe714cUmEcKvF4XtMZVDqdwaAr8Xh9OJShYuqfTduLAcoHW1lt2dmqB8SGqiobOVevlq6pUQWcdFYW3UivIbhXHIghOSl7ubnjivxcc/HGAZugzXxUEXDvpunPAB7b2TNcAJtpdouktlE6mqZNwW8y/iNC8Ju7S3vqdp2+v2Nez/z5xWq5XFpAOcv+5HDUq/Knth0ZqGmGDiyOfKpB59g79DIT9BiL8Z9nDu15vPqOxdWdi9Z6NJbKYn+heyOBo4X5GW5NO63W5Ed0FlqnLauNfDnoyi+hfTX99hJVrjPE/3blTt/b/+s3/vT14X/2Jia4W8AIHr35Fuby90r+vsbdop2ineJt4m0S+//f/52btz2R/iVTxf38B5tNDyQGhpm/pFmwonWesLEjZvkb/uj3f+0Soko+FXL4XMtOJiHFXAqyEFIGzUdLUDOgtgK1onmga4QP5xiy8DVyAVcCODH3B9OWltJQZIvHw5cgPI5Ef/MsPvHn1mvoWvKvFOlfoWEo302EiO2o+X+DBL9C8i8i8QAy/E+T8Cs3SFSGzMJaZPk8Iq4i5SwJXwLdLM1DqlkSrU+R5F+T73EkfB9AFnyB7Tjb4F0HphJPPrNKUf0BkqaM+Z1th9/m8pNv/L5z5tvXZzJ/K+H+fyCT9xe4/h1kW1U6CmVuZHN0cmVhbQplbmRvYmoKMTMgMCBvYmoKNTMyNgplbmRvYmoKOSAwIG9iago8PC9CYXNlRm9udC9MWUJLVlArVFQxQ0Z0MDAvRm9udERlc2NyaXB0b3IgOCAwIFIvVHlwZS9Gb250Ci9GaXJzdENoYXIgMS9MYXN0Q2hhciAxMy9XaWR0aHNbIDgwMiA1MzAgMzY1IDYwMiAyNTAgOTg5IDUzNSA2NTAgMzA4IDU2NyA2MTkgNjc4IDQ4Ml0KL0VuY29kaW5nIDE0IDAgUi9TdWJ0eXBlL1RydWVUeXBlPj4KZW5kb2JqCjE0IDAgb2JqCjw8L1R5cGUvRW5jb2RpbmcvQmFzZUVuY29kaW5nL1dpbkFuc2lFbmNvZGluZy9EaWZmZXJlbmNlc1sKMS9IL2UvbC9vL3NwYWNlL3cvci9kL2V4Y2xhbS9hL3kvdS9xdWVzdGlvbl0+PgplbmRvYmoKOCAwIG9iago8PC9UeXBlL0ZvbnREZXNjcmlwdG9yL0ZvbnROYW1lL0xZQktWUCtUVDFDRnQwMC9Gb250QkJveFstNiAtMTcwIDk5NSA2NzddL0ZsYWdzIDQKL0FzY2VudCA2NzcKL0NhcEhlaWdodCA2NzcKL0Rlc2NlbnQgLTE3MAovSXRhbGljQW5nbGUgMAovU3RlbVYgMTQ5Ci9NaXNzaW5nV2lkdGggMjUwCi9Gb250RmlsZTIgMTIgMCBSPj4KZW5kb2JqCjIgMCBvYmoKPDwvUHJvZHVjZXIoR1BMIEdob3N0c2NyaXB0IDguMTUpCi9DcmVhdGlvbkRhdGUoRDoyMDEyMDUyNDA4MTgxMykKL01vZERhdGUoRDoyMDEyMDUyNDA4MTgxMykKL1RpdGxlKE1pY3Jvc29mdCBXb3JkIC0gSGVsbG8gd29ybGQuZG9jeCkKL0NyZWF0b3IoUFNjcmlwdDUuZGxsIFZlcnNpb24gNS4yLjIpCi9BdXRob3IoYmpvcm4pPj5lbmRvYmoKeHJlZgowIDE1CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDU3NiAwMDAwMCBuIAowMDAwMDA2Njc2IDAwMDAwIG4gCjAwMDAwMDA1MDggMDAwMDAgbiAKMDAwMDAwMDM0OCAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAzMjkgMDAwMDAgbiAKMDAwMDAwMDYyNCAwMDAwMCBuIAowMDAwMDA2NDc0IDAwMDAwIG4gCjAwMDAwMDYxNTYgMDAwMDAgbiAKMDAwMDAwMDY2NSAwMDAwMCBuIAowMDAwMDAwNjk1IDAwMDAwIG4gCjAwMDAwMDA3MjUgMDAwMDAgbiAKMDAwMDAwNjEzNSAwMDAwMCBuIAowMDAwMDA2MzUyIDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgMTUgL1Jvb3QgMSAwIFIgL0luZm8gMiAwIFIKL0lEIFsocdqVDp4Olc+6pQu3FepQeykocdqVDp4Olc+6pQu3FepQeyldCj4+CnN0YXJ0eHJlZgo2ODc5CiUlRU9GCg==</cbc:EmbeddedDocumentBinaryObject>
+        </cac:Attachment>
+    </cac:AdditionalDocumentReference>
+    <cac:OriginatorDocumentReference>
+        <cbc:ID>PPID123</cbc:ID>
+    </cac:OriginatorDocumentReference>
+    <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cbc:EndpointID schemeID="0196">0987654321</cbc:EndpointID>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="0196">0987654321</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Prufufyrirtæki slf.</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Prufutúni 37</cbc:StreetName>
+                <cbc:AdditionalStreetName>4th floor</cbc:AdditionalStreetName>
+                <cbc:CityName>Reykjavík</cbc:CityName>
+                <cbc:PostalZone>116</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID>IS65321</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>Prufufyrirtæki slf.</cbc:RegistrationName>
+                <cbc:CompanyID schemeID="0196">0987654321</cbc:CompanyID>
+                <cbc:CompanyLegalForm>LEGAL123</cbc:CompanyLegalForm>
+            </cac:PartyLegalEntity>
+            <cac:Contact>
+                <cbc:Name>Guðmundur Guðmundsson</cbc:Name>
+                <cbc:Telephone>1234567</cbc:Telephone>
+                <cbc:ElectronicMail>gudmundur@test.test</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cbc:EndpointID schemeID="0196">1234567890</cbc:EndpointID>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="0196">1234567890</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Prufufyrirtækið ehf.</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Prufugata 20</cbc:StreetName>
+                <cbc:AdditionalStreetName>Þriðja hæð</cbc:AdditionalStreetName>
+                <cbc:CityName>Reykjavík</cbc:CityName>
+                <cbc:PostalZone>115</cbc:PostalZone>
+                <cbc:CountrySubentity>Gullbringusýsla</cbc:CountrySubentity>
+                <cac:AddressLine>
+                    <cbc:Line>Door on the right</cbc:Line>
+                </cac:AddressLine>
+                <cac:Country>
+                    <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID>IS12356</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>Prufufyrirtækið ehf</cbc:RegistrationName>
+                <cbc:CompanyID schemeID="0196">1234567890</cbc:CompanyID>
+            </cac:PartyLegalEntity>
+            <cac:Contact>
+                <cbc:Name>Jón Jónsson</cbc:Name>
+                <cbc:Telephone>4561237</cbc:Telephone>
+                <cbc:ElectronicMail>jonjonsson@prufa.test</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:PayeeParty>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0196">0123456789</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+            <cbc:Name>Sindri Jónsson</cbc:Name>
+        </cac:PartyName>
+        <cac:PartyLegalEntity>
+            <cbc:CompanyID schemeID="0196">9874651230</cbc:CompanyID>
+        </cac:PartyLegalEntity>
+    </cac:PayeeParty>
+    <cac:TaxRepresentativeParty>
+        <cac:PartyName>
+            <cbc:Name>Tax name</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+            <cbc:StreetName>Tax street 23</cbc:StreetName>
+            <cbc:AdditionalStreetName>Additional Tax Street</cbc:AdditionalStreetName>
+            <cbc:CityName>Reykjavík</cbc:CityName>
+            <cbc:PostalZone>101</cbc:PostalZone>
+            <cbc:CountrySubentity>Gullbringusýsla</cbc:CountrySubentity>
+            <cac:AddressLine>
+                <cbc:Line>Third tax street</cbc:Line>
+            </cac:AddressLine>
+            <cac:Country>
+                <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+            </cac:Country>
+        </cac:PostalAddress>
+        <cac:PartyTaxScheme>
+            <cbc:CompanyID>IS645789</cbc:CompanyID>
+            <cac:TaxScheme>
+                <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+        </cac:PartyTaxScheme>
+    </cac:TaxRepresentativeParty>
+    <cac:Delivery>
+        <cbc:ActualDeliveryDate>2018-12-07</cbc:ActualDeliveryDate>
+        <cac:DeliveryLocation>
+            <cac:Address>
+                <cbc:ID schemeID="0196">1234562540</cbc:ID>
+                <cbc:StreetName>Prufutúni 37</cbc:StreetName>
+                <cbc:AdditionalStreetName>4th floor</cbc:AdditionalStreetName>
+                <cbc:CityName>Reykjavík</cbc:CityName>
+                <cbc:PostalZone>116</cbc:PostalZone>
+                <cbc:CountrySubentity>Gullbringusýsla</cbc:CountrySubentity>
+                <cac:AddressLine>
+                    <cbc:Line>Door on the right</cbc:Line>
+                </cac:AddressLine>
+                <cac:Country>
+                    <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:DeliveryLocation>
+        <cac:DeliveryParty>
+            <cac:PartyName>
+                <cbc:Name>Íslandspóstur</cbc:Name>
+            </cac:PartyName>
+        </cac:DeliveryParty>
+    </cac:Delivery>
+    <cac:PaymentTerms>
+        <cbc:Note>Payment terms note</cbc:Note>
+    </cac:PaymentTerms>
+    <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+        <cbc:AllowanceChargeReason>Discount</cbc:AllowanceChargeReason>
+        <cbc:MultiplierFactorNumeric>10</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="ISK">120.00</cbc:Amount>
+        <cbc:BaseAmount currencyID="ISK">1200.00</cbc:BaseAmount>
+        <cac:TaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>11</cbc:Percent>
+            <cac:TaxScheme>
+                <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+        </cac:TaxCategory>
+    </cac:AllowanceCharge>
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="ISK">3373.76</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="ISK">32000.00</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="ISK">0.00</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="ISK">12117.50</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="ISK">3089.96</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>25.5</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="ISK">2580.00</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="ISK">283.80</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>11.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="ISK">80.00</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="ISK">0.00</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>E</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cbc:TaxExemptionReasonCode>vatex-eu-o</cbc:TaxExemptionReasonCode>
+                <cbc:TaxExemptionReason>Exempt</cbc:TaxExemptionReason>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="EUR">25.18</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="ISK">46897.50</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="ISK">46777.50</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="ISK">50151.26</cbc:TaxInclusiveAmount>
+        <cbc:AllowanceTotalAmount currencyID="ISK">120.00</cbc:AllowanceTotalAmount>
+        <cbc:ChargeTotalAmount currencyID="ISK">0.00</cbc:ChargeTotalAmount>
+        <cbc:PrepaidAmount currencyID="ISK">0.00</cbc:PrepaidAmount>
+        <cbc:PayableRoundingAmount currencyID="ISK">-0.26</cbc:PayableRoundingAmount>
+        <cbc:PayableAmount currencyID="ISK">50151.00</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+    <cac:CreditNoteLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">32000.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>Húsaleiga</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HÚLEIG</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">64000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">12117.50</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>7.50 kr afsláttur</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="ISK">7.5</cbc:Amount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Description>Rekstrarkostnaður vegna einhvers</cbc:Description>
+            <cbc:Name>Rekstrarkostnaður</cbc:Name>
+            <cac:BuyersItemIdentification>
+                <cbc:ID>REK</cbc:ID>
+            </cac:BuyersItemIdentification>
+            <cac:SellersItemIdentification>
+                <cbc:ID>REKSTUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:StandardItemIdentification>
+                <cbc:ID schemeID="0160">REK</cbc:ID>
+            </cac:StandardItemIdentification>
+            <cac:OriginCountry>
+                <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+            </cac:OriginCountry>
+            <cac:CommodityClassification>
+                <cbc:ItemClassificationCode listID="STI" listVersionID="MP">9873242</cbc:ItemClassificationCode>
+            </cac:CommodityClassification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>25.5</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Auka</cbc:Name>
+                <cbc:Value>Hlutur</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">24250</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>3</cbc:ID>
+        <cbc:CreditedQuantity unitCode="C62">3</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">2700.00</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>10% afsláttur</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>10.0</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="ISK">300.00</cbc:Amount>
+            <cbc:BaseAmount currencyID="ISK">3000.00</cbc:BaseAmount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Name>Matarkostnaður</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>MATUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>11.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">1000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>4</cbc:ID>
+        <cbc:Note>Line note</cbc:Note>
+        <cbc:CreditedQuantity unitCode="MON">1</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">80.00</cbc:LineExtensionAmount>
+        <cbc:AccountingCost>LAC=1234</cbc:AccountingCost>
+        <cac:InvoicePeriod>
+            <cbc:StartDate>2018-11-08</cbc:StartDate>
+            <cbc:EndDate>2018-11-20</cbc:EndDate>
+        </cac:InvoicePeriod>
+        <cac:DocumentReference>
+            <cbc:ID schemeID="ZZZ">LHLT</cbc:ID>
+            <cbc:DocumentTypeCode>130</cbc:DocumentTypeCode>
+        </cac:DocumentReference>
+        <cac:Item>
+            <cbc:Name>Hlutur</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HLT</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>E</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">80</cbc:PriceAmount>
+            <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
+            <cac:AllowanceCharge>
+                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+                <cbc:Amount currencyID="ISK">20.00</cbc:Amount>
+                <cbc:BaseAmount currencyID="ISK">100.00</cbc:BaseAmount>
+            </cac:AllowanceCharge>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>5</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">32000.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>Húsaleiga</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HÚLEIG</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">64000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>6</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">12117.50</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>7.50 kr afsláttur</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="ISK">7.5</cbc:Amount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Description>Rekstrarkostnaður vegna einhvers</cbc:Description>
+            <cbc:Name>Rekstrarkostnaður</cbc:Name>
+            <cac:BuyersItemIdentification>
+                <cbc:ID>REK</cbc:ID>
+            </cac:BuyersItemIdentification>
+            <cac:SellersItemIdentification>
+                <cbc:ID>REKSTUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:StandardItemIdentification>
+                <cbc:ID schemeID="0160">REK</cbc:ID>
+            </cac:StandardItemIdentification>
+            <cac:OriginCountry>
+                <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+            </cac:OriginCountry>
+            <cac:CommodityClassification>
+                <cbc:ItemClassificationCode listID="STI" listVersionID="MP">9873242</cbc:ItemClassificationCode>
+            </cac:CommodityClassification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>25.5</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Auka</cbc:Name>
+                <cbc:Value>Hlutur</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">24250</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>6</cbc:ID>
+        <cbc:CreditedQuantity unitCode="C62">3</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">2700.00</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>10% afsláttur</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>10.0</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="ISK">300.00</cbc:Amount>
+            <cbc:BaseAmount currencyID="ISK">3000.00</cbc:BaseAmount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Name>Matarkostnaður</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>MATUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>11.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">1000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>8</cbc:ID>
+        <cbc:Note>Line note</cbc:Note>
+        <cbc:CreditedQuantity unitCode="MON">1</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">80.00</cbc:LineExtensionAmount>
+        <cbc:AccountingCost>LAC=1234</cbc:AccountingCost>
+        <cac:InvoicePeriod>
+            <cbc:StartDate>2018-11-08</cbc:StartDate>
+            <cbc:EndDate>2018-11-20</cbc:EndDate>
+        </cac:InvoicePeriod>
+        <cac:DocumentReference>
+            <cbc:ID schemeID="ZZZ">LHLT</cbc:ID>
+            <cbc:DocumentTypeCode>130</cbc:DocumentTypeCode>
+        </cac:DocumentReference>
+        <cac:Item>
+            <cbc:Name>Hlutur</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HLT</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>E</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">80</cbc:PriceAmount>
+            <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
+            <cac:AllowanceCharge>
+                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+                <cbc:Amount currencyID="ISK">20.00</cbc:Amount>
+                <cbc:BaseAmount currencyID="ISK">100.00</cbc:BaseAmount>
+            </cac:AllowanceCharge>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>9</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">32000.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>Húsaleiga</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HÚLEIG</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">64000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>10</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">12117.50</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>7.50 kr afsláttur</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="ISK">7.5</cbc:Amount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Description>Rekstrarkostnaður vegna einhvers</cbc:Description>
+            <cbc:Name>Rekstrarkostnaður</cbc:Name>
+            <cac:BuyersItemIdentification>
+                <cbc:ID>REK</cbc:ID>
+            </cac:BuyersItemIdentification>
+            <cac:SellersItemIdentification>
+                <cbc:ID>REKSTUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:StandardItemIdentification>
+                <cbc:ID schemeID="0160">REK</cbc:ID>
+            </cac:StandardItemIdentification>
+            <cac:OriginCountry>
+                <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+            </cac:OriginCountry>
+            <cac:CommodityClassification>
+                <cbc:ItemClassificationCode listID="STI" listVersionID="MP">9873242</cbc:ItemClassificationCode>
+            </cac:CommodityClassification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>25.5</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Auka</cbc:Name>
+                <cbc:Value>Hlutur</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">24250</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>11</cbc:ID>
+        <cbc:CreditedQuantity unitCode="C62">3</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">2700.00</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>10% afsláttur</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>10.0</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="ISK">300.00</cbc:Amount>
+            <cbc:BaseAmount currencyID="ISK">3000.00</cbc:BaseAmount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Name>Matarkostnaður</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>MATUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>11.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">1000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>12</cbc:ID>
+        <cbc:Note>Line note</cbc:Note>
+        <cbc:CreditedQuantity unitCode="MON">1</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">80.00</cbc:LineExtensionAmount>
+        <cbc:AccountingCost>LAC=1234</cbc:AccountingCost>
+        <cac:InvoicePeriod>
+            <cbc:StartDate>2018-11-08</cbc:StartDate>
+            <cbc:EndDate>2018-11-20</cbc:EndDate>
+        </cac:InvoicePeriod>
+        <cac:DocumentReference>
+            <cbc:ID schemeID="ZZZ">LHLT</cbc:ID>
+            <cbc:DocumentTypeCode>130</cbc:DocumentTypeCode>
+        </cac:DocumentReference>
+        <cac:Item>
+            <cbc:Name>Hlutur</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HLT</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>E</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">80</cbc:PriceAmount>
+            <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
+            <cac:AllowanceCharge>
+                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+                <cbc:Amount currencyID="ISK">20.00</cbc:Amount>
+                <cbc:BaseAmount currencyID="ISK">100.00</cbc:BaseAmount>
+            </cac:AllowanceCharge>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>13</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">32000.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>Húsaleiga</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HÚLEIG</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">64000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>14</cbc:ID>
+        <cbc:CreditedQuantity unitCode="MON">0.5</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">12117.50</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>7.50 kr afsláttur</cbc:AllowanceChargeReason>
+            <cbc:Amount currencyID="ISK">7.5</cbc:Amount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Description>Rekstrarkostnaður vegna einhvers</cbc:Description>
+            <cbc:Name>Rekstrarkostnaður</cbc:Name>
+            <cac:BuyersItemIdentification>
+                <cbc:ID>REK</cbc:ID>
+            </cac:BuyersItemIdentification>
+            <cac:SellersItemIdentification>
+                <cbc:ID>REKSTUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:StandardItemIdentification>
+                <cbc:ID schemeID="0160">REK</cbc:ID>
+            </cac:StandardItemIdentification>
+            <cac:OriginCountry>
+                <cbc:IdentificationCode>IS</cbc:IdentificationCode>
+            </cac:OriginCountry>
+            <cac:CommodityClassification>
+                <cbc:ItemClassificationCode listID="STI" listVersionID="MP">9873242</cbc:ItemClassificationCode>
+            </cac:CommodityClassification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>25.5</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Auka</cbc:Name>
+                <cbc:Value>Hlutur</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">24250</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>15</cbc:ID>
+        <cbc:CreditedQuantity unitCode="C62">3</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">2700.00</cbc:LineExtensionAmount>
+        <cac:AllowanceCharge>
+            <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
+            <cbc:AllowanceChargeReason>10% afsláttur</cbc:AllowanceChargeReason>
+            <cbc:MultiplierFactorNumeric>10.0</cbc:MultiplierFactorNumeric>
+            <cbc:Amount currencyID="ISK">300.00</cbc:Amount>
+            <cbc:BaseAmount currencyID="ISK">3000.00</cbc:BaseAmount>
+        </cac:AllowanceCharge>
+        <cac:Item>
+            <cbc:Name>Matarkostnaður</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>MATUR</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>11.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">1000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+        <cbc:ID>16</cbc:ID>
+        <cbc:Note>Line note</cbc:Note>
+        <cbc:CreditedQuantity unitCode="MON">1</cbc:CreditedQuantity>
+        <cbc:LineExtensionAmount currencyID="ISK">80.00</cbc:LineExtensionAmount>
+        <cbc:AccountingCost>LAC=1234</cbc:AccountingCost>
+        <cac:InvoicePeriod>
+            <cbc:StartDate>2018-11-08</cbc:StartDate>
+            <cbc:EndDate>2018-11-20</cbc:EndDate>
+        </cac:InvoicePeriod>
+        <cac:DocumentReference>
+            <cbc:ID schemeID="ZZZ">LHLT</cbc:ID>
+            <cbc:DocumentTypeCode>130</cbc:DocumentTypeCode>
+        </cac:DocumentReference>
+        <cac:Item>
+            <cbc:Name>Hlutur</cbc:Name>
+            <cac:SellersItemIdentification>
+                <cbc:ID>HLT</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>E</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="ISK">80</cbc:PriceAmount>
+            <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
+            <cac:AllowanceCharge>
+                <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+                <cbc:Amount currencyID="ISK">20.00</cbc:Amount>
+                <cbc:BaseAmount currencyID="ISK">100.00</cbc:BaseAmount>
+            </cac:AllowanceCharge>
+        </cac:Price>
+    </cac:CreditNoteLine>
+</CreditNote>

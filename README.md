@@ -1,6 +1,5 @@
 # README - UniStyles
 
-
 [![Version](https://img.shields.io/github/issues/unimaze/unimaze-peppol-stylesheets.svg)](https://github.com/unimaze/unimaze-peppol-stylesheets/issues)
 [![Contributors](https://img.shields.io/github/contributors/unimaze/unimaze-peppol-stylesheets.svg)](https://github.com/unimaze/unimaze-peppol-stylesheets/graphs/contributors)
 [![Version](https://img.shields.io/github/release/unimaze/unimaze-peppol-stylesheets.svg)](https://github.com/unimaze/unimaze-peppol-stylesheets/releases)
@@ -26,26 +25,66 @@ List of features:
 - Line details can be shown (expanded) or hidden (collapsed).
 - Language support: English, Swedish, Polish and Icelandic. Please create pull requests or contact us for adding new translations.
 
+## Licensing
+Apache License 2.0
+
+See [LICENSE](LICENSE.txt) for the full text.
+
 ### Samples
-See [samples](samples) files.
+See [samples](doc/samples) files.
 
 <p align="center">
-  <img src="samples/biling-3/images/bisenubl-invoice-complete_en.png" width="320" />
+  <img src="doc/samples/biling-3/images/bisenubl-invoice-complete_en.png" width="320" />
   <span>&#160;&#160;&#160;&#160;&#160;&#160;</span>
-  <img src="samples/biling-3/images/bisenubl-creditnote-complete_en.png" width="320" />
+  <img src="doc/samples/biling-3/images/bisenubl-creditnote-complete_en.png" width="320" />
 <p>
 
 ## Requirements
 Currently this stylesheet requires XLST 1.0 and has been tested with Saxon v9.7 and MSXML 3.0.
 
-## Use and adaptation of the stylesheet
-Please refer to the [README](templates/readme.md) in the `template` folder for instructions on:
-- Adding a new language.
+## Adding a new language
+In order to add another language to the stylesheet, there are a few steps.
 
-## Licensing
-Apache License 2.0
+`*` is your language code
 
-See [LICENSE](LICENSE.txt) for the full text.
+Create a file named Headlines-BT_&ast;.xml (or copy and rename Headlines-BT_en.xml)
+The structure of the xml should be:
+
+`<Semantic Model>`<br/>
+	&nbsp; &nbsp; `<BusinessTerm id= "BT or BG code">`<br/>
+		&nbsp; &nbsp; &nbsp;&nbsp;  `<TermName> The official term name in your language </Termname>`<br/>
+		&nbsp; &nbsp; &nbsp; &nbsp; `<Definition> The definition of the term </Definition> --->Optional`<br/>
+		&nbsp; &nbsp; &nbsp; &nbsp; `<Description> A description of the term </Description> --->Optional`<br/>
+		&nbsp; &nbsp; &nbsp; &nbsp; `<DisplayName> The preferred display name in the stylesheet (if abscent, the TermName will be used) - If present 
+		but empty, no lead text will be shown in the stylesheet.` <br/>
+	&nbsp; &nbsp; &nbsp; &nbsp; `</DisplayName> --> Optional`<br/>
+	&nbsp; &nbsp; `</BusinessTerm>`<br/>
+`</Semantic Model>`<br/>
+
+Pleas make sure to add all the BusinessTerms you wish to be visible in the stylesheet, there is no fallback if a term is missing, the lead text will then be abscent.
+
+Create files corresponding to all the relevant code lists in your language by replacing the * with your language code. 
+With these code lists, there will be a fallback to english code values if the value is missing in your language.
+
+The format of all of the code lists below are in generic code 1.0 : http://docs.oasis-open.org/codelist/ns/genericode/1.0/
+
+The relevant code lists are:
+
+* UBLClassificationCode_&ast;.xml --> Item classification identifier
+* UBLInvoiceBaseType_&ast;.xml --> Base type of document: Invoice or Credit Note
+* UBLPeriodDescriptionCode_&ast;.xml --> Invoice period description code
+* UBLTaxCategoryCode_&ast;.xml --> Tax category code
+* UNCL1001_&ast;.xml --> Sub-type of document
+* UNCL4461_&ast;.xml --> Payment means code
+* UNCL5189_&ast;.xml --> Allowance reason code
+* UNCL7161_&ast;.xml --> Charge reason code
+* UNECE_&ast;.xml --> Unit of measure code
+
+## Setting the default language
+Open the user_config.xsl and under the tag: `<xsl:variable name="lang" select="'*'"/>` change the `*` to your language code, corresponding to the `*` in your file names.
+
+The language can be changed in runtime by setting the `lang` XSLT parameter when invoking the transaction.
+
 
 ---
 
