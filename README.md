@@ -42,6 +42,13 @@ See [samples](docs/samples) files.
 ## Requirements
 Currently this stylesheet requires XSLT 1.0 and has been tested with Saxon v9.7 & v9.9 and MSXML 3.0.
 
+To trigger the transformation from UBL XML to HTML type via commandline type at project root level:
+<code>mvn clean install</code>
+
+* The UBL test input files are in the directory: [src/test/resources/ubl21](src/test/resources/ubl21).
+* The XSL stylesheets are in the directory: [src/main/resources/xslt/html](src/main/resources/xslt/html).
+* The HTML output will be created in the directory: [target/generated-resources/xml/xslt](target/generated-resources/xml/xslt).
+
 ## Adding a new language
 In order to add another language to the stylesheet, there are a few steps.
 
