@@ -2,7 +2,7 @@
 <!--
 ******************************************************************************************************************
 
-		PEPPOL Instance Documentation title= PEPPOL-BIS-EN-UBL-3.0-CommonTemplates.xml publisher= "Unimaze Software" Creator= "Unimaze SoftwareW created= 2019-02-12 conformsTo= UBL-Invoice-2.1.xsd description= "Common templates for displaying BISENUBL-3.0 - PEPPOL BIS, European Norm, version 3.0 (Invoice and Credit note)"
+        PEPPOL Instance Documentation title= PEPPOL-BIS-EN-UBL-3.0-CommonTemplates.xml publisher= "Unimaze Software" Creator= "Unimaze SoftwareW created= 2019-02-12 conformsTo= UBL-Invoice-2.1.xsd description= "Common templates for displaying BISENUBL-3.0 - PEPPOL BIS, European Norm, version 3.0 (Invoice and Credit note)"
 
 		Derived from work by SFTI, Sweden anbd OIOUBL, Denmark. For more information, see www.unimaze.com or email info at unimaze dot com
 

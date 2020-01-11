@@ -2096,7 +2096,7 @@
                                                     <xsl:value-of select="cbc:ID"/>
                                                     <!-- Inserting Preceding Invoice Issue Date  -->
                                                     <xsl:if test="cbc:IssueDate != ''">
-										                [<xsl:value-of select="cbc:IssueDate"/>]
+                                                        [<xsl:value-of select="cbc:IssueDate"/>]
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </xsl:if>
