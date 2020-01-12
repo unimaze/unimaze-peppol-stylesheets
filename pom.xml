@@ -105,10 +105,6 @@
                 <configuration>
                     <includeProjectDependencies>false</includeProjectDependencies>
                     <includePluginDependencies>true</includePluginDependencies>
-                    <executableDependency>
-                        <groupId>nu.validator</groupId>
-                        <artifactId>validator</artifactId>
-                    </executableDependency>
                     <mainClass>nu.validator.client.SimpleCommandLineValidator</mainClass>
                     <arguments>     
                         <argument>--skip-non-html</argument>
