@@ -60,7 +60,8 @@
                         <transformationSet>
                             <dir>${ubl21.test.input}</dir>
                             <stylesheet>${html.stylesheet}</stylesheet>
-                            <outputProperties>
+                            <!-- https://www.saxonica.com/html/documentation/xsl-elements/output.html -->
+                            <outputProperties>                            		
                                 <outputProperty>
                                     <name>omit-xml-declaration</name>
                                     <value>yes</value>
