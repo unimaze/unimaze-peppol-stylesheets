@@ -591,7 +591,6 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template name="SellerAdditionalInfo">
-        <br/>
             <small>
                 <b>
                     <xsl:call-template name="AdditionalInfoAccountingSupplierPartyNameTitle" />
@@ -646,7 +645,6 @@
             <xsl:call-template name="SellerPartyLegalEntity" />
         </div>
         <xsl:if test="cac:TaxRepresentativeParty !=''">
-            <br/>
             <small>
                 <b>
                     <xsl:call-template name="LabelName">
@@ -664,7 +662,6 @@
     <xsl:template name="SellerPartyLegalEntity">
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity">
             <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID">
-                <br/>
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-47'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -677,7 +674,6 @@
                 <br/>
             </xsl:if>
             <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName !=''">
-                <br/>
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-27'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -687,14 +683,12 @@
                 <br/>
             </xsl:if>
             <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm != ''">
-                <br/>
                     <xsl:apply-templates
                             select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm" />
                 <br/>
             </xsl:if>
             <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress !=''">
-                <br/>
-                    <xsl:choose>
+                <xsl:choose>
                         <xsl:when test="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName !='' and cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country !=''">
                             <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName" />,&#160;
                             <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country" />
@@ -1021,6 +1015,7 @@
                     </b>
                 </xsl:if>
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name"/>
+                <br/>
             </span>
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone !=''">
@@ -1035,9 +1030,9 @@
                 </xsl:if> 
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone" />
             </span>
+            <br/>
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telefax !=''">
-            <br />
             <span class="UBLTelefax">
                 <xsl:if test="$ShowLabel='true'"> 
                     <b>
@@ -1049,9 +1044,9 @@
                 </xsl:if> 
                 <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telefax" />
             </span>
+            <br/>
         </xsl:if>
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail !=''">
-            <br />
             <span class="UBLElectronicMail">
                 <xsl:if test="$ShowLabel='true'"> 
                     <b>
@@ -1064,6 +1059,7 @@
                 <xsl:apply-templates
                         select="cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail" />
             </span>
+            <br/>
         </xsl:if>
     </xsl:template>
     <!-- /SELLER PARTY -->
@@ -1702,7 +1698,6 @@
     <xsl:template name="BuyerPartyLegalEntity">
         <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity">
             <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID">
-                <p>
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-47'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -1712,26 +1707,23 @@
                     <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID !='' ">
                         &#160;[<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID" />]
                     </xsl:if>
-                </p>
+                <br/>
             </xsl:if>
             <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName !=''">
-                <p>
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-27'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                     <xsl:apply-templates
                             select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName" />
-                </p>
+                <br/>
             </xsl:if>
             <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm != ''">
-                <p>
                     <xsl:apply-templates
                             select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm" />
-                </p>
+                <br/>
             </xsl:if>
             <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress !=''">
-                <p>
                     <xsl:choose>
                         <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName !='' and cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country !=''">
                             <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName" />,&#160;
@@ -1746,7 +1738,7 @@
                             </xsl:if>
                         </xsl:otherwise>
                     </xsl:choose>
-                </p>
+                <br/>
             </xsl:if>
         </xsl:if>
     </xsl:template>
@@ -1808,7 +1800,6 @@
     </xsl:template>
     <xsl:template name="BuyerPostalAddress">
         <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName !=''">
-            <br />
             <span class="UBLStreetName">
                 <xsl:call-template name="LabelName">
                     <xsl:with-param name="BT-ID" select="'BT-50'" />
@@ -1816,9 +1807,9 @@
                 </xsl:call-template>
                 <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName" />
             </span>
+            <br />
         </xsl:if>
         <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName !=''">
-            <br />
             <span class="UBLAdditionalStreetName">
                 <xsl:call-template name="LabelName">
                     <xsl:with-param name="BT-ID" select="'BT-51'" />
@@ -1827,17 +1818,17 @@
                 <xsl:apply-templates
                     select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName" />
             </span>
+            <br />
         </xsl:if>
         <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line !=''">
-            <br />
             <span class="UBLAdditionalStreetName">
                 <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line" />
             </span>
+            <br />
         </xsl:if>
         <xsl:if
             test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone !='' or cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName !=''">
             <span class="UBLCityName">
-                <br />
                 <xsl:choose>
                     <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone !=''">
                         <xsl:call-template name="LabelName">
@@ -1862,6 +1853,7 @@
                             select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName" />,&#160;
                     </xsl:otherwise>
                 </xsl:choose>
+                <br />
             </span>
         </xsl:if>
         <xsl:if
@@ -1869,7 +1861,6 @@
             <xsl:choose>
                 <xsl:when
                     test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !='' and cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country !=''">
-                    <br />
                     <xsl:call-template name="LabelName">
                         <xsl:with-param name="BT-ID" select="'BT-54'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
@@ -1881,6 +1872,7 @@
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                     <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country" />
+                    <br />
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity !=''">
