@@ -30,9 +30,10 @@
     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
     xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2"
     xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
-    xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts sdt udt">
+    xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts fcn sdt udt">
     <xsl:import href="billing-3/CommonTemplates.xsl"/>
-    <xsl:output method="html" doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" doctype-system="http://www.w3.org/TR/html4/loose.dtd" indent="yes"/>
+          
+    <xsl:output method="html" indent="yes"/>
     <xsl:strip-space elements="*"/>
     <xsl:param name="stylesheet_url" select="'NONE'"/>
     <xsl:variable name="borderColor">
@@ -49,9 +50,7 @@
     <xsl:variable name="backgroundColor">
 				#F4FBFE
 			</xsl:variable>
-    <xsl:template name="doc-head">
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <xsl:template name="css">
         <xsl:choose>
             <xsl:when test="$stylesheet_url = 'NONE'">
                 <style>
@@ -121,7 +120,10 @@
 					}
 					.text_right {
 						text-align: right;
-					}
+                    }
+					.text_left {
+						text-align: left;
+					}                    
 
                     .blue_title,
                     .red_title {
@@ -256,7 +258,7 @@
 					}
 
                     .payment_table .payment_table_header_title:last-child {
-                        margin-right: none;
+                        margin-right: 0;
                     }
 
                     .payment_table .payment_table_body {
@@ -557,13 +559,11 @@
     </xsl:template>
     <xsl:template match="n1:Invoice | n2:CreditNote">
         <!-- Start HTML -->
-        <html>
-            <!-- <xsl:if test="/Invoice !=''"></xsl:if> -->
-            <xsl:call-template name="doc-head" />
+        <html>            
             <head>
-                <link rel="Stylesheet" type="text/css" href="PEPPOL.css" />
-                <meta name="viewport" content="width=device-width,initial-scale=1" />
                 <title>PEPPOL BIS-BILLING 3 Invoice AND CREDIT NOTE</title>
+                <xsl:call-template name="css" />                
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />                        
             </head>
             <body>
                 <div class="container">
@@ -579,7 +579,7 @@
                                 </p>
                                 <p>
                                     <xsl:call-template name="Seller"/>
-                                </p>
+                                   </p>
                             </div>
                             <div class="seller-contact">
                                 <xsl:choose>
@@ -790,36 +790,32 @@
                                             <!-- Inserting Total Payable amount  -->
                                             <xsl:choose>
                                                 <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
-                                                    <p align="left">
-                                                        <h1 style="color:red">
-                                                            <xsl:call-template name="LabelName">
-                                                                <xsl:with-param name="BT-ID" select="'BT-115'"/>
-                                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                            </xsl:call-template>
-                                                        </h1>
-                                                        <div style="color:red" class="payable_amount">
-                                                            <xsl:call-template name="Currency">
-                                                                <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
-                                                                <xsl:with-param name="country" select="$languageCode" />
-                                                            </xsl:call-template>
-                                                        </div>
-                                                    </p>
+                                                    <h1 style="color:red" class="text_left">
+                                                        <xsl:call-template name="LabelName">
+                                                            <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                        </xsl:call-template>
+                                                    </h1>
+                                                    <div style="color:red" class="payable_amount">
+                                                        <xsl:call-template name="Currency">
+                                                            <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
+                                                            <xsl:with-param name="country" select="$languageCode" />
+                                                        </xsl:call-template>
+                                                    </div>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    <p align="left">
-                                                        <h1>
-                                                            <xsl:call-template name="LabelName">
-                                                                <xsl:with-param name="BT-ID" select="'BT-115'"/>
-                                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                            </xsl:call-template>
-                                                        </h1>
-                                                        <div class="payable_amount">
-                                                            <xsl:call-template name="Currency">
-                                                                <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
-                                                                <xsl:with-param name="country" select="$languageCode" />
-                                                            </xsl:call-template>
-                                                        </div>
-                                                    </p>
+                                                    <h1 class="text_left">
+                                                        <xsl:call-template name="LabelName">
+                                                            <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                        </xsl:call-template>
+                                                    </h1>
+                                                    <div class="payable_amount">
+                                                        <xsl:call-template name="Currency">
+                                                            <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
+                                                            <xsl:with-param name="country" select="$languageCode" />
+                                                        </xsl:call-template>
+                                                    </div>
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                         </div>
@@ -839,7 +835,7 @@
                                 <div class="grid_small_2fr_spliter">
                                     <div>
                                         <!-- Inserting Invoice Date -->
-                                        <p align="left">
+                                        <p class="text_left">
                                             <b>
                                                 <small>
                                                     <xsl:call-template name="LabelName">
@@ -859,7 +855,7 @@
                                         </p>
                                         <!-- Inserting Settlement Date -->
                                         <xsl:if test="cac:PaymentTerms/cac:SettlementPeriod/cbc:StartDate !=''">
-                                            <p align="left">
+                                            <p class="text_left">
                                                 <b>
                                                     <small>
                                                         <xsl:call-template name="UMZLabelName">
@@ -879,7 +875,7 @@
                                             </p>
                                         </xsl:if>
                                         <xsl:if test="cac:InvoicePeriod !=''">
-                                            <p align="left">
+                                            <p class="text_left">
                                                 <xsl:if test="((cac:InvoicePeriod/cbc:StartDate !='') and (cac:InvoicePeriod/cbc:EndDate !=''))">
                                                     <b>
                                                         <small>
@@ -891,7 +887,7 @@
                                                     </b>
                                                 </xsl:if>
                                             </p>
-                                            <p align="left">
+                                            <p class="text_left">
                                                 <xsl:if test="((cac:InvoicePeriod/cbc:StartDate !='') and (cac:InvoicePeriod/cbc:EndDate !=''))">
                                                     <small>
                                                         <xsl:call-template name="formatDate">
@@ -953,7 +949,7 @@
                                         <!-- Credit Note Dates -->
                                         <div class="date_holder">
                                             <div class="red_box corner_title_center_content">
-                                                <p align="left">
+                                                <p class="text_left">
                                                     <b>
                                                         <small>
                                                             <xsl:call-template name="UMZLabelName">
@@ -964,18 +960,16 @@
                                                     </b>
                                                     <br />
                                                     <!-- Inserting Invoice Date -->
-                                                    <div>
-                                                        <xsl:call-template name="formatDate">
-                                                            <xsl:with-param name="dateTime" select="cbc:IssueDate" />
-                                                            <xsl:with-param name="country" select="$languageCode" />
-                                                        </xsl:call-template>
-                                                    </div>
+                                                    <xsl:call-template name="formatDate">
+                                                        <xsl:with-param name="dateTime" select="cbc:IssueDate" />
+                                                        <xsl:with-param name="country" select="$languageCode" />
+                                                    </xsl:call-template>
                                                     <br />
                                                 </p>
                                             </div>
                                             <div>
                                                 <xsl:if test="cac:PaymentMeans/cbc:PaymentDueDate !=''">
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <b>
                                                             <small>
                                                                 <xsl:call-template name="LabelName">
@@ -985,7 +979,7 @@
                                                             </small>
                                                         </b>
                                                     </p>
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <small>
                                                             <xsl:call-template name="formatDate">
                                                                 <xsl:with-param name="dateTime" select="cac:PaymentMeans[1]/cbc:PaymentDueDate" />
@@ -995,7 +989,7 @@
                                                     </p>
                                                 </xsl:if>
                                                 <xsl:if test="cac:InvoicePeriod !=''">
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <xsl:if test="((cac:InvoicePeriod/cbc:StartDate !='') and (cac:InvoicePeriod/cbc:EndDate !=''))">
                                                             <b>
                                                                 <small>
@@ -1007,7 +1001,7 @@
                                                             </b>
                                                         </xsl:if>
                                                     </p>
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <xsl:if test="((cac:InvoicePeriod/cbc:StartDate !='') and (cac:InvoicePeriod/cbc:EndDate !=''))">
                                                             <small>
                                                                 <xsl:call-template name="formatDate">
@@ -1025,7 +1019,7 @@
                                                     </p>
                                                 </xsl:if>
                                                 <xsl:if test="cbc:TaxPointDate !=''">
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <b>
                                                             <small>
                                                                 <xsl:call-template name="LabelName">
@@ -1035,7 +1029,7 @@
                                                             </small>
                                                         </b>
                                                     </p>
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <small>
                                                             <xsl:call-template name="formatDate">
                                                                 <xsl:with-param name="dateTime" select="cbc:TaxPointDate" />
@@ -1045,7 +1039,7 @@
                                                     </p>
                                                 </xsl:if>
                                                 <xsl:if test="cac:InvoicePeriod/cbc:DescriptionCode != ''">
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <b>
                                                             <small>
                                                                 <xsl:call-template name="LabelName">
@@ -1055,7 +1049,7 @@
                                                             </small>
                                                         </b>
                                                     </p>
-                                                    <p align="left">
+                                                    <p class="text_left">
                                                         <small>
                                                             <xsl:call-template name="UBLDescriptionCode">
                                                                 <xsl:with-param name="Code" select="cac:InvoicePeriod/cbc:DescriptionCode"/>
@@ -1405,7 +1399,7 @@
                                     <div class="items_table_header table_header">
                                         <div class="items_table_header_title">
                                             <label for="collapse_expand_all" class="collapse_expand_all_label">
-                                                <div class="double_expand_arrow">&#171;</div>
+                                                <span class="double_expand_arrow">&#171;</span>
                                             </label>
                                         </div>
                                         <div class="items_table_header_title">
@@ -1477,7 +1471,7 @@
                                     <div class="items_table_header credit_note_table_header">
                                         <div class="items_table_header_title">
                                             <label for="collapse_expand_all" class="collapse_expand_all_label">
-                                                <div class="double_expand_arrow">&#171;</div>
+                                                <span class="double_expand_arrow">&#171;</span>
                                             </label>
                                         </div>
                                         <div class="items_table_header_title">
@@ -1665,7 +1659,7 @@
                             <!-- Start sum of invoice line net amount: -->
                             <div class="grid_spliter" id="sum">
                                 <div>
-                                    <p align="right">
+                                    <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-106'"/>
                                             <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1673,7 +1667,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <p align="right">
+                                    <p class="text_right">
                                         <xsl:call-template name="Currency">
                                             <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>
                                             <xsl:with-param name="country" select="$languageCode" />
@@ -1685,7 +1679,7 @@
                             <xsl:if test="cbc:TaxCurrencyCode !=''">
                                 <div class="grid_spliter">
                                     <div>
-                                        <p align="right">
+                                        <p class="text_right">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-6'"/>
@@ -1695,7 +1689,7 @@
                                         </p>
                                     </div>
                                     <div>
-                                        <p align="right">
+                                        <p class="text_right">
                                             <xsl:value-of select="cbc:TaxCurrencyCode"/>
                                         </p>
                                     </div>
@@ -1705,7 +1699,7 @@
                                 <xsl:if test="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]">
                                     <div class="grid_spliter">
                                         <div>
-                                            <p align="right">
+                                            <p class="text_right">
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-110'"/>
                                                     <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1713,7 +1707,7 @@
                                             </p>
                                         </div>
                                         <div>
-                                            <p align="right">
+                                            <p class="text_right">
                                                 <xsl:call-template name="Currency">
                                                     <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>
                                                     <xsl:with-param name="country" select="$languageCode" />
@@ -1727,7 +1721,7 @@
                             <!-- Start TaxExclusive Amount: -->
                             <div class="grid_spliter">
                                 <div>
-                                    <p align="right">
+                                    <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-109'"/>
                                             <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1735,7 +1729,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <p align="right">
+                                    <p class="text_right">
                                         <xsl:call-template name="Currency">
                                             <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/>
                                             <xsl:with-param name="country" select="$languageCode" />
@@ -1747,7 +1741,7 @@
                             <!-- Start TaxInclusive Amount: -->
                             <div class="grid_spliter">
                                 <div>
-                                    <p align="right">
+                                    <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-112'"/>
                                             <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1755,7 +1749,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <p align="right">
+                                    <p class="text_right">
                                         <b>
                                             <xsl:call-template name="Currency">
                                                 <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/>
@@ -1770,7 +1764,7 @@
                             <xsl:if test="cac:LegalMonetaryTotal/cbc:PrepaidAmount !='' ">
                                 <div class="grid_spliter">
                                     <div>
-                                        <p align="right">
+                                        <p class="text_right">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BT-113'"/>
                                                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1778,7 +1772,7 @@
                                         </p>
                                     </div>
                                     <div>
-                                        <p align="right">
+                                        <p class="text_right">
                                             <xsl:call-template name="Currency">
                                                 <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PrepaidAmount"/>
                                                 <xsl:with-param name="country" select="$languageCode" />
@@ -1792,7 +1786,7 @@
                             <xsl:if test="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount !='' ">
                                 <div class="grid_spliter">
                                     <div>
-                                        <p align="right">
+                                        <p class="text_right">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BT-114'"/>
                                                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
@@ -1800,7 +1794,7 @@
                                         </p>
                                     </div>
                                     <div>
-                                        <p align="right">
+                                        <p class="text_right">
                                             <xsl:call-template name="Currency">
                                                 <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"/>
                                                 <xsl:with-param name="country" select="$languageCode" />
@@ -1814,46 +1808,46 @@
                                 <xsl:choose>
                                     <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
                                         <div>
-                                            <b>
-                                                <p align="right">
-                                                    <xsl:call-template name="LabelName">
-                                                        <xsl:with-param name="BT-ID" select="'BT-115'"/>
-                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                    </xsl:call-template>
-                                                </p>
-                                            </b>
+                                            <p class="text_right">
+                                                <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                                </b>
+                                            </p>
                                         </div>
-                                        <div>
-                                            <b>
-                                                <p align="right">
-                                                    <xsl:call-template name="Currency">
-                                                        <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
-                                                        <xsl:with-param name="country" select="$languageCode" />
-                                                    </xsl:call-template>
-                                                </p>
-                                            </b>
+                                        <div>                                            
+                                            <p class="text_right">
+                                                <b>
+                                                <xsl:call-template name="Currency">
+                                                    <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
+                                                    <xsl:with-param name="country" select="$languageCode" />
+                                                </xsl:call-template>
+                                                </b>
+                                            </p>
                                         </div>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <div>
-                                            <b>
-                                                <p align="right">
-                                                    <xsl:call-template name="LabelName">
-                                                        <xsl:with-param name="BT-ID" select="'BT-115'"/>
-                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                    </xsl:call-template>
-                                                </p>
-                                            </b>
+                                        <div>                                            
+                                            <p class="text_right">
+                                                <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                                </b>
+                                            </p>                                            
                                         </div>
-                                        <div>
-                                            <b>
-                                                <p align="right">
-                                                    <xsl:call-template name="Currency">
-                                                        <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
-                                                        <xsl:with-param name="country" select="$languageCode" />
-                                                    </xsl:call-template>
-                                                </p>
-                                            </b>
+                                        <div>                                            
+                                            <p class="text_right">
+                                                <b>
+                                                <xsl:call-template name="Currency">
+                                                    <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
+                                                    <xsl:with-param name="country" select="$languageCode" />
+                                                </xsl:call-template>
+                                                </b>
+                                            </p>                                            
                                         </div>
                                     </xsl:otherwise>
                                 </xsl:choose>
@@ -2102,7 +2096,7 @@
                                                     <xsl:value-of select="cbc:ID"/>
                                                     <!-- Inserting Preceding Invoice Issue Date  -->
                                                     <xsl:if test="cbc:IssueDate != ''">
-										                [<xsl:value-of select="cbc:IssueDate"/>]
+                                                        [<xsl:value-of select="cbc:IssueDate"/>]
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </xsl:if>
