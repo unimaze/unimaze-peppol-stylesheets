@@ -1141,7 +1141,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<TermName>Item attribute name</TermName>
 		<Definition>The name of the attribute or property of the item. </Definition>
 		<Description>Such as “Colour”. </Description>
-		<DisplayName>Attribute</DisplayName>
+		<DisplayName>Attribute name</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-161">
 		<TermName>Item attribute value</TermName>
