@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<Identification xmlns="">
-		<ShortName>InvoiceBaseType</ShortName>
+<CodeList xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+	<Identification>
+		<ShortName>OPStatusAction</ShortName>
 		<Version></Version>
 		<CanonicalUri></CanonicalUri>
 		<CanonicalVersionUri></CanonicalVersionUri>
 	</Identification>
-	<ColumnSet xmlns="">
+	<ColumnSet>
 		<Column Id="code" Use="required">
 			<ShortName>Code</ShortName>
 			<Data Type="string"/>
@@ -20,61 +20,62 @@
 			<ColumnRef Ref="code"/>
 		</Key>
 	</ColumnSet>
-	<SimpleCodeList xmlns="">
+	<SimpleCodeList>
 		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
 			<Value ColumnRef="code">
-				<SimpleValue>Invoice</SimpleValue>
+				<SimpleValue>NOA</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>FAKTURA</SimpleValue>
-			</Value>
-		</Row>
-		<Row>
-			<Annotation>
-				<Description xml:lang="en"/>
-			</Annotation>
-			<Value ColumnRef="code">
-				<SimpleValue>NOTA KREDYTOWA</SimpleValue>
-			</Value>
-			<Value ColumnRef="name">
-				<SimpleValue>NOTA KREDYTOWA</SimpleValue>
+				<SimpleValue>No action required</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Value ColumnRef="code">
-				<SimpleValue>Order</SimpleValue>
+				<SimpleValue>PIN</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ORDER</SimpleValue>
+				<SimpleValue>Provide information</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Value ColumnRef="code">
-				<SimpleValue>RemittanceAdvice</SimpleValue>
+				<SimpleValue>NIN</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>REMITTANCE ADVICE</SimpleValue>
+				<SimpleValue>Issue new invoice</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Value ColumnRef="code">
-				<SimpleValue>InvoiceResponse</SimpleValue>
+				<SimpleValue>CNF</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>INVOICE RESPONSE</SimpleValue>
+				<SimpleValue>Credit fully</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
 			<Value ColumnRef="code">
-				<SimpleValue>CreditNoteResponse</SimpleValue>
+				<SimpleValue>CNP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>CREDIT NOTE RESPONSE</SimpleValue>
+				<SimpleValue>Credit partially</SimpleValue>
 			</Value>
 		</Row>
-
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>CNA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Credit the amount</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="code">
+				<SimpleValue>OTH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Other</SimpleValue>
+			</Value>
+		</Row>
 	</SimpleCodeList>
 </CodeList>
