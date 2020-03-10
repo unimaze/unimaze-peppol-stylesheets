@@ -1587,11 +1587,18 @@
         </div>
         <span class="UBLID">
             <xsl:choose>
-                <xsl:when test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID !=''">
-                    <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID" />
+                <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ID !=''">
+                    <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ID" />
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
+                    <xsl:choose>
+                        <xsl:when test="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID !=''">
+                            <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:otherwise>
             </xsl:choose>
         </span>
