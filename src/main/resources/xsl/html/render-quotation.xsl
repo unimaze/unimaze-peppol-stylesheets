@@ -384,66 +384,6 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template match="cac:QuotationLine | cac:RequestForQuotationLine">
-        <input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"/>
-        <div class="quotation_items_table_header table_header">
-            <div class="quotation_items_table_header_title">
-                <label for="collapse_expand_all" class="collapse_expand_all_label">
-                    <div class="double_expand_arrow">&#171;</div>
-                </label>
-            </div>
-            <div class="quotation_items_table_header_title">
-                <b>
-                    <xsl:call-template name="LabelName">
-                        <xsl:with-param name="BT-ID" select="'BT-155'"/>
-                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                    </xsl:call-template>
-                </b>
-            </div>
-            <div class="quotation_items_table_header_title">
-                <b>
-                    <xsl:call-template name="LabelName">
-                        <xsl:with-param name="BT-ID" select="'BT-153'"/>
-                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                    </xsl:call-template>
-                </b>
-            </div>
-            <div class="quotation_items_table_header_title">
-                <b>
-                    <xsl:call-template name="LabelName">
-                        <xsl:with-param name="BT-ID" select="'BT-129'"/>
-                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                    </xsl:call-template>
-                </b>
-            </div>
-            <xsl:if test="local-name(.) = 'QuotationLine'">
-                <div class="quotation_items_table_header_title">
-                    <b>
-                        <xsl:call-template name="LabelName">
-                            <xsl:with-param name="BT-ID" select="'BT-146'"/>
-                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                        </xsl:call-template>
-                    </b>
-                </div>
-                <div class="quotation_items_table_header_title text_right">
-                    <b>
-                        <xsl:call-template name="LabelName">
-                            <xsl:with-param name="BT-ID" select="'BT-131'"/>
-                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                        </xsl:call-template>
-                    </b>
-                </div>
-            </xsl:if>
-            <xsl:if test="local-name(.) = 'RequestForQuotationLine'">
-                <div class="quotation_items_table_header_title text_right">
-                    <b>
-                        <xsl:call-template name="LabelName">
-                            <xsl:with-param name="BT-ID" select="'BT-146'"/>
-                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                        </xsl:call-template>
-                    </b>
-                </div>
-            </xsl:if>
-        </div>
         <div class="quotation_items_table_body">
             <!--QuotationLine start: -->
             <xsl:for-each select="cac:LineItem">
@@ -771,8 +711,9 @@
                             </xsl:if>
                         </div>
                         <div class="quotation_items_table_body_data text_right">
+                            <xsl:variable name="itemAmount" select="format-number(number(cbc:Quantity)*number(cac:Price/cbc:PriceAmount),'#.00')" />
                             <xsl:call-template name="Currency">
-                                <xsl:with-param name="currencyvalue" select="../../cac:QuotedMonetaryTotal/cbc:PayableAmount" />
+                                <xsl:with-param name="currencyvalue" select="$itemAmount" />
                                 <xsl:with-param name="country" select="$languageCode" />
                             </xsl:call-template>
                         </div>
@@ -1257,11 +1198,99 @@
                         <div class="quotation_items_table">
                             <xsl:if test="local-name(.)  = 'Quotation'">
                                 <div class="orange_box_no_back">
+                                    <input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"/>
+                                    <div class="quotation_items_table_header table_header">
+                                        <div class="quotation_items_table_header_title">
+                                            <label for="collapse_expand_all" class="collapse_expand_all_label">
+                                                <div class="double_expand_arrow">&#171;</div>
+                                            </label>
+                                        </div>
+                                        <div class="quotation_items_table_header_title">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-155'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                        <div class="quotation_items_table_header_title">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-153'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                        <div class="quotation_items_table_header_title">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-129'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                        <div class="quotation_items_table_header_title">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-146'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                        <div class="quotation_items_table_header_title text_right">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-131'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                    </div>
                                     <xsl:apply-templates select="cac:QuotationLine"/>
                                 </div>
                             </xsl:if>
                             <xsl:if test="local-name(.)  = 'RequestForQuotation'">
                                 <div class="dark_orange_box_no_back">
+                                    <input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"/>
+                                    <div class="quotation_items_table_header table_header">
+                                        <div class="quotation_items_table_header_title">
+                                            <label for="collapse_expand_all" class="collapse_expand_all_label">
+                                                <div class="double_expand_arrow">&#171;</div>
+                                            </label>
+                                        </div>
+                                        <div class="quotation_items_table_header_title">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-155'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                        <div class="quotation_items_table_header_title">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-153'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                        <div class="quotation_items_table_header_title">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-129'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                        <div class="quotation_items_table_header_title text_right">
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-146'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                        </div>
+                                    </div>
                                     <xsl:apply-templates select="cac:RequestForQuotationLine"/>
                                     <!-- <xsl:call-template name="QuotationLineTable"/> -->
                                 </div>

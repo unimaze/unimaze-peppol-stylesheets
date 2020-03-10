@@ -288,20 +288,20 @@
 
 	<!-- QUOTATION TITLES -->
 	<BusinessTerm id="UMZ-BT-066">
-		<TermName>Quotation reference</TermName>
-		<DisplayName>Quotation reference</DisplayName>
+		<TermName>Tilvísun í ósk um tilboð</TermName>
+		<DisplayName>Tilvísun í ósk um tilboð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-067">
-		<TermName>Request for quotation line ID</TermName>
-		<DisplayName>Request for quotation line ID</DisplayName>
+		<TermName>Auðkenni línu fyrir ósk um tilboð</TermName>
+		<DisplayName>Auðkenni línu fyrir ósk um tilboð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-068">
-		<TermName>Quotation amount</TermName>
-		<DisplayName>Quotation amount</DisplayName>
+		<TermName>Tilboðsupphæð</TermName>
+		<DisplayName>Tilboðsupphæð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-069">
-		<TermName>Quotation currency</TermName>
-		<DisplayName>Quotation currency</DisplayName>
+		<TermName>Tilboðsgjaldmiðill</TermName>
+		<DisplayName>Tilboðsgjaldmiðill</DisplayName>
 	</BusinessTerm>
 
 </SemanticModel>

@@ -139,16 +139,44 @@
                     <xsl:when test="(($transformedIntegers_period !='NaN') and ($transformedIntegers_comma !='NaN') and ($transformedIntegers_space !='NaN'))">
                         <xsl:choose>
                             <xsl:when test="$country = 'is'">
-                                <xsl:value-of select="concat($transformedIntegers_period,',', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_period,',', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_period,',', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:when>
                             <xsl:when test="$country = 'en'">
-                                <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:when>
                             <xsl:when test="$country = 'se'">
-                                <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
