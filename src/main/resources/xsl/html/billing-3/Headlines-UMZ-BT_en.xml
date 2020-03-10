@@ -290,8 +290,8 @@
 
 	<!-- QUOTATION TITLES -->
 	<BusinessTerm id="UMZ-BT-066">
-		<TermName>Quotation reference</TermName>
-		<DisplayName>Quotation reference</DisplayName>
+		<TermName>Request for quotation reference</TermName>
+		<DisplayName>Request for quotation reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-067">
 		<TermName>Request for quotation line ID</TermName>
