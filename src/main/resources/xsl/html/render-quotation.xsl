@@ -1049,60 +1049,58 @@
                                         </div>
                                     </xsl:if>
                                     <xsl:if test="local-name(.) = 'RequestForQuotation'">
-                                        <div class="dark_orange_box corner_title_center_content">
+                                        <xsl:if test="cac:QuotedMonetaryTotal != ''">
+                                            <div class="dark_orange_box corner_title_center_content">
                                             <!-- Inserting Payable amount  -->
-                                            <xsl:choose>
-                                                <xsl:when test="cac:QuotedMonetaryTotal != ''">
-                                                    <xsl:choose>
-                                                        <xsl:when test="cac:QuotedMonetaryTotal/cbc:PayableAmount &lt; '0'">
-                                                            <p align="left">
-                                                                <h1 style="color:red">
-                                                                    <xsl:call-template name="UMZLabelName">
-                                                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-068'"/>
-                                                                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                                    </xsl:call-template>
-                                                                </h1>
-                                                                <div style="color:red" class="payable_amount">
-                                                                    <xsl:call-template name="Currency">
-                                                                        <xsl:with-param name="currencyvalue" select="cac:QuotedMonetaryTotal/cbc:PayableAmount"/>
-                                                                        <xsl:with-param name="country" select="$languageCode" />
-                                                                    </xsl:call-template>
-                                                                </div>
-                                                            </p>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>
-                                                            <p align="left">
-                                                                <h1>
-                                                                    <xsl:call-template name="UMZLabelName">
-                                                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-068'"/>
-                                                                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                                    </xsl:call-template>
-                                                                </h1>
-                                                                <div class="payable_amount">
-                                                                    <xsl:call-template name="Currency">
-                                                                        <xsl:with-param name="currencyvalue" select="cac:QuotedMonetaryTotal/cbc:PayableAmount"/>
-                                                                        <xsl:with-param name="country" select="$languageCode" />
-                                                                    </xsl:call-template>
-                                                                </div>
-                                                            </p>
-                                                        </xsl:otherwise>
-                                                    </xsl:choose>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <p align="left">
-                                                        <h1>
-                                                            <xsl:call-template name="UMZLabelName">
-                                                                <xsl:with-param name="BT-ID" select="'UMZ-BT-068'"/>
-                                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                            </xsl:call-template>
-                                                        </h1>
-                                                        <div class="payable_amount">
-                                                            /
-                                                        </div>
-                                                    </p>
-                                                </xsl:otherwise>
-                                            </xsl:choose>
-                                        </div>
+                                                <xsl:choose>
+                                                    <xsl:when test="cac:QuotedMonetaryTotal/cbc:PayableAmount &lt; '0'">
+                                                        <p align="left">
+                                                            <h1 style="color:red">
+                                                                <xsl:call-template name="UMZLabelName">
+                                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-068'"/>
+                                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                </xsl:call-template>
+                                                            </h1>
+                                                            <div style="color:red" class="payable_amount">
+                                                                <xsl:call-template name="Currency">
+                                                                    <xsl:with-param name="currencyvalue" select="cac:QuotedMonetaryTotal/cbc:PayableAmount"/>
+                                                                    <xsl:with-param name="country" select="$languageCode" />
+                                                                </xsl:call-template>
+                                                            </div>
+                                                        </p>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <p align="left">
+                                                            <h1>
+                                                                <xsl:call-template name="UMZLabelName">
+                                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-068'"/>
+                                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                </xsl:call-template>
+                                                            </h1>
+                                                            <div class="payable_amount">
+                                                                <xsl:call-template name="Currency">
+                                                                    <xsl:with-param name="currencyvalue" select="cac:QuotedMonetaryTotal/cbc:PayableAmount"/>
+                                                                    <xsl:with-param name="country" select="$languageCode" />
+                                                                </xsl:call-template>
+                                                            </div>
+                                                        </p>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            <!-- <xsl:otherwise>
+                                                <p align="left">
+                                                    <h1>
+                                                        <xsl:call-template name="UMZLabelName">
+                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-068'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                        </xsl:call-template>
+                                                    </h1>
+                                                    <div class="payable_amount">
+                                                        /
+                                                    </div>
+                                                </p>
+                                            </xsl:otherwise> -->
+                                            </div>
+                                        </xsl:if>
                                     </xsl:if>
                                     <div class="document_info_currency">
                                         <div>
