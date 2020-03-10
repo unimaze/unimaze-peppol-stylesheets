@@ -1086,19 +1086,6 @@
                                                         </p>
                                                     </xsl:otherwise>
                                                 </xsl:choose>
-                                            <!-- <xsl:otherwise>
-                                                <p align="left">
-                                                    <h1>
-                                                        <xsl:call-template name="UMZLabelName">
-                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-068'"/>
-                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                        </xsl:call-template>
-                                                    </h1>
-                                                    <div class="payable_amount">
-                                                        /
-                                                    </div>
-                                                </p>
-                                            </xsl:otherwise> -->
                                             </div>
                                         </xsl:if>
                                     </xsl:if>
