@@ -108,7 +108,7 @@
 				<SimpleValue>623</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Reikningur miðlara</SimpleValue>
+				<SimpleValue>Reikningur flutningsmiðlara</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -126,7 +126,7 @@
 				<SimpleValue>81</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Kreditnóta í tenglsum við vörur eða þjónustu</SimpleValue>
+				<SimpleValue>Kreditnóta í tengslum við vörur eða þjónustu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
