@@ -34,7 +34,7 @@
 				<SimpleValue>REF</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>References incorrect</SimpleValue>
+				<SimpleValue>Röng tilvísun</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -50,7 +50,7 @@
 				<SimpleValue>REC</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Receiver unknown</SimpleValue>
+				<SimpleValue>Óþekktur móttakandi</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -58,7 +58,7 @@
 				<SimpleValue>QUA</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Item quality insufficient</SimpleValue>
+				<SimpleValue>Gæði vöru ófullnægjandi</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -66,7 +66,7 @@
 				<SimpleValue>DEL</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Delivery issues</SimpleValue>
+				<SimpleValue>Vandamál við afhendingu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -74,7 +74,7 @@
 				<SimpleValue>PRI</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Prices incorrect</SimpleValue>
+				<SimpleValue>Rangt verð</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -82,7 +82,7 @@
 				<SimpleValue>QTY</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Quantity incorrect</SimpleValue>
+				<SimpleValue>Rangur fjöldi</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -90,7 +90,7 @@
 				<SimpleValue>ITM</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Items incorrect</SimpleValue>
+				<SimpleValue>Rangar vörur</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -98,7 +98,7 @@
 				<SimpleValue>PAY</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Payment terms incorrect</SimpleValue>
+				<SimpleValue>Röng greiðsluskilyrði</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -106,7 +106,7 @@
 				<SimpleValue>UNR</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Not recognized</SimpleValue>
+				<SimpleValue>Óþekkt</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -114,7 +114,7 @@
 				<SimpleValue>FIN</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Finance incorrect</SimpleValue>
+				<SimpleValue>Röng greiðsluupphæð</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -122,7 +122,7 @@
 				<SimpleValue>OTH</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Other</SimpleValue>
+				<SimpleValue>Annað</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>

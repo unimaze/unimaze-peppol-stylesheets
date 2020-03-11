@@ -27,7 +27,7 @@
 				<SimpleValue>AB</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Message acknowledgement</SimpleValue>
+				<SimpleValue>Staðfesting móttöku á skeyti</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -36,7 +36,7 @@
 				<SimpleValue>AP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Accepted</SimpleValue>
+				<SimpleValue>Samþykkt</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -45,7 +45,7 @@
 				<SimpleValue>RE</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Rejected</SimpleValue>
+				<SimpleValue>Hafnað</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -54,7 +54,7 @@
 				<SimpleValue>IP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>In process</SimpleValue>
+				<SimpleValue>Í vinnslu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -63,7 +63,7 @@
 				<SimpleValue>UQ</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Under query</SimpleValue>
+				<SimpleValue>Í skoðun</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -72,7 +72,7 @@
 				<SimpleValue>CA</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Conditionally accepted</SimpleValue>
+				<SimpleValue>Samþykkt gegn skilyrðum</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -81,7 +81,7 @@
 				<SimpleValue>PD</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Paid</SimpleValue>
+				<SimpleValue>Greitt</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>

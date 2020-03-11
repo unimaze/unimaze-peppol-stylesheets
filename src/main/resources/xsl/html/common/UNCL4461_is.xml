@@ -36,7 +36,7 @@
 				<SimpleValue>2</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Automated clearing house credit</SimpleValue>
+				<SimpleValue>Kredit sjálfvirkrar stöðustofnunarstöðvar</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -45,7 +45,7 @@
 				<SimpleValue>3</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Automated clearing house debit</SimpleValue>
+				<SimpleValue>Debet sjálfvirkrar stöðustofnunarstöðvar</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -54,7 +54,7 @@
 				<SimpleValue>4</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand debit reversal</SimpleValue>
+				<SimpleValue>ACH krafa um debet bakfærslu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -63,7 +63,7 @@
 				<SimpleValue>5</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand credit reversal</SimpleValue>
+				<SimpleValue>ACH krafa um kredit bakfærslu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -72,7 +72,7 @@
 				<SimpleValue>6</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand credit</SimpleValue>
+				<SimpleValue>ACH krafa kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -81,7 +81,7 @@
 				<SimpleValue>7</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand debit</SimpleValue>
+				<SimpleValue>ACH krafa debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -90,7 +90,7 @@
 				<SimpleValue>8</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Hold</SimpleValue>
+				<SimpleValue>Bið</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -99,7 +99,7 @@
 				<SimpleValue>9</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>National or regional clearing</SimpleValue>
+				<SimpleValue>Ríkis- eða svæðisbundin færsluvísun</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -108,7 +108,7 @@
 				<SimpleValue>10</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>In cash</SimpleValue>
+				<SimpleValue>Í reiðufé</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -117,7 +117,7 @@
 				<SimpleValue>11</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings credit reversal</SimpleValue>
+				<SimpleValue>ACH kredit bakfærsla sparnaðar</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -126,7 +126,7 @@
 				<SimpleValue>12</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings debit reversal</SimpleValue>
+				<SimpleValue>ACH debet bakfærsla sparnaðar</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -135,7 +135,7 @@
 				<SimpleValue>13</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings credit</SimpleValue>
+				<SimpleValue>ACH sparnaðar kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -144,7 +144,7 @@
 				<SimpleValue>14</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings debit</SimpleValue>
+				<SimpleValue>ACH sparnaðar debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -153,7 +153,7 @@
 				<SimpleValue>15</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bookentry credit</SimpleValue>
+				<SimpleValue>Skráning kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -162,7 +162,7 @@
 				<SimpleValue>16</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bookentry debit</SimpleValue>
+				<SimpleValue>Skráning debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -171,7 +171,7 @@
 				<SimpleValue>17</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand cash concentration/disbursement (CCD) credit</SimpleValue>
+				<SimpleValue>ACH krafa um peningastyrk úr sjóði kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -180,7 +180,7 @@
 				<SimpleValue>18</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand cash concentration/disbursement (CCD) debit</SimpleValue>
+				<SimpleValue>ACH krafa um peningastyrk úr sjóði debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -189,7 +189,7 @@
 				<SimpleValue>19</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand corporate trade payment (CTP) credit</SimpleValue>
+				<SimpleValue>ACH krafa um CTP greiðslu kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -198,7 +198,7 @@
 				<SimpleValue>20</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Cheque</SimpleValue>
+				<SimpleValue>Ávísun</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -207,7 +207,7 @@
 				<SimpleValue>21</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Banker's draft</SimpleValue>
+				<SimpleValue>Bankaábyrgð</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -216,7 +216,7 @@
 				<SimpleValue>22</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Certified banker's draft</SimpleValue>
+				<SimpleValue>Löggild bankaábyrgð</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -225,7 +225,7 @@
 				<SimpleValue>23</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bank cheque (issued by a banking or similar establishment)</SimpleValue>
+				<SimpleValue>Ávísun úr banka (útgefin af banka eða annarri svipaðri stofnun)</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -234,7 +234,7 @@
 				<SimpleValue>24</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bill of exchange awaiting acceptance</SimpleValue>
+				<SimpleValue>Víxill bíður samþykkis</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -243,7 +243,7 @@
 				<SimpleValue>25</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Certified cheque</SimpleValue>
+				<SimpleValue>Löggild ávísun</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -252,7 +252,7 @@
 				<SimpleValue>26</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Local cheque</SimpleValue>
+				<SimpleValue>Staðbundin ávísun</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -261,7 +261,7 @@
 				<SimpleValue>27</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand corporate trade payment (CTP) debit</SimpleValue>
+				<SimpleValue>ACH debet krafa um CTP greiðslu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -270,7 +270,7 @@
 				<SimpleValue>28</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand corporate trade exchange (CTX) credit</SimpleValue>
+				<SimpleValue>ACH krafa um CTX skipti kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -279,7 +279,7 @@
 				<SimpleValue>29</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand corporate trade exchange (CTX) debit</SimpleValue>
+				<SimpleValue>ACH krafa um CTX skipti debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -288,7 +288,7 @@
 				<SimpleValue>30</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit transfer</SimpleValue>
+				<SimpleValue>Kredit yfirfærsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -297,7 +297,7 @@
 				<SimpleValue>31</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Debit transfer</SimpleValue>
+				<SimpleValue>Debet yfirfærsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -306,7 +306,7 @@
 				<SimpleValue>32</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand cash concentration/disbursement plus (CCD+) credit</SimpleValue>
+				<SimpleValue>ACH krafa um peningastyrk úr sjóði plús (CCD+) kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -315,7 +315,7 @@
 				<SimpleValue>33</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH demand cash concentration/disbursement plus (CCD+) debit</SimpleValue>
+				<SimpleValue>ACH krafa um peningastyrk úr sjóði plús (CCD+) debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -324,7 +324,7 @@
 				<SimpleValue>34</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH prearranged payment and deposit (PPD)</SimpleValue>
+				<SimpleValue>ACH fyrirfram ákveðin greiðsla og innlögn</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -333,7 +333,7 @@
 				<SimpleValue>35</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings cash concentration/disbursement (CCD) credit</SimpleValue>
+				<SimpleValue>ACH sparnaður með peningastyrk úr sjóði (CCD) kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -342,7 +342,7 @@
 				<SimpleValue>36</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings cash concentration/disbursement (CCD) debit</SimpleValue>
+				<SimpleValue>ACH sparnaður með peningastyrk úr sjóði (CCD) debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -351,7 +351,7 @@
 				<SimpleValue>37</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings corporate trade payment (CTP) credit</SimpleValue>
+				<SimpleValue>ACH sparnaður kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -360,7 +360,7 @@
 				<SimpleValue>38</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings corporate trade payment (CTP) debit</SimpleValue>
+				<SimpleValue>ACH sparnaður debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -369,7 +369,7 @@
 				<SimpleValue>39</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings corporate trade exchange (CTX) credit</SimpleValue>
+				<SimpleValue>ACH sparnaðarskipti (CTX) credit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -378,7 +378,7 @@
 				<SimpleValue>40</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings corporate trade exchange (CTX) debit</SimpleValue>
+				<SimpleValue>ACH sparnaðarskipti (CTX) debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -387,7 +387,7 @@
 				<SimpleValue>41</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings cash concentration/disbursement plus (CCD+) credit</SimpleValue>
+				<SimpleValue>ACH sparnaður með peningastyrk úr sjóði plús (CCD+) kredit</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -396,7 +396,7 @@
 				<SimpleValue>42</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Payment to bank account</SimpleValue>
+				<SimpleValue>Bankagreiðsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -405,7 +405,7 @@
 				<SimpleValue>43</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>ACH savings cash concentration/disbursement plus (CCD+) debit</SimpleValue>
+				<SimpleValue>ACH sparnaður með peningastyrk úr sjóði plús (CCD+) debet</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -414,7 +414,7 @@
 				<SimpleValue>44</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Accepted bill of exchange</SimpleValue>
+				<SimpleValue>Samþykktur víxill</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -423,7 +423,7 @@
 				<SimpleValue>45</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Referenced home-banking credit transfer</SimpleValue>
+				<SimpleValue>Millifærsla fjármuna gegnum heimabanka með tilvísun</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -432,7 +432,7 @@
 				<SimpleValue>46</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Interbank debit transfer</SimpleValue>
+				<SimpleValue>Millibanka millifærsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -441,7 +441,7 @@
 				<SimpleValue>47</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Home-banking debit transfer</SimpleValue>
+				<SimpleValue>Millfærsla gegnum heimabanka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -450,7 +450,7 @@
 				<SimpleValue>48</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bank card</SimpleValue>
+				<SimpleValue>Bankakort</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -459,7 +459,7 @@
 				<SimpleValue>49</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Direct debit</SimpleValue>
+				<SimpleValue>Beingreiðsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -468,7 +468,7 @@
 				<SimpleValue>50</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Payment by postgiro</SimpleValue>
+				<SimpleValue>Greiðsla með póstkröfu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -486,7 +486,7 @@
 				<SimpleValue>52</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Urgent commercial payment</SimpleValue>
+				<SimpleValue>Áríðandi greiðsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -495,7 +495,7 @@
 				<SimpleValue>53</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Urgent Treasury Payment</SimpleValue>
+				<SimpleValue>Áríðandi sjóðsgreiðsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -504,7 +504,7 @@
 				<SimpleValue>54</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit card</SimpleValue>
+				<SimpleValue>Kreditkort</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -513,7 +513,7 @@
 				<SimpleValue>55</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Debit card</SimpleValue>
+				<SimpleValue>Debetkort</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -522,7 +522,7 @@
 				<SimpleValue>56</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bankgiro</SimpleValue>
+				<SimpleValue>Gíróseðill</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -531,7 +531,7 @@
 				<SimpleValue>57</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Standing agreement</SimpleValue>
+				<SimpleValue>Standandi samkomulag</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -540,7 +540,7 @@
 				<SimpleValue>58</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>SEPA credit transfer</SimpleValue>
+				<SimpleValue>SEPA millifærsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -549,7 +549,7 @@
 				<SimpleValue>59</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>SEPA direct debit</SimpleValue>
+				<SimpleValue>SEPA beingreiðsla</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -558,7 +558,7 @@
 				<SimpleValue>60</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -567,7 +567,7 @@
 				<SimpleValue>61</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note signed by the debtor</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning undirrituð af skuldara</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -576,7 +576,7 @@
 				<SimpleValue>62</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note signed by the debtor and endorsed by a bank</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning undirrituð af skuldara og samþykkt af banka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -585,7 +585,7 @@
 				<SimpleValue>63</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note signed by the debtor and endorsed by a third party</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning undirrituð af skuldara og samþykkt af þriðja aðila</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -594,7 +594,7 @@
 				<SimpleValue>64</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note signed by a bank</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning undirrituð af banka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -603,7 +603,7 @@
 				<SimpleValue>65</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note signed by a bank and endorsed by another bank</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning undirrituð af banka og samþykkt af öðrum banka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -612,7 +612,7 @@
 				<SimpleValue>66</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note signed by a third party</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning undirrituð af þriðja aðila</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -621,7 +621,7 @@
 				<SimpleValue>67</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Promissory note signed by a third party and endorsed by a bank</SimpleValue>
+				<SimpleValue>Skuldaviðurkenning undirrituð af þriðja aðila og samþykkt af banka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -630,7 +630,7 @@
 				<SimpleValue>68</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Online payment service</SimpleValue>
+				<SimpleValue>Greiðsluþjónusta á netinu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -693,7 +693,7 @@
 				<SimpleValue>91</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Not transferable banker's draft</SimpleValue>
+				<SimpleValue>Bankaábyrgð sem ekki er hægt að færa á milli aðila</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -702,7 +702,7 @@
 				<SimpleValue>92</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Not transferable local cheque</SimpleValue>
+				<SimpleValue>Staðbundin ávísun sem ekki er hægt að færa á milli aðila</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -711,7 +711,7 @@
 				<SimpleValue>93</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Reference giro</SimpleValue>
+				<SimpleValue>Tilvísun gíróseðils</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -720,7 +720,7 @@
 				<SimpleValue>94</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Urgent giro</SimpleValue>
+				<SimpleValue>Áríðandi gíróseðill</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -729,7 +729,7 @@
 				<SimpleValue>95</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Free format giro</SimpleValue>
+				<SimpleValue>Gíróseðill eftir frjálsu sniðmáti</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -738,7 +738,7 @@
 				<SimpleValue>96</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Requested method for payment was not used</SimpleValue>
+				<SimpleValue>Umbeðin greiðsluaðferð var ekki notuð</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -747,7 +747,7 @@
 				<SimpleValue>97</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Clearing between partners</SimpleValue>
+				<SimpleValue>Færsluvísun milli samstarfsaðila</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -756,7 +756,7 @@
 				<SimpleValue>ZZZ</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Mutually defined</SimpleValue>
+				<SimpleValue>Skv. samkomulagi</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>

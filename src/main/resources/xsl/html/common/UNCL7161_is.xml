@@ -1,0 +1,1474 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeList xmlns="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+	<Identification>
+		<ShortName>UNCL7161</ShortName>
+		<Version></Version>
+		<CanonicalUri></CanonicalUri>
+		<CanonicalVersionUri></CanonicalVersionUri>
+	</Identification>
+	<ColumnSet>
+		<Column Id="code" Use="required">
+			<ShortName>Code</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="optional">
+			<ShortName>Name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="code"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Auglýsingar</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fjarskipti</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Tæknileg breyting</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Framleiðsla eftir pöntun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Leggur út fyrir</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Utan svæðis</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Aukin vinnsla</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vottar</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Samþykkt</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hraðsending</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sérstök mannvirki</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Flugvallaraðstaða</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AAZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sérleyfi</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Geymsluskylda</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fjarlægja eldsneyti</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Inn í flugvél</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Yfirvinna</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Verkfæri</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ýmislegt</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Viðbótarumbúðir</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Milli- og undirlag farms</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Gámavæðing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Umbúðapökkun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pakkað í hessian</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ABU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Innpakkað í plast</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ýmsar meðferðir</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Meðferð á glerungi</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hitameðferð</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Málmhúðun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Málun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Slípun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Grunnun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Meðferð til varðveislu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ACS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Mátun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sameining</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Farmbréf</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Loftpúði</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Flutningur</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Millilag</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Kjölur</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Viðgerð eða skipti á ónýtum pakka sem hægt er að skila</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Skilvirk birgðastjórnun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vöruauglýsingar</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADQ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Blandaðar vörur</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Önnur þjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sótt</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Langvarandi sjúkdómur</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ný vörukynning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ADZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Bein afhending</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Breyting á flutningsleið</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Aftengja</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Dreifing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AED</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Meðhöndlun hættulegs varnings</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Leiga</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Breytileg staðsetning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Eldsneytisáfylling flugvéla</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Eldsneyti komið fyrir í geymslu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Reiðufé við afhendingu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vinnsla minni pantana</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Skrifstofu- og stjórnunarþjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ábyrgjast</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Söfnun og endurvinnsla</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Innheimta höfundarréttargjalda</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AES</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Þjónustuskoðun dýralæknis</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AET</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Þjónusta við ellilífeyrisþega</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Aðili sem fær undanþágu frá greiðslu lyfja</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Umhverfisverndarþjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Umhverfishreinsunarþjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEX</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vinnsla ríkisávísana utan reikningssvæðis</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vinnsla greiðsluþjónustu utan reikningssvæðis</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AEZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vinnsla greiðsluþjónustu innan reikningssvæðis</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Aðlögun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>AU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Auðkenning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vinnsla vörulista</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Flutningur með kerru/öðrum ökutækjum</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vottun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Samræmisvottun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Upprunavottun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Skurður</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAJ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Þjónusta ræðismanns</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAK</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Customer collection ?</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Launagreiðsluþjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Reiðufjárflutningur</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAN</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Heimabankaþjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Tvíhliða samningsþjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Þjónusta tryggingamiðlara</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAQ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Útgáfa ávísana</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sérstök ósk um staðsetningu vöruauglýsinga</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Krani</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sérstök litaþjónusta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Raða</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Söfnun og endurvinnsla rafhlaðna</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CAW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Skilagjald vöru</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ferma bíl</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Þrif</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Stimplun sígaretta</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>CT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Talning og endurtalning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>DAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Útlit/hönnun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>DAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Affermun bílstjóra</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>DL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Afhending</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>EG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Grafa í</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>EP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hraða</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ER</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Gengisábyrgð</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>FAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Framleiðsla</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>FAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Útjöfnun farms</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>FAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Mikil meðhöndlun farms</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>FC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Þjónusta tengd farmi</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>FH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Áfylling/meðhöndlun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>FI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fjármögnun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>GAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Mylja</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>HAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Slanga</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>HD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Meðhöndlun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>HH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Hífa</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>IAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Uppsetning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>IAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Uppsetning og ábyrgð</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ID</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Innanhússafhending</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>IF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Skoðun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>IR</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Uppsetning og þjálfun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>IS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Útgáfa reikninga</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>KO</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Koshering</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>L1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fjöldi flytjanda</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>LA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Merking</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>LAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vinnuafl</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>LAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Viðgerð og skil</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>LF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Lögleiðing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>MAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Uppsetning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>MI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senda reikning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ML</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Senda reikning á hverja staðsetningu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>NAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Gámar sem ekki er hægt að skila</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>OA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Utandyra snúrutengi</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>PA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Reikningur með sendingu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>PAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Phosphatizing (meðferð á stáli)</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>PC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Pökkun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>PL</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vöruflutningar á brettum</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Endurpökkun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Viðgerð</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Gámur sem má skila</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RAF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Vöruáfylling</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Endursending</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RF</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Endurnýjun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ráðning á lestarvagni</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>RV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Fermun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Bjarga</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Flutningur og meðhöndlun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SAD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sérstök innpökkun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SAE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Stimplun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SAI</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Kaupandi affermir</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SG</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Plöstun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sérstök meðhöndlun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SM</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sérstök áferð</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>SU</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Uppsetning</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>TAB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Tankaleiga</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>TAC</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Prófun</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>TT</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Flutningur - þriðji aðili greiðir</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>TV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Flutningur með seljanda</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>V1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Afhending á lóð</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>V2</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Afhending við bryggju</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>WH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Þjónusta í vöruhúsi</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>XAA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Sameina sendingar á sama degi</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>YY</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Skipta afhendingu</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>ZZZ</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Skv. samkomulagi</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</CodeList>

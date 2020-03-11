@@ -124,8 +124,8 @@
 		<DisplayName>Tilvísun viðskiptavinar</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-030">
-		<TermName>Bókhaldskostnaður</TermName>
-		<DisplayName>Bókhaldskostnaður</DisplayName>
+		<TermName>Bókhaldstilvísun</TermName>
+		<DisplayName>Bókhaldstilvísun</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-031">
 		<TermName>Endanlegur kaupandi</TermName>
@@ -140,8 +140,8 @@
 		<DisplayName>Raðnúmer vöru</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-034">
-		<TermName>Upplýsingar um útboð vöru</TermName>
-		<DisplayName>Upplýsingar um útboð vöru</DisplayName>
+		<TermName>Lotunúmer vöru</TermName>
+		<DisplayName>Lotunúmer vöru</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-035">
 		<TermName>Grunnupphæð afsláttar</TermName>
@@ -251,12 +251,12 @@
 		<DisplayName>Dagsetning sem tekur gildi</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-061">
-		<TermName>Engin Ástæða</TermName>
-		<DisplayName>Engin Ástæða</DisplayName>
+		<TermName>Engin ástæða</TermName>
+		<DisplayName>Engin ástæða</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-062">
-		<TermName>Engin Aðgerð</TermName>
-		<DisplayName>Engin Aðgerð</DisplayName>
+		<TermName>Engin áðgerð</TermName>
+		<DisplayName>Engin áðgerð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-063">
 		<TermName>Ítarupplýsingar sendandi</TermName>
