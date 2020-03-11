@@ -58,7 +58,7 @@
 				<SimpleValue>InvoiceResponse</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>INVOICE RESPONSE</SimpleValue>
+				<SimpleValue>STAÐA REIKNINGS</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -66,7 +66,7 @@
 				<SimpleValue>CreditNoteResponse</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>CREDIT NOTE RESPONSE</SimpleValue>
+				<SimpleValue>STAÐA KREDITNÓTU</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>

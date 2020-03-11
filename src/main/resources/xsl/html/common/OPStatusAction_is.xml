@@ -26,7 +26,7 @@
 				<SimpleValue>NOA</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>No action required</SimpleValue>
+				<SimpleValue>Engrar aðgerðar krafist</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -34,7 +34,7 @@
 				<SimpleValue>PIN</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Provide information</SimpleValue>
+				<SimpleValue>Sláðu inn upplýsingar</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -42,7 +42,7 @@
 				<SimpleValue>NIN</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Issue new invoice</SimpleValue>
+				<SimpleValue>Gefa út nýjan reikning</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -50,7 +50,7 @@
 				<SimpleValue>CNF</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit fully</SimpleValue>
+				<SimpleValue>Bakfæra að fullu</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -58,7 +58,7 @@
 				<SimpleValue>CNP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit partially</SimpleValue>
+				<SimpleValue>Bakfæra að hluta til</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -66,7 +66,7 @@
 				<SimpleValue>CNA</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Credit the amount</SimpleValue>
+				<SimpleValue>Bakfæra upphæðina</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -74,7 +74,7 @@
 				<SimpleValue>OTH</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Other</SimpleValue>
+				<SimpleValue>Annað</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>
