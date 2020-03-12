@@ -27,7 +27,7 @@
 				<SimpleValue>S</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Standard</SimpleValue>
+				<SimpleValue>Staðall</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -36,7 +36,7 @@
 				<SimpleValue>AE</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Reverse charge</SimpleValue>
+				<SimpleValue>Skattbyrði kaupanda</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -91,7 +91,7 @@
 				<SimpleValue>L</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Canary Islands general indirect tax</SimpleValue>
+				<SimpleValue>Almennur óbeinn skattur Kanaríeyja</SimpleValue>
 			</Value>
 		</Row>		
 				<Row>
@@ -100,7 +100,7 @@
 				<SimpleValue>M</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Tax for production, services and importation in Ceuta and Melilla</SimpleValue>
+				<SimpleValue>Skattur á framleiðslu, þjónustu og innflutning í Ceuta og Melilla</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>
