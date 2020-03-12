@@ -27,7 +27,7 @@
 				<SimpleValue>CC</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Industry commodity code</SimpleValue>
+				<SimpleValue>Vöruflokkunarkóði</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -36,7 +36,7 @@
 				<SimpleValue>EF</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Material code</SimpleValue>
+				<SimpleValue>Efniskóði</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -45,7 +45,7 @@
 				<SimpleValue>GB</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Buyer's internal product group code</SimpleValue>
+				<SimpleValue>Innri vöruflokkakóði kaupanda</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -54,7 +54,7 @@
 				<SimpleValue>HS</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Harmonised system/INTRASTAT</SimpleValue>
+				<SimpleValue>Samræmt kerfi/INTRASTAT</SimpleValue>
 			</Value>
 		</Row>
 		
@@ -64,7 +64,7 @@
 				<SimpleValue>MP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Product/service identification number/ UNSPSC</SimpleValue>
+				<SimpleValue>Auðkennisnúmer vöru/þjónustu/UNSPSC</SimpleValue>
 			</Value>
 		</Row>
 		
@@ -74,7 +74,7 @@
 				<SimpleValue>SSO</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>UN Dangerous Goods List</SimpleValue>
+				<SimpleValue>Listi SÞ yfir hættulegan varning</SimpleValue>
 			</Value>
 		</Row>
 		
@@ -104,7 +104,7 @@
 				<SimpleValue>TSP</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>EU Combined Nomenclature</SimpleValue>
+				<SimpleValue>Sameinað flokkunarkerfi Evrópusambandsins</SimpleValue>
 			</Value>
 		</Row>
 		
@@ -114,7 +114,7 @@
 				<SimpleValue>ZZZ</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Mutually defined</SimpleValue>
+				<SimpleValue>Skv. samkomulagi</SimpleValue>
 			</Value>
 		</Row>
 		

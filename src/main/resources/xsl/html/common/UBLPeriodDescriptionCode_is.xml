@@ -45,7 +45,7 @@
 				<SimpleValue>432</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Paid to date</SimpleValue>
+				<SimpleValue>Greitt dags.</SimpleValue>
 			</Value>
 		</Row>
 	</SimpleCodeList>
