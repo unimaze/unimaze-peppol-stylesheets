@@ -911,6 +911,98 @@
                                 <xsl:call-template name="BuyerAdditionalInfo" />
                             </div>
                             <br/>
+                            <!-- Additional Supporting Documents -->
+                            <div class="supporting_documents">
+                                <xsl:if test="(cac:AdditionalDocumentReference !='') or (cac:BillingReference != '')">
+                                    <p class="yellow_title">
+                                        <xsl:call-template name="LabelName">
+                                            <xsl:with-param name="BT-ID" select="'BG-24'"/>
+                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                        </xsl:call-template>
+                                    </p>
+                                    <div class="yellow_box_no_back">
+                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode != '130' and cbc:DocumentTypeCode != '50' or  not(cbc:DocumentTypeCode)]" mode="Supporting"/>
+                                        <xsl:if test="cac:BillingReference !=''">
+                                            <xsl:for-each select="cac:BillingReference/cac:InvoiceDocumentReference">
+                                                <br/>
+                                                <b>
+                                                    <xsl:call-template name="LabelName">
+                                                        <xsl:with-param name="BT-ID" select="'BT-25'"/>
+                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                    </xsl:call-template>
+                                                </b>&#8201;
+                                                <!-- Inserting Preceding invoice number  -->
+                                                <xsl:value-of select="cbc:ID"/>
+                                                <!-- Inserting Preceding Invoice Issue Date  -->
+                                                <xsl:if test="cbc:IssueDate != ''">
+                                                    [<xsl:value-of select="cbc:IssueDate"/>]
+                                                </xsl:if>
+                                            </xsl:for-each>
+                                            <xsl:for-each select="cac:BillingReference/cac:CreditNoteDocumentReference">
+                                                <br/>
+                                                <b>
+                                                    <xsl:call-template name="UMZLabelName">
+                                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-071'"/>
+                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                    </xsl:call-template>
+                                                </b>&#8201;
+                                                <!-- Inserting Preceding invoice number  -->
+                                                <xsl:value-of select="cbc:ID"/>
+                                                <!-- Inserting Preceding Invoice Issue Date  -->
+                                                <xsl:if test="cbc:IssueDate != ''">
+                                                    [<xsl:value-of select="cbc:IssueDate"/>]
+                                                </xsl:if>
+                                            </xsl:for-each>
+                                        </xsl:if>
+                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130' or cbc:DocumentTypeCode='50']" mode="InvoicedObject"/>
+                                        <xsl:if test="cac:DespatchDocumentReference/cbc:ID">
+                                            <br/>
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-16'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                            <!-- Inserting Despatch advice reference  -->
+                                            <xsl:value-of select="cac:DespatchDocumentReference/cbc:ID"/>
+                                        </xsl:if>
+                                        <xsl:if test="cac:ReceiptDocumentReference/cbc:ID">
+                                            <br/>
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-15'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                            <!-- Inserting Receipt advice reference  -->
+                                            <xsl:value-of select="cac:ReceiptDocumentReference/cbc:ID"/>
+                                        </xsl:if>
+                                        <xsl:if test="cac:OriginatorDocumentReference/cbc:ID">
+                                            <br/>
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-17'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                            <!-- Inserting Originator advice reference  -->
+                                            <xsl:value-of select="cac:OriginatorDocumentReference/cbc:ID"/>
+                                        </xsl:if>
+                                        <xsl:if test="cac:ProjectReference/cbc:ID">
+                                            <br/>
+                                            <b>
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-11'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b>
+                                            <!-- Inserting Project advice reference  -->
+                                            <xsl:value-of select="cac:ProjectReference/cbc:ID"/>
+                                        </xsl:if>
+                                    </div>
+                                </xsl:if>
+                            </div>
+                            <!-- /Additional Supporting Documents -->
                         </div>
                     </div>
                     <!-- /Additional Information -->
