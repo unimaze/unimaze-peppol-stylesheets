@@ -52,6 +52,14 @@
 		<TermName>Skráð nafn</TermName>
 		<DisplayName>Lögskráð nafn</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-071">
+		<TermName>Preceding credit note reference</TermName>
+		<DisplayName>Preceding credit note reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-072">
+		<TermName>Notes</TermName>
+		<DisplayName>Notes</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">

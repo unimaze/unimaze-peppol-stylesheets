@@ -234,6 +234,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-162">
 		<TermName>Heimilisfang seljanda 3</TermName>
 		<Definition>An additional address line in an address that can be used to give further details supplementing the main line.</Definition>
+		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-37">
 		<TermName>Staður seljanda</TermName>
