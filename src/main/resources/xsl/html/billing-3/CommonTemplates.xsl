@@ -669,7 +669,6 @@
         </xsl:if>
         <xsl:call-template name="SellerPostalID" />
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
-            <br/>
             <div class="box_with_top_margin">
                 <small>
                     <b>
