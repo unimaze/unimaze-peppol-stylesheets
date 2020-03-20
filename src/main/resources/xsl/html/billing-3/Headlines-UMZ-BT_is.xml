@@ -13,8 +13,10 @@
 		<DisplayName>Viðskiptareikningur</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-004">
-		<TermName>Reglugerð nr. 505/2013.</TermName>
-		<DisplayName>Útgefinn skv. heimild í reglugerð nr. 505/2013.</DisplayName>
+		<!-- <TermName>Reglugerð nr. 505/2013.</TermName>
+		<DisplayName>Útgefinn skv. heimild í reglugerð nr. 505/2013.</DisplayName> -->
+		<TermName></TermName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-005">
 		<TermName>Lýsing</TermName>
