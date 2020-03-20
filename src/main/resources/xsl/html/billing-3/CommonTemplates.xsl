@@ -653,6 +653,7 @@
             </span>
         </xsl:if>
         <xsl:call-template name="SellerPostalAddress" />
+        <xsl:call-template name="SellerID" />
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact !=''">
             <div class="box_with_top_margin">
                 <small>
@@ -667,7 +668,6 @@
             <xsl:call-template name="SellerContact" />
         </xsl:if>
         <xsl:call-template name="SellerPostalID" />
-        <xsl:call-template name="SellerID" />
         <xsl:if test="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
             <br/>
             <div class="box_with_top_margin">
