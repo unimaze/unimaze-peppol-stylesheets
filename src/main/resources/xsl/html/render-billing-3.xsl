@@ -677,7 +677,7 @@
                                         <br/>
                                     </small>
                                 </xsl:if>
-                                <xsl:if test="cbc:Note !=''">
+                                <!-- <xsl:if test="cbc:Note !=''">
                                     <small>
                                         <b>
                                             <xsl:call-template name="UMZLabelName">
@@ -685,13 +685,12 @@
                                                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                             </xsl:call-template>
                                         </b>
-                                        <!-- Inserting Note::  -->
                                         <span>
                                             <xsl:value-of select="cbc:Note"/>
                                         </span>
                                         <br/>
                                     </small>
-                                </xsl:if>
+                                </xsl:if> -->
                             </xsl:if>
                             <xsl:if test="local-name(.)  = 'CreditNote'">
                                 <h1>
@@ -752,7 +751,7 @@
                                         <br/>
                                     </small>
                                 </xsl:if>
-                                <xsl:if test="cbc:Note !=''">
+                                <!-- <xsl:if test="cbc:Note !=''">
                                     <small>
                                         <b>
                                             <xsl:call-template name="UMZLabelName">
@@ -760,13 +759,12 @@
                                                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                             </xsl:call-template>
                                         </b>
-                                        <!-- Inserting Note::  -->
                                         <span>
                                             <xsl:value-of select="cbc:Note"/>
                                         </span>
                                         <br/>
                                     </small>
-                                </xsl:if>
+                                </xsl:if> -->
                             </xsl:if>
                             <!-- /DOCUMENT DETAILS -->
                         </div>
@@ -1132,20 +1130,22 @@
                                                 </xsl:call-template>
                                             </h1>
                                             <div>
-                                                <xsl:choose>
-                                                    <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount !=''">
-                                                        <xsl:call-template name="Currency">
-                                                            <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
-                                                            <xsl:with-param name="country" select="$languageCode" />
-                                                        </xsl:call-template>
-                                                    </xsl:when>
-                                                    <xsl:otherwise>
-                                                        <xsl:call-template name="Currency">
-                                                            <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/>
-                                                            <xsl:with-param name="country" select="$languageCode" />
-                                                        </xsl:call-template>
-                                                    </xsl:otherwise>
-                                                </xsl:choose>
+                                                <b>
+                                                    <xsl:choose>
+                                                        <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount !=''">
+                                                            <xsl:call-template name="Currency">
+                                                                <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
+                                                                <xsl:with-param name="country" select="$languageCode" />
+                                                            </xsl:call-template>
+                                                        </xsl:when>
+                                                        <xsl:otherwise>
+                                                            <xsl:call-template name="Currency">
+                                                                <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/>
+                                                                <xsl:with-param name="country" select="$languageCode" />
+                                                            </xsl:call-template>
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
+                                                </b>
                                             </div>
                                             <p class="currency text_right">
                                                 <small>
@@ -1262,6 +1262,23 @@
                                         </b>
                                     </small>
                                 </p>
+                                <xsl:if test="cbc:Note !=''">
+                                    <p>
+                                        <small>
+                                            <!-- <b>
+                                                <xsl:call-template name="UMZLabelName">
+                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-072'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b> -->
+                                            <!-- Inserting Note::  -->
+                                            <span>
+                                                <xsl:value-of select="cbc:Note"/>
+                                            </span>
+                                            <br/>
+                                        </small>
+                                    </p>
+                                </xsl:if>
                                 <br/>
                                 <xsl:if test="(cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification != '') or (cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID != '')">
                                     <p>
@@ -1399,6 +1416,42 @@
                                 </xsl:if>
                             </div>
                             <div class="red_box_no_back credit_note_description">
+                                <p>
+                                    <small>
+                                        <xsl:call-template name="UMZLabelName">
+                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-004'"/>
+                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                        </xsl:call-template>
+                                    </small>
+                                </p>
+                                <p>
+                                    <small>
+                                        <b>
+                                            <xsl:call-template name="UMZLabelName">
+                                                <xsl:with-param name="BT-ID" select="'UMZ-BT-005'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                            </xsl:call-template>
+                                        </b>
+                                    </small>
+                                </p>
+                                <xsl:if test="cbc:Note !=''">
+                                    <p>
+                                        <small>
+                                            <!-- <b>
+                                                <xsl:call-template name="UMZLabelName">
+                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-072'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b> -->
+                                            <!-- Inserting Note::  -->
+                                            <span>
+                                                <xsl:value-of select="cbc:Note"/>
+                                            </span>
+                                            <br/>
+                                        </small>
+                                    </p>
+                                </xsl:if>
+                                <br/>
                                 <p>
                                     <small>
                                         <xsl:if test="cac:ContractDocumentReference !=''">
@@ -1976,6 +2029,7 @@
                                         </xsl:call-template>
                                     </p>
                                     <div class="red_box_no_back">
+                                        <xsl:call-template name="DeliveryPartyName" />
                                         <xsl:apply-templates select="cac:Delivery/cac:DeliveryLocation"/>
                                         <xsl:call-template name="ActualDeliveryDate"/>
                                     </div>

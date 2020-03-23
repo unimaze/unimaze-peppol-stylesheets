@@ -13,8 +13,10 @@
 		<DisplayName>Viðskiptareikningur</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-004">
-		<TermName>Reglugerð nr. 505/2013.</TermName>
-		<DisplayName>Útgefinn skv. heimild í reglugerð nr. 505/2013.</DisplayName>
+		<!-- <TermName>Reglugerð nr. 505/2013.</TermName>
+		<DisplayName>Útgefinn skv. heimild í reglugerð nr. 505/2013.</DisplayName> -->
+		<TermName></TermName>
+		<DisplayName></DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-005">
 		<TermName>Lýsing</TermName>
@@ -51,6 +53,14 @@
 	<BusinessTerm id="UMZ-BT-026">
 		<TermName>Skráð nafn</TermName>
 		<DisplayName>Lögskráð nafn</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-071">
+		<TermName>Preceding credit note reference</TermName>
+		<DisplayName>Preceding credit note reference</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-072">
+		<TermName>Notes</TermName>
+		<DisplayName>Notes</DisplayName>
 	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
