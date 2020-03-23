@@ -2029,6 +2029,7 @@
                                         </xsl:call-template>
                                     </p>
                                     <div class="red_box_no_back">
+                                        <xsl:call-template name="DeliveryPartyName" />
                                         <xsl:apply-templates select="cac:Delivery/cac:DeliveryLocation"/>
                                         <xsl:call-template name="ActualDeliveryDate"/>
                                     </div>
