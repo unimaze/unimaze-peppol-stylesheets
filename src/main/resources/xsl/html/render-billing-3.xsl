@@ -647,6 +647,21 @@
                                         <br/>
                                     </small>
                                 </xsl:if>
+                                <xsl:if test="((cac:OrderReference/cbc:SalesOrderID !='') and (cac:OrderReference/cbc:SalesOrderID != 'Unknown'))">
+                                    <small>
+                                        <b>
+                                            <xsl:call-template name="LabelName">
+                                                <xsl:with-param name="BT-ID" select="'BT-14'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            </xsl:call-template>
+                                        </b>
+                                        <!-- Inserting Sales order reference  -->
+                                        <span>
+                                            <xsl:value-of select="cac:OrderReference/cbc:SalesOrderID"/>
+                                        </span>
+                                        <br/>
+                                    </small>
+                                </xsl:if>
                                 <xsl:if test="((cbc:BuyerReference !='') and (cbc:BuyerReference != 'Unknown'))">
                                     <small>
                                         <b>
@@ -717,6 +732,21 @@
                                         <!-- Inserting Order reference number  -->
                                         <span>
                                             <xsl:value-of select="cac:OrderReference/cbc:ID"/>
+                                        </span>
+                                        <br/>
+                                    </small>
+                                </xsl:if>
+                                <xsl:if test="((cac:OrderReference/cbc:SalesOrderID !='') and (cac:OrderReference/cbc:SalesOrderID != 'Unknown'))">
+                                    <small>
+                                        <b>
+                                            <xsl:call-template name="LabelName">
+                                                <xsl:with-param name="BT-ID" select="'BT-14'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            </xsl:call-template>
+                                        </b>
+                                        <!-- Inserting Sales order reference  -->
+                                        <span>
+                                            <xsl:value-of select="cac:OrderReference/cbc:SalesOrderID"/>
                                         </span>
                                         <br/>
                                     </small>
