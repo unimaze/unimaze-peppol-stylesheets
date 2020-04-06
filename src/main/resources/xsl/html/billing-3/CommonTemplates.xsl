@@ -3873,6 +3873,17 @@
             <xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@filename" />
             <br />
         </xsl:if>
+        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@filename !=''">
+            -&#8201;
+            <xsl:call-template name="LabelName">
+                <xsl:with-param name="BT-ID" select="'BT-125'" />
+                <xsl:with-param name="Colon-Suffix" select="'true'" />
+            </xsl:call-template>
+            <a href="data:{cbc:EmbeddedDocumentBinaryObject/@mimeCode};base64,{cbc:EmbeddedDocumentBinaryObject}" download="{cbc:EmbeddedDocumentBinaryObject/@filename}">
+                <xsl:value-of select="cbc:EmbeddedDocumentBinaryObject/@filename"/>
+            </a>
+            <br />
+        </xsl:if>
         <xsl:if test="cac:ExternalReference !=''">
             -&#8201;
             <xsl:apply-templates select="cac:ExternalReference" />
