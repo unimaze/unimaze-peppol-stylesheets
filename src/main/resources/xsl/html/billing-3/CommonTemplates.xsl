@@ -3873,15 +3873,24 @@
             <xsl:apply-templates select="cbc:EmbeddedDocumentBinaryObject/@filename" />
             <br />
         </xsl:if>
-        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@filename !=''">
+        <xsl:if test="cbc:EmbeddedDocumentBinaryObject/@mimeCode !=''">
             -&#8201;
             <xsl:call-template name="LabelName">
                 <xsl:with-param name="BT-ID" select="'BT-125'" />
                 <xsl:with-param name="Colon-Suffix" select="'true'" />
             </xsl:call-template>
-            <a href="data:{cbc:EmbeddedDocumentBinaryObject/@mimeCode};base64,{cbc:EmbeddedDocumentBinaryObject}" download="{cbc:EmbeddedDocumentBinaryObject/@filename}">
-                <xsl:value-of select="cbc:EmbeddedDocumentBinaryObject/@filename"/>
-            </a>
+            <xsl:choose>
+                <xsl:when test="cbc:EmbeddedDocumentBinaryObject/@filename !=''">
+                    <a href="data:{cbc:EmbeddedDocumentBinaryObject/@mimeCode};base64,{cbc:EmbeddedDocumentBinaryObject}" download="{cbc:EmbeddedDocumentBinaryObject/@filename}">
+                        <xsl:value-of select="cbc:EmbeddedDocumentBinaryObject/@filename"/>
+                    </a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <a href="data:{cbc:EmbeddedDocumentBinaryObject/@mimeCode};base64,{cbc:EmbeddedDocumentBinaryObject}" download="{../cbc:ID}">
+                        <xsl:value-of select="../cbc:ID"/>
+                    </a>
+                </xsl:otherwise>
+            </xsl:choose>
             <br />
         </xsl:if>
         <xsl:if test="cac:ExternalReference !=''">
