@@ -2130,7 +2130,9 @@
                                             </xsl:call-template>
                                         </p>
                                         <div class="blue_box_no_back">
-                                            <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode != '130' and cbc:DocumentTypeCode != '50' or  not(cbc:DocumentTypeCode)]" mode="Supporting"/>
+                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode != '130' and cbc:DocumentTypeCode != '50' or  not(cbc:DocumentTypeCode)]" mode="Supporting"/>
+                                            </xsl:if>
                                             <xsl:if test="cac:BillingReference !=''">
                                                 <xsl:for-each select="cac:BillingReference/cac:InvoiceDocumentReference">
                                                     <br/>
@@ -2163,7 +2165,9 @@
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </xsl:if>
-                                            <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130' or cbc:DocumentTypeCode='50']" mode="InvoicedObject"/>
+                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
+									            <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130' or cbc:DocumentTypeCode='50']" mode="InvoicedObject"/>
+							                </xsl:if>
                                             <xsl:if test="cac:DespatchDocumentReference/cbc:ID">
                                                 <br/>
                                                 <b>
@@ -2234,7 +2238,9 @@
                                             </xsl:call-template>
                                         </p>
                                         <div class="red_box_no_back">
-                                            <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode != '130' and cbc:DocumentTypeCode != '50' or  not(cbc:DocumentTypeCode)]" mode="Supporting"/>
+                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode != '130' and cbc:DocumentTypeCode != '50' or  not(cbc:DocumentTypeCode)]" mode="Supporting"/>
+                                            </xsl:if>
                                             <xsl:if test="cac:BillingReference !=''">
                                                 <xsl:for-each select="cac:BillingReference/cac:InvoiceDocumentReference">
                                                     <br/>
@@ -2267,7 +2273,9 @@
                                                     </xsl:if>
                                                 </xsl:for-each>
                                             </xsl:if>
-                                            <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130' or cbc:DocumentTypeCode='50']" mode="InvoicedObject"/>
+                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
+									            <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130' or cbc:DocumentTypeCode='50']" mode="InvoicedObject"/>
+							                </xsl:if>
                                             <xsl:if test="cac:DespatchDocumentReference/cbc:ID">
                                                 <br/>
                                                 <b>
