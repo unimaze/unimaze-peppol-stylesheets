@@ -27,7 +27,7 @@
 				<SimpleValue>1</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Instrument not defined</SimpleValue>
+				<SimpleValue>Tól ekki til staðar</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -639,7 +639,7 @@
 				<SimpleValue>70</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bill drawn by the creditor on the debtor</SimpleValue>
+				<SimpleValue>Reikningur útgefinn af skuldunaut á skuldara</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -648,7 +648,7 @@
 				<SimpleValue>74</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bill drawn by the creditor on a bank</SimpleValue>
+				<SimpleValue>Reikningur útgefinn af skuldunaut á banka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -657,7 +657,7 @@
 				<SimpleValue>75</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bill drawn by the creditor, endorsed by another bank</SimpleValue>
+				<SimpleValue>Reikningur útgefinn af skuldunaut, studdur af öðrum banka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -666,7 +666,7 @@
 				<SimpleValue>76</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bill drawn by the creditor on a bank and endorsed by a third party</SimpleValue>
+				<SimpleValue>Reikningur útgefinn af skuldunaut á banka og studdur af þriðja aðila</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -675,7 +675,7 @@
 				<SimpleValue>77</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bill drawn by the creditor on a third party</SimpleValue>
+				<SimpleValue>Reikningur útgefinn af skuldunaut á þriðja aðila</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -684,7 +684,7 @@
 				<SimpleValue>78</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Bill drawn by creditor on third party, accepted and endorsed by bank</SimpleValue>
+				<SimpleValue>Reikningur útgefinn á þriðja aðila, samþykktur og studdur af banka</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
