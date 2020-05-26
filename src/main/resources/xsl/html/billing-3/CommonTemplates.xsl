@@ -3801,7 +3801,7 @@
                 </div>
             </div>
         </xsl:if>
-        <xsl:if test="((../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID) or (../cac:PayeeParty/cac:Party/cbc:EndpointID) or (../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID !=''))">
+        <xsl:if test="((../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID) or (../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID !=''))">
             <div class="payment_table_cell">
                 <div class="payment_table_header_title">
                     <b>
@@ -3818,18 +3818,11 @@
                         <xsl:choose>
                             <xsl:when test="../cac:PayeeParty !=''">
                                 <xsl:choose>
-                                    <xsl:when test="../cac:PayeeParty/cac:Party/cbc:EndpointID !=''">
-                                        <xsl:value-of select="../cac:PayeeParty/cac:Party/cbc:EndpointID" />
+                                    <xsl:when test="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !=''">
+                                        <xsl:value-of select="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID" />
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:choose>
-                                            <xsl:when test="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !=''">
-                                                <xsl:value-of select="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID" />
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <xsl:value-of select="../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID" />
-                                            </xsl:otherwise>
-                                        </xsl:choose>
+                                        <xsl:value-of select="../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID" />
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:when>
