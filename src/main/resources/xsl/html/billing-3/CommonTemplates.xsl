@@ -3567,6 +3567,37 @@
                 </div>
             </div>
         </xsl:if>
+        <xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID !='' ">
+            <div class="payment_table_cell">
+                <div class="payment_table_header_title">
+                    <b>
+                        <small>
+                            <xsl:call-template name="LabelName">
+                                <xsl:with-param name="BT-ID" select="'BT-86'"/>
+                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                            </xsl:call-template>
+                        </small>
+                    </b>
+                </div>
+                <xsl:choose>
+                    <xsl:when test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID/@schemeID !='' ">
+                        <div class="payment_table_body_data">
+                            <small>
+                                <xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID"/>&#8201;
+                                [<xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID/@schemeID"/>]&#8201;
+                            </small>
+                        </div>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <div class="payment_table_body_data">
+                            <small>
+                                <xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID"/>&#8201;
+                            </small>
+                        </div>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </div>
+        </xsl:if>
         <xsl:if test="cac:PaymentMandate/cbc:ID !='' or cac:PaymentMandate/cac:PayerFinancialAccount !=''">
             <div class="payment_table_cell">
                 <div class="payment_table_header_title">
