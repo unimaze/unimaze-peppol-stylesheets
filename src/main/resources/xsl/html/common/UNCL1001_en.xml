@@ -51,6 +51,24 @@
 		<Row>
 			
 			<Value ColumnRef="code">
+				<SimpleValue>310</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Offer / quotation</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>311</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Request for quote</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
 				<SimpleValue>380</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">

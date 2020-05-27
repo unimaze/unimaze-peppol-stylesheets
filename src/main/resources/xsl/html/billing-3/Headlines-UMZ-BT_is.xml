@@ -284,5 +284,24 @@
 		<TermName>Dagsetning og tími svars</TermName>
 		<DisplayName>Dagsetning og tími svars</DisplayName>
 	</BusinessTerm>
+	
+
+	<!-- QUOTATION TITLES -->
+	<BusinessTerm id="UMZ-BT-066">
+		<TermName>Tilvísun í ósk um tilboð</TermName>
+		<DisplayName>Tilvísun í ósk um tilboð</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-067">
+		<TermName>Auðkenni línu fyrir ósk um tilboð</TermName>
+		<DisplayName>Auðkenni línu fyrir ósk um tilboð</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-068">
+		<TermName>Tilboðsupphæð</TermName>
+		<DisplayName>Tilboðsupphæð</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-069">
+		<TermName>Tilboðsgjaldmiðill</TermName>
+		<DisplayName>Tilboðsgjaldmiðill</DisplayName>
+	</BusinessTerm>
 
 </SemanticModel>

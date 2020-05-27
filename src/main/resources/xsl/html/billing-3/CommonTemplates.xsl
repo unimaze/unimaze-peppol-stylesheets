@@ -139,16 +139,44 @@
                     <xsl:when test="(($transformedIntegers_period !='NaN') and ($transformedIntegers_comma !='NaN') and ($transformedIntegers_space !='NaN'))">
                         <xsl:choose>
                             <xsl:when test="$country = 'is'">
-                                <xsl:value-of select="concat($transformedIntegers_period,',', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_period,',', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_period,',', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:when>
                             <xsl:when test="$country = 'en'">
-                                <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:when>
                             <xsl:when test="$country = 'se'">
-                                <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                <xsl:choose>
+                                    <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalAddition)" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -371,11 +399,10 @@
         <xsl:param name="time" />
         <xsl:variable name="hours" select="substring-before($time, ':')" />
         <xsl:variable name="minutes" select="substring-before(substring-after($time, ':'), ':')" />
-        <xsl:variable name="seconds" select="substring-after(substring-after($time, ':'), ':')" />
-        <xsl:variable name="milliseconds" select="substring-after($seconds, '.')" />
+        <xsl:variable name="seconds" select="substring-after(substring-after(substring-before($time, '.'), ':'), ':')" />
         <xsl:choose>
-            <xsl:when test="($hours !='') and ($minutes !='') and ($seconds !='') and ($milliseconds !='')">
-                <xsl:value-of select="concat($hours, ':', $minutes, ':', substring-before($seconds, '.'))" />
+            <xsl:when test="($hours !='') or ($minutes !='') or ($seconds !='')">
+                <xsl:value-of select="concat($hours, ':', $minutes, ':', $seconds)" />
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="$time" />
@@ -1417,6 +1444,16 @@
                 </xsl:otherwise>
             </xsl:choose>
         </span>
+    </xsl:template>
+    <xsl:template name="SellerSupplierPartyID">
+        <xsl:choose>
+            <xsl:when test="cac:SellerSupplierParty/cac:Party/cbc:EndpointID !=''">
+                <xsl:value-of select="cac:SellerSupplierParty/cac:Party/cbc:EndpointID" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template name="AdditionalInfoSellerSupplierPartyNameTitle">
         <xsl:choose>
