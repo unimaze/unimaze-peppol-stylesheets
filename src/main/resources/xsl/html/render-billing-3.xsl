@@ -571,6 +571,10 @@
                     .col-50 {
                         width: 50%;
                         }
+                        
+                    .col-66 {
+                        width: 66%;
+                        }
 
                     .col-75 {
                         width: 75%;
@@ -1852,7 +1856,7 @@
                         <div class="tax_amount col-50 margin-right-big">
                             <!-- Start sum of invoice line net amount: -->
                             <div class="row" id="sum">
-                                <div class="col-75">
+                                <div class="col-66">
                                     <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-106'"/>
@@ -1860,7 +1864,7 @@
                                         </xsl:call-template>
                                     </p>
                                 </div>
-                                <div class="col-25">
+                                <div class="col-33">
                                     <p class="text_right">
                                         <xsl:call-template name="Currency">
                                             <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>
@@ -1872,7 +1876,7 @@
                             <!-- End Sum of invoice line net amount -->
                             <xsl:if test="cbc:TaxCurrencyCode !=''">
                                 <div class="row">
-                                    <div class="col-75">
+                                    <div class="col-66">
                                         <p class="text_right">
                                             <b>
                                                 <xsl:call-template name="LabelName">
@@ -1882,7 +1886,7 @@
                                             </b>
                                         </p>
                                     </div>
-                                    <div class="col-25">
+                                    <div class="col-33">
                                         <p class="text_right">
                                             <xsl:value-of select="cbc:TaxCurrencyCode"/>
                                         </p>
@@ -1892,7 +1896,7 @@
                             <xsl:if test="cac:TaxTotal/cbc:TaxAmount">
                                 <xsl:if test="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]">
                                     <div class="row">
-                                        <div class="col-75">
+                                        <div class="col-66">
                                             <p class="text_right">
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-110'"/>
@@ -1900,7 +1904,7 @@
                                                 </xsl:call-template>
                                             </p>
                                         </div>
-                                        <div class="col-25">
+                                        <div class="col-33">
                                             <p class="text_right">
                                                 <xsl:call-template name="Currency">
                                                     <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>
@@ -1914,7 +1918,7 @@
                             <!-- End Tax Amount -->
                             <!-- Start TaxExclusive Amount: -->
                             <div class="row">
-                                <div class="col-75">
+                                <div class="col-66">
                                     <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-109'"/>
@@ -1922,7 +1926,7 @@
                                         </xsl:call-template>
                                     </p>
                                 </div>
-                                <div class="col-25">
+                                <div class="col-33">
                                     <p class="text_right">
                                         <xsl:call-template name="Currency">
                                             <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/>
@@ -1934,7 +1938,7 @@
                             <!-- End TaxExclusive Amount -->
                             <!-- Start TaxInclusive Amount: -->
                             <div class="row">
-                                <div class="col-75">
+                                <div class="col-66">
                                     <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-112'"/>
@@ -1942,7 +1946,7 @@
                                         </xsl:call-template>
                                     </p>
                                 </div>
-                                <div class="col-25">
+                                <div class="col-33">
                                     <p class="text_right">
                                         <b>
                                             <xsl:call-template name="Currency">
@@ -1957,7 +1961,7 @@
                             <!-- Start Prepaid Amount: -->
                             <xsl:if test="cac:LegalMonetaryTotal/cbc:PrepaidAmount !='' ">
                                 <div class="row">
-                                    <div class="col-75">
+                                    <div class="col-66">
                                         <p class="text_right">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BT-113'"/>
@@ -1965,7 +1969,7 @@
                                             </xsl:call-template>
                                         </p>
                                     </div>
-                                    <div class="col-25">
+                                    <div class="col-33">
                                         <p class="text_right">
                                             <xsl:call-template name="Currency">
                                                 <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PrepaidAmount"/>
@@ -1979,7 +1983,7 @@
                             <!-- Start Rounding Amount: -->
                             <xsl:if test="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount !='' ">
                                 <div class="row">
-                                    <div class="col-75">
+                                    <div class="col-66">
                                         <p class="text_right">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BT-114'"/>
@@ -1987,7 +1991,7 @@
                                             </xsl:call-template>
                                         </p>
                                     </div>
-                                    <div class="col-25">
+                                    <div class="col-33">
                                         <p class="text_right">
                                             <xsl:call-template name="Currency">
                                                 <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"/>
@@ -2001,7 +2005,7 @@
                             <div class="row">
                                 <xsl:choose>
                                     <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
-                                        <div class="col-75">
+                                        <div class="col-66">
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="LabelName">
@@ -2011,7 +2015,7 @@
                                                 </b>
                                             </p>
                                         </div>
-                                        <div class="col-25">                                            
+                                        <div class="col-33">                                            
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="Currency">
@@ -2023,7 +2027,7 @@
                                         </div>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <div class="col-75">                                            
+                                        <div class="col-66">                                            
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="LabelName">
@@ -2033,7 +2037,7 @@
                                                 </b>
                                             </p>                                            
                                         </div>
-                                        <div class="col-25">                                            
+                                        <div class="col-33">                                            
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="Currency">
