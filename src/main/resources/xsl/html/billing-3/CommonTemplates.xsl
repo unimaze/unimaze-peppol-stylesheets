@@ -2853,7 +2853,7 @@
                 <xsl:apply-templates select="cbc:ID" />
             </xsl:attribute>
         </input>
-        <div class="items_table_body_holder">
+        <div class="items_table_body_holder row">
             <div class="items_table_body_data">
                 <label>
                     <xsl:attribute name="for">
@@ -3529,7 +3529,7 @@
     <!-- AllowanceCharge end -->
     <!-- Tax (VAT) totals from here: -->
     <xsl:template match="cac:TaxTotal/cac:TaxSubtotal">
-        <div class="tax_table_body_data">
+        <div class="tax_table_body_data col-10">
             <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
             <xsl:call-template name="NumberFormat">
                 <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
@@ -3537,7 +3537,7 @@
                 <xsl:with-param name="country" select="$languageCode" />
             </xsl:call-template>
         </div>
-        <div class="tax_table_body_data">
+        <div class="tax_table_body_data col-30">
             <xsl:choose>
                 <xsl:when test="cac:TaxCategory/cbc:Percent !=''">
                 &#8201;
@@ -3552,13 +3552,13 @@
                 </xsl:otherwise>
             </xsl:choose>
         </div>
-        <div class="tax_table_body_data">
+        <div class="tax_table_body_data col-30">
             <xsl:call-template name="Currency">
                 <xsl:with-param name="currencyvalue" select="cbc:TaxableAmount" />
                 <xsl:with-param name="country" select="$languageCode" />
             </xsl:call-template>
         </div>
-        <div class="tax_table_body_data">
+        <div class="tax_table_body_data col-30">
             <xsl:call-template name="Currency">
                 <xsl:with-param name="currencyvalue" select="cbc:TaxAmount" />
                 <xsl:with-param name="country" select="$languageCode" />
