@@ -553,6 +553,7 @@
                         justify-content: flex-start;
                         align-items: flex-start;
                         flex-direction: row;
+                        align-items: stretch;
                         }
 
                     .col-10 {
