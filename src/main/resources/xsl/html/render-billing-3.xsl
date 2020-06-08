@@ -567,6 +567,10 @@
                     .col-30 {
                         width: 30%;
                         }
+                        
+                    .col-33 {
+                        width: 33%;
+                        }
 
                     .col-50 {
                         width: 50%;
