@@ -207,6 +207,10 @@
 		<TermName>Order Document Reference</TermName>
 		<DisplayName>Order Document Reference</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-073">
+		<TermName>Validity Period</TermName>
+		<DisplayName>Validity Period</DisplayName>
+	</BusinessTerm>
 
 	<!-- INVOICE RESPONSE -->
 	<BusinessTerm id="UMZ-BT-049">

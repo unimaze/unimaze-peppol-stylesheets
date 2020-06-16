@@ -209,6 +209,10 @@
 		<TermName>Tilvísun í pöntunarskjal</TermName>
 		<DisplayName>Tilvísun í pöntunarskjal</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-073">
+		<TermName>Validity Period</TermName>
+		<DisplayName>Validity Period</DisplayName>
+	</BusinessTerm>
 	
 
 	<!-- INVOICE RESPONSE -->
