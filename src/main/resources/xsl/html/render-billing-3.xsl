@@ -195,11 +195,6 @@
                         position: relative;
                         height: 80px;
                     }
-                    .credit_note_buyer_payment_info_wrapper .grid_spliter {
-                        display: grid;
-                        grid-template-columns: repeat(2,1fr);
-                        grid-gap: 1em;
-                    }
 
                     .credit_note_buyer_payment_info_wrapper .red_box .currency{
                         position: absolute;
@@ -248,8 +243,6 @@
                     }
 
                     .payment_table .payment_table_header {
-                        display: grid;
-                        grid-template-columns: 50% 50%;
                         margin-bottom: 0.5em;
                     }
 
@@ -352,10 +345,8 @@
                         right: 0;
                     }
 
-                    .tax_amount .grid_spliter {
-                        display: grid;
-                        grid-template-columns: 2fr 1fr;
-                        padding-right: 26%;
+                    .tax_amount .row {
+                        padding-right: 25%;
                     }
 
                     <!-- HIDE-SHOW TABLE DETAILS -->
@@ -429,18 +420,41 @@
                     }
                     <!-- /HIDE-SHOW TABLE DETAILS -->
 
-                    .items_table_header {
-                        display: grid;
-                        grid-template-columns: 7% 10% auto 10% 12% 6% 10% 12%;
-                        align-items: center;
-                        page-break-inside: avoid;
+                    .items_table_header_title:nth-child(1),
+                    .items_table_body_data:nth-child(1) {
+                        width: 7%;
+                    }
+                    .items_table_header_title:nth-child(2),
+                    .items_table_body_data:nth-child(2) {
+                        width: 10%;
+                    }
+                    .items_table_header_title:nth-child(3),
+                    .items_table_body_data:nth-child(3) {
+                        width: 33%;
+                    }
+                    .items_table_header_title:nth-child(4),
+                    .items_table_body_data:nth-child(4) {
+                        width: 10%;
+                    }
+                    .items_table_header_title:nth-child(5),
+                    .items_table_body_data:nth-child(5) {
+                        width: 12%;
+                    }
+                    .items_table_header_title:nth-child(6),
+                    .items_table_body_data:nth-child(6) {
+                        width: 6%;
+                    }
+                    .items_table_header_title:nth-child(7),
+                    .items_table_body_data:nth-child(7) {
+                        width: 10%;
+                    }
+                    .items_table_header_title:nth-child(8),
+                    .items_table_body_data:nth-child(8) {
+                        width: 12%;
                     }
 
                     .items_table_body_holder {
-                        display: grid;
                         padding: 0.3em 0.5em;
-                        grid-template-columns: 7% 10% auto 10% 12% 6% 10% 12%;
-                        align-items: flex-start;
                     }
 
                     .items_table_body_holder:first-of-type {
@@ -459,13 +473,10 @@
 
                     .tax_table .table_header,
                     .tax_table .credit_note_table_header {
-                        display: grid;
-                        grid-template-columns: 1fr 3fr 3fr 3fr;
                         padding: 0.5em 0;
                     }
 
                     .tax_table .table_body {
-                        display: grid;
                         padding: 0;
                     }
 
@@ -478,9 +489,8 @@
 
 
                     .tax_table .table_body .table_body_data_row1 {
-                        display: grid;
-                        grid-template-columns: 1fr 3fr 3fr 3fr;
                         border-bottom: 1px solid #A6C3D1;
+                        justify-content: flex-end;
                     }
 
                     .tax_table .table_body .table_body_data_row2 {
@@ -490,6 +500,7 @@
 
                     .tax_table .table_body .tax_table_body_data {
                         justify-self: flex-end;
+                        text-align: right;
                         padding: .5em;
                         margin-right: 0.2em;
                     }
@@ -534,26 +545,62 @@
                         }    
                     }
                     <!-- /GENERAL CSS -->
-                    <!-- GRID CSS -->
-					.space_between {
-						display: flex;
-						justify-content: space-between;
-					}
+                    <!-- LAYOUT -->
+                    .row {
+                        display: flex;
+                        page-break-inside: avoid;
+                        width: 100%;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: row;
+                        align-items: stretch;
+                        }
 
-                    .grid_big_2fr_spliter {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-gap: 2em;
-                        page-break-inside: avoid;
+                    .col-10 {
+                        width: 10%;
+                        }
+
+                    .col-25 {
+                        width: 25%;
+                        }
+
+                    .col-30 {
+                        width: 30%;
+                        }
+                        
+                    .col-33 {
+                        width: 33%;
+                        }
+
+                    .col-50 {
+                        width: 50%;
+                        }
+                        
+                    .col-66 {
+                        width: 66%;
+                        }
+
+                    .col-75 {
+                        width: 75%;
+                        }
+
+                    .margin-right-big {
+                        margin-right: 2em;
+                        }
+
+                    .margin-right-small {
+                        margin-right: 1em;
+                        }
+
+                    .margin-right-big:last-of-type,
+                    .margin-right-small:last-of-type {
+                        margin-right: 0;
+                        }
+
+                    .align-center {
+                        align-items: center;
                     }
-                    
-                    .grid_small_2fr_spliter {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-gap: 1em;
-                        page-break-inside: avoid;
-                    }
-                    <!-- /GRID CSS -->
+                    <!-- /LAYOUT -->
                 </style>
             </xsl:when>
             <xsl:otherwise>
@@ -571,10 +618,10 @@
             </head>
             <body>
                 <div class="container">
-                    <header class="main_header grid_big_2fr_spliter">
-                        <div class="seller grid_small_2fr_spliter">
+                    <header class="main_header row">
+                        <div class="seller row col-50 margin-right-big">
                             <!-- SELLER -->
-                            <div class="seller_info">
+                            <div class="seller_info col-50 margin-right-small">
                                 <p class="title">
                                     <xsl:call-template name="LabelName">
                                         <xsl:with-param name="BT-ID" select="'BG-4'"/>
@@ -585,7 +632,7 @@
                                     <xsl:call-template name="Seller"/>
                                    </p>
                             </div>
-                            <div class="seller-contact">
+                            <div class="seller-contact col-50 margin-right-small">
                                 <xsl:choose>
                                     <xsl:when test="cac:AccountingSupplierParty/cac:Party/cac:Contact !=''">
                                         <br/>
@@ -619,7 +666,7 @@
                             </div>
                             <!-- /SELLER -->
                         </div>
-                        <div class="document_details">
+                        <div class="document_details col-50 margin-right-big">
                             <br/>
                             <!-- DOCUMENT DETAILS -->
                             <xsl:if test="local-name(.)  = 'Invoice'">
@@ -806,8 +853,8 @@
                     <br/>
                     <br/>
                     <!-- buyer_and_due_dates_holder -->
-                    <div class="grid_big_2fr_spliter">
-                        <div class="buyer">
+                    <div class="row">
+                        <div class="buyer col-50 margin-right-big">
                             <!-- BUYER -->
                             <xsl:if test="local-name(.)  = 'Invoice'">
                                 <div class="blue_box">
@@ -850,9 +897,9 @@
                             <!-- /BUYER -->
                         </div>
                         <xsl:if test="local-name(.) = 'Invoice'">
-                            <div class="buyer_payment_info_holder">
-                                <div class="grid_small_2fr_spliter">
-                                    <div class="blue_box corner_title_center_content">
+                            <div class="buyer_payment_info_holder col-50 margin-right-big">
+                                <div class="row">
+                                    <div class="blue_box corner_title_center_content col-50 margin-right-small">
                                         <!-- Inserting Due Date Label:  -->
                                         <h1>
                                             <xsl:call-template name="LabelName">
@@ -878,7 +925,7 @@
                                             </xsl:choose>
                                         </div>
                                     </div>
-                                    <div class="amount_payable">
+                                    <div class="amount_payable col-50 margin-right-small">
                                         <div class="blue_box corner_title_center_content">
                                             <!-- Inserting Total Payable amount  -->
                                             <xsl:choose>
@@ -925,8 +972,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid_small_2fr_spliter">
-                                    <div>
+                                <div class="row">
+                                    <div class="col-50 margin-right-small">
                                         <!-- Inserting Invoice Date -->
                                         <p class="text_left">
                                             <b>
@@ -1031,16 +1078,16 @@
                                             </xsl:if>
                                         </p>
                                     </div>
-                                    <div></div>
+                                    <div class="col-50 margin-right-small"></div>
                                 </div>
                             </div>
                         </xsl:if>
                         <xsl:if test="local-name(.) = 'CreditNote'">
-                            <div class="buyer_payment_info_holder">
+                            <div class="buyer_payment_info_holder col-50 margin-right-big">
                                 <div class="credit_note_buyer_payment_info_wrapper">
-                                    <div class="grid_spliter">
+                                    <div class="row">
                                         <!-- Credit Note Dates -->
-                                        <div class="date_holder">
+                                        <div class="date_holder col-50  margin-right-small">
                                             <div class="red_box corner_title_center_content">
                                                 <p class="text_left">
                                                     <b>
@@ -1156,7 +1203,7 @@
                                             </div>
                                         </div>
                                         <!-- Credit Note Dates END -->
-                                        <div class="red_box corner_title_center_content">
+                                        <div class="red_box corner_title_center_content col-50 margin-right-small">
                                             <h1>
                                                 <xsl:call-template name="UMZLabelName">
                                                     <xsl:with-param name="BT-ID" select="'UMZ-BT-012'"/>
@@ -1201,13 +1248,13 @@
                     <!-- /buyer_and_due_dates_holder -->
                     <xsl:if test="local-name(.) = 'Invoice'">
                         <br/>
-                        <div class="grid_big_2fr_spliter">
+                        <div class="row">
                             <xsl:if test="cac:PaymentMeans != ''">
-                                <div class="payment_table">
+                                <div class="payment_table col-50 margin-right-big">
                                     <div class="blue_box_no_back">
                                         <xsl:for-each select="cac:PaymentMeans">
-                                            <div class="payment_table_header">
-                                                <div class="payment" data-name="payment">
+                                            <div class="payment_table_header row">
+                                                <div class="payment col-50" data-name="payment">
                                                     <xsl:if test="position()=1">
                                                         <p class="text_center">
                                                             <b>
@@ -1219,7 +1266,7 @@
                                                         </p>
                                                     </xsl:if>
                                                 </div>
-                                                <div class="transfer" data-name="transfer">
+                                                <div class="transfer col-50" data-name="transfer">
                                                     <p>
                                                         [<xsl:apply-templates select="cbc:PaymentMeansCode"/>]
                                                         <xsl:choose>
@@ -1285,7 +1332,7 @@
                                     </div>
                                 </div>
                             </xsl:if>
-                            <div class="blue_box_no_back description">
+                            <div class="blue_box_no_back description col-50 margin-right-big">
                                 <p>
                                     <small>
                                         <xsl:call-template name="UMZLabelName">
@@ -1381,8 +1428,8 @@
                         <xsl:if test="cac:PaymentMeans != ''">
                             <br/>
                         </xsl:if>
-                        <div class="grid_big_2fr_spliter">
-                            <div class="payment_table">
+                        <div class="row">
+                            <div class="payment_table col-50 margin-right-big">
                                 <xsl:if test="cac:PaymentMeans != ''">
                                     <div class="red_box_no_back">
                                         <xsl:for-each select="cac:PaymentMeans">
@@ -1465,7 +1512,7 @@
                                     </div>
                                 </xsl:if>
                             </div>
-                            <div class="red_box_no_back credit_note_description">
+                            <div class="red_box_no_back credit_note_description col-50 margin-right-big">
                                 <p>
                                     <small>
                                         <xsl:call-template name="UMZLabelName">
@@ -1551,7 +1598,7 @@
                             <xsl:if test="local-name(.)  = 'Invoice'">
                                 <div class="blue_box_no_back">
                                     <input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"/>
-                                    <div class="items_table_header table_header">
+                                    <div class="items_table_header table_header row align-center">
                                         <div class="items_table_header_title">
                                             <label for="collapse_expand_all" class="collapse_expand_all_label">
                                                 <span class="double_expand_arrow">&#171;</span>
@@ -1623,7 +1670,7 @@
                             <xsl:if test="local-name(.)  = 'CreditNote'">
                                 <div class="red_box_no_back">
                                     <input type="checkbox" name="collapse_expand_all" class="hide_all_content_input" id="collapse_expand_all"/>
-                                    <div class="items_table_header credit_note_table_header">
+                                    <div class="items_table_header credit_note_table_header row align-center">
                                         <div class="items_table_header_title">
                                             <label for="collapse_expand_all" class="collapse_expand_all_label">
                                                 <span class="double_expand_arrow">&#171;</span>
@@ -1698,13 +1745,13 @@
                     <!-- class="blue_box_no_back" -->
                     <br/>
                     <!-- Start VAT Breakdown: -->
-                    <div class="grid_big_2fr_spliter">
-                        <div class="tax_table">
+                    <div class="row">
+                        <div class="tax_table col-50 margin-right-big">
                             <xsl:if test="local-name(.)  = 'Invoice'">
                                 <div class="blue_box_no_back">
-                                    <div class="table_header">
-                                        <div class="tax_table_header_title"></div>
-                                        <div class="tax_table_header_title">
+                                    <div class="table_header row">
+                                        <div class="tax_table_header_title col-10"></div>
+                                        <div class="tax_table_header_title col-30">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-118'"/>
@@ -1712,7 +1759,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="tax_table_header_title">
+                                        <div class="tax_table_header_title col-30">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-116'"/>
@@ -1720,7 +1767,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="tax_table_header_title">
+                                        <div class="tax_table_header_title col-30">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-117'"/>
@@ -1730,7 +1777,7 @@
                                         </div>
                                     </div>
                                     <div class="table_body">
-                                        <div class="table_body_data_row1">
+                                        <div class="table_body_data_row1 row">
                                             <xsl:apply-templates select="cac:TaxTotal/cac:TaxSubtotal"/>
                                         </div>
                                         <div class="table_body_data_row2">
@@ -1756,9 +1803,9 @@
                             </xsl:if>
                             <xsl:if test="local-name(.)  = 'CreditNote'">
                                 <div class="red_box_no_back">
-                                    <div class="credit_note_table_header">
-                                        <div class="tax_table_header_title"></div>
-                                        <div class="tax_table_header_title">
+                                    <div class="credit_note_table_header row">
+                                        <div class="tax_table_header_title col-10"></div>
+                                        <div class="tax_table_header_title col-30">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-118'"/>
@@ -1766,7 +1813,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="tax_table_header_title">
+                                        <div class="tax_table_header_title col-30">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-116'"/>
@@ -1774,7 +1821,7 @@
                                                 </xsl:call-template>
                                             </b>
                                         </div>
-                                        <div class="tax_table_header_title">
+                                        <div class="tax_table_header_title col-30">
                                             <b>
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-117'"/>
@@ -1784,7 +1831,7 @@
                                         </div>
                                     </div>
                                     <div class="table_body">
-                                        <div class="table_body_data_row1">
+                                        <div class="table_body_data_row1 row">
                                             <xsl:apply-templates select="cac:TaxTotal/cac:TaxSubtotal"/>
                                         </div>
                                         <div class="table_body_data_row2">
@@ -1810,10 +1857,10 @@
                             </xsl:if>
                         </div>
                         <!-- Start Tax Amount: -->
-                        <div class="tax_amount">
+                        <div class="tax_amount col-50 margin-right-big">
                             <!-- Start sum of invoice line net amount: -->
-                            <div class="grid_spliter" id="sum">
-                                <div>
+                            <div class="row" id="sum">
+                                <div class="col-66">
                                     <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-106'"/>
@@ -1821,7 +1868,7 @@
                                         </xsl:call-template>
                                     </p>
                                 </div>
-                                <div>
+                                <div class="col-33">
                                     <p class="text_right">
                                         <xsl:call-template name="Currency">
                                             <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>
@@ -1832,8 +1879,8 @@
                             </div>
                             <!-- End Sum of invoice line net amount -->
                             <xsl:if test="cbc:TaxCurrencyCode !=''">
-                                <div class="grid_spliter">
-                                    <div>
+                                <div class="row">
+                                    <div class="col-66">
                                         <p class="text_right">
                                             <b>
                                                 <xsl:call-template name="LabelName">
@@ -1843,7 +1890,7 @@
                                             </b>
                                         </p>
                                     </div>
-                                    <div>
+                                    <div class="col-33">
                                         <p class="text_right">
                                             <xsl:value-of select="cbc:TaxCurrencyCode"/>
                                         </p>
@@ -1852,8 +1899,8 @@
                             </xsl:if>
                             <xsl:if test="cac:TaxTotal/cbc:TaxAmount">
                                 <xsl:if test="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]">
-                                    <div class="grid_spliter">
-                                        <div>
+                                    <div class="row">
+                                        <div class="col-66">
                                             <p class="text_right">
                                                 <xsl:call-template name="LabelName">
                                                     <xsl:with-param name="BT-ID" select="'BT-110'"/>
@@ -1861,7 +1908,7 @@
                                                 </xsl:call-template>
                                             </p>
                                         </div>
-                                        <div>
+                                        <div class="col-33">
                                             <p class="text_right">
                                                 <xsl:call-template name="Currency">
                                                     <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>
@@ -1874,8 +1921,8 @@
                             </xsl:if>
                             <!-- End Tax Amount -->
                             <!-- Start TaxExclusive Amount: -->
-                            <div class="grid_spliter">
-                                <div>
+                            <div class="row">
+                                <div class="col-66">
                                     <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-109'"/>
@@ -1883,7 +1930,7 @@
                                         </xsl:call-template>
                                     </p>
                                 </div>
-                                <div>
+                                <div class="col-33">
                                     <p class="text_right">
                                         <xsl:call-template name="Currency">
                                             <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/>
@@ -1894,8 +1941,8 @@
                             </div>
                             <!-- End TaxExclusive Amount -->
                             <!-- Start TaxInclusive Amount: -->
-                            <div class="grid_spliter">
-                                <div>
+                            <div class="row">
+                                <div class="col-66">
                                     <p class="text_right">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-112'"/>
@@ -1903,7 +1950,7 @@
                                         </xsl:call-template>
                                     </p>
                                 </div>
-                                <div>
+                                <div class="col-33">
                                     <p class="text_right">
                                         <b>
                                             <xsl:call-template name="Currency">
@@ -1917,8 +1964,8 @@
                             <!-- End TaxInclusive Amount -->
                             <!-- Start Prepaid Amount: -->
                             <xsl:if test="cac:LegalMonetaryTotal/cbc:PrepaidAmount !='' ">
-                                <div class="grid_spliter">
-                                    <div>
+                                <div class="row">
+                                    <div class="col-66">
                                         <p class="text_right">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BT-113'"/>
@@ -1926,7 +1973,7 @@
                                             </xsl:call-template>
                                         </p>
                                     </div>
-                                    <div>
+                                    <div class="col-33">
                                         <p class="text_right">
                                             <xsl:call-template name="Currency">
                                                 <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PrepaidAmount"/>
@@ -1939,8 +1986,8 @@
                             <!-- End Prepaid Amount -->
                             <!-- Start Rounding Amount: -->
                             <xsl:if test="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount !='' ">
-                                <div class="grid_spliter">
-                                    <div>
+                                <div class="row">
+                                    <div class="col-66">
                                         <p class="text_right">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BT-114'"/>
@@ -1948,7 +1995,7 @@
                                             </xsl:call-template>
                                         </p>
                                     </div>
-                                    <div>
+                                    <div class="col-33">
                                         <p class="text_right">
                                             <xsl:call-template name="Currency">
                                                 <xsl:with-param name="currencyvalue" select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"/>
@@ -1959,10 +2006,10 @@
                                 </div>
                             </xsl:if>
                             <!-- Start Payable Amount: -->
-                            <div class="grid_spliter">
+                            <div class="row">
                                 <xsl:choose>
                                     <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
-                                        <div>
+                                        <div class="col-66">
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="LabelName">
@@ -1972,7 +2019,7 @@
                                                 </b>
                                             </p>
                                         </div>
-                                        <div>                                            
+                                        <div class="col-33">                                            
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="Currency">
@@ -1984,7 +2031,7 @@
                                         </div>
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <div>                                            
+                                        <div class="col-66">                                            
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="LabelName">
@@ -1994,7 +2041,7 @@
                                                 </b>
                                             </p>                                            
                                         </div>
-                                        <div>                                            
+                                        <div class="col-33">                                            
                                             <p class="text_right">
                                                 <b>
                                                 <xsl:call-template name="Currency">
@@ -2037,8 +2084,8 @@
                     </div>
                     <!-- Delivery Location and Payee-->
                     <xsl:if test="local-name(.)  = 'Invoice'">
-                        <div class="grid_big_2fr_spliter">
-                            <div class="delivery_location">
+                        <div class="row">
+                            <div class="delivery_location col-50 margin-right-big">
                                 <xsl:if test="cac:Delivery != ''">
                                     <p class="blue_title">
                                         <xsl:call-template name="LabelName">
@@ -2053,7 +2100,7 @@
                                     </div>
                                 </xsl:if>
                             </div>
-                            <div>
+                            <div class="col-50 margin-right-big">
                                 <xsl:if test="cac:PayeeParty != ''">
                                     <p class="blue_title">
                                         <xsl:call-template name="LabelName">
@@ -2069,8 +2116,8 @@
                         </div>
                     </xsl:if>
                     <xsl:if test="local-name(.)  = 'CreditNote'">
-                        <div class="grid_big_2fr_spliter">
-                            <div class="delivery_location">
+                        <div class="row">
+                            <div class="delivery_location col-50 margin-right-big">
                                 <xsl:if test="cac:Delivery != ''">
                                     <p class="red_title">
                                         <xsl:call-template name="LabelName">
@@ -2085,7 +2132,7 @@
                                     </div>
                                 </xsl:if>
                             </div>
-                            <div>
+                            <div class="col-50 margin-right-big">
                                 <xsl:if test="cac:PayeeParty != ''">
                                     <p class="red_title">
                                         <xsl:call-template name="LabelName">
@@ -2103,8 +2150,8 @@
                     <br/>
                     <!-- /Delivery Location and Payee -->
                     <!-- Additional Information -->
-                    <div class="grid_big_2fr_spliter">
-                        <div class="seller_information">
+                    <div class="row">
+                        <div class="seller_information col-50 margin-right-big">
                             <xsl:if test="local-name(.)  = 'Invoice'">
                                 <p class="blue_title">
                                     <xsl:call-template name="LabelName">
@@ -2128,7 +2175,7 @@
                                 </div>
                             </xsl:if>
                         </div>
-                        <div class="buyer_information">
+                        <div class="buyer_information col-50 margin-right-big">
                             <xsl:if test="local-name(.)  = 'Invoice'">
                                 <p class="blue_title">
                                     <xsl:call-template name="UMZLabelName">
