@@ -62,6 +62,10 @@
 		<TermName>Notes</TermName>
 		<DisplayName>Notes</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-074">
+		<TermName>Eindagi</TermName>
+		<DisplayName>Eindagi</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">

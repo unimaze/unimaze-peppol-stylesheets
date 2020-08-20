@@ -60,6 +60,10 @@
 		<TermName>Notes</TermName>
 		<DisplayName>Notes</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-074">
+		<TermName>Grace date</TermName>
+		<DisplayName>Grace date</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">

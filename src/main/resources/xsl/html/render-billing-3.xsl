@@ -993,6 +993,31 @@
                                             </small>
                                             <br />
                                         </p>
+                                        <!-- Inserting Grace Date -->
+                                        <xsl:if test="cac:AdditionalDocumentReference">
+                                            <xsl:if test="cac:AdditionalDocumentReference/cbc:DocumentTypeCode='71'">
+                                                <xsl:if test="cac:AdditionalDocumentReference/cbc:ID">
+                                                    <p class="text_left">
+                                                        <b>
+                                                            <small>
+                                                                <xsl:call-template name="UMZLabelName">
+                                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-074'" />
+                                                                    <xsl:with-param name="Colon-Suffix" select="'false'" />
+                                                                </xsl:call-template>
+                                                            </small>
+                                                        </b>
+                                                        <br />
+                                                        <small>
+                                                            <xsl:call-template name="formatDate">
+                                                                <xsl:with-param name="dateTime" select="cac:AdditionalDocumentReference/cbc:ID" />
+                                                                <xsl:with-param name="country" select="$languageCode" />
+                                                            </xsl:call-template>
+                                                        </small>
+                                                        <br />
+                                                    </p>
+                                                </xsl:if>
+                                            </xsl:if>
+                                        </xsl:if>
                                         <!-- Inserting Settlement Date -->
                                         <xsl:if test="cac:PaymentTerms/cac:SettlementPeriod/cbc:StartDate !=''">
                                             <p class="text_left">
@@ -1110,6 +1135,31 @@
                                                 </p>
                                             </div>
                                             <div>
+                                                <!-- Inserting Grace Date -->
+                                                <xsl:if test="cac:AdditionalDocumentReference">
+                                                    <xsl:if test="cac:AdditionalDocumentReference/cbc:DocumentTypeCode='71'">
+                                                        <xsl:if test="cac:AdditionalDocumentReference/cbc:ID">
+                                                            <p class="text_left">
+                                                                <b>
+                                                                    <small>
+                                                                        <xsl:call-template name="UMZLabelName">
+                                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-074'" />
+                                                                            <xsl:with-param name="Colon-Suffix" select="'false'" />
+                                                                        </xsl:call-template>
+                                                                    </small>
+                                                                </b>
+                                                                <br />
+                                                                <small>
+                                                                    <xsl:call-template name="formatDate">
+                                                                        <xsl:with-param name="dateTime" select="cac:AdditionalDocumentReference/cbc:ID" />
+                                                                        <xsl:with-param name="country" select="$languageCode" />
+                                                                    </xsl:call-template>
+                                                                </small>
+                                                                <br />
+                                                            </p>
+                                                        </xsl:if>
+                                                    </xsl:if>
+                                                </xsl:if>
                                                 <xsl:if test="cac:PaymentMeans/cbc:PaymentDueDate !=''">
                                                     <p class="text_left">
                                                         <b>

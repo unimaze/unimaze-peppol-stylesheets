@@ -27,7 +27,7 @@
 				<SimpleValue>AB</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Message acknowledgement</SimpleValue>
+				<SimpleValue>Message acknowledged</SimpleValue>
 			</Value>
 		</Row>
 		<Row>

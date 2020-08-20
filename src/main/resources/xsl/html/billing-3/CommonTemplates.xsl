@@ -401,7 +401,7 @@
         <xsl:variable name="minutes" select="substring-before(substring-after($time, ':'), ':')" />
         <xsl:variable name="seconds" select="substring-after(substring-after(substring-before($time, '.'), ':'), ':')" />
         <xsl:choose>
-            <xsl:when test="($hours !='') or ($minutes !='') or ($seconds !='')">
+            <xsl:when test="($hours !='') and ($minutes !='') and ($seconds !='')">
                 <xsl:value-of select="concat($hours, ':', $minutes, ':', $seconds)" />
             </xsl:when>
             <xsl:otherwise>
