@@ -1879,9 +1879,7 @@
                                         </div>
                                     </div>
                                     <div class="table_body">
-                                        <div class="table_body_data_row1 row">
-                                            <xsl:apply-templates select="cac:TaxTotal/cac:TaxSubtotal"/>
-                                        </div>
+                                        <xsl:apply-templates select="cac:TaxTotal/cac:TaxSubtotal"/>
                                         <div class="table_body_data_row2">
                                             <div class="tax_table_body_data">
                                                 <xsl:if test="cac:TaxTotal/cbc:TaxAmount">
