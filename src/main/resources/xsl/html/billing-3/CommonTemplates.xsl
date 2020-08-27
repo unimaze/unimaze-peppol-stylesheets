@@ -3105,7 +3105,7 @@
                     </xsl:if>
                 </small>
             </div>
-            <div class="items_table_body_data">
+            <div class="items_table_body_data text_right">
                 <xsl:if test="cbc:InvoicedQuantity !=''">
                     <xsl:apply-templates select="cbc:InvoicedQuantity" />&#8201;
                     <xsl:if test="cbc:InvoicedQuantity/@unitCode !=''">
@@ -3143,7 +3143,7 @@
                     </xsl:if>
                 </xsl:if>
             </div>
-            <div class="items_table_body_data">
+            <div class="items_table_body_data text_right">
                 <xsl:call-template name="Currency">
                     <xsl:with-param name="currencyvalue" select="cac:Price/cbc:PriceAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
@@ -3161,7 +3161,7 @@
                     </small>
                 </xsl:if>
             </div>
-            <div class="items_table_body_data">
+            <div class="items_table_body_data text_right">
                 <xsl:if test="cac:Item/cac:ClassifiedTaxCategory !='' ">
                     <xsl:choose>
                         <xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !=''">
@@ -3529,40 +3529,42 @@
     <!-- AllowanceCharge end -->
     <!-- Tax (VAT) totals from here: -->
     <xsl:template match="cac:TaxTotal/cac:TaxSubtotal">
-        <div class="tax_table_body_data col-10">
-            <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
-            <xsl:call-template name="NumberFormat">
-                <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
-                <xsl:with-param name="formatToDecimal" select="'false'" />
-                <xsl:with-param name="country" select="$languageCode" />
-            </xsl:call-template>
-        </div>
-        <div class="tax_table_body_data col-30">
-            <xsl:choose>
-                <xsl:when test="cac:TaxCategory/cbc:Percent !=''">
-                &#8201;
-                    [<xsl:call-template name="NumberFormat">
-                        <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
-                        <xsl:with-param name="formatToDecimal" select="'true'" />
-                        <xsl:with-param name="country" select="$languageCode" />
-                    </xsl:call-template>%]
-                </xsl:when>
-                <xsl:otherwise>
-                    %
-                </xsl:otherwise>
-            </xsl:choose>
-        </div>
-        <div class="tax_table_body_data col-30">
-            <xsl:call-template name="Currency">
-                <xsl:with-param name="currencyvalue" select="cbc:TaxableAmount" />
-                <xsl:with-param name="country" select="$languageCode" />
-            </xsl:call-template>
-        </div>
-        <div class="tax_table_body_data col-30">
-            <xsl:call-template name="Currency">
-                <xsl:with-param name="currencyvalue" select="cbc:TaxAmount" />
-                <xsl:with-param name="country" select="$languageCode" />
-            </xsl:call-template>
+        <div class="table_body_data_row1 row">
+            <div class="tax_table_body_data col-10">
+                <xsl:apply-templates select="cac:TaxCategory/cbc:ID" />
+                <xsl:call-template name="NumberFormat">
+                    <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
+                    <xsl:with-param name="formatToDecimal" select="'false'" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template>
+            </div>
+            <div class="tax_table_body_data col-30">
+                <xsl:choose>
+                    <xsl:when test="cac:TaxCategory/cbc:Percent !=''">
+                    &#8201;
+                        [<xsl:call-template name="NumberFormat">
+                            <xsl:with-param name="value" select="cac:TaxCategory/cbc:Percent" />
+                            <xsl:with-param name="formatToDecimal" select="'true'" />
+                            <xsl:with-param name="country" select="$languageCode" />
+                        </xsl:call-template>%]
+                    </xsl:when>
+                    <xsl:otherwise>
+                        %
+                    </xsl:otherwise>
+                </xsl:choose>
+            </div>
+            <div class="tax_table_body_data col-30">
+                <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:TaxableAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template>
+            </div>
+            <div class="tax_table_body_data col-30">
+                <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:TaxAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template>
+            </div>
         </div>
     </xsl:template>
     <xsl:template name="cac:PaymentMeans">
