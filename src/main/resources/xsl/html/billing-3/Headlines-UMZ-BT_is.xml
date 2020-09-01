@@ -55,8 +55,8 @@
 		<DisplayName>Lögskráð nafn</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-071">
-		<TermName>Preceding credit note reference</TermName>
-		<DisplayName>Preceding credit note reference</DisplayName>
+		<TermName>Tilvísun í reikning</TermName>
+		<DisplayName>Tilvísun í reikning</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-072">
 		<TermName>Notes</TermName>
@@ -65,6 +65,10 @@
 	<BusinessTerm id="UMZ-BT-074">
 		<TermName>Eindagi</TermName>
 		<DisplayName>Eindagi</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-075">
+		<TermName>Upprunaskjal</TermName>
+		<DisplayName>Upprunaskjal</DisplayName>
 	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
@@ -93,8 +97,8 @@
 		<DisplayName>Viðskiptamannanúmer</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-018">
-		<TermName>Tilvísun í kredit reikning</TermName>
-		<DisplayName>Tilvísun í kredit reikning</DisplayName>
+		<TermName>Tilvísun í kreditnótu</TermName>
+		<DisplayName>Tilvísun í kreditnótu</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-019">
 		<TermName>Kreditnótunr</TermName>
@@ -214,8 +218,8 @@
 		<DisplayName>Tilvísun í pöntunarskjal</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-073">
-		<TermName>Validity Period</TermName>
-		<DisplayName>Validity Period</DisplayName>
+		<TermName>Validity period</TermName>
+		<DisplayName>Validity period</DisplayName>
 	</BusinessTerm>
 	
 

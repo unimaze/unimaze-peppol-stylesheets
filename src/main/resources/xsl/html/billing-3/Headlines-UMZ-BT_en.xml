@@ -53,8 +53,8 @@
 		<DisplayName>Legal name</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-071">
-		<TermName>Preceding credit note reference</TermName>
-		<DisplayName>Preceding credit note reference</DisplayName>
+		<TermName>Invoice reference</TermName>
+		<DisplayName>Invoice reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-072">
 		<TermName>Notes</TermName>
@@ -63,6 +63,10 @@
 	<BusinessTerm id="UMZ-BT-074">
 		<TermName>Grace date</TermName>
 		<DisplayName>Grace date</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-075">
+		<TermName>Originator document reference</TermName>
+		<DisplayName>Originator document reference</DisplayName>
 	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
@@ -91,8 +95,8 @@
 		<DisplayName>Client number</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-018">
-		<TermName>Reference to credit invoice</TermName>
-		<DisplayName>Reference to credit invoice</DisplayName>
+		<TermName>Credit note reference</TermName>
+		<DisplayName>Credit note reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-019">
 		<TermName>No.</TermName>
@@ -204,16 +208,16 @@
 		<DisplayName>ID</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-047">
-		<TermName>Quotation Document Reference</TermName>
-		<DisplayName>Quotation Document Reference</DisplayName>
+		<TermName>Quotation document reference</TermName>
+		<DisplayName>Quotation document reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-048">
-		<TermName>Order Document Reference</TermName>
-		<DisplayName>Order Document Reference</DisplayName>
+		<TermName>Order document reference</TermName>
+		<DisplayName>Order document reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-073">
-		<TermName>Validity Period</TermName>
-		<DisplayName>Validity Period</DisplayName>
+		<TermName>Validity period</TermName>
+		<DisplayName>Validity period</DisplayName>
 	</BusinessTerm>
 
 
