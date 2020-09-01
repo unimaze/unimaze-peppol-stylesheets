@@ -327,6 +327,14 @@
                     .col-75 {
                         width: 75%;
                         }
+                    
+                    .col-50.margin-right-big:only-child {
+                        width: calc(50% - 1em)
+                        }
+
+                    .col-50.margin-right-small:only-child {
+                        width: calc(50% - 0.5em)
+                        }
 
                     .margin-right-big {
                         margin-right: 2em;
