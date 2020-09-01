@@ -745,7 +745,7 @@ If remittance information is to be mapped to the End To End Identification field
 - Services outside scope of tax (Sale is not subject to VAT/IGIC/IPSI)
 - Canary Islands General Indirect Tax (Liable for IGIC tax)
 - Liable for IPSI (Ceuta/Melilla tax)</Description>
-		<DisplayName>VAT category code</DisplayName>
+		<DisplayName>VAT</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-103">
 		<TermName>Document level charge VAT rate</TermName>

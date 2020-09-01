@@ -208,7 +208,7 @@
                     }
                     .items_table_header_title:nth-child(3),
                     .items_table_body_data:nth-child(3) {
-                        width: 33%;
+                        width: 30%;
                     }
                     .items_table_header_title:nth-child(4),
                     .items_table_body_data:nth-child(4) {
@@ -216,11 +216,11 @@
                     }
                     .items_table_header_title:nth-child(5),
                     .items_table_body_data:nth-child(5) {
-                        width: 12%;
+                        width: 11%;
                     }
                     .items_table_header_title:nth-child(6),
                     .items_table_body_data:nth-child(6) {
-                        width: 6%;
+                        width: 10%;
                     }
                     .items_table_header_title:nth-child(7),
                     .items_table_body_data:nth-child(7) {
@@ -929,7 +929,7 @@
                                                     </xsl:call-template>
                                                 </b>
                                             </div>
-                                            <div class="items_table_header_title">
+                                            <div class="items_table_header_title text_right">
                                                 <b>
                                                     <xsl:call-template name="LabelName">
                                                         <xsl:with-param name="BT-ID" select="'BT-129'"/>
@@ -937,7 +937,7 @@
                                                     </xsl:call-template>
                                                 </b>
                                             </div>
-                                            <div class="items_table_header_title">
+                                            <div class="items_table_header_title text_right">
                                                 <b>
                                                     <xsl:call-template name="LabelName">
                                                         <xsl:with-param name="BT-ID" select="'BT-146'"/>
@@ -945,10 +945,10 @@
                                                     </xsl:call-template>
                                                 </b>
                                             </div>
-                                            <div class="items_table_header_title">
+                                            <div class="items_table_header_title text_right">
                                                 <b>
                                                     <xsl:call-template name="LabelName">
-                                                        <xsl:with-param name="BT-ID" select="'BT-151'"/>
+                                                        <xsl:with-param name="BT-ID" select="'BT-102'"/>
                                                         <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                                     </xsl:call-template>
                                                 </b>
@@ -1224,7 +1224,7 @@
                                     <p class="green_title">
                                         <xsl:call-template name="UMZLabelName">
                                             <xsl:with-param name="BT-ID" select="'UMZ-BT-041'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                         </xsl:call-template>
                                     </p>
                                     <div class="green_box_no_back">
@@ -1235,7 +1235,7 @@
                                             <p class="green_title">
                                                 <xsl:call-template name="UMZLabelName">
                                                     <xsl:with-param name="BT-ID" select="'UMZ-BT-027'" />
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'" />
+                                                    <xsl:with-param name="Colon-Suffix" select="'false'" />
                                                 </xsl:call-template>
                                             </p>
                                             <div class="green_box_no_back">
@@ -1248,7 +1248,7 @@
                                     <p class="green_title">
                                         <xsl:call-template name="LabelName">
                                             <xsl:with-param name="BT-ID" select="'BT-33'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                         </xsl:call-template>
                                     </p>
                                     <div class="green_box_no_back">
@@ -1259,7 +1259,7 @@
                                     <p class="green_title">
                                         <xsl:call-template name="UMZLabelName">
                                             <xsl:with-param name="BT-ID" select="'UMZ-BT-009'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                         </xsl:call-template>
                                     </p>
                                     <div class="green_box_no_back">
@@ -1278,7 +1278,7 @@
                                         <p class="green_title">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BG-13'"/>
-                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                             </xsl:call-template>
                                         </p>
                                         <div class="green_box_no_back">
@@ -1292,7 +1292,7 @@
                                         <p class="green_title">
                                             <xsl:call-template name="LabelName">
                                                 <xsl:with-param name="BT-ID" select="'BG-24'"/>
-                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                             </xsl:call-template>
                                         </p>
                                         <div class="green_box_no_back">
