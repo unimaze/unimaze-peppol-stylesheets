@@ -77,8 +77,8 @@
 		<DisplayName>Kreditfært</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-013">
-		<TermName>Tilvísun í kredit reikning</TermName>
-		<DisplayName>Tilvísun í kredit reikning</DisplayName>
+		<TermName>Bókunarupplýsingar</TermName>
+		<DisplayName>Bókunarupplýsingar</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-014">
 		<TermName>Gjaldmiðill á kreditnótu</TermName>
