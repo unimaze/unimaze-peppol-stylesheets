@@ -77,7 +77,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<Definition>An identifier of a referenced receiving advice.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-16">
-		<TermName>Móttökufyrirmæli</TermName>
+		<TermName>Afhendingarseðill</TermName>
 		<Definition>An identifier of a referenced despatch advice.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-17">

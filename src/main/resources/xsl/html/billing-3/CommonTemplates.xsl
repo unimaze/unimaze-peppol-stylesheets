@@ -3874,17 +3874,20 @@
             </xsl:if>
         </xsl:if>
         <xsl:if test="cbc:DocumentTypeCode='50'">
-            <br />
-            <b>
-                <xsl:call-template name="LabelName">
-                    <xsl:with-param name="BT-ID" select="'BT-11'" />
-                    <xsl:with-param name="Colon-Suffix" select="'true'" />
-                </xsl:call-template>
-            </b>
-            <xsl:value-of select="cbc:ID" />
-            <xsl:if test="cbc:ID/@schemeID != ''">
-                [<xsl:value-of select="cbc:ID/@schemeID" />]
-            </xsl:if>
+            <p>
+                <small>
+                    <b>
+                        <xsl:call-template name="LabelName">
+                            <xsl:with-param name="BT-ID" select="'BT-11'" />
+                            <xsl:with-param name="Colon-Suffix" select="'true'" />
+                        </xsl:call-template>
+                    </b>&#8201;
+                    <xsl:value-of select="cbc:ID" />
+                    <xsl:if test="cbc:ID/@schemeID != ''">
+                        [<xsl:value-of select="cbc:ID/@schemeID" />]
+                    </xsl:if>
+                </small>
+            </p>
         </xsl:if>
     </xsl:template>
     <xsl:template match="cac:AdditionalDocumentReference" mode="Supporting">
