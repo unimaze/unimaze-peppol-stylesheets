@@ -65,6 +65,8 @@
     <xsl:variable name="invoiceBaseType_en" select="document('UBLInvoiceBaseType_en.xml')" />
     <xsl:variable name="UNECE_en" select="document('../common/UNECE_en.xml')" />
     <xsl:variable name="table_item_ID" select="cbc:ID" />
+    <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" /> 
+    <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" /> 
     <xsl:template match="/">
         <xsl:apply-templates />
     </xsl:template>
