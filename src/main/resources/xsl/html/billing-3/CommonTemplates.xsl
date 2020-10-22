@@ -3894,7 +3894,6 @@
     </xsl:template>
     <xsl:template match="cac:AdditionalDocumentReference" mode="Supporting">
         <xsl:if test="cbc:ID !=''">
-            <br/>
             <p>
                 <xsl:call-template name="LabelName">
                     <xsl:with-param name="BT-ID" select="'BT-122'" />
@@ -3906,7 +3905,7 @@
                 </xsl:if>
             </p>
         </xsl:if>
-            <xsl:if test="cbc:DocumentType !='' or cbc:DocumentTypeCode !=''">
+        <xsl:if test="cbc:DocumentType !='' or cbc:DocumentTypeCode !=''">
             <p>
                 <small>
                     -&#8201;
@@ -3931,7 +3930,8 @@
             <small>
                 <xsl:apply-templates select="cac:Attachment" />
             </small>
-        </p>        
+        </p>
+        <br/>        
     </xsl:template>
     <xsl:template match="cac:Attachment">
         <!-- No processing of attached document, just info: -->

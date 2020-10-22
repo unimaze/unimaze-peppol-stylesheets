@@ -2466,7 +2466,7 @@
                                 </div>
                                 <br/>
                                 <!-- Additional Supporting Documents -->
-                                <xsl:if test="(cac:AdditionalDocumentReference !='') and (cac:AdditionalDocumentReference[cbc:DocumentTypeCode !='71'])">
+                                <xsl:if test="cac:AdditionalDocumentReference !=''">
                                     <div class="supporting_documents">
                                         <p class="blue_title">
                                             <xsl:call-template name="LabelName">
@@ -2476,7 +2476,7 @@
                                         </p>
                                         <div class="blue_box_no_back">
                                             <xsl:if test="cac:AdditionalDocumentReference !=''">
-                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[((cbc:DocumentTypeCode != '130') and (cbc:DocumentTypeCode != '71')) or not(cbc:DocumentTypeCode)]" mode="Supporting"/>
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[((cbc:DocumentTypeCode != '130') and (cbc:DocumentTypeCode != '71')) or (not(cbc:DocumentTypeCode) and not(cbc:DocumentDescription))]" mode="Supporting"/>
                                             </xsl:if>
                                             <xsl:if test="cac:AdditionalDocumentReference !=''">
                                                 <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
@@ -2498,7 +2498,7 @@
                                 </div>
                                 <br/>
                                 <!-- Additional Supporting Documents -->
-                                <xsl:if test="(cac:AdditionalDocumentReference !='') and (cac:AdditionalDocumentReference[cbc:DocumentTypeCode !='50'])">
+                                <xsl:if test="(cac:AdditionalDocumentReference !='')">
                                     <div class="supporting_documents">
                                         <p class="red_title">
                                             <xsl:call-template name="LabelName">
@@ -2508,7 +2508,7 @@
                                         </p>
                                         <div class="red_box_no_back">
                                             <xsl:if test="cac:AdditionalDocumentReference !=''">
-                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[((cbc:DocumentTypeCode != '130') and (cbc:DocumentTypeCode != '50')) or not(cbc:DocumentTypeCode)]" mode="Supporting"/>
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[((cbc:DocumentTypeCode != '130') and (cbc:DocumentTypeCode != '50') and (cbc:DocumentTypeCode != '71')) or (not(cbc:DocumentTypeCode) and not(cbc:DocumentDescription))]" mode="Supporting"/>
                                             </xsl:if>
                                             <xsl:if test="cac:AdditionalDocumentReference !=''">
                                                 <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
