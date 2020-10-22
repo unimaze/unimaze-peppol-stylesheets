@@ -1744,19 +1744,6 @@
                                     </p>
                                 </xsl:if>
                                 <br/>
-                                <xsl:if test="cac:ContractDocumentReference !=''">
-                                    <p>
-                                        <small>
-                                            <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BT-12'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                </xsl:call-template>
-                                            </b>&#8201;
-                                            <xsl:apply-templates select="cac:ContractDocumentReference"/>
-                                        </small>
-                                    </p>
-                                </xsl:if>
                                 <xsl:if test="cac:BillingReference !=''">
                                     <xsl:for-each select="cac:BillingReference/cac:InvoiceDocumentReference">
                                         <p>
