@@ -53,8 +53,8 @@
 		<DisplayName>Legal name</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-071">
-		<TermName>Invoice reference</TermName>
-		<DisplayName>Invoice reference</DisplayName>
+		<TermName>Reference to invoice</TermName>
+		<DisplayName>Reference to invoice</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-072">
 		<TermName>Notes</TermName>
@@ -95,8 +95,8 @@
 		<DisplayName>Client number</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-018">
-		<TermName>Credit note reference</TermName>
-		<DisplayName>Credit note reference</DisplayName>
+		<TermName>Reference to credit note</TermName>
+		<DisplayName>Reference to credit note</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-019">
 		<TermName>No.</TermName>

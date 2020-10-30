@@ -10,5 +10,5 @@
     xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2"
     xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
     xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" exclude-result-prefixes="n1 n2 cdl cac cbc ccts sdt udt">
-    <xsl:param name="languageCode" select="'is'"/>
+    <xsl:param name="languageCode" select="'en'"/>
 </xsl:stylesheet>
