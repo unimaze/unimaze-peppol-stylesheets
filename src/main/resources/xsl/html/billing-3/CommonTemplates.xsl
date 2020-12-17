@@ -123,6 +123,28 @@
         </xsl:choose>
     </xsl:template>
     <!--A function to display currencies locale with spaces as thousand delimiter-->
+    <xsl:decimal-format name="isDecimalFormat" decimal-separator="," grouping-separator="."/>
+    <xsl:decimal-format name="enDecimalFormat" decimal-separator="." grouping-separator=","/>
+    <xsl:decimal-format name="seDecimalFormat" decimal-separator="," grouping-separator="&#160;"/>
+    <xsl:template name="currencyLocalization">
+        <xsl:param name="currencyValue" />
+        <xsl:param name="country" />
+        <xsl:choose>
+            <xsl:when test="$country = 'is'">
+                <xsl:value-of select="format-number($currencyValue, '#.##0,00', 'isDecimalFormat')"/>
+            </xsl:when>
+            <xsl:when test="$country = 'en'">
+                <xsl:value-of select="format-number($currencyValue, '#,##0.00', 'enDecimalFormat')"/>
+            </xsl:when>
+            <xsl:when test="$country = 'se'">
+                <xsl:value-of select="format-number($currencyValue, '#&#160;##0,00', 'seDecimalFormat')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="format-number($currencyValue, '#&#160;##0,00', 'seDecimalFormat')"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <!--Old function for displaying currencies locale with spaces as thousand delimiter-->
     <xsl:template name="Currency">
         <xsl:param name="currencyvalue" />
         <xsl:param name="country" />
@@ -143,7 +165,14 @@
                             <xsl:when test="$country = 'is'">
                                 <xsl:choose>
                                     <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
-                                        <xsl:value-of select="concat($transformedIntegers_period,',', $decimalPart)" />
+                                        <xsl:choose>
+                                            <xsl:when test="string-length($decimalPart) > 2">
+                                                <xsl:value-of select="concat($transformedIntegers_period,',', substring($decimalPart, 1,2))" />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="concat($transformedIntegers_period,',', $decimalPart)" />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="concat($transformedIntegers_period,',', $decimalAddition)" />
@@ -153,7 +182,14 @@
                             <xsl:when test="$country = 'en'">
                                 <xsl:choose>
                                     <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
-                                        <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalPart)" />
+                                        <xsl:choose>
+                                            <xsl:when test="string-length($decimalPart) > 2">
+                                                <xsl:value-of select="concat($transformedIntegers_comma,'.', substring($decimalPart, 1,2))" />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalPart)" />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="concat($transformedIntegers_comma,'.', $decimalAddition)" />
@@ -163,7 +199,14 @@
                             <xsl:when test="$country = 'se'">
                                 <xsl:choose>
                                     <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
-                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                        <xsl:choose>
+                                            <xsl:when test="string-length($decimalPart) > 2">
+                                                <xsl:value-of select="concat($transformedIntegers_space,',', substring($decimalPart, 1,2))" />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="concat($transformedIntegers_space,',', $decimalAddition)" />
@@ -173,7 +216,7 @@
                             <xsl:otherwise>
                                 <xsl:choose>
                                     <xsl:when test="($decimalPart != 0) or ($decimalPart != '0')">
-                                        <xsl:value-of select="concat($transformedIntegers_space,',', $decimalPart)" />
+                                        <xsl:value-of select="concat($transformedIntegers_space,',', substring($decimalPart, 1,2))" />
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="concat($transformedIntegers_space,',', $decimalAddition)" />
@@ -3063,7 +3106,15 @@
                                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                                     </xsl:call-template>
                                 </b>
-                                <xsl:apply-templates select="cbc:Amount" />
+                                <!-- <xsl:apply-templates select="cbc:Amount" /> -->
+                                <xsl:call-template name="currencyLocalization">
+                                    <xsl:with-param name="currencyValue" select="cbc:Amount" />
+                                    <xsl:with-param name="country" select="$languageCode" />
+                                </xsl:call-template>
+                                <!-- <xsl:call-template name="Currency">
+                                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                                    <xsl:with-param name="country" select="$languageCode" />
+                                </xsl:call-template> -->
                             </xsl:if>
                             <xsl:if test="cbc:BaseAmount !=''">
                                 <br />
@@ -3073,7 +3124,15 @@
                                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                                     </xsl:call-template>
                                 </b>
-                                <xsl:apply-templates select="cbc:BaseAmount" />
+                                <!-- <xsl:apply-templates select="cbc:BaseAmount" /> -->
+                                <xsl:call-template name="currencyLocalization">
+                                    <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
+                                    <xsl:with-param name="country" select="$languageCode" />
+                                </xsl:call-template>
+                                <!-- <xsl:call-template name="Currency">
+                                    <xsl:with-param name="currencyvalue" select="cbc:BaseAmount" />
+                                    <xsl:with-param name="country" select="$languageCode" />
+                                </xsl:call-template> -->
                             </xsl:if>
                         </xsl:for-each>
                         <br />
@@ -3146,10 +3205,14 @@
                 </xsl:if>
             </div>
             <div class="items_table_body_data text_right">
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cac:Price/cbc:PriceAmount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cac:Price/cbc:PriceAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cac:Price/cbc:PriceAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
                 <xsl:if test="cac:Price/cbc:BaseQuantity">
                     <small class="hide_content">
                         <br />
@@ -3159,7 +3222,15 @@
                                 <xsl:with-param name="Colon-Suffix" select="'true'" />
                             </xsl:call-template>
                         </b>
-                        <xsl:apply-templates select="cac:Price/cbc:BaseQuantity" />
+                        <!-- <xsl:apply-templates select="cac:Price/cbc:BaseQuantity" /> -->
+                        <xsl:call-template name="currencyLocalization">
+                            <xsl:with-param name="currencyValue" select="cac:Price/cbc:BaseQuantity" />
+                            <xsl:with-param name="country" select="$languageCode" />
+                        </xsl:call-template>
+                        <!-- <xsl:call-template name="Currency">
+                            <xsl:with-param name="currencyvalue" select="cac:Price/cbc:BaseQuantity" />
+                            <xsl:with-param name="country" select="$languageCode" />
+                        </xsl:call-template> -->
                     </small>
                 </xsl:if>
             </div>
@@ -3185,16 +3256,24 @@
                         <small>
                             <xsl:choose>
                                 <xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !=''">
-                                    [<xsl:call-template name="Currency">
-                                        <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount" />
+                                    [<xsl:call-template name="currencyLocalization">
+                                        <xsl:with-param name="currencyValue" select="cac:TaxTotal/cbc:TaxAmount" />
                                         <xsl:with-param name="country" select="$languageCode" />
                                     </xsl:call-template>]
+                                    <!-- [<xsl:call-template name="Currency">
+                                        <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount" />
+                                        <xsl:with-param name="country" select="$languageCode" />
+                                    </xsl:call-template>] -->
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    [<xsl:call-template name="Currency">
-                                        <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount" />
+                                    [<xsl:call-template name="currencyLocalization">
+                                        <xsl:with-param name="currencyValue" select="cac:TaxTotal/cbc:TaxAmount" />
                                         <xsl:with-param name="country" select="$languageCode" />
                                     </xsl:call-template>]
+                                    <!-- [<xsl:call-template name="Currency">
+                                        <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount" />
+                                        <xsl:with-param name="country" select="$languageCode" />
+                                    </xsl:call-template>] -->
                                 </xsl:otherwise>
                             </xsl:choose>
                         </small>
@@ -3202,43 +3281,65 @@
                 </xsl:if>
             </div>
             <div class="items_table_body_data text_right">
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cbc:LineExtensionAmount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:LineExtensionAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:LineExtensionAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
             </div>
             <div class="items_table_body_data text_right">
                 <xsl:choose>
                     <xsl:when test="((cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !='') and (cbc:LineExtensionAmount !=''))">
                         <xsl:variable name="taxInclusiveAmount" select="format-number((number(cac:Item/cac:ClassifiedTaxCategory/cbc:Percent) div 100)*number(cbc:LineExtensionAmount)+number(cbc:LineExtensionAmount),'#.00')" />
-                        <xsl:call-template name="Currency">
-                            <xsl:with-param name="currencyvalue" select="$taxInclusiveAmount" />
+                        <xsl:call-template name="currencyLocalization">
+                            <xsl:with-param name="currencyValue" select="$taxInclusiveAmount" />
                             <xsl:with-param name="country" select="$languageCode" />
                         </xsl:call-template>
+                        <!-- <xsl:call-template name="Currency">
+                            <xsl:with-param name="currencyvalue" select="$taxInclusiveAmount" />
+                            <xsl:with-param name="country" select="$languageCode" />
+                        </xsl:call-template> -->
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:choose>
                             <xsl:when test="((cac:TaxTotal/cbc:TaxAmount !='') and (cbc:LineExtensionAmount !=''))">
                                 <xsl:variable name="taxInclusiveAmount" select="format-number(round(number(cbc:LineExtensionAmount))+round(number(cac:TaxTotal/cbc:TaxAmount)),'#.00')" />
-                                <xsl:call-template name="Currency">
-                                    <xsl:with-param name="currencyvalue" select="$taxInclusiveAmount" />
+                                <xsl:call-template name="currencyLocalization">
+                                    <xsl:with-param name="currencyValue" select="$taxInclusiveAmount" />
                                     <xsl:with-param name="country" select="$languageCode" />
                                 </xsl:call-template>
+                                <!-- <xsl:call-template name="Currency">
+                                    <xsl:with-param name="currencyvalue" select="$taxInclusiveAmount" />
+                                    <xsl:with-param name="country" select="$languageCode" />
+                                </xsl:call-template> -->
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:if test="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount !=''">
-                                    <xsl:call-template name="Currency">
-                                        <xsl:with-param name="currencyvalue"
+                                    <xsl:call-template name="currencyLocalization">
+                                        <xsl:with-param name="currencyValue"
                                             select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount" />
                                         <xsl:with-param name="country" select="$languageCode" />
                                     </xsl:call-template>
+                                    <!-- <xsl:call-template name="Currency">
+                                        <xsl:with-param name="currencyvalue"
+                                            select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount" />
+                                        <xsl:with-param name="country" select="$languageCode" />
+                                    </xsl:call-template> -->
                                 </xsl:if>
                                 <xsl:if test="../cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount !=''">
-                                    <xsl:call-template name="Currency">
-                                        <xsl:with-param name="currencyvalue"
+                                    <xsl:call-template name="currencyLocalization">
+                                        <xsl:with-param name="currencyValue"
                                             select="../cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount" />
                                         <xsl:with-param name="country" select="$languageCode" />
                                     </xsl:call-template>
+                                    <!-- <xsl:call-template name="Currency">
+                                        <xsl:with-param name="currencyvalue"
+                                            select="../cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount" />
+                                        <xsl:with-param name="country" select="$languageCode" />
+                                    </xsl:call-template> -->
                                 </xsl:if>
                             </xsl:otherwise>
                         </xsl:choose>
@@ -3314,10 +3415,14 @@
         <xsl:apply-templates select="cbc:ID" />
     </xsl:template>
     <xsl:template match="cac:Price">
-        <xsl:call-template name="Currency">
-            <xsl:with-param name="currencyvalue" select="cbc:PriceAmount" />
+        <xsl:call-template name="currencyLocalization">
+            <xsl:with-param name="currencyValue" select="cbc:PriceAmount" />
             <xsl:with-param name="country" select="$languageCode" />
         </xsl:call-template>&#8201;
+        <!-- <xsl:call-template name="Currency">
+            <xsl:with-param name="currencyvalue" select="cbc:PriceAmount" />
+            <xsl:with-param name="country" select="$languageCode" />
+        </xsl:call-template>&#8201; -->
         <xsl:apply-templates select="cbc:PriceAmount/@currencyID" />
     </xsl:template>
     <!--Invoiceline end-->
@@ -3368,10 +3473,14 @@
                 </xsl:if>
             </td>
             <td valign="top" align="right">
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:Amount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
             </td>
         </tr>
     </xsl:template>
@@ -3402,16 +3511,24 @@
                 <xsl:if test="cbc:MultiplierFactorNumeric != ''">
                     <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />% of
                 </xsl:if>
-                <xsl:call-template name="Currency">
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
                     <xsl:with-param name="currencyvalue" select="cbc:BaseAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
-                </xsl:call-template>
+                </xsl:call-template> -->
             </td>
             <td valign="top" align="right">
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:Amount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
             </td>
         </tr>
     </xsl:template>
@@ -3442,16 +3559,24 @@
                 <xsl:if test="cbc:MultiplierFactorNumeric != ''">
                     <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />% of
                 </xsl:if>
-                <xsl:call-template name="Currency">
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
                     <xsl:with-param name="currencyvalue" select="cbc:BaseAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
-                </xsl:call-template>
+                </xsl:call-template> -->
             </td>
             <td valign="top" align="right">
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:Amount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
             </td>
         </tr>
     </xsl:template>
@@ -3471,10 +3596,14 @@
                 </xsl:call-template>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:call-template name="Currency">
-            <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+        <xsl:call-template name="currencyLocalization">
+            <xsl:with-param name="currencyValue" select="cbc:Amount" />
             <xsl:with-param name="country" select="$languageCode" />
         </xsl:call-template>
+        <!-- <xsl:call-template name="Currency">
+            <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+            <xsl:with-param name="country" select="$languageCode" />
+        </xsl:call-template> -->
         <small>
             <br />
             <xsl:apply-templates select="cbc:AllowanceChargeReason" />
@@ -3503,10 +3632,14 @@
         </b>
         <xsl:choose>
             <xsl:when test="cbc:BaseAmount !='' ">
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:Amount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
                 <br />
                 <b>
                     <xsl:call-template name="LabelName">
@@ -3514,16 +3647,24 @@
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                     </xsl:call-template>
                 </b>
-                <xsl:call-template name="Currency">
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
                     <xsl:with-param name="currencyvalue" select="cbc:BaseAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
-                </xsl:call-template>
+                </xsl:call-template> -->
             </xsl:when>
             <xsl:otherwise>
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:Amount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:Amount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
             </xsl:otherwise>
         </xsl:choose>
         <br />
@@ -3556,16 +3697,24 @@
                 </xsl:choose>
             </div>
             <div class="tax_table_body_data col-30">
-                <xsl:call-template name="Currency">
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:TaxableAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
                     <xsl:with-param name="currencyvalue" select="cbc:TaxableAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
-                </xsl:call-template>
+                </xsl:call-template> -->
             </div>
             <div class="tax_table_body_data col-30">
-                <xsl:call-template name="Currency">
-                    <xsl:with-param name="currencyvalue" select="cbc:TaxAmount" />
+                <xsl:call-template name="currencyLocalization">
+                    <xsl:with-param name="currencyValue" select="cbc:TaxAmount" />
                     <xsl:with-param name="country" select="$languageCode" />
                 </xsl:call-template>
+                <!-- <xsl:call-template name="Currency">
+                    <xsl:with-param name="currencyvalue" select="cbc:TaxAmount" />
+                    <xsl:with-param name="country" select="$languageCode" />
+                </xsl:call-template> -->
             </div>
         </div>
     </xsl:template>
