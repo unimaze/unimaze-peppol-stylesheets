@@ -741,8 +741,8 @@
                                                                 </xsl:call-template>
                                                             </h1>
                                                             <div style="color:red" class="payable_amount">
-                                                                <xsl:call-template name="Currency">
-                                                                    <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
+                                                                <xsl:call-template name="currencyLocalization">
+                                                                    <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
                                                                     <xsl:with-param name="country" select="$languageCode" />
                                                                 </xsl:call-template>
                                                             </div>
@@ -757,8 +757,8 @@
                                                                 </xsl:call-template>
                                                             </h1>
                                                             <div class="payable_amount">
-                                                                <xsl:call-template name="Currency">
-                                                                    <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
+                                                                <xsl:call-template name="currencyLocalization">
+                                                                    <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
                                                                     <xsl:with-param name="country" select="$languageCode" />
                                                                 </xsl:call-template>
                                                             </div>
@@ -1058,8 +1058,8 @@
                                     </div>
                                     <div class="col-33">
                                         <p align="right">
-                                            <xsl:call-template name="Currency">
-                                                <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:LineExtensionAmount"/>
+                                            <xsl:call-template name="currencyLocalization">
+                                                <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:LineExtensionAmount"/>
                                                 <xsl:with-param name="country" select="$languageCode" />
                                             </xsl:call-template>
                                         </p>
@@ -1098,8 +1098,8 @@
                                             </div>
                                             <div class="col-33">
                                                 <p align="right">
-                                                    <xsl:call-template name="Currency">
-                                                        <xsl:with-param name="currencyvalue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>
+                                                    <xsl:call-template name="currencyLocalization">
+                                                        <xsl:with-param name="currencyValue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>
                                                         <xsl:with-param name="country" select="$languageCode" />
                                                     </xsl:call-template>
                                                 </p>
@@ -1120,8 +1120,8 @@
                                     </div>
                                     <div class="col-33">
                                         <p align="right">
-                                            <xsl:call-template name="Currency">
-                                                <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:TaxExclusiveAmount"/>
+                                            <xsl:call-template name="currencyLocalization">
+                                                <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:TaxExclusiveAmount"/>
                                                 <xsl:with-param name="country" select="$languageCode" />
                                             </xsl:call-template>
                                         </p>
@@ -1141,8 +1141,8 @@
                                     <div class="col-33">
                                         <p align="right">
                                             <b>
-                                                <xsl:call-template name="Currency">
-                                                    <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:TaxInclusiveAmount"/>
+                                                <xsl:call-template name="currencyLocalization">
+                                                    <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:TaxInclusiveAmount"/>
                                                     <xsl:with-param name="country" select="$languageCode" />
                                                 </xsl:call-template>
                                             </b>
@@ -1163,8 +1163,8 @@
                                         </div>
                                         <div class="col-33">
                                             <p align="right">
-                                                <xsl:call-template name="Currency">
-                                                    <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:PrepaidAmount"/>
+                                                <xsl:call-template name="currencyLocalization">
+                                                    <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:PrepaidAmount"/>
                                                     <xsl:with-param name="country" select="$languageCode" />
                                                 </xsl:call-template>
                                             </p>
@@ -1185,8 +1185,8 @@
                                         </div>
                                         <div class="col-33">
                                             <p align="right">
-                                                <xsl:call-template name="Currency">
-                                                    <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:PayableRoundingAmount"/>
+                                                <xsl:call-template name="currencyLocalization">
+                                                    <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:PayableRoundingAmount"/>
                                                     <xsl:with-param name="country" select="$languageCode" />
                                                 </xsl:call-template>
                                             </p>
@@ -1210,8 +1210,8 @@
                                             <div class="col-33">
                                                 <b>
                                                     <p align="right">
-                                                        <xsl:call-template name="Currency">
-                                                            <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
+                                                        <xsl:call-template name="currencyLocalization">
+                                                            <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
                                                             <xsl:with-param name="country" select="$languageCode" />
                                                         </xsl:call-template>
                                                     </p>
@@ -1232,8 +1232,8 @@
                                             <div class="col-33">
                                                 <b>
                                                     <p align="right">
-                                                        <xsl:call-template name="Currency">
-                                                            <xsl:with-param name="currencyvalue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
+                                                        <xsl:call-template name="currencyLocalization">
+                                                            <xsl:with-param name="currencyValue" select="cac:AnticipatedMonetaryTotal/cbc:PayableAmount"/>
                                                             <xsl:with-param name="country" select="$languageCode" />
                                                         </xsl:call-template>
                                                     </p>

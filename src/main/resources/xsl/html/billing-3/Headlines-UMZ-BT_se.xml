@@ -292,6 +292,7 @@
 	<BusinessTerm id="UMZ-BT-070">
 		<TermName>Response date timestamp</TermName>
 		<DisplayName>Response date timestamp</DisplayName>
+	</BusinessTerm>
 
 	<!-- QUOTATION TITLES -->
 	<BusinessTerm id="UMZ-BT-066">
