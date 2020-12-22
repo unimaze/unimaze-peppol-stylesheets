@@ -3184,7 +3184,6 @@
             </div>
             <div class="items_table_body_data text_right">
                 <xsl:if test="cbc:InvoicedQuantity !=''">
-                    <!-- <xsl:apply-templates select="cbc:InvoicedQuantity" />&#8201; -->
                     <xsl:call-template name="currencyLocalization">
                         <xsl:with-param name="currencyValue" select="cbc:InvoicedQuantity" />
                         <xsl:with-param name="country" select="$languageCode" />
@@ -3200,7 +3199,6 @@
                     </xsl:if>
                 </xsl:if>
                 <xsl:if test="cbc:CreditedQuantity !=''">
-                    <!-- <xsl:apply-templates select="cbc:CreditedQuantity" />&#8201; -->
                     <xsl:call-template name="currencyLocalization">
                         <xsl:with-param name="currencyValue" select="cbc:CreditedQuantity" />
                         <xsl:with-param name="country" select="$languageCode" />
@@ -3216,7 +3214,10 @@
                     </xsl:if>
                 </xsl:if>
                 <xsl:if test="cbc:Quantity !=''">
-                    <xsl:apply-templates select="cbc:Quantity" />&#8201;
+                     <xsl:call-template name="currencyLocalization">
+                        <xsl:with-param name="currencyValue" select="cbc:Quantity" />
+                        <xsl:with-param name="country" select="$languageCode" />
+                    </xsl:call-template>&#8201;
                     <xsl:if test="cbc:Quantity/@unitCode !=''">
                         <xsl:value-of select="cbc:Quantity/@unitCode" />
                         <small class="hide_content">
