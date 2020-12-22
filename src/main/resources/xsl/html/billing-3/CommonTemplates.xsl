@@ -3096,7 +3096,10 @@
                                 </xsl:call-template>&#8201;
                             </xsl:if>
                             <xsl:if test="cbc:MultiplierFactorNumeric !=''">
-                                <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />%
+                                <xsl:call-template name="currencyLocalization">
+                                    <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
+                                    <xsl:with-param name="country" select="$languageCode" />
+                                </xsl:call-template>%
                             </xsl:if>
                             <br />
                             <xsl:if test="cbc:Amount !=''">
@@ -3106,7 +3109,6 @@
                                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                                     </xsl:call-template>
                                 </b>
-                                <!-- <xsl:apply-templates select="cbc:Amount" /> -->
                                 <xsl:call-template name="currencyLocalization">
                                     <xsl:with-param name="currencyValue" select="cbc:Amount" />
                                     <xsl:with-param name="country" select="$languageCode" />
@@ -3463,7 +3465,10 @@
             </td>
             <td valign="top" align="right">
                 <xsl:if test="cbc:MultiplierFactorNumeric != ''">
-                    <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />% of
+                    <xsl:call-template name="currencyLocalization">
+                        <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
+                        <xsl:with-param name="country" select="$languageCode" />
+                    </xsl:call-template>% of
                 </xsl:if>
                 <xsl:call-template name="currencyLocalization">
                     <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
@@ -3503,7 +3508,10 @@
             </td>
             <td valign="top" align="right">
                 <xsl:if test="cbc:MultiplierFactorNumeric != ''">
-                    <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />% of
+                    <xsl:call-template name="currencyLocalization">
+                        <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
+                        <xsl:with-param name="country" select="$languageCode" />
+                    </xsl:call-template>% of
                 </xsl:if>
                 <xsl:call-template name="currencyLocalization">
                     <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
@@ -3542,7 +3550,10 @@
             <br />
             <xsl:apply-templates select="cbc:AllowanceChargeReason" />
             [<xsl:apply-templates select="cbc:AllowanceChargeReasonCode" />]
-            <xsl:apply-templates select="cbc:MultiplierFactorNumeric" />%
+            <xsl:call-template name="currencyLocalization">
+                <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
+                <xsl:with-param name="country" select="$languageCode" />
+            </xsl:call-template>%
             <br />
         </small>
     </xsl:template>
