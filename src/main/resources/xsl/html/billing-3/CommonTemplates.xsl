@@ -129,18 +129,39 @@
     <xsl:template name="currencyLocalization">
         <xsl:param name="currencyValue" />
         <xsl:param name="country" />
+        <xsl:param name="useFourDecimalPoints" />
         <xsl:choose>
-            <xsl:when test="$country = 'is'">
-                <xsl:value-of select="format-number($currencyValue, '#.##0,00', 'isDecimalFormat')"/>
-            </xsl:when>
-            <xsl:when test="$country = 'en'">
-                <xsl:value-of select="format-number($currencyValue, '#,##0.00', 'enDecimalFormat')"/>
-            </xsl:when>
-            <xsl:when test="$country = 'se'">
-                <xsl:value-of select="format-number($currencyValue, '#&#160;##0,00', 'seDecimalFormat')"/>
+            <xsl:when test="$useFourDecimalPoints = 'true'">
+                <xsl:choose>
+                    <xsl:when test="$country = 'is'">
+                        <xsl:value-of select="format-number($currencyValue, '#.##0,0000', 'isDecimalFormat')"/>
+                    </xsl:when>
+                    <xsl:when test="$country = 'en'">
+                        <xsl:value-of select="format-number($currencyValue, '#,##0.0000', 'enDecimalFormat')"/>
+                    </xsl:when>
+                    <xsl:when test="$country = 'se'">
+                        <xsl:value-of select="format-number($currencyValue, '#&#160;##0,0000', 'seDecimalFormat')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="format-number($currencyValue, '#&#160;##0,0000', 'seDecimalFormat')"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="format-number($currencyValue, '#&#160;##0,00', 'seDecimalFormat')"/>
+                <xsl:choose>
+                    <xsl:when test="$country = 'is'">
+                        <xsl:value-of select="format-number($currencyValue, '#.##0,00', 'isDecimalFormat')"/>
+                    </xsl:when>
+                    <xsl:when test="$country = 'en'">
+                        <xsl:value-of select="format-number($currencyValue, '#,##0.00', 'enDecimalFormat')"/>
+                    </xsl:when>
+                    <xsl:when test="$country = 'se'">
+                        <xsl:value-of select="format-number($currencyValue, '#&#160;##0,00', 'seDecimalFormat')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="format-number($currencyValue, '#&#160;##0,00', 'seDecimalFormat')"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -3099,6 +3120,7 @@
                                 <xsl:call-template name="currencyLocalization">
                                     <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
                                     <xsl:with-param name="country" select="$languageCode" />
+                                    <xsl:with-param name="useFourDecimalPoints" select="'true'" />
                                 </xsl:call-template>%
                             </xsl:if>
                             <br />
@@ -3122,10 +3144,10 @@
                                         <xsl:with-param name="Colon-Suffix" select="'true'" />
                                     </xsl:call-template>
                                 </b>
-                                <!-- <xsl:apply-templates select="cbc:BaseAmount" /> -->
                                 <xsl:call-template name="currencyLocalization">
                                     <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
                                     <xsl:with-param name="country" select="$languageCode" />
+                                    <xsl:with-param name="useFourDecimalPoints" select="'true'" />
                                 </xsl:call-template>
                             </xsl:if>
                         </xsl:for-each>
@@ -3468,6 +3490,7 @@
                     <xsl:call-template name="currencyLocalization">
                         <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
                         <xsl:with-param name="country" select="$languageCode" />
+                        <xsl:with-param name="useFourDecimalPoints" select="'true'" />
                     </xsl:call-template>% of
                 </xsl:if>
                 <xsl:call-template name="currencyLocalization">
@@ -3511,6 +3534,7 @@
                     <xsl:call-template name="currencyLocalization">
                         <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
                         <xsl:with-param name="country" select="$languageCode" />
+                        <xsl:with-param name="useFourDecimalPoints" select="'true'" />
                     </xsl:call-template>% of
                 </xsl:if>
                 <xsl:call-template name="currencyLocalization">
@@ -3553,6 +3577,7 @@
             <xsl:call-template name="currencyLocalization">
                 <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
                 <xsl:with-param name="country" select="$languageCode" />
+                <xsl:with-param name="useFourDecimalPoints" select="'true'" />
             </xsl:call-template>%
             <br />
         </small>
