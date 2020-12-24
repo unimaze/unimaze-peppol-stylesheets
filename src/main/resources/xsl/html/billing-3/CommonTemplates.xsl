@@ -3262,8 +3262,15 @@
                                 <xsl:with-param name="country" select="$languageCode" />
                             </xsl:call-template>
                         </xsl:when>
+                        <xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:ID ='O'">
+                            <xsl:apply-templates select="cac:Item/cac:ClassifiedTaxCategory/cbc:ID" />
+                            <xsl:call-template name="NumberFormat">
+                                <xsl:with-param name="value" select="0" />
+                                <xsl:with-param name="formatToDecimal" select="'false'" />
+                                <xsl:with-param name="country" select="$languageCode" />
+                            </xsl:call-template>
+                        </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates select="cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID" />
                             <xsl:apply-templates select="cac:Item/cac:ClassifiedTaxCategory/cbc:ID" />
                         </xsl:otherwise>
                     </xsl:choose>
@@ -3274,7 +3281,7 @@
                             <xsl:choose>
                                 <xsl:when test="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent !=''">
                                     [<xsl:call-template name="currencyLocalization">
-                                        <xsl:with-param name="currencyValue" select="cac:TaxTotal/cbc:TaxAmount" />
+                                        <xsl:with-param name="currencyValue" select="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent" />
                                         <xsl:with-param name="country" select="$languageCode" />
                                     </xsl:call-template>]
                                 </xsl:when>
@@ -3306,8 +3313,8 @@
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:choose>
-                            <xsl:when test="((cac:TaxTotal/cbc:TaxAmount !='') and (cbc:LineExtensionAmount !=''))">
-                                <xsl:variable name="taxInclusiveAmount" select="format-number(round(number(cbc:LineExtensionAmount))+round(number(cac:TaxTotal/cbc:TaxAmount)),'#.00')" />
+                            <xsl:when test="((../cac:TaxTotal/cbc:TaxAmount !='') and (cbc:LineExtensionAmount !=''))">
+                                <xsl:variable name="taxInclusiveAmount" select="format-number(round(number(cbc:LineExtensionAmount))+round(number(../cac:TaxTotal/cbc:TaxAmount)),'#.00')" />
                                 <xsl:call-template name="currencyLocalization">
                                     <xsl:with-param name="currencyValue" select="$taxInclusiveAmount" />
                                     <xsl:with-param name="country" select="$languageCode" />
