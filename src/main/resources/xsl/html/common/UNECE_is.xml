@@ -1468,7 +1468,7 @@
 				<SimpleValue>ANN</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>year</SimpleValue>
+				<SimpleValue>ár</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -4154,7 +4154,6 @@
 			</Value>
 		</Row>
 		<Row>
-			
 			<Value ColumnRef="code">
 				<SimpleValue>DAD</SimpleValue>
 			</Value>
@@ -4163,12 +4162,11 @@
 			</Value>
 		</Row>
 		<Row>
-			
 			<Value ColumnRef="code">
 				<SimpleValue>DAY</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>day</SimpleValue>
+				<SimpleValue>dagur</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -4181,7 +4179,6 @@
 			</Value>
 		</Row>
 		<Row>
-			
 			<Value ColumnRef="code">
 				<SimpleValue>DD</SimpleValue>
 			</Value>
@@ -8056,7 +8053,7 @@
 				<SimpleValue>H87</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>piece</SimpleValue>
+				<SimpleValue>stykki</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -8308,7 +8305,7 @@
 				<SimpleValue>HUR</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>hour</SimpleValue>
+				<SimpleValue>klukkustund</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -10052,7 +10049,7 @@
 				<SimpleValue>KGM</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>kilogram</SimpleValue>
+				<SimpleValue>kílógramm</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -10196,7 +10193,7 @@
 				<SimpleValue>KMT</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>kilometre</SimpleValue>
+				<SimpleValue>kílómetri</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -11348,7 +11345,7 @@
 				<SimpleValue>LTR</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>litre</SimpleValue>
+				<SimpleValue>lítri</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -12365,7 +12362,7 @@
 				<SimpleValue>MIN</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>minute [unit of time]</SimpleValue>
+				<SimpleValue>mínúta (tímaeining)</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -12446,7 +12443,7 @@
 				<SimpleValue>MON</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>month</SimpleValue>
+				<SimpleValue>mánuður</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -12491,7 +12488,7 @@
 				<SimpleValue>MTK</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>square metre</SimpleValue>
+				<SimpleValue>fermetri</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -12500,7 +12497,7 @@
 				<SimpleValue>MTQ</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>cubic metre</SimpleValue>
+				<SimpleValue>rúmmetri</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -12509,7 +12506,7 @@
 				<SimpleValue>MTR</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>metre</SimpleValue>
+				<SimpleValue>metri</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -15285,7 +15282,7 @@
 				<SimpleValue>TNE</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>tonne (metric ton)</SimpleValue>
+				<SimpleValue>tonn</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -15474,7 +15471,7 @@
 				<SimpleValue>WEE</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>week</SimpleValue>
+				<SimpleValue>vika</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -17499,7 +17496,7 @@
 				<SimpleValue>PK</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Package</SimpleValue>
+				<SimpleValue>Pakki</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
