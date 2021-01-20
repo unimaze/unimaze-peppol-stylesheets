@@ -9,8 +9,8 @@
 		<DisplayName>Eindagi</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-003">
-		<TermName>Viðskiptareikningur</TermName>
-		<DisplayName>Viðskiptareikningur</DisplayName>
+		<TermName>Kostnaðarstöð</TermName>
+		<DisplayName>Kostnaðarstöð</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-004">
 		<!-- <TermName>Reglugerð nr. 505/2013.</TermName>

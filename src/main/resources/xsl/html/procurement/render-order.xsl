@@ -800,25 +800,24 @@
                                             </small>
                                         </p>
                                         <br/>
-                                        <p>
-                                            <small>
-                                                <b>
-                                                    <xsl:call-template name="UMZLabelName">
-                                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-003'"/>
-                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                    </xsl:call-template>
-                                                </b>&#8201;
-                                                <xsl:choose>
-                                                    <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification !=''">
+                                        <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification !=''">
+                                            <p>
+                                                <small>
+                                                    <b>
+                                                        <xsl:call-template name="UMZLabelName">
+                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-003'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                        </xsl:call-template>
+                                                    </b>&#8201;
+                                                    <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification !=''">
                                                         <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification" />
-                                                    </xsl:when>
-                                                    <xsl:otherwise>
-                                                        <xsl:apply-templates
-                                                            select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
-                                                    </xsl:otherwise>
-                                                </xsl:choose>
-                                            </small>
-                                        </p>
+                                                        <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                                                            &#8201;[<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />]
+                                                        </xsl:if>
+                                                    </xsl:if>
+                                                </small>
+                                            </p>
+                                        </xsl:if>
                                         <xsl:if test="cac:Delivery/cbc:ActualDeliveryDate != ''">
                                             <p>
                                                 <small>

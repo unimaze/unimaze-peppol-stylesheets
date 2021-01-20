@@ -879,7 +879,9 @@
                                         <br/>
                                         <xsl:call-template name="BuyerPostalAddress" />
                                         <br/>
-                                        <xsl:call-template name="BuyerPostalID" />
+                                        <span class="UBLID">
+                                            <xsl:call-template name="BuyerPartyID" />
+                                        </span>
                                     </div>
                                 </div>
                             </xsl:if>
@@ -898,7 +900,9 @@
                                         <br/>
                                         <xsl:call-template name="BuyerPostalAddress" />
                                         <br/>
-                                        <xsl:call-template name="BuyerPostalID" />
+                                        <span class="UBLID">
+                                            <xsl:call-template name="BuyerPartyID" />
+                                        </span>
                                     </div>
                                 </div>
                             </xsl:if>
@@ -1435,7 +1439,7 @@
                                     </p>
                                 </xsl:if>
                                 <br/>
-                                <xsl:if test="(cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification != '') or (cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID != '')">
+                                <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification != ''">
                                     <p>
                                         <small>
                                             <b>
@@ -1444,15 +1448,12 @@
                                                     <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                                 </xsl:call-template>
                                             </b>&#8201;
-                                            <xsl:choose>
-                                                <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification !=''">
-                                                    <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification" />
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <xsl:apply-templates
-                                                            select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
-                                                </xsl:otherwise>
-                                            </xsl:choose>
+                                            <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification !=''">
+                                                <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification" />
+                                                <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                                                    &#8201;[<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />]
+                                                </xsl:if>
+                                            </xsl:if>
                                         </small>
                                     </p>
                                 </xsl:if>
