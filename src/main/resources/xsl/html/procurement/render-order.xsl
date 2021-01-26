@@ -1275,15 +1275,17 @@
                         <xsl:if test="local-name(.)  = 'Order'">
                             <div class="row">
                                 <div class="invoicee_information col-33 margin-right-big">
-                                    <p class="green_title">
-                                        <xsl:call-template name="UMZLabelName">
-                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-041'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                        </xsl:call-template>
-                                    </p>
-                                    <div class="green_box_no_back">
-                                        <xsl:call-template name="BuyerAdditionalInfo" />
-                                    </div>
+                                    <xsl:if test="cac:AccountingCustomerParty != ''">
+                                        <p class="green_title">
+                                            <xsl:call-template name="UMZLabelName">
+                                                <xsl:with-param name="BT-ID" select="'UMZ-BT-041'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                            </xsl:call-template>
+                                        </p>
+                                        <div class="green_box_no_back">
+                                            <xsl:call-template name="BuyerAdditionalInfo" />
+                                        </div>
+                                    </xsl:if>
                                     <xsl:if test="cac:OriginatorCustomerParty != ''">
                                         <div>
                                             <p class="green_title">
