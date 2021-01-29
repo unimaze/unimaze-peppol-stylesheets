@@ -1860,7 +1860,7 @@
                     <small>
                         <b>
                             <xsl:call-template name="LabelName">
-                                <xsl:with-param name="BT-ID" select="'BT-27'" />
+                                <xsl:with-param name="BT-ID" select="'BT-44'" />
                                 <xsl:with-param name="Colon-Suffix" select="'true'" />
                             </xsl:call-template>
                         </b>
@@ -2348,7 +2348,7 @@
             <xsl:if test="cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName !=''">
                 <p>
                 <xsl:call-template name="LabelName">
-                    <xsl:with-param name="BT-ID" select="'BT-27'" />
+                    <xsl:with-param name="BT-ID" select="'BT-44'" />
                     <xsl:with-param name="Colon-Suffix" select="'true'" />
                 </xsl:call-template>
                 <xsl:apply-templates
