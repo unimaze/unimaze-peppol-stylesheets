@@ -552,7 +552,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<DisplayName/>
 	</BusinessTerm>
 	<BusinessTerm id="BT-77">
-		<TermName>Staður Afhendingarstaðs</TermName>
+		<TermName>Staður afhendingarstaðs</TermName>
 		<Definition>The common name of the city, town or village, where the deliver to address is located.</Definition>
 		<!-- <DisplayName>Staður</DisplayName> -->
 		<DisplayName/>

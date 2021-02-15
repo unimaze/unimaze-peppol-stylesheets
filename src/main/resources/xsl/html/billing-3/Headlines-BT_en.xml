@@ -271,7 +271,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller contact point</TermName>
 		<Definition>A contact point for a legal entity or person.</Definition>
 		<Description>Such as person name, contact identification, department or office identification. </Description>
-		<DisplayName>Contact Point</DisplayName>
+		<DisplayName>Contact point</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-42">
 		<TermName>Seller contact telephone number</TermName>
@@ -290,7 +290,7 @@ The Value added tax point date code is used if the Value added tax point date is
 	<BusinessTerm id="BT-44">
 		<TermName>Buyer name</TermName>
 		<Definition>The full name of the Buyer. </Definition>
-		
+		<DisplayName>Name</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-45">
 		<TermName>Buyer trading name</TermName>
@@ -610,7 +610,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<Definition>A group of business terms to specify credit transfer payments. </Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-84">
-		<TermName>Account No.</TermName>
+		<TermName>Account no.</TermName>
 		<Definition>A unique identifier of the financial payment account, at a payment service provider, to which payment should be made.</Definition>
 		<Description>Such as IBAN (in case of a SEPA payment) or a national account number.</Description>
 	</BusinessTerm>
@@ -715,7 +715,7 @@ If remittance information is to be mapped to the End To End Identification field
 	<BusinessTerm id="BG-21">
 		<TermName>Document level charges</TermName>
 		<Definition>A group of business terms providing information about charges and taxes other than VAT, applicable to the Invoice as a whole.</Definition>
-		<DisplayName>CHARGES</DisplayName>
+		<DisplayName>Charges</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-99">
 		<TermName>Document level charge amount</TermName>
@@ -899,7 +899,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Type</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-125-2">
-		<TermName>Attached document Filename</TermName>
+		<TermName>Attached document filename</TermName>
 		<Definition>The file name of the attached document</Definition>
 		<DisplayName>Filename</DisplayName>
 	</BusinessTerm>
@@ -952,7 +952,7 @@ If remittance information is to be mapped to the End To End Identification field
 		<DisplayName>Purchase order line reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-133">
-		<TermName>Invoice line Buyer accounting reference</TermName>
+		<TermName>Invoice line buyer accounting reference</TermName>
 		<Definition>A textual value that specifies where to book the relevant data into the Buyer's financial accounts.</Definition>
 		<Description>If required, this reference shall be provided by the Buyer to the Seller prior to the issuing of the Invoice.</Description>
 	</BusinessTerm>

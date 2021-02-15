@@ -583,6 +583,10 @@
                     .col-75 {
                         width: 75%;
                         }
+
+                    .col-100 {
+                        width: 100%;
+                        }
                         
                     .col-50.margin-right-big:only-child {
                         width: calc(50% - 1em)
@@ -627,28 +631,48 @@
             <body>
                 <div class="container">
                     <header class="main_header row">
-                        <div class="seller row col-50 margin-right-big">
-                            <!-- SELLER -->
-                            <div class="seller_info col-50 margin-right-small">
-                                <p class="title">
-                                    <xsl:call-template name="LabelName">
-                                        <xsl:with-param name="BT-ID" select="'BG-4'"/>
-                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                    </xsl:call-template>
-                                </p>
-                                <p>
-                                    <xsl:call-template name="Seller"/>
-                                   </p>
+                        <!-- SELLER -->
+                        <div class="seller col-50 margin-right-big">
+                            <div class="row">
+                                <div class="col-100">
+                                    <p class="title">
+                                        <xsl:call-template name="LabelName">
+                                            <xsl:with-param name="BT-ID" select="'BG-4'"/>
+                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                        </xsl:call-template>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="seller-contact col-50 margin-right-small">
-                                <xsl:choose>
-                                    <xsl:when test="cac:AccountingSupplierParty/cac:Party/cac:Contact !=''">
-                                        <br/>
+                            <div class="row">
+                                <div class="seller_info col-50 margin-right-small">
+                                    <p>
+                                        <xsl:call-template name="Seller"/>
+                                    </p>
+                                </div>
+                                <div class="seller-contact col-50 margin-right-small">
+                                    <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:Contact !=''">
                                         <small>
                                             <xsl:call-template name="SellerContact">
                                                 <xsl:with-param name="ShowLabel" select="'true'"/>
                                             </xsl:call-template>
                                         </small>
+                                    </xsl:if>
+                                    <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification != ''">
+                                        <br/>
+                                        <small>
+                                            <b>
+                                                <xsl:call-template name="UMZLabelName">
+                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-003'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b>&#8201;
+                                            <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification" />
+                                            <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                                                &#8201;[<xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />]
+                                            </xsl:if>
+                                        </small>
+                                    </xsl:if>
+                                    <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID !=''">
                                         <br/>
                                         <small>
                                             <b>
@@ -659,21 +683,11 @@
                                             </b>
                                             <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />
                                         </small>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <br/>
-                                        <span class="UBLElectronicMail">
-                                            <xsl:call-template name="LabelName">
-                                                <xsl:with-param name="BT-ID" select="'BT-31'"/>
-                                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                            </xsl:call-template>&#8201;
-                                            <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID"/>
-                                        </span>
-                                    </xsl:otherwise>
-                                </xsl:choose>
+                                    </xsl:if>
+                                </div>
                             </div>
-                            <!-- /SELLER -->
                         </div>
+                        <!-- /SELLER -->
                         <div class="document_details col-50 margin-right-big">
                             <br/>
                             <!-- DOCUMENT DETAILS -->
@@ -879,7 +893,9 @@
                                         <br/>
                                         <xsl:call-template name="BuyerPostalAddress" />
                                         <br/>
-                                        <xsl:call-template name="BuyerPostalID" />
+                                        <span class="UBLID">
+                                            <xsl:call-template name="BuyerPartyID" />
+                                        </span>
                                     </div>
                                 </div>
                             </xsl:if>
@@ -898,7 +914,9 @@
                                         <br/>
                                         <xsl:call-template name="BuyerPostalAddress" />
                                         <br/>
-                                        <xsl:call-template name="BuyerPostalID" />
+                                        <span class="UBLID">
+                                            <xsl:call-template name="BuyerPartyID" />
+                                        </span>
                                     </div>
                                 </div>
                             </xsl:if>
@@ -1435,7 +1453,8 @@
                                     </p>
                                 </xsl:if>
                                 <br/>
-                                <xsl:if test="(cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification != '') or (cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID != '')">
+                                <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification != ''">
+                                <!-- Inserting Cost center  -->
                                     <p>
                                         <small>
                                             <b>
@@ -1444,15 +1463,10 @@
                                                     <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                                 </xsl:call-template>
                                             </b>&#8201;
-                                            <xsl:choose>
-                                                <xsl:when test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification !=''">
-                                                    <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification" />
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <xsl:apply-templates
-                                                            select="cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
-                                                </xsl:otherwise>
-                                            </xsl:choose>
+                                            <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification" />
+                                            <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                                                &#8201;[<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />]
+                                            </xsl:if>
                                         </small>
                                     </p>
                                 </xsl:if>
@@ -1484,9 +1498,9 @@
                                             <xsl:apply-templates select="cac:PaymentTerms"/>
                                         </small>
                                     </p>
-                                    <br/>
                                 </xsl:if>
                                 <xsl:if test="cac:BillingReference !=''">
+                                    <br/>
                                     <xsl:for-each select="cac:BillingReference/cac:InvoiceDocumentReference">
                                         <p>
                                             <small>
@@ -1744,7 +1758,25 @@
                                     </p>
                                 </xsl:if>
                                 <br/>
+                                <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification != ''">
+                                <!-- Inserting Cost center  -->
+                                    <p>
+                                        <small>
+                                            <b>
+                                                <xsl:call-template name="UMZLabelName">
+                                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-003'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </b>&#8201;
+                                            <xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification" />
+                                            <xsl:if test="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID !='' ">
+                                                &#8201;[<xsl:apply-templates select="cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID" />]
+                                            </xsl:if>
+                                        </small>
+                                    </p>
+                                </xsl:if>
                                 <xsl:if test="cac:BillingReference !=''">
+                                    <br/>
                                     <xsl:for-each select="cac:BillingReference/cac:InvoiceDocumentReference">
                                         <p>
                                             <small>

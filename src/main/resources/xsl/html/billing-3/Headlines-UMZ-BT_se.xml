@@ -9,8 +9,8 @@
 		<DisplayName>Settlement period date</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-003">
-		<TermName>Trade account</TermName>
-		<DisplayName>Trade account</DisplayName>
+		<TermName>Cost center</TermName>
+		<DisplayName>Cost center</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-004">
 		<TermName></TermName>
@@ -140,8 +140,8 @@
 		<DisplayName>Customer reference</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-030">
-		<TermName>Accounting Cost</TermName>
-		<DisplayName>Accounting Cost</DisplayName>
+		<TermName>Accounting cost</TermName>
+		<DisplayName>Accounting cost</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-031">
 		<TermName>Final buyer</TermName>
