@@ -2502,17 +2502,8 @@
                                         </p>
                                         <xsl:if test="cac:AdditionalDocumentReference !=''">
                                             <div class="blue_box_no_back">
-                                                <xsl:choose>
-                                                    <xsl:when test="not(cac:AdditionalDocumentReference/cbc:DocumentTypeCode != '')">
-                                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI')]" mode="Supporting"/>
-                                                    </xsl:when>
-                                                    <xsl:when test="(not(cac:AdditionalDocumentReference/cbc:DocumentTypeCode = '130') and not(cac:AdditionalDocumentReference/cbc:DocumentTypeCode = '71'))">
-                                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI')]" mode="Supporting"/>
-                                                    </xsl:when>
-                                                    <xsl:otherwise>
-                                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
-                                                    </xsl:otherwise>
-                                                </xsl:choose>
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI') and not(cbc:DocumentTypeCode = '130') and not(cbc:DocumentTypeCode = '71')]" mode="Supporting"/>
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
                                             </div>
                                         </xsl:if>
                                     </div>
@@ -2541,17 +2532,8 @@
                                         </p>
                                         <xsl:if test="cac:AdditionalDocumentReference !=''">
                                             <div class="red_box_no_back">
-                                                <xsl:choose>
-                                                    <xsl:when test="not(cac:AdditionalDocumentReference/cbc:DocumentTypeCode != '')">
-                                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI')]" mode="Supporting"/>
-                                                    </xsl:when>
-                                                    <xsl:when test="(not(cac:AdditionalDocumentReference/cbc:DocumentTypeCode = '130') and not(cac:AdditionalDocumentReference/cbc:DocumentTypeCode = '71') and not(cac:AdditionalDocumentReference/cbc:DocumentTypeCode = '50'))">
-                                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI')]" mode="Supporting"/>
-                                                    </xsl:when>
-                                                    <xsl:otherwise>
-                                                        <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
-                                                    </xsl:otherwise>
-                                                </xsl:choose>
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI') and not(cbc:DocumentTypeCode = '130') and not(cbc:DocumentTypeCode = '71') and not(cbc:DocumentTypeCode = '50')]" mode="Supporting"/>
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
                                             </div>
                                         </xsl:if>
                                     </div>

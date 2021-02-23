@@ -4010,11 +4010,11 @@
             <p>
                 <small>
                     -&#8201;
-                    <xsl:call-template name="LabelName">
-                        <xsl:with-param name="BT-ID" select="'BT-123'" />
+                    <!-- <xsl:call-template name="LabelName">
+                        <xsl:with-param name="BT-ID" select="'BT-125-1'" />
                         <xsl:with-param name="Colon-Suffix" select="'true'" />
-                    </xsl:call-template>
-                    <xsl:apply-templates select="cbc:DocumentType" />
+                    </xsl:call-template> -->
+                    <xsl:apply-templates select="cbc:DocumentType" /> <!-- Document type is not part of PEPPOL BIS3 -->
                     <xsl:if test="cbc:DocumentTypeCode !=''">
                         &#8201;[<xsl:apply-templates select="cbc:DocumentTypeCode" />]
                     </xsl:if>
@@ -4024,6 +4024,10 @@
         <xsl:if test="cbc:DocumentDescription">
             <small>
                 -&#8201;
+                <xsl:call-template name="LabelName">
+                        <xsl:with-param name="BT-ID" select="'BT-123'" />
+                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                    </xsl:call-template>
                 <xsl:apply-templates select="cbc:DocumentDescription" />
             </small>
         </xsl:if>
