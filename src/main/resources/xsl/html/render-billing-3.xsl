@@ -2500,14 +2500,12 @@
                                                 <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                             </xsl:call-template>
                                         </p>
-                                        <div class="blue_box_no_back">
-                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
-                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[((cbc:DocumentTypeCode != '130') and (cbc:DocumentTypeCode != '71')) or (not(cbc:DocumentTypeCode) and not(cbc:DocumentDescription))]" mode="Supporting"/>
-                                            </xsl:if>
-                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
+                                        <xsl:if test="cac:AdditionalDocumentReference !=''">
+                                            <div class="blue_box_no_back">
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI') and not(cbc:DocumentTypeCode = '130') and not(cbc:DocumentTypeCode = '71')]" mode="Supporting"/>
                                                 <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
-                                            </xsl:if>
-                                        </div>
+                                            </div>
+                                        </xsl:if>
                                     </div>
                                 </xsl:if>
                                 <!-- /Additional Supporting Documents -->
@@ -2532,14 +2530,12 @@
                                                 <xsl:with-param name="Colon-Suffix" select="'false'"/>
                                             </xsl:call-template>
                                         </p>
-                                        <div class="red_box_no_back">
-                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
-                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[((cbc:DocumentTypeCode != '130') and (cbc:DocumentTypeCode != '50') and (cbc:DocumentTypeCode != '71')) or (not(cbc:DocumentTypeCode) and not(cbc:DocumentDescription))]" mode="Supporting"/>
-                                            </xsl:if>
-                                            <xsl:if test="cac:AdditionalDocumentReference !=''">
+                                        <xsl:if test="cac:AdditionalDocumentReference !=''">
+                                            <div class="red_box_no_back">
+                                                <xsl:apply-templates select="cac:AdditionalDocumentReference[not(cbc:DocumentDescription = 'EINDAGI') and not(cbc:DocumentTypeCode = '130') and not(cbc:DocumentTypeCode = '71') and not(cbc:DocumentTypeCode = '50')]" mode="Supporting"/>
                                                 <xsl:apply-templates select="cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']" mode="InvoicedObject"/>
-                                            </xsl:if>
-                                        </div>
+                                            </div>
+                                        </xsl:if>
                                     </div>
                                 </xsl:if>
                                 <!-- /Additional Supporting Documents -->
