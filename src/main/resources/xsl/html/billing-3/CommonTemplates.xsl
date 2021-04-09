@@ -463,12 +463,13 @@
     <!--Function to format date to number for payment means box-->
     <xsl:template name="formatDateToNumber">
         <xsl:param name="date" />
-        <xsl:variable name="year" select="substring-before($date, '-')" />
+        <xsl:variable name="wholeYear" select="substring-before($date, '-')" />
+        <xsl:variable name="strippedYear" select="substring($wholeYear, 3, 2)" />
         <xsl:variable name="month" select="substring-before(substring-after($date, '-'), '-')" />
         <xsl:variable name="day" select="substring-after(substring-after($date, '-'), '-')" />
         <xsl:choose>
-            <xsl:when test="($year !='') or ($month !='') or ($day !='')">
-                <xsl:value-of select="concat($day, $month, $year)" />
+            <xsl:when test="($strippedYear !='') or ($month !='') or ($day !='')">
+                <xsl:value-of select="concat($day, $month, $strippedYear)" />
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="$date" />
