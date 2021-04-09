@@ -68,6 +68,14 @@
 		<TermName>Originator document reference</TermName>
 		<DisplayName>Originator document reference</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-076">
+		<TermName>Financial Account Id.</TermName>
+		<DisplayName>Financial Account Id.</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-077">
+		<TermName>Cat.</TermName>
+		<DisplayName>Cat.</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">

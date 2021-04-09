@@ -70,6 +70,14 @@
 		<TermName>Upprunaskjal</TermName>
 		<DisplayName>Upprunaskjal</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-076">
+		<TermName>Kröfunr.</TermName>
+		<DisplayName>Kröfunr.</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-077">
+		<TermName>Fl.</TermName>
+		<DisplayName>Fl.</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">

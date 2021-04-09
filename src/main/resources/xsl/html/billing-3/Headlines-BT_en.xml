@@ -182,7 +182,7 @@ The Value added tax point date code is used if the Value added tax point date is
 		<TermName>Seller legal registration identifier</TermName>
 		<Definition>An identifier issued by an official registrar that identifies the Seller as a legal entity or person.</Definition>
 		<Description>If no identification scheme is specified, it should be known by Buyer and Seller.</Description>
-		<DisplayName>Id</DisplayName>
+		<DisplayName>Id.</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="BT-30-1">
 		<TermName>Scheme identifier</TermName>
