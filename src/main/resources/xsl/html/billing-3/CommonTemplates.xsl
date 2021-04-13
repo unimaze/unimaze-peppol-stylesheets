@@ -460,6 +460,22 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <!--Function to format date to number for payment means box-->
+    <xsl:template name="formatDateToNumber">
+        <xsl:param name="date" />
+        <xsl:variable name="wholeYear" select="substring-before($date, '-')" />
+        <xsl:variable name="strippedYear" select="substring($wholeYear, 3, 2)" />
+        <xsl:variable name="month" select="substring-before(substring-after($date, '-'), '-')" />
+        <xsl:variable name="day" select="substring-after(substring-after($date, '-'), '-')" />
+        <xsl:choose>
+            <xsl:when test="($strippedYear !='') or ($month !='') or ($day !='')">
+                <xsl:value-of select="concat($day, $month, $strippedYear)" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$date" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
     <!--Function to format time-->
     <xsl:template name="formatTime">
         <xsl:param name="time" />
@@ -3671,6 +3687,161 @@
         </div>
     </xsl:template>
     <xsl:template name="cac:PaymentMeans">
+        <xsl:if test="((../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID) or (../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID !=''))">
+            <div class="payment_table_cell">
+                <div class="payment_table_header_title">
+                    <b>
+                        <small>
+                            <xsl:call-template name="LabelName">
+                                <xsl:with-param name="BT-ID" select="'BT-30'"/>
+                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                            </xsl:call-template>
+                        </small>
+                    </b>
+                </div>
+                <div class="payment_table_body_data">
+                    <small>
+                        <xsl:choose>
+                            <xsl:when test="../cac:PayeeParty !=''">
+                                <xsl:choose>
+                                    <xsl:when test="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !=''">
+                                        <xsl:value-of select="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:choose>
+                                    <xsl:when test="../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID !=''">
+                                        <xsl:value-of select="../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:choose>
+                                            <xsl:when test="../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID !=''">
+                                                <xsl:value-of select="../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID" />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="../cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </small>
+                </div>
+            </div>
+        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS' ">
+                <xsl:if test="cac:PayeeFinancialAccount[1]/cbc:ID !='' ">
+                    <div class="payment_table_cell">
+                        <div class="payment_table_header_title">
+                            <b>
+                                <small>
+                                    <xsl:call-template name="UMZLabelName">
+                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-076'" />
+                                        <xsl:with-param name="Colon-Suffix" select="'false'" />
+                                    </xsl:call-template>
+                                </small>
+                            </b>
+                        </div>
+                        <div class="payment_table_body_data">
+                            <small>
+                                <xsl:variable name="paymentMeansFinancialAccountId" select="substring(cac:PayeeFinancialAccount[1]/cbc:ID, 7, 6)" />
+                                <xsl:value-of select="$paymentMeansFinancialAccountId" />
+                            </small>
+                        </div>
+                    </div>
+                </xsl:if>
+                <div class="payment_table_cell">
+                    <div class="payment_table_header_title">
+                        <b>
+                            <small>
+                                <xsl:call-template name="UMZLabelName">
+                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-077'" />
+                                    <xsl:with-param name="Colon-Suffix" select="'false'" />
+                                </xsl:call-template>
+                            </small>
+                        </b>
+                    </div>
+                    <div class="payment_table_body_data">
+                        <small>03</small>
+                    </div>
+                </div>
+                <xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID !='' or cac:PayeeFinancialAccount[1]/cbc:ID !='' ">
+                    <div class="payment_table_cell">
+                        <div class="payment_table_header_title">
+                            <b>
+                                <small>
+                                    <xsl:call-template name="LabelName">
+                                        <xsl:with-param name="BT-ID" select="'BT-86'"/>
+                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                    </xsl:call-template>
+                                </small>
+                            </b>
+                        </div>
+                        <div class="payment_table_body_data">
+                            <small>
+                                <xsl:choose>
+                                    <xsl:when test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID !='' ">
+                                        <xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"/>&#8201;
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:variable name="paymentMeansBankNumber" select="substring(cac:PayeeFinancialAccount[1]/cbc:ID, 1, 4)" />
+                                        <xsl:value-of select="$paymentMeansBankNumber" />
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </small>
+                        </div>
+                    </div>
+                </xsl:if>
+                <xsl:if test="cac:PayeeFinancialAccount[1]/cbc:ID !='' ">
+                    <div class="payment_table_cell">
+                        <div class="payment_table_header_title">
+                            <b>
+                                <small>
+                                    <xsl:call-template name="UMZLabelName">
+                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-010'" />
+                                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                                    </xsl:call-template>
+                                </small>
+                            </b>
+                        </div>
+                        <div class="payment_table_body_data">
+                            <small>
+                                <xsl:variable name="paymentMeansAccountType" select="substring(cac:PayeeFinancialAccount[1]/cbc:ID, 5, 2)" />
+                                <xsl:value-of select="$paymentMeansAccountType" />
+                            </small>
+                        </div>
+                    </div>
+                </xsl:if>                
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:if test="cac:PayeeFinancialAccount/cbc:ID !=''">
+                    <div class="payment_table_cell">
+                        <div class="payment_table_header_title">
+                            <small>
+                                <b>
+                                    <xsl:call-template name="LabelName">
+                                        <xsl:with-param name="BT-ID" select="'BT-84'"/>
+                                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                    </xsl:call-template>
+                                </b>
+                            </small>
+                        </div>
+                        <div class="payment_table_body_data">
+                            <small>
+                                <xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''"></xsl:if>
+                                <xsl:apply-templates select="cac:PayeeFinancialAccount[1]/cbc:ID"/>&#8201;
+                            </small>
+                        </div>
+                    </div>
+                </xsl:if>
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''">
             <div class="payment_table_cell">
                 <div class="payment_table_header_title">
@@ -3686,25 +3857,6 @@
                 <div class="payment_table_body_data">
                     <small>
                         <xsl:apply-templates select="cac:CardAccount/cbc:NetworkID"/>
-                    </small>
-                </div>
-            </div>
-        </xsl:if>
-        <xsl:if test="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID !='' ">
-            <div class="payment_table_cell">
-                <div class="payment_table_header_title">
-                    <b>
-                        <small>
-                            <xsl:call-template name="LabelName">
-                                <xsl:with-param name="BT-ID" select="'BT-86'"/>
-                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                            </xsl:call-template>
-                        </small>
-                    </b>
-                </div>
-                <div class="payment_table_body_data">
-                    <small>
-                        <xsl:apply-templates select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"/>&#8201;
                     </small>
                 </div>
             </div>
@@ -3775,26 +3927,6 @@
                     <small>
 					***
                         <xsl:apply-templates select="cac:CardAccount/cbc:PrimaryAccountNumberID"/>&#8201;
-                    </small>
-                </div>
-            </div>
-        </xsl:if>
-        <xsl:if test="cac:PayeeFinancialAccount/cbc:ID !=''">
-            <div class="payment_table_cell">
-                <div class="payment_table_header_title">
-                    <small>
-                        <b>
-                            <xsl:call-template name="LabelName">
-                                <xsl:with-param name="BT-ID" select="'BT-84'"/>
-                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                            </xsl:call-template>
-                        </b>
-                    </small>
-                </div>
-                <div class="payment_table_body_data">
-                    <small>
-                        <xsl:if test="cac:CardAccount/cbc:PrimaryAccountNumberID !='' or cac:CardAccount/cbc:NetworkID !=''"></xsl:if>
-                        <xsl:apply-templates select="cac:PayeeFinancialAccount[1]/cbc:ID"/>&#8201;
                     </small>
                 </div>
             </div>
@@ -3906,52 +4038,37 @@
                 </div>
             </div>
         </xsl:if>
-        <xsl:if test="((../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID) or (../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID !='') or (../cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID !=''))">
-            <div class="payment_table_cell">
-                <div class="payment_table_header_title">
-                    <b>
+        <xsl:if test="../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS' ">
+            <xsl:if test="cbc:PaymentDueDate !='' or ../cbc:DueDate !=''">
+                <div class="payment_table_cell">
+                    <div class="payment_table_header_title">
+                        <b>
+                            <small>
+                                <xsl:call-template name="LabelName">
+                                    <xsl:with-param name="BT-ID" select="'BT-9'"/>
+                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                </xsl:call-template>
+                            </small>
+                        </b>
+                    </div>
+                    <div class="payment_table_body_data">
                         <small>
-                            <xsl:call-template name="LabelName">
-                                <xsl:with-param name="BT-ID" select="'BT-30'"/>
-                                <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                            </xsl:call-template>
+                            <xsl:choose>
+                                <xsl:when test="cbc:PaymentDueDate !=''">
+                                    <xsl:call-template name="formatDateToNumber">
+                                        <xsl:with-param name="date" select="cbc:PaymentDueDate" />
+                                    </xsl:call-template>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:call-template name="formatDateToNumber">
+                                        <xsl:with-param name="date" select="../cbc:DueDate" />
+                                    </xsl:call-template>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </small>
-                    </b>
+                    </div>
                 </div>
-                <div class="payment_table_body_data">
-                    <small>
-                        <xsl:choose>
-                            <xsl:when test="../cac:PayeeParty !=''">
-                                <xsl:choose>
-                                    <xsl:when test="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID !=''">
-                                        <xsl:value-of select="../cac:PayeeParty/cac:Party/cac:PartyIdentification/cbc:ID" />
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="../cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID" />
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:choose>
-                                    <xsl:when test="../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID !=''">
-                                        <xsl:value-of select="../cac:AccountingSupplierParty/cac:Party/cbc:EndpointID" />
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:choose>
-                                            <xsl:when test="../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID !=''">
-                                                <xsl:value-of select="../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID" />
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <xsl:value-of select="../cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID" />
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </small>
-                </div>
-            </div>
+            </xsl:if>
         </xsl:if>
     </xsl:template>
     <!--PaymentMeans template until here-->
