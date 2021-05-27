@@ -27,7 +27,7 @@
 				<SimpleValue>1</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Ótilgreint</SimpleValue>
+				<SimpleValue>Ekki tilgreint</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -99,7 +99,17 @@
 				<SimpleValue>9</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Krafa (greiðsluseðill)</SimpleValue>
+				<!-- <SimpleValue>Krafa (greiðsluseðill)</SimpleValue> -->
+				<SimpleValue>Innlent uppgjör</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>9_issuerIS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Krafa</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -108,7 +118,7 @@
 				<SimpleValue>10</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Staðgreitt</SimpleValue>
+				<SimpleValue>Í reiðufé</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -531,7 +541,7 @@
 				<SimpleValue>57</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Samkvæmt samningi</SimpleValue>
+				<SimpleValue>Skv. samningi</SimpleValue>
 			</Value>
 		</Row>
 		<Row>

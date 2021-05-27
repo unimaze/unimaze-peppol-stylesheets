@@ -69,8 +69,8 @@
 		<DisplayName>Originator document ref</DisplayName>
 	</BusinessTerm>
 	<BusinessTerm id="UMZ-BT-076">
-		<TermName>Financial Account Id.</TermName>
-		<DisplayName>Financial Account Id.</DisplayName>
+		<TermName>Claim no.</TermName>
+		<DisplayName>Claim no.</DisplayName>
 	</BusinessTerm>	
 	<BusinessTerm id="UMZ-BT-077">
 		<TermName>Cat.</TermName>

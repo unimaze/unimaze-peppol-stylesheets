@@ -242,10 +242,6 @@
                         border-top: none;
                     }
 
-                    .payment_table .payment_table_header {
-                        margin-bottom: 0.5em;
-                    }
-
 					.payment_table .red_box_no_back .payment_table_header {
                         border-top: 1px solid #CDA1B6;
 					}
@@ -262,7 +258,7 @@
                         margin-bottom: 1em;
                     }
 
-                    .transfer {
+                    .payment_means_code {
                         padding: 0.5em;
                     }
 
@@ -270,26 +266,30 @@
                         padding: 0.5em;
                     }
 
-					.payment_table_header .transfer {
+					.payment_table_header .payment_means_code {
                         border-bottom: 1px solid #A6C3D1;
                         border-left: 1px solid #A6C3D1;
                         border-top: none;
 					}
 
-					.blue_box_no_back .payment_table_header .transfer {
+					.blue_box_no_back .payment_table_header .payment_means_code {
                         border-color: #A6C3D1;
 					}
 
-					.red_box_no_back .payment_table_header .transfer {
+					.red_box_no_back .payment_table_header .payment_means_code {
                         border-color: #CDA1B6;
 					}
                     
+					<!-- .payment_table .payment_table_body {
+                        margin-top: 0.5em;
+					} -->
 
 					.payment_table .payment_table_body .table_body {
                         display: flex;
                         justify-content: space-between;
                         background: #fff;
                         border-bottom: none;
+                        margin-top: 0.5em;
 					}
 
 					.payment_table .payment_table_body .payment_table_cell {
@@ -1333,10 +1333,98 @@
                     <xsl:if test="local-name(.) = 'Invoice'">
                         <br/>
                         <div class="row">
-                            <xsl:if test="cac:PaymentMeans != ''">
-                                <div class="payment_table col-50 margin-right-big">
-                                    <div class="blue_box_no_back">
-                                        <xsl:for-each select="cac:PaymentMeans">
+                            <xsl:choose>
+                                <xsl:when test="cac:PaymentMeans != ''">
+                                    <div class="payment_table col-50 margin-right-big">
+                                        <div class="blue_box_no_back">
+                                            <xsl:for-each select="cac:PaymentMeans">
+                                                <div class="payment_table_header row">
+                                                    <div class="payment col-50" data-name="payment">
+                                                        <xsl:if test="position()=1">
+                                                            <p class="text_center">
+                                                                <b>
+                                                                    <xsl:call-template name="LabelName">
+                                                                        <xsl:with-param name="BT-ID" select="'BG-16'"/>
+                                                                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                    </xsl:call-template>
+                                                                </b>
+                                                            </p>
+                                                        </xsl:if>
+                                                    </div>
+                                                    <div class="payment_means_code col-50" data-name="payment_means_code">
+                                                        <p>
+                                                            [<xsl:apply-templates select="cbc:PaymentMeansCode"/>]
+                                                            <xsl:choose>
+                                                                <xsl:when test="(../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS') and (cbc:PaymentMeansCode = 9)">
+                                                                <xsl:variable name="codeNineIssuerIS" select="'9_issuerIS'" />
+                                                                    <xsl:call-template name="PaymentMeansCode">
+                                                                        <xsl:with-param name="PaymentCode" select="$codeNineIssuerIS"/>
+                                                                    </xsl:call-template>
+                                                                </xsl:when>
+                                                                <xsl:otherwise>
+                                                                    <xsl:if test="cbc:PaymentMeansCode != ''">
+                                                                        <xsl:call-template name="PaymentMeansCode">
+                                                                            <xsl:with-param name="PaymentCode" select="cbc:PaymentMeansCode"/>
+                                                                        </xsl:call-template>
+                                                                    </xsl:if>
+                                                                </xsl:otherwise>
+                                                            </xsl:choose>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="payment_table_body">
+                                                    <xsl:if test="cac:PayeeFinancialAccount !=''">
+                                                        <div class="table_body">
+                                                            <xsl:if test="cac:PayeeFinancialAccount !=''">
+                                                                <xsl:call-template name="cac:PaymentMeans"/>
+                                                            </xsl:if>
+                                                            <xsl:if test="not(cac:PaymentMandate) and not(cac:CardAccount) and not(cac:PayeeFinancialAccount)">
+                                                                <small>
+                                                                    <xsl:call-template name="cac:PaymentMeans"/>
+                                                                </small>
+                                                            </xsl:if>
+                                                        </div>
+                                                    </xsl:if>
+                                                    <xsl:if test="cac:CardAccount !=''">
+                                                        <div class="table_body">
+                                                            <xsl:if test="cac:CardAccount !=''">
+                                                                <xsl:call-template name="cac:PaymentMeans"/>
+                                                            </xsl:if>
+                                                        </div>
+                                                    </xsl:if>
+                                                    <xsl:if test="cac:PaymentMandate !=''">
+                                                        <div class="table_body">
+                                                            <xsl:if test="cac:CardAccount !=''">
+                                                                <xsl:call-template name="cac:PaymentMeans"/>
+                                                            </xsl:if>
+                                                        </div>
+                                                    </xsl:if>
+                                                </div>
+                                            </xsl:for-each>
+                                            <xsl:if test="not(cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) or (cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode !='IS')">
+                                                <xsl:choose>
+                                                    <xsl:when test="cbc:PaymentMeansCode/@name != ''">
+                                                        <p class="payment_means_name">
+                                                            <small>
+                                                                <xsl:apply-templates select="cbc:PaymentMeansCode/@name"/>
+                                                            </small>
+                                                        </p>
+                                                    </xsl:when>
+                                                    <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode/@name != ''">
+                                                        <p class="payment_means_name">
+                                                            <small>
+                                                                <xsl:apply-templates select="cac:PaymentMeans/cbc:PaymentMeansCode/@name"/>
+                                                            </small>
+                                                        </p>
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                            </xsl:if>
+                                        </div>
+                                    </div>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <div class="payment_table col-50 margin-right-big">
+                                        <div class="blue_box_no_back">
                                             <div class="payment_table_header row">
                                                 <div class="payment col-50" data-name="payment">
                                                     <xsl:if test="position()=1">
@@ -1350,74 +1438,19 @@
                                                         </p>
                                                     </xsl:if>
                                                 </div>
-                                                <div class="transfer col-50" data-name="transfer">
+                                                <div class="payment_means_code col-50" data-name="payment_means_code">
                                                     <p>
-                                                        [<xsl:apply-templates select="cbc:PaymentMeansCode"/>]
-                                                        <xsl:choose>
-                                                            <xsl:when test="cbc:PaymentMeansCode != ''">
-                                                                <xsl:call-template name="PaymentMeansCode">
-                                                                    <xsl:with-param name="PaymentCode" select="cbc:PaymentMeansCode"/>
-                                                                </xsl:call-template>
-                                                            </xsl:when>
-                                                            <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode != ''">
-                                                                <xsl:call-template name="PaymentMeansCode">
-                                                                    <xsl:with-param name="PaymentCode" select="cac:PaymentMeans/cbc:PaymentMeansCode"/>
-                                                                </xsl:call-template>
-                                                            </xsl:when>
-                                                        </xsl:choose>
+                                                        [1]
+                                                        <xsl:call-template name="PaymentMeansCode">
+                                                            <xsl:with-param name="PaymentCode" select="1"/>
+                                                        </xsl:call-template>
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="payment_table_body">
-                                                <xsl:if test="cac:PayeeFinancialAccount !=''">
-                                                    <div class="table_body">
-                                                        <xsl:if test="cac:PayeeFinancialAccount !=''">
-                                                            <xsl:call-template name="cac:PaymentMeans"/>
-                                                        </xsl:if>
-                                                        <xsl:if test="not(cac:PaymentMandate) and not(cac:CardAccount) and not(cac:PayeeFinancialAccount)">
-                                                            <small>
-                                                                <xsl:call-template name="cac:PaymentMeans"/>
-                                                            </small>
-                                                        </xsl:if>
-                                                    </div>
-                                                </xsl:if>
-                                                <xsl:if test="cac:CardAccount !=''">
-                                                    <div class="table_body">
-                                                        <xsl:if test="cac:CardAccount !=''">
-                                                            <xsl:call-template name="cac:PaymentMeans"/>
-                                                        </xsl:if>
-                                                    </div>
-                                                </xsl:if>
-                                                <xsl:if test="cac:PaymentMandate !=''">
-                                                    <div class="table_body">
-                                                        <xsl:if test="cac:CardAccount !=''">
-                                                            <xsl:call-template name="cac:PaymentMeans"/>
-                                                        </xsl:if>
-                                                    </div>
-                                                </xsl:if>
-                                            </div>
-                                        </xsl:for-each>
-                                        <xsl:if test="not(cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) or cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode !='IS'">
-                                            <xsl:choose>
-                                                <xsl:when test="cbc:PaymentMeansCode/@name != ''">
-                                                    <p class="payment_means_name">
-                                                        <small>
-                                                            <xsl:apply-templates select="cbc:PaymentMeansCode/@name"/>
-                                                        </small>
-                                                    </p>
-                                                </xsl:when>
-                                                <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode/@name != ''">
-                                                    <p class="payment_means_name">
-                                                        <small>
-                                                            <xsl:apply-templates select="cac:PaymentMeans/cbc:PaymentMeansCode/@name"/>
-                                                        </small>
-                                                    </p>
-                                                </xsl:when>
-                                            </xsl:choose>
-                                        </xsl:if>
+                                        </div>
                                     </div>
-                                </div>
-                            </xsl:if>
+                                </xsl:otherwise>
+                            </xsl:choose>
                             <div class="blue_box_no_back description col-50 margin-right-big">
                                 <p>
                                     <small>
@@ -1641,87 +1674,120 @@
                         </xsl:if>
                         <div class="row">
                             <div class="payment_table col-50 margin-right-big">
-                                <xsl:if test="cac:PaymentMeans != ''">
-                                    <div class="red_box_no_back">
-                                        <xsl:for-each select="cac:PaymentMeans">
-                                            <div class="payment_table_header">
-                                                <div class="payment" data-name="payment">
-                                                    <xsl:if test="position()=1">
-                                                        <p class="text_center">
-                                                            <b>
-                                                                <xsl:call-template name="LabelName">
-                                                                    <xsl:with-param name="BT-ID" select="'BG-16'"/>
-                                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                                </xsl:call-template>
-                                                            </b>
+                                <xsl:choose>
+                                    <xsl:when test="cac:PaymentMeans != ''">
+                                        <div class="red_box_no_back">
+                                            <xsl:for-each select="cac:PaymentMeans">
+                                                <div class="payment_table_header">
+                                                    <div class="payment" data-name="payment">
+                                                        <xsl:if test="position()=1">
+                                                            <p class="text_center">
+                                                                <b>
+                                                                    <xsl:call-template name="LabelName">
+                                                                        <xsl:with-param name="BT-ID" select="'BG-16'"/>
+                                                                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                    </xsl:call-template>
+                                                                </b>
+                                                            </p>
+                                                        </xsl:if>
+                                                    </div>
+                                                    <div class="payment_means_code" data-name="payment_means_code">
+                                                        <p>
+                                                            [<xsl:apply-templates select="cbc:PaymentMeansCode"/>]
+                                                            <xsl:choose>
+                                                                <xsl:when test="(../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS') and (cbc:PaymentMeansCode = 9)">
+                                                                <xsl:variable name="codeNineIssuerIS" select="'9_issuerIS'" />
+                                                                    <xsl:call-template name="PaymentMeansCode">
+                                                                        <xsl:with-param name="PaymentCode" select="$codeNineIssuerIS"/>
+                                                                    </xsl:call-template>
+                                                                </xsl:when>
+                                                                <xsl:otherwise>
+                                                                    <xsl:if test="cbc:PaymentMeansCode != ''">
+                                                                        <xsl:call-template name="PaymentMeansCode">
+                                                                            <xsl:with-param name="PaymentCode" select="cbc:PaymentMeansCode"/>
+                                                                        </xsl:call-template>
+                                                                    </xsl:if>
+                                                                </xsl:otherwise>
+                                                            </xsl:choose>
                                                         </p>
+                                                    </div>
+                                                </div>
+                                                <div class="payment_table_body">
+                                                    <xsl:if test="cac:PayeeFinancialAccount !=''">
+                                                        <div class="table_body">
+                                                            <xsl:if test="cac:PayeeFinancialAccount !=''">
+                                                                <xsl:call-template name="cac:PaymentMeans"/>
+                                                            </xsl:if>
+                                                            <xsl:if test="not(cac:PaymentMandate) and not(cac:CardAccount) and not(cac:PayeeFinancialAccount)">
+                                                                <small>
+                                                                    <xsl:call-template name="cac:PaymentMeans"/>
+                                                                </small>
+                                                            </xsl:if>
+                                                        </div>
+                                                    </xsl:if>
+                                                    <xsl:if test="cac:CardAccount !=''">
+                                                        <div class="table_body">
+                                                            <xsl:if test="cac:CardAccount !=''">
+                                                                <xsl:call-template name="cac:PaymentMeans"/>
+                                                            </xsl:if>
+                                                        </div>
+                                                    </xsl:if>
+                                                    <xsl:if test="cac:PaymentMandate !=''">
+                                                        <div class="table_body">
+                                                            <xsl:if test="cac:CardAccount !=''">
+                                                                <xsl:call-template name="cac:PaymentMeans"/>
+                                                            </xsl:if>
+                                                        </div>
                                                     </xsl:if>
                                                 </div>
-                                                <div class="transfer" data-name="transfer">
-                                                    <p>
-                                                        [<xsl:apply-templates select="cbc:PaymentMeansCode"/>]
-                                                        <xsl:choose>
-                                                            <xsl:when test="cbc:PaymentMeansCode != ''">
-                                                                <xsl:call-template name="PaymentMeansCode">
-                                                                    <xsl:with-param name="PaymentCode" select="cbc:PaymentMeansCode"/>
-                                                                </xsl:call-template>
-                                                            </xsl:when>
-                                                            <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode != ''">
-                                                                <xsl:call-template name="PaymentMeansCode">
-                                                                    <xsl:with-param name="PaymentCode" select="cac:PaymentMeans/cbc:PaymentMeansCode"/>
-                                                                </xsl:call-template>
-                                                            </xsl:when>
-                                                        </xsl:choose>
+                                            </xsl:for-each>
+                                            <xsl:choose>
+                                                <xsl:when test="cbc:PaymentMeansCode/@name != ''">
+                                                    <p class="payment_means_name">
+                                                        <small>
+                                                            <xsl:apply-templates select="cbc:PaymentMeansCode/@name"/>
+                                                        </small>
                                                     </p>
+                                                </xsl:when>
+                                                <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode/@name != ''">
+                                                    <p class="payment_means_name">
+                                                        <small>
+                                                            <xsl:apply-templates select="cac:PaymentMeans/cbc:PaymentMeansCode/@name"/>
+                                                        </small>
+                                                    </p>
+                                                </xsl:when>
+                                            </xsl:choose>
+                                        </div>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <div class="payment_table col-50 margin-right-big">
+                                            <div class="red_box_no_back">
+                                                <div class="payment_table_header row">
+                                                    <div class="payment col-50" data-name="payment">
+                                                        <xsl:if test="position()=1">
+                                                            <p class="text_center">
+                                                                <b>
+                                                                    <xsl:call-template name="LabelName">
+                                                                        <xsl:with-param name="BT-ID" select="'BG-16'"/>
+                                                                        <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                                    </xsl:call-template>
+                                                                </b>
+                                                            </p>
+                                                        </xsl:if>
+                                                    </div>
+                                                    <div class="payment_means_code col-50" data-name="payment_means_code">
+                                                        <p>
+                                                            [1]
+                                                            <xsl:call-template name="PaymentMeansCode">
+                                                                <xsl:with-param name="PaymentCode" select="1"/>
+                                                            </xsl:call-template>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="payment_table_body">
-                                                <xsl:if test="cac:PayeeFinancialAccount !=''">
-                                                    <div class="table_body">
-                                                        <xsl:if test="cac:PayeeFinancialAccount !=''">
-                                                            <xsl:call-template name="cac:PaymentMeans"/>
-                                                        </xsl:if>
-                                                        <xsl:if test="not(cac:PaymentMandate) and not(cac:CardAccount) and not(cac:PayeeFinancialAccount)">
-                                                            <small>
-                                                                <xsl:call-template name="cac:PaymentMeans"/>
-                                                            </small>
-                                                        </xsl:if>
-                                                    </div>
-                                                </xsl:if>
-                                                <xsl:if test="cac:CardAccount !=''">
-                                                    <div class="table_body">
-                                                        <xsl:if test="cac:CardAccount !=''">
-                                                            <xsl:call-template name="cac:PaymentMeans"/>
-                                                        </xsl:if>
-                                                    </div>
-                                                </xsl:if>
-                                                <xsl:if test="cac:PaymentMandate !=''">
-                                                    <div class="table_body">
-                                                        <xsl:if test="cac:CardAccount !=''">
-                                                            <xsl:call-template name="cac:PaymentMeans"/>
-                                                        </xsl:if>
-                                                    </div>
-                                                </xsl:if>
-                                            </div>
-                                        </xsl:for-each>
-                                        <xsl:choose>
-                                            <xsl:when test="cbc:PaymentMeansCode/@name != ''">
-                                                <p class="payment_means_name">
-                                                    <small>
-                                                        <xsl:apply-templates select="cbc:PaymentMeansCode/@name"/>
-                                                    </small>
-                                                </p>
-                                            </xsl:when>
-                                            <xsl:when test="cac:PaymentMeans/cbc:PaymentMeansCode/@name != ''">
-                                                <p class="payment_means_name">
-                                                    <small>
-                                                        <xsl:apply-templates select="cac:PaymentMeans/cbc:PaymentMeansCode/@name"/>
-                                                    </small>
-                                                </p>
-                                            </xsl:when>
-                                        </xsl:choose>
-                                    </div>
-                                </xsl:if>
+                                        </div>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </div>
                             <div class="red_box_no_back credit_note_description col-50 margin-right-big">
                                 <p>

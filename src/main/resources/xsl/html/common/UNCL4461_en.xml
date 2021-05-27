@@ -27,7 +27,7 @@
 				<SimpleValue>1</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Instrument not defined</SimpleValue>
+				<SimpleValue>Not specified</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -100,6 +100,15 @@
 			</Value>
 			<Value ColumnRef="name">
 				<SimpleValue>National or regional clearing</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			
+			<Value ColumnRef="code">
+				<SimpleValue>9_issuerIS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Icelandic claim</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
@@ -396,7 +405,8 @@
 				<SimpleValue>42</SimpleValue>
 			</Value>
 			<Value ColumnRef="name">
-				<SimpleValue>Payment to bank account</SimpleValue>
+				<!-- <SimpleValue>Payment to bank account</SimpleValue> -->
+				<SimpleValue>Bank transfer</SimpleValue>
 			</Value>
 		</Row>
 		<Row>
