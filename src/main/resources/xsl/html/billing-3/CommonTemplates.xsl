@@ -3735,7 +3735,7 @@
             </div>
         </xsl:if>
         <xsl:choose>
-            <xsl:when test="../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS' ">
+            <xsl:when test="(../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS') and (cbc:PaymentMeansCode = 9)">
                 <xsl:if test="cac:PayeeFinancialAccount[1]/cbc:ID !='' ">
                     <div class="payment_table_cell">
                         <div class="payment_table_header_title">
@@ -3777,7 +3777,7 @@
                             <b>
                                 <small>
                                     <xsl:call-template name="LabelName">
-                                        <xsl:with-param name="BT-ID" select="'BT-86'"/>
+                                        <xsl:with-param name="BT-ID" select="'BT-86'"/> <!-- Bank/Banki -->
                                         <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                     </xsl:call-template>
                                 </small>
@@ -4038,7 +4038,7 @@
                 </div>
             </div>
         </xsl:if>
-        <xsl:if test="../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS' ">
+        <xsl:if test="(../cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode ='IS') and (cbc:PaymentMeansCode = 9)">
             <xsl:if test="cbc:PaymentDueDate !='' or ../cbc:DueDate !=''">
                 <div class="payment_table_cell">
                     <div class="payment_table_header_title">
