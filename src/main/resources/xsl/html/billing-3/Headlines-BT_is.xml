@@ -785,12 +785,14 @@ If remittance information is to be mapped to the End To End Identification field
 		<Description>Charges on line level are included in the Invoice line net amount which is summed up into the Sum of Invoice line net amount.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-109">
-		<TermName>Samtals án skatts</TermName>
+		<!-- <TermName>Samtals án skatts</TermName> -->
+		<TermName>Samtals fyrir skatt</TermName>
 		<Definition>The total amount of the Invoice without VAT.</Definition>
 		<Description>The Invoice total amount without VAT is the Sum of Invoice line net amount minus Sum of allowances on document level plus Sum of charges on document level.</Description>
 	</BusinessTerm>
 	<BusinessTerm id="BT-110">
-		<TermName>Samtals VSK</TermName>
+		<!-- <TermName>Samtals VSK</TermName> -->
+		<TermName>Samtals skattur</TermName>
 		<Definition>The total VAT amount for the Invoice.</Definition>
 		<Description>The Invoice total VAT amount is the sum of all VAT category tax amounts.</Description>
 	</BusinessTerm>
@@ -812,7 +814,7 @@ If remittance information is to be mapped to the End To End Identification field
 	</BusinessTerm>
 	<BusinessTerm id="BT-114">
 		<!-- <TermName>Rounding amount</TermName> -->
-		<TermName>Afrúningur aura</TermName>
+		<TermName>Afrúnnun</TermName>
 		<Definition>The amount to be added to the invoice total to round the amount to be paid.</Definition>
 	</BusinessTerm>
 	<BusinessTerm id="BT-115">
