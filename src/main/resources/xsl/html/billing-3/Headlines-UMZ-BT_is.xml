@@ -78,6 +78,14 @@
 		<TermName>Fl.</TermName>
 		<DisplayName>Fl.</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-078">
+		<TermName>Upphæð reiknings</TermName>
+		<DisplayName>Upphæð reiknings</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-079">
+		<TermName>Upphæð kreditnótu</TermName>
+		<DisplayName>Upphæð kreditnótu</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">

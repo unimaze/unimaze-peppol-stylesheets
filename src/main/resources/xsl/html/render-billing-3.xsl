@@ -143,13 +143,8 @@
                         margin-top: 0.3em;
                     }
 
-                    .document_info {
-                        font-size:1.2em;
-                    }
-
-                    .document_info span {
-                        display: inline-block;
-                        min-width: 4em;
+                    .larger_text {
+                        font-size: 1.15em;
                     }
 
                     .main_header .seller {
@@ -345,8 +340,16 @@
                         right: 0;
                     }
 
-                    .tax_amount .row {
-                        padding-right: 25%;
+                    .tax_amount .tax_amount_content {
+                        margin-right: 25%;
+                    }
+
+                    .divider_horizontal {
+                        display: inline-block;
+                        width: 100%;
+                        height: 0px;
+                        border-top: 1px solid #000;
+                        margin: 4px 0;
                     }
 
                     <!-- HIDE-SHOW TABLE DETAILS -->
@@ -674,15 +677,37 @@
                                     </xsl:if>
                                     <xsl:if test="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID !=''">
                                         <br/>
-                                        <small>
-                                            <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BT-31'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'false'"/>
-                                                </xsl:call-template>&#8201;
-                                            </b>
-                                            <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />
-                                        </small>
+                                        <xsl:choose>
+                                            <xsl:when test="count(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme) = '1'">
+                                                <small>
+                                                    <b>
+                                                        <xsl:call-template name="LabelName">
+                                                            <xsl:with-param name="BT-ID" select="'BT-31'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                        </xsl:call-template>&#8201;
+                                                    </b>
+                                                    <xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />&#8201;
+                                                    [<xsl:apply-templates select="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID" />]
+                                                </small>
+                                            </xsl:when>
+                                            <xsl:when test="count(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme) > '1'">
+                                                <small>
+                                                    <b>
+                                                        <xsl:call-template name="LabelName">
+                                                            <xsl:with-param name="BT-ID" select="'BT-31'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'false'"/>
+                                                        </xsl:call-template>&#8201;
+                                                    </b>
+                                                    <xsl:for-each select="cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme">
+                                                            <xsl:apply-templates select="cbc:CompanyID" />&#8201;
+                                                            [<xsl:apply-templates select="cac:TaxScheme/cbc:ID" />]
+                                                            <xsl:if test="count(../cac:PartyTaxScheme) > position()">
+                                                            ,&#8201;
+                                                            </xsl:if>
+                                                    </xsl:for-each>
+                                                </small>
+                                            </xsl:when>
+                                        </xsl:choose>
                                     </xsl:if>
                                 </div>
                             </div>
@@ -2230,52 +2255,97 @@
                         </div>
                         <!-- Start Tax Amount: -->
                         <div class="tax_amount col-50 margin-right-big">
-                            <!-- Start sum of invoice line net amount: -->
-                            <div class="row" id="sum">
-                                <div class="col-66">
-                                    <p class="text_right">
-                                        <xsl:call-template name="LabelName">
-                                            <xsl:with-param name="BT-ID" select="'BT-106'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                        </xsl:call-template>
-                                    </p>
-                                </div>
-                                <div class="col-33">
-                                    <p class="text_right">
-                                        <xsl:call-template name="currencyLocalization">
-                                            <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>
-                                            <xsl:with-param name="country" select="$languageCode" />
-                                        </xsl:call-template>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- End Sum of invoice line net amount -->
-                            <xsl:if test="cbc:TaxCurrencyCode !=''">
+                            <div class="tax_amount_content">
+                                <!-- Start TaxExclusive Amount: -->
                                 <div class="row">
                                     <div class="col-66">
                                         <p class="text_right">
-                                            <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BT-6'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                </xsl:call-template>
-                                            </b>
+                                            <xsl:call-template name="LabelName">
+                                                <xsl:with-param name="BT-ID" select="'BT-109'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            </xsl:call-template>
                                         </p>
                                     </div>
                                     <div class="col-33">
                                         <p class="text_right">
-                                            <xsl:value-of select="cbc:TaxCurrencyCode"/>
+                                            <xsl:call-template name="currencyLocalization">
+                                                <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/>
+                                                <xsl:with-param name="country" select="$languageCode" />
+                                            </xsl:call-template>
                                         </p>
                                     </div>
                                 </div>
-                            </xsl:if>
-                            <xsl:if test="cac:TaxTotal/cbc:TaxAmount">
-                                <xsl:if test="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]">
+                                <!-- End TaxExclusive Amount -->                        
+                                <!-- Start sum of invoice line net amount: --> 
+                                <!-- <div class="row" id="sum">
+                                    <div class="col-66">
+                                        <p class="text_right">
+                                            <xsl:call-template name="LabelName">
+                                                <xsl:with-param name="BT-ID" select="'BT-106'"/>
+                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            </xsl:call-template>
+                                        </p>
+                                    </div>
+                                    <div class="col-33">
+                                        <p class="text_right">
+                                            <xsl:call-template name="currencyLocalization">
+                                                <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>
+                                                <xsl:with-param name="country" select="$languageCode" />
+                                            </xsl:call-template>
+                                        </p>
+                                    </div>
+                                </div> -->
+                                <!-- End Sum of invoice line net amount -->
+                                <xsl:if test="cbc:TaxCurrencyCode !=''">
+                                    <div class="row">
+                                        <div class="col-66">
+                                            <p class="text_right">
+                                                <b>
+                                                    <xsl:call-template name="LabelName">
+                                                        <xsl:with-param name="BT-ID" select="'BT-6'"/>
+                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                    </xsl:call-template>
+                                                </b>
+                                            </p>
+                                        </div>
+                                        <div class="col-33">
+                                            <p class="text_right">
+                                                <xsl:value-of select="cbc:TaxCurrencyCode"/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </xsl:if>
+                                <!-- Start Tax Amount -->
+                                <xsl:if test="cac:TaxTotal/cbc:TaxAmount">
+                                    <xsl:if test="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]">
+                                        <div class="row">
+                                            <div class="col-66">
+                                                <p class="text_right">
+                                                    <xsl:call-template name="LabelName">
+                                                        <xsl:with-param name="BT-ID" select="'BT-110'"/>
+                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                    </xsl:call-template>
+                                                </p>
+                                            </div>
+                                            <div class="col-33">
+                                                <p class="text_right">
+                                                    <xsl:call-template name="currencyLocalization">
+                                                        <xsl:with-param name="currencyValue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>
+                                                        <xsl:with-param name="country" select="$languageCode" />
+                                                    </xsl:call-template>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </xsl:if>
+                                </xsl:if>
+                                <!-- End Tax Amount -->
+                                <!-- Start Rounding Amount: -->
+                                <xsl:if test="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount !='' ">
                                     <div class="row">
                                         <div class="col-66">
                                             <p class="text_right">
                                                 <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BT-110'"/>
+                                                    <xsl:with-param name="BT-ID" select="'BT-114'"/>
                                                     <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                                 </xsl:call-template>
                                             </p>
@@ -2283,148 +2353,164 @@
                                         <div class="col-33">
                                             <p class="text_right">
                                                 <xsl:call-template name="currencyLocalization">
-                                                    <xsl:with-param name="currencyValue" select="cac:TaxTotal/cbc:TaxAmount[@currencyID=../../cbc:DocumentCurrencyCode]"/>
+                                                    <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"/>
+                                                    <xsl:with-param name="country" select="$languageCode" />
+                                                </xsl:call-template>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </xsl:if>                            
+                                <!-- End Rounding Amount: -->
+                                <div class="row">
+                                    <div class="col-33"></div>
+                                    <div class="col-66"><div class="divider_horizontal"></div></div>
+                                </div>
+                                <!-- Start Total Amount: -->
+                                <div class="row larger_text">
+                                    <div class="col-66">
+                                        <p class="text_right">
+                                            <b>
+                                                <xsl:choose>
+                                                    <xsl:when test="local-name(.)  = 'Invoice'">                                        
+                                                        <xsl:call-template name="UMZLabelName">
+                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-078'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                        </xsl:call-template>
+                                                    </xsl:when>                                        
+                                                    <xsl:when test="local-name(.)  = 'CreditNote'">
+                                                        <xsl:call-template name="UMZLabelName">
+                                                            <xsl:with-param name="BT-ID" select="'UMZ-BT-079'"/>
+                                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                        </xsl:call-template>                                                                                        
+                                                    </xsl:when>                                        
+                                                </xsl:choose>
+                                            </b>
+                                        </p>
+                                    </div>
+                                    <div class="col-33">
+                                        <p class="text_right">
+                                            <b>
+                                                <xsl:variable name="totalAmountCalculated">
+                                                    <xsl:call-template name="sum">
+                                                        <xsl:with-param name="a" select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount" />
+                                                        <xsl:with-param name="b" select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount" />
+                                                    </xsl:call-template>
+                                                </xsl:variable>
+                                                <small>
+                                                    <xsl:value-of select="cbc:DocumentCurrencyCode" />&#8201;
+                                                </small>
+                                                <xsl:call-template name="currencyLocalization">
+                                                    <xsl:with-param name="currencyValue" select="$totalAmountCalculated"/>
+                                                    <xsl:with-param name="country" select="$languageCode" />
+                                                </xsl:call-template>
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Total Amount -->   
+                                <!-- Start Prepaid Amount: -->
+                                <xsl:if test="cac:LegalMonetaryTotal/cbc:PrepaidAmount !='' ">
+                                    <div class="row">
+                                        <div class="col-66">
+                                            <p class="text_right">
+                                                <xsl:call-template name="LabelName">
+                                                    <xsl:with-param name="BT-ID" select="'BT-113'"/>
+                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                                </xsl:call-template>
+                                            </p>
+                                        </div>
+                                        <div class="col-33">
+                                            <p class="text_right">
+                                                <xsl:call-template name="currencyLocalization">
+                                                    <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PrepaidAmount"/>
                                                     <xsl:with-param name="country" select="$languageCode" />
                                                 </xsl:call-template>
                                             </p>
                                         </div>
                                     </div>
                                 </xsl:if>
-                            </xsl:if>
-                            <!-- End Tax Amount -->
-                            <!-- Start TaxExclusive Amount: -->
-                            <div class="row">
-                                <div class="col-66">
-                                    <p class="text_right">
-                                        <xsl:call-template name="LabelName">
-                                            <xsl:with-param name="BT-ID" select="'BT-109'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                        </xsl:call-template>
-                                    </p>
-                                </div>
-                                <div class="col-33">
-                                    <p class="text_right">
-                                        <xsl:call-template name="currencyLocalization">
-                                            <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/>
-                                            <xsl:with-param name="country" select="$languageCode" />
-                                        </xsl:call-template>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- End TaxExclusive Amount -->
-                            <!-- Start TaxInclusive Amount: -->
-                            <div class="row">
-                                <div class="col-66">
-                                    <p class="text_right">
-                                        <xsl:call-template name="LabelName">
-                                            <xsl:with-param name="BT-ID" select="'BT-112'"/>
-                                            <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                        </xsl:call-template>
-                                    </p>
-                                </div>
-                                <div class="col-33">
-                                    <p class="text_right">
-                                        <b>
-                                            <xsl:call-template name="currencyLocalization">
-                                                <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/>
-                                                <xsl:with-param name="country" select="$languageCode" />
-                                            </xsl:call-template>
-                                        </b>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- End TaxInclusive Amount -->
-                            <!-- Start Prepaid Amount: -->
-                            <xsl:if test="cac:LegalMonetaryTotal/cbc:PrepaidAmount !='' ">
+                                <!-- End Prepaid Amount -->
                                 <div class="row">
+                                    <div class="col-33"></div>
+                                    <div class="col-66"><div class="divider_horizontal"></div></div>
+                                </div>                                                                                         
+                                <!-- Start TaxInclusive Amount: -->
+                                <!-- <div class="row">
                                     <div class="col-66">
                                         <p class="text_right">
                                             <xsl:call-template name="LabelName">
-                                                <xsl:with-param name="BT-ID" select="'BT-113'"/>
+                                                <xsl:with-param name="BT-ID" select="'BT-112'"/>
                                                 <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                             </xsl:call-template>
                                         </p>
                                     </div>
                                     <div class="col-33">
                                         <p class="text_right">
-                                            <xsl:call-template name="currencyLocalization">
-                                                <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PrepaidAmount"/>
-                                                <xsl:with-param name="country" select="$languageCode" />
-                                            </xsl:call-template>
-                                        </p>
-                                    </div>
-                                </div>
-                            </xsl:if>
-                            <!-- End Prepaid Amount -->
-                            <!-- Start Rounding Amount: -->
-                            <xsl:if test="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount !='' ">
-                                <div class="row">
-                                    <div class="col-66">
-                                        <p class="text_right">
-                                            <xsl:call-template name="LabelName">
-                                                <xsl:with-param name="BT-ID" select="'BT-114'"/>
-                                                <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                            </xsl:call-template>
-                                        </p>
-                                    </div>
-                                    <div class="col-33">
-                                        <p class="text_right">
-                                            <xsl:call-template name="currencyLocalization">
-                                                <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"/>
-                                                <xsl:with-param name="country" select="$languageCode" />
-                                            </xsl:call-template>
-                                        </p>
-                                    </div>
-                                </div>
-                            </xsl:if>
-                            <!-- Start Payable Amount: -->
-                            <div class="row">
-                                <xsl:choose>
-                                    <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
-                                        <div class="col-66">
-                                            <p class="text_right">
-                                                <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BT-115'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
+                                            <b>
+                                                <xsl:call-template name="currencyLocalization">
+                                                    <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/>
+                                                    <xsl:with-param name="country" select="$languageCode" />
                                                 </xsl:call-template>
-                                                </b>
-                                            </p>
-                                        </div>
-                                        <div class="col-33">                                            
-                                            <p class="text_right">
-                                                <b>
-                                                    <xsl:call-template name="currencyLocalization">
-                                                        <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
-                                                        <xsl:with-param name="country" select="$languageCode" />
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div> -->
+                                <!-- End TaxInclusive Amount -->
+                                <!-- Start Payable Amount: -->
+                                <div class="row larger_text">
+                                    <xsl:choose>
+                                        <xsl:when test="cac:LegalMonetaryTotal/cbc:PayableAmount &lt; '0'">
+                                            <div class="col-66">
+                                                <p class="text_right">
+                                                    <b>
+                                                    <xsl:call-template name="LabelName">
+                                                        <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                                     </xsl:call-template>
-                                                </b>
-                                            </p>
-                                        </div>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <div class="col-66">                                            
-                                            <p class="text_right">
-                                                <b>
-                                                <xsl:call-template name="LabelName">
-                                                    <xsl:with-param name="BT-ID" select="'BT-115'"/>
-                                                    <xsl:with-param name="Colon-Suffix" select="'true'"/>
-                                                </xsl:call-template>
-                                                </b>
-                                            </p>                                            
-                                        </div>
-                                        <div class="col-33">                                            
-                                            <p class="text_right">
-                                                <b>
-                                                    <xsl:call-template name="currencyLocalization">
-                                                        <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
-                                                        <xsl:with-param name="country" select="$languageCode" />
+                                                    </b>
+                                                </p>
+                                            </div>
+                                            <div class="col-33">                                            
+                                                <p class="text_right">
+                                                    <b>
+                                                        <small>
+                                                            <xsl:value-of select="cbc:DocumentCurrencyCode" />&#8201;
+                                                        </small>
+                                                        <xsl:call-template name="currencyLocalization">
+                                                            <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
+                                                            <xsl:with-param name="country" select="$languageCode" />
+                                                        </xsl:call-template>
+                                                    </b>
+                                                </p>
+                                            </div>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <div class="col-66">                                            
+                                                <p class="text_right">
+                                                    <b>
+                                                    <xsl:call-template name="LabelName">
+                                                        <xsl:with-param name="BT-ID" select="'BT-115'"/>
+                                                        <xsl:with-param name="Colon-Suffix" select="'true'"/>
                                                     </xsl:call-template>
-                                                </b>
-                                            </p>                                            
-                                        </div>
-                                    </xsl:otherwise>
-                                </xsl:choose>
+                                                    </b>
+                                                </p>                                            
+                                            </div>
+                                            <div class="col-33">                                            
+                                                <p class="text_right">
+                                                    <b>
+                                                        <small>
+                                                            <xsl:value-of select="cbc:DocumentCurrencyCode" />&#8201;
+                                                        </small>                                                    
+                                                        <xsl:call-template name="currencyLocalization">
+                                                            <xsl:with-param name="currencyValue" select="cac:LegalMonetaryTotal/cbc:PayableAmount"/>
+                                                            <xsl:with-param name="country" select="$languageCode" />
+                                                        </xsl:call-template>
+                                                    </b>
+                                                </p>                                            
+                                            </div>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </div>
                             </div>
                         </div>
                     </div>

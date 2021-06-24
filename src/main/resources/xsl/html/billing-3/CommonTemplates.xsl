@@ -67,6 +67,7 @@
     <xsl:variable name="table_item_ID" select="cbc:ID" />
     <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" /> 
     <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" /> 
+    <xsl:decimal-format name="coercedToNumber" NaN="0" />
     <xsl:template match="/">
         <xsl:apply-templates />
     </xsl:template>
@@ -563,6 +564,15 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    <!-- Sum two values -->
+    <xsl:template name="sum">
+        <xsl:param name="a" />
+        <xsl:param name="b" />
+        <xsl:variable name="aFormated" select="format-number($a, '#', 'coercedToNumber')"/>
+        <xsl:variable name="bFormated" select="format-number($b, '#', 'coercedToNumber')"/>
+        <xsl:value-of select="$aFormated + $bFormated"/>
+    </xsl:template>
+    <!-- End sum two values -->
     <xsl:template match="cbc:Note">
         <xsl:call-template name="replace">
             <xsl:with-param name="string" select="." />

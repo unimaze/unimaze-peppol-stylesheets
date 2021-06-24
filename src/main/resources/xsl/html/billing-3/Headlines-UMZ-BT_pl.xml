@@ -76,6 +76,14 @@
 		<TermName>Cat.</TermName>
 		<DisplayName>Cat.</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-078">
+		<TermName>Total invoiced amount</TermName>
+		<DisplayName>Total invoiced amount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-079">
+		<TermName>Total credit note amount</TermName>
+		<DisplayName>Total credit note amount</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">
