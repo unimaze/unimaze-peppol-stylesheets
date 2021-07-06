@@ -84,6 +84,22 @@
 		<TermName>Total credit note amount</TermName>
 		<DisplayName>Total credit note amount</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-080">
+		<TermName>Discount</TermName>
+		<DisplayName>Discount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-081">
+		<TermName>Charge</TermName>
+		<DisplayName>Charge</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-082">
+		<TermName>Customer discount</TermName>
+		<DisplayName>Customer discount</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-083">
+		<TermName>base amount</TermName>
+		<DisplayName>base amount</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">

@@ -3122,29 +3122,71 @@
                                 <br />
                             </xsl:if>
                             <b>
-                                <xsl:call-template name="LabelName">
+                                <!-- <xsl:call-template name="LabelName">
                                     <xsl:with-param name="BT-ID" select="'BT-98'" />
                                     <xsl:with-param name="Colon-Suffix" select="'true'" />
-                                </xsl:call-template>
+                                </xsl:call-template> -->
+
+                                <xsl:if test="cbc:ChargeIndicator = 'false'">
+                                    <xsl:call-template name="UMZLabelName">
+                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-080'" />
+                                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                                    </xsl:call-template>
+                                </xsl:if>
+
+                                <xsl:if test="cbc:ChargeIndicator = 'true'">
+                                    <xsl:call-template name="UMZLabelName">
+                                        <xsl:with-param name="BT-ID" select="'UMZ-BT-081'" />
+                                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                                    </xsl:call-template>
+                                </xsl:if>
                             </b>
-                            <xsl:if test="cbc:AllowanceChargeReason !=''">
-                                <xsl:apply-templates select="cbc:AllowanceChargeReason" />
-                            </xsl:if>
-                            <xsl:if test="cbc:AllowanceChargeReasonCode !=''">
-                                [<xsl:apply-templates select="cbc:AllowanceChargeReasonCode" />] -
-                                <xsl:call-template name="AllowanceReasonCode">
-                                    <xsl:with-param name="AllowanceCode" select="cbc:AllowanceChargeReasonCode"/>
+                            <xsl:if test="cbc:Amount !=''">
+                                <xsl:call-template name="currencyLocalization">
+                                    <xsl:with-param name="currencyValue" select="cbc:Amount" />
+                                    <xsl:with-param name="country" select="$languageCode" />
                                 </xsl:call-template>&#8201;
                             </xsl:if>
                             <xsl:if test="cbc:MultiplierFactorNumeric !=''">
+                                (<xsl:apply-templates select="cbc:MultiplierFactorNumeric" />%) - 
+                            </xsl:if>
+                            <xsl:if test="cbc:AllowanceChargeReasonCode !='' or cbc:AllowanceChargeReason !=''">
+                                <!-- <xsl:call-template name="AllowanceReasonCode">
+                                    <xsl:with-param name="AllowanceCode" select="cbc:AllowanceChargeReasonCode"/>
+                                </xsl:call-template>&#8201; -->
+                                <xsl:apply-templates select="cbc:AllowanceChargeReason" />&#8201;
+                                [<xsl:apply-templates select="cbc:AllowanceChargeReasonCode" />]&#8201;
+                            </xsl:if>
+                            <xsl:if test="cbc:BaseAmount !=''">
+                                (<xsl:call-template name="UMZLabelName">
+                                    <xsl:with-param name="BT-ID" select="'UMZ-BT-083'" />
+                                    <xsl:with-param name="Colon-Suffix" select="'true'" />
+                                </xsl:call-template>
+                                <xsl:call-template name="currencyLocalization">
+                                    <xsl:with-param name="currencyValue" select="cbc:BaseAmount" />
+                                    <xsl:with-param name="country" select="$languageCode" />
+                                    <xsl:with-param name="useFourDecimalPoints" select="'false'" />
+                                </xsl:call-template>)
+                            </xsl:if>
+                            <!-- <xsl:if test="cbc:AllowanceChargeReason !=''">
+                                <br />
+                                <b>
+                                    <xsl:call-template name="LabelName">
+                                        <xsl:with-param name="BT-ID" select="'BT-98'" />
+                                        <xsl:with-param name="Colon-Suffix" select="'true'" />
+                                    </xsl:call-template>
+                                </b>
+                                <xsl:apply-templates select="cbc:AllowanceChargeReason" />
+                            </xsl:if> -->
+                            <!-- <xsl:if test="cbc:MultiplierFactorNumeric !=''">
                                 <xsl:call-template name="currencyLocalization">
                                     <xsl:with-param name="currencyValue" select="cbc:MultiplierFactorNumeric" />
                                     <xsl:with-param name="country" select="$languageCode" />
                                     <xsl:with-param name="useFourDecimalPoints" select="'true'" />
                                 </xsl:call-template>%
-                            </xsl:if>
-                            <br />
-                            <xsl:if test="cbc:Amount !=''">
+                            </xsl:if> -->
+                            <!-- <br /> -->
+                            <!-- <xsl:if test="cbc:Amount !=''">
                                 <b>
                                     <xsl:call-template name="LabelName">
                                         <xsl:with-param name="BT-ID" select="'BT-136'" />
@@ -3155,8 +3197,8 @@
                                     <xsl:with-param name="currencyValue" select="cbc:Amount" />
                                     <xsl:with-param name="country" select="$languageCode" />
                                 </xsl:call-template>
-                            </xsl:if>
-                            <xsl:if test="cbc:BaseAmount !=''">
+                            </xsl:if> -->
+                            <!-- <xsl:if test="cbc:BaseAmount !=''">
                                 <br />
                                 <b>
                                     <xsl:call-template name="UMZLabelName">
@@ -3169,7 +3211,7 @@
                                     <xsl:with-param name="country" select="$languageCode" />
                                     <xsl:with-param name="useFourDecimalPoints" select="'true'" />
                                 </xsl:call-template>
-                            </xsl:if>
+                            </xsl:if> -->
                         </xsl:for-each>
                         <br />
                     </xsl:if>

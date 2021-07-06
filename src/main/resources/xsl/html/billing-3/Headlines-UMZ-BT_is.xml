@@ -86,6 +86,22 @@
 		<TermName>Upphæð kreditnótu</TermName>
 		<DisplayName>Upphæð kreditnótu</DisplayName>
 	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-080">
+		<TermName>Afsláttur</TermName>
+		<DisplayName>Afsláttur</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-081">
+		<TermName>Rukka</TermName>
+		<DisplayName>Rukka</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-082">
+		<TermName>Afsláttur viðskiptavinar</TermName>
+		<DisplayName>Afsláttur viðskiptavinar</DisplayName>
+	</BusinessTerm>
+	<BusinessTerm id="UMZ-BT-083">
+		<TermName>grunnupphæð</TermName>
+		<DisplayName>grunnupphæð</DisplayName>
+	</BusinessTerm>
 
 	<!-- CREDIT NOTE TITLES -->
 	<BusinessTerm id="UMZ-BT-012">
